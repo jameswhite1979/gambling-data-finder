@@ -107,6 +107,20 @@
       <span class="score-legend-item"><span class="score-pill score-moderate">6&ndash;10</span> Moderate / exploratory</span>
       <span class="score-legend-item"><span class="score-pill score-low">0&ndash;5</span> Low readiness</span>
     </div>
+    <div class="score-legend" style="margin-bottom:1rem;">
+      <span class="score-legend-item"><strong>Compat.</strong> Compatibility flag</span>
+      <span class="score-legend-item"><strong>U25</strong> Under-25 data</span>
+      <span class="score-legend-item"><strong>Gamb</strong> Clear gambling measure</span>
+      <span class="score-legend-item"><strong>Named</strong> Named or validated gambling measure</span>
+      <span class="score-legend-item"><strong>Meta</strong> Metadata quality</span>
+      <span class="score-legend-item"><strong>Risk</strong> Risk/protective factors</span>
+      <span class="score-legend-item"><strong>ValR</strong> Validated risk/protective measures</span>
+      <span class="score-legend-item"><strong>Long</strong> Longitudinal design</span>
+      <span class="score-legend-item"><strong>Ineq</strong> Inequality variables</span>
+      <span class="score-legend-item"><strong>Acc</strong> Access route</span>
+      <span class="score-legend-item"><strong>Pub</strong> Published research</span>
+      <span class="score-legend-item"><strong>Comp</strong> Compatible with other datasets</span>
+    </div>
     <div id="readiness-content"><div class="loading">Loading readiness data...</div></div>
   </div>
 
@@ -271,18 +285,18 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Readiness table
   let html = `<div style="overflow-x:auto;"><table class="readiness-table">
     <thead><tr>
-      <th>Dataset</th><th>Score</th><th>Band</th><th>Compatibility flag</th>
-      <th title="Under-25 data (0-2)">Under-25 data</th>
-      <th title="Clear gambling measure (0-2)">Clear gambling measure</th>
-      <th title="Named/validated measure (0-2)">Named or validated gambling measure</th>
-      <th title="Metadata quality (0-2)">Metadata quality</th>
-      <th title="Risk/protective factors (0-3)">Risk/protective factors</th>
-      <th title="Validated risk/protective measures (0-2)">Validated risk/protective measures</th>
-      <th title="Longitudinal design (0-2)">Longitudinal design</th>
-      <th title="Inequality variables (0-1)">Inequality variables</th>
-      <th title="Access route (0-2)">Access route</th>
-      <th title="Published research (0-1)">Published research</th>
-      <th title="Compatible with others (0-1)">Compatible with other datasets</th>
+      <th>Dataset</th><th>Score</th><th>Band</th><th>Compat.</th>
+      <th title="Under-25 data (0-2)">U25</th>
+      <th title="Clear gambling measure (0-2)">Gamb</th>
+      <th title="Named/validated measure (0-2)">Named</th>
+      <th title="Metadata quality (0-2)">Meta</th>
+      <th title="Risk/protective factors (0-3)">Risk</th>
+      <th title="Validated risk/protective measures (0-2)">ValR</th>
+      <th title="Longitudinal design (0-2)">Long</th>
+      <th title="Inequality variables (0-1)">Ineq</th>
+      <th title="Access route (0-2)">Acc</th>
+      <th title="Published research (0-1)">Pub</th>
+      <th title="Compatible with others (0-1)">Comp</th>
       <th>Design</th>
       <th>Country</th>
     </tr></thead><tbody>`;
