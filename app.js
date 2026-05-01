@@ -53,6 +53,7 @@ function renderNav(activePage) {
     { id: 'explore', label: 'Explore', href: 'explore.html' },
     { id: 'visualisations', label: 'Visualisations', href: 'visualisations.html' },
     { id: 'measures', label: 'Measures', href: 'measures.html' },
+    { id: 'new-analysis', label: 'New Analysis', href: 'new-analysis.html' },
     { id: 'coverage', label: 'Coverage', href: 'coverage.html' },
     { id: 'faq', label: 'FAQs', href: 'faq.html' },
     { id: 'about', label: 'About', href: 'about.html' },

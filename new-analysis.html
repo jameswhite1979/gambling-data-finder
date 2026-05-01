@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Analysis — Gambling Data Finder</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.readiness-table{width:100%;border-collapse:collapse;font-size:.8rem}
+.readiness-table th,.readiness-table td{padding:.5rem .6rem;border:1px solid var(--border);text-align:left;vertical-align:top}
+.readiness-table th{background:var(--navy);color:#fff;font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:.03em;position:sticky;top:0;z-index:10;white-space:nowrap}
+.readiness-table tr:nth-child(even){background:var(--border-light)}
+.readiness-table tr:hover{background:var(--amber-bg)}
+.readiness-table a{color:var(--amber)}
+.readiness-table td:first-child{font-weight:600;color:var(--navy)}
+
+.score-pill{display:inline-block;padding:.15rem .5rem;border-radius:10px;font-size:.72rem;font-weight:700;min-width:32px;text-align:center}
+.score-high{background:#d1fae5;color:#065f46}
+.score-good{background:#dbeafe;color:#1e40af}
+.score-moderate{background:#fef3c7;color:#92400e}
+.score-low{background:#fee2e2;color:#991b1b}
+
+.compat-flag{display:inline-block;padding:.12rem .45rem;border-radius:3px;font-size:.68rem;font-weight:700;text-transform:uppercase}
+.compat-A{background:#d1fae5;color:#065f46}
+.compat-B{background:#dbeafe;color:#1e40af}
+.compat-C{background:#fef3c7;color:#92400e}
+.compat-D{background:#fee2e2;color:#991b1b}
+
+.analysis-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:2rem}
+.analysis-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem;text-align:center;box-shadow:var(--shadow-sm)}
+.analysis-card-num{font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--navy);line-height:1.2}
+.analysis-card-label{font-size:.78rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;font-weight:500;margin-top:.2rem}
+
+.overlap-matrix-scroll{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius);margin:1rem 0}
+.overlap-matrix{border-collapse:collapse;font-size:.68rem;min-width:100%}
+.overlap-matrix th{background:var(--navy);color:#fff;font-weight:600;padding:.4rem .45rem;white-space:nowrap;text-align:center;border:1px solid rgba(255,255,255,.15);position:sticky;top:0;z-index:5}
+.overlap-matrix th:first-child{left:0;z-index:6;text-align:left}
+.overlap-matrix td{text-align:center;padding:.3rem .35rem;border:1px solid var(--border);min-width:38px}
+.overlap-matrix td:first-child{font-weight:600;color:var(--navy);white-space:nowrap;position:sticky;left:0;background:var(--card);z-index:3;text-align:left;padding-left:.5rem}
+.cell-high{background:#d1fae5;color:#065f46;font-weight:700}
+.cell-med{background:#dbeafe;color:#1e40af;font-weight:600}
+.cell-low{background:#eff6ff;color:#64748b}
+.cell-none{background:var(--border-light);color:var(--slate-muted)}
+.cell-diag{background:var(--navy-light);color:rgba(255,255,255,.5);font-weight:400;font-size:.6rem}
+
+.network-container{position:relative;width:100%;min-height:420px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.network-svg{width:100%;height:420px}
+.network-node{cursor:default}
+.network-node circle{stroke:#fff;stroke-width:2;transition:opacity .15s}
+.network-node circle:hover{opacity:.8}
+.network-node text{font-family:var(--font-body);font-size:10px;fill:var(--text);font-weight:600;pointer-events:none}
+.network-edge{stroke:var(--border);stroke-opacity:.5;fill:none}
+.network-edge-strong{stroke:var(--amber);stroke-opacity:.6;stroke-width:2}
+.network-edge-medium{stroke:var(--teal);stroke-opacity:.4;stroke-width:1.5}
+
+.section-intro{color:var(--text-muted);font-size:.9rem;margin-bottom:1.5rem;max-width:800px}
+.subsection{margin:2rem 0}
+.subsection h2{font-family:var(--font-display);font-size:1.15rem;color:var(--navy);margin-bottom:.8rem;padding-bottom:.4rem;border-bottom:2px solid var(--border)}
+.subsection h3{font-family:var(--font-display);font-size:1rem;color:var(--navy);margin-bottom:.6rem}
+
+.score-legend{display:flex;flex-wrap:wrap;gap:.5rem .8rem;margin:.8rem 0;font-size:.78rem;color:var(--text-muted)}
+.score-legend-item{display:flex;align-items:center;gap:.3rem}
+</style>
+</head>
+<body>
+<div id="header"></div>
+
+<div class="page-content">
+  <h1 style="font-size:1.4rem;color:var(--navy);margin-bottom:.3rem;">New analysis: readiness and synthesis potential</h1>
+  <p class="section-intro">This page assesses each dataset's readiness for secondary analysis and identifies where cross-dataset synthesis or meta-analysis may be feasible. Readiness scores reflect data quality, measurement detail, access routes and risk/protective factor coverage. Compatibility flags indicate potential for harmonisation across datasets.</p>
+
+  <div id="summary-cards"><div class="loading">Loading analysis data...</div></div>
+
+  <div class="subsection">
+    <h2>Dataset readiness scores</h2>
+    <p style="color:var(--text-muted);font-size:.85rem;margin-bottom:.8rem;">Each dataset is scored 0&ndash;20 across eleven components reflecting how ready and useful it is for gambling-related secondary analysis. Higher scores indicate greater readiness for research use and cross-dataset synthesis.</p>
+    <div class="score-legend">
+      <span class="score-legend-item"><span class="score-pill score-high">16&ndash;20</span> High readiness</span>
+      <span class="score-legend-item"><span class="score-pill score-good">11&ndash;15</span> Good candidate</span>
+      <span class="score-legend-item"><span class="score-pill score-moderate">6&ndash;10</span> Moderate / exploratory</span>
+      <span class="score-legend-item"><span class="score-pill score-low">0&ndash;5</span> Low readiness</span>
+    </div>
+    <div id="readiness-content"><div class="loading">Loading readiness data...</div></div>
+  </div>
+
+  <div class="subsection">
+    <h2>Shared gambling measures across datasets</h2>
+    <p style="color:var(--text-muted);font-size:.85rem;margin-bottom:.8rem;">The matrix below shows how many named gambling measures are shared between each pair of datasets. Shared measures indicate potential for harmonisation, pooled analysis or meta-analytic comparison.</p>
+    <div id="overlap-content"><div class="loading">Loading overlap data...</div></div>
+  </div>
+
+  <div class="subsection">
+    <h2>Measure overlap network</h2>
+    <p style="color:var(--text-muted);font-size:.85rem;margin-bottom:.8rem;">Datasets that share named gambling measures are connected. Thicker lines indicate more shared measures. Node size reflects the number of gambling variables in each dataset.</p>
+    <div id="network-content"><div class="loading">Loading network...</div></div>
+  </div>
+
+  <div class="subsection">
+    <h2>Risk/protective factor overlap</h2>
+    <p style="color:var(--text-muted);font-size:.85rem;margin-bottom:.8rem;">For datasets sharing gambling measures, this table shows which risk and protective factor domains are available in both, supporting the identification of cross-dataset research questions.</p>
+    <div id="risk-overlap-content"><div class="loading">Loading risk overlap data...</div></div>
+  </div>
+</div>
+
+<div id="footer"></div>
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  document.getElementById('header').innerHTML = renderNav('new-analysis');
+  document.getElementById('footer').innerHTML = renderFooter();
+  updateBasketCount();
+
+  const [datasets, variables, publications, metaCheck, questionnaires, gamblingMeasures] = await Promise.all([
+    fetchJSON('data/datasets.json'),
+    loadVariables(),
+    fetchJSON('data/publications.json'),
+    fetchJSON('data/metadata_check.json'),
+    fetchJSON('data/questionnaires.json'),
+    fetchJSON('data/gambling_measures.json'),
+  ]);
+
+  if (!datasets || !variables) {
+    document.getElementById('readiness-content').innerHTML = '<p>Unable to load data.</p>';
+    return;
+  }
+
+  const scorableDatasets = datasets.filter(d =>
+    d.Dataset_ID !== 'GREO_REPO' && d.Dataset_ID !== 'UKLLC' && d.Dataset_ID !== 'AHAH'
+  );
+
+  function computeReadiness(ds) {
+    const id = ds.Dataset_ID;
+    const dsVars = variables.filter(v => v.dataset_id === id);
+    const gambVars = dsVars.filter(v => v.role === 'Gambling measure');
+    const riskVars = dsVars.filter(v => v.role === 'Risk/protective factor');
+    const namedMeasures = [...new Set(gambVars.map(v => v.named_measure).filter(Boolean))];
+    const riskNamed = [...new Set(riskVars.map(v => v.named_measure).filter(Boolean))];
+    const mc = (metaCheck || []).find(m => m.Dataset_ID === id) || {};
+    const pubs = (publications || []).filter(p => p['Dataset ID'] === id);
+    const riskDomains = (ds['Key risk/protective domains confirmed'] || '').toLowerCase();
+    const age = (ds['Age focus / population'] || '').toLowerCase();
+    const design = (ds['Study design'] || '').toLowerCase();
+    const accessURL = ds['Access request URL'] || '';
+    const accessType = (ds['Access type'] || '').toLowerCase();
+
+    const components = {};
+
+    // 1. Under-25 (0-2)
+    if (age.match(/adolescen|child|youth|young|11-17|11-16|16-24|under 25|school|grades 7-12|15-16|11,|age 14|age 11|years 7/i))
+      components.under25 = 2;
+    else if (age.match(/16\+|18\+|adult|emerging/i))
+      components.under25 = 1;
+    else components.under25 = 0;
+
+    // 2. Clear gambling measure (0-2)
+    if (gambVars.length > 5) components.gamblingMeasure = 2;
+    else if (gambVars.length > 0 || ds['Gambling measure summary']) components.gamblingMeasure = 1;
+    else components.gamblingMeasure = 0;
+
+    // 3. Named/validated measure (0-2)
+    if (namedMeasures.length >= 2) components.namedMeasure = 2;
+    else if (namedMeasures.length === 1) components.namedMeasure = 1;
+    else components.namedMeasure = 0;
+
+    // 4. Exact wording/metadata (0-2)
+    const varPub = (mc['Variable names public?'] || '').toLowerCase();
+    const qPub = (mc['Question wording public?'] || '').toLowerCase();
+    if (varPub.startsWith('yes') && qPub.startsWith('yes')) components.metadata = 2;
+    else if (varPub.startsWith('yes') || qPub.startsWith('partial') || qPub.startsWith('yes')) components.metadata = 1;
+    else components.metadata = 0;
+
+    // 5. Risk/protective factors (0-3)
+    const domainKeywords = ['mental health','substance','socioeconomic','family','peer','school','digital','adversity','protective','inequalit'];
+    const domainCount = domainKeywords.filter(d => riskDomains.includes(d)).length;
+    if (domainCount >= 5 && riskVars.length > 10) components.riskFactors = 3;
+    else if (domainCount >= 3) components.riskFactors = 2;
+    else if (domainCount >= 1) components.riskFactors = 1;
+    else components.riskFactors = 0;
+
+    // 6. Validated R/P measures (0-2)
+    if (riskNamed.length >= 2) components.validatedRisk = 2;
+    else if (riskNamed.length === 1) components.validatedRisk = 1;
+    else components.validatedRisk = 0;
+
+    // 7. Longitudinal (0-2)
+    if (design.includes('longitudinal') || design.includes('cohort') || design.includes('panel')) components.longitudinal = 2;
+    else if (design.includes('repeated')) components.longitudinal = 1;
+    else components.longitudinal = 0;
+
+    // 8. Inequality variables (0-1)
+    if (riskDomains.match(/inequalit|ethnic|deprivat|disabilit|gender|sexuality|migration/)) components.inequality = 1;
+    else components.inequality = 0;
+
+    // 9. Clear access route (0-2)
+    if (accessURL && (accessType.includes('open') || accessType.includes('public') || accessType.includes('registered'))) components.access = 2;
+    else if (accessURL) components.access = 1;
+    else components.access = 0;
+
+    // 10. Published research (0-1)
+    components.published = pubs.length > 0 ? 1 : 0;
+
+    // 11. Compatible with others (0-1)
+    const allGamb = variables.filter(v => v.role === 'Gambling measure' && v.named_measure);
+    const shared = namedMeasures.filter(m => allGamb.some(v => v.dataset_id !== id && v.named_measure === m));
+    components.compatible = shared.length > 0 ? 1 : 0;
+
+    const total = Object.values(components).reduce((a, b) => a + b, 0);
+    let band, bandClass;
+    if (total >= 16) { band = 'High'; bandClass = 'score-high'; }
+    else if (total >= 11) { band = 'Good'; bandClass = 'score-good'; }
+    else if (total >= 6) { band = 'Moderate'; bandClass = 'score-moderate'; }
+    else { band = 'Low'; bandClass = 'score-low'; }
+
+    // Compatibility flag
+    let compatFlag;
+    const sharedMeasureCount = shared.length;
+    const riskOverlap = domainCount;
+    if (sharedMeasureCount >= 2 && riskOverlap >= 3) compatFlag = 'A';
+    else if (sharedMeasureCount >= 1 && riskOverlap >= 2) compatFlag = 'B';
+    else if (gambVars.length > 0) compatFlag = 'C';
+    else compatFlag = 'D';
+
+    return { id, name: ds['Dataset name'], dataset: ds, total, band, bandClass, components, namedMeasures, compatFlag, gambVarCount: gambVars.length, riskDomains: riskDomains, domainCount };
+  }
+
+  const scored = scorableDatasets.map(computeReadiness).sort((a, b) => b.total - a.total);
+
+  // Summary cards
+  const highCount = scored.filter(s => s.total >= 16).length;
+  const goodCount = scored.filter(s => s.total >= 11 && s.total < 16).length;
+  const compatAB = scored.filter(s => s.compatFlag === 'A' || s.compatFlag === 'B').length;
+  const avgScore = (scored.reduce((a, b) => a + b.total, 0) / scored.length).toFixed(1);
+
+  document.getElementById('summary-cards').innerHTML = `
+    <div class="analysis-cards">
+      <div class="analysis-card"><div class="analysis-card-num">${scored.length}</div><div class="analysis-card-label">Datasets scored</div></div>
+      <div class="analysis-card"><div class="analysis-card-num">${highCount}</div><div class="analysis-card-label">High readiness</div></div>
+      <div class="analysis-card"><div class="analysis-card-num">${goodCount}</div><div class="analysis-card-label">Good candidates</div></div>
+      <div class="analysis-card"><div class="analysis-card-num">${compatAB}</div><div class="analysis-card-label">Synthesis-ready (A/B)</div></div>
+      <div class="analysis-card"><div class="analysis-card-num">${avgScore}</div><div class="analysis-card-label">Mean score</div></div>
+    </div>`;
+
+  // Readiness table
+  let html = `<div style="overflow-x:auto;"><table class="readiness-table">
+    <thead><tr>
+      <th>Dataset</th><th>Score</th><th>Band</th><th>Compat.</th>
+      <th title="Under-25 data (0-2)">U25</th>
+      <th title="Clear gambling measure (0-2)">Gamb</th>
+      <th title="Named/validated measure (0-2)">Named</th>
+      <th title="Metadata quality (0-2)">Meta</th>
+      <th title="Risk/protective factors (0-3)">Risk</th>
+      <th title="Validated R/P measures (0-2)">ValR</th>
+      <th title="Longitudinal design (0-2)">Long</th>
+      <th title="Inequality variables (0-1)">Ineq</th>
+      <th title="Access route (0-2)">Acc</th>
+      <th title="Published research (0-1)">Pub</th>
+      <th title="Compatible with others (0-1)">Comp</th>
+      <th>Design</th>
+      <th>Country</th>
+    </tr></thead><tbody>`;
+
+  scored.forEach(s => {
+    const c = s.components;
+    html += `<tr>
+      <td><a href="study.html?id=${encodeURIComponent(s.id)}">${escapeHTML(s.name)}</a></td>
+      <td style="text-align:center;"><span class="score-pill ${s.bandClass}">${s.total}</span></td>
+      <td>${s.band}</td>
+      <td style="text-align:center;"><span class="compat-flag compat-${s.compatFlag}">${s.compatFlag}</span></td>
+      <td style="text-align:center;">${c.under25}</td>
+      <td style="text-align:center;">${c.gamblingMeasure}</td>
+      <td style="text-align:center;">${c.namedMeasure}</td>
+      <td style="text-align:center;">${c.metadata}</td>
+      <td style="text-align:center;">${c.riskFactors}</td>
+      <td style="text-align:center;">${c.validatedRisk}</td>
+      <td style="text-align:center;">${c.longitudinal}</td>
+      <td style="text-align:center;">${c.inequality}</td>
+      <td style="text-align:center;">${c.access}</td>
+      <td style="text-align:center;">${c.published}</td>
+      <td style="text-align:center;">${c.compatible}</td>
+      <td style="font-size:.72rem;">${escapeHTML(s.dataset['Study design'] || '')}</td>
+      <td style="font-size:.72rem;">${escapeHTML(s.dataset['Country'] || '')}</td>
+    </tr>`;
+  });
+  html += '</tbody></table></div>';
+  document.getElementById('readiness-content').innerHTML = html;
+
+  // Overlap matrix: shared named gambling measures between datasets
+  const datasetsWithMeasures = scored.filter(s => s.namedMeasures.length > 0);
+  const dsIds = datasetsWithMeasures.map(s => s.id);
+
+  function countShared(id1, id2) {
+    const m1 = datasetsWithMeasures.find(s => s.id === id1)?.namedMeasures || [];
+    const m2 = datasetsWithMeasures.find(s => s.id === id2)?.namedMeasures || [];
+    return m1.filter(m => m2.includes(m)).length;
+  }
+
+  let oHtml = '<div class="overlap-matrix-scroll"><table class="overlap-matrix"><thead><tr><th></th>';
+  dsIds.forEach(id => { oHtml += `<th>${escapeHTML(id)}</th>`; });
+  oHtml += '</tr></thead><tbody>';
+
+  dsIds.forEach(id1 => {
+    oHtml += `<tr><td>${escapeHTML(id1)}</td>`;
+    dsIds.forEach(id2 => {
+      if (id1 === id2) {
+        const own = datasetsWithMeasures.find(s => s.id === id1)?.namedMeasures.length || 0;
+        oHtml += `<td class="cell-diag">${own}</td>`;
+      } else {
+        const count = countShared(id1, id2);
+        let cls = 'cell-none';
+        if (count >= 3) cls = 'cell-high';
+        else if (count >= 2) cls = 'cell-med';
+        else if (count >= 1) cls = 'cell-low';
+        oHtml += `<td class="${cls}">${count || '&mdash;'}</td>`;
+      }
+    });
+    oHtml += '</tr>';
+  });
+  oHtml += '</tbody></table></div>';
+  oHtml += '<div class="score-legend" style="margin-top:.6rem;"><span class="score-legend-item"><span style="display:inline-block;width:14px;height:14px;background:#d1fae5;border-radius:2px;"></span> 3+ shared</span><span class="score-legend-item"><span style="display:inline-block;width:14px;height:14px;background:#dbeafe;border-radius:2px;"></span> 2 shared</span><span class="score-legend-item"><span style="display:inline-block;width:14px;height:14px;background:#eff6ff;border-radius:2px;"></span> 1 shared</span><span class="score-legend-item"><span style="display:inline-block;width:14px;height:14px;background:var(--border-light);border-radius:2px;"></span> None</span></div>';
+  document.getElementById('overlap-content').innerHTML = oHtml;
+
+  // Network diagram (SVG)
+  const edges = [];
+  for (let i = 0; i < dsIds.length; i++) {
+    for (let j = i + 1; j < dsIds.length; j++) {
+      const count = countShared(dsIds[i], dsIds[j]);
+      if (count > 0) edges.push({ source: dsIds[i], target: dsIds[j], weight: count });
+    }
+  }
+
+  const svgW = 900, svgH = 420;
+  const nodeData = datasetsWithMeasures.map((s, i) => {
+    const angle = (2 * Math.PI * i) / datasetsWithMeasures.length - Math.PI / 2;
+    const rx = svgW * 0.36, ry = svgH * 0.36;
+    return {
+      id: s.id, x: svgW / 2 + rx * Math.cos(angle), y: svgH / 2 + ry * Math.sin(angle),
+      r: Math.max(12, Math.min(30, 8 + s.gambVarCount * 0.15)),
+      band: s.bandClass
+    };
+  });
+
+  const nodeMap = {};
+  nodeData.forEach(n => { nodeMap[n.id] = n; });
+
+  const bandColors = { 'score-high': '#059669', 'score-good': '#2563eb', 'score-moderate': '#d97706', 'score-low': '#e11d48' };
+
+  let nSvg = `<svg class="network-svg" viewBox="0 0 ${svgW} ${svgH}" xmlns="http://www.w3.org/2000/svg">`;
+
+  edges.forEach(e => {
+    const s = nodeMap[e.source], t = nodeMap[e.target];
+    const cls = e.weight >= 3 ? 'network-edge-strong' : e.weight >= 2 ? 'network-edge-medium' : 'network-edge';
+    const sw = Math.max(1, e.weight * 1.2);
+    nSvg += `<line x1="${s.x}" y1="${s.y}" x2="${t.x}" y2="${t.y}" class="${cls}" stroke-width="${sw}"/>`;
+  });
+
+  nodeData.forEach(n => {
+    const col = bandColors[n.band] || '#94a3b8';
+    nSvg += `<g class="network-node"><circle cx="${n.x}" cy="${n.y}" r="${n.r}" fill="${col}" opacity=".85"/>`;
+    const labelY = n.y < svgH / 2 ? n.y - n.r - 6 : n.y + n.r + 13;
+    nSvg += `<text x="${n.x}" y="${labelY}" text-anchor="middle">${escapeHTML(n.id)}</text></g>`;
+  });
+
+  nSvg += '</svg>';
+
+  let netHtml = `<div class="network-container">${nSvg}</div>`;
+  netHtml += '<div class="score-legend" style="margin-top:.6rem;">';
+  netHtml += '<span class="score-legend-item"><span style="display:inline-block;width:14px;height:14px;background:#059669;border-radius:50%;"></span> High readiness</span>';
+  netHtml += '<span class="score-legend-item"><span style="display:inline-block;width:14px;height:14px;background:#2563eb;border-radius:50%;"></span> Good</span>';
+  netHtml += '<span class="score-legend-item"><span style="display:inline-block;width:14px;height:14px;background:#d97706;border-radius:50%;"></span> Moderate</span>';
+  netHtml += '<span class="score-legend-item"><span style="display:inline-block;width:14px;height:14px;background:#e11d48;border-radius:50%;"></span> Low</span>';
+  netHtml += '<span class="score-legend-item" style="margin-left:1rem;"><span style="display:inline-block;width:20px;height:3px;background:var(--amber);border-radius:2px;"></span> 3+ shared measures</span>';
+  netHtml += '<span class="score-legend-item"><span style="display:inline-block;width:20px;height:2px;background:var(--teal);border-radius:2px;"></span> 2 shared</span>';
+  netHtml += '<span class="score-legend-item"><span style="display:inline-block;width:20px;height:1px;background:var(--border);border-radius:2px;"></span> 1 shared</span>';
+  netHtml += '</div>';
+  document.getElementById('network-content').innerHTML = netHtml;
+
+  // Risk/protective factor overlap for connected pairs
+  const domainLabels = ['Mental health', 'Substance use', 'Socioeconomic', 'Family', 'Peers', 'School', 'Digital environment', 'Adversity', 'Protective assets', 'Inequalities'];
+  const domainKeys = ['mental health', 'substance', 'socioeconomic', 'family', 'peer', 'school', 'digital', 'adversity', 'protective', 'inequalit'];
+
+  const connectedPairs = edges.filter(e => e.weight >= 1).sort((a, b) => b.weight - a.weight);
+
+  if (connectedPairs.length > 0) {
+    let rHtml = '<div style="overflow-x:auto;"><table class="readiness-table"><thead><tr><th>Dataset pair</th><th>Shared measures</th>';
+    domainLabels.forEach(d => { rHtml += `<th style="font-size:.6rem;">${d}</th>`; });
+    rHtml += '</tr></thead><tbody>';
+
+    connectedPairs.forEach(pair => {
+      const s1 = scored.find(s => s.id === pair.source);
+      const s2 = scored.find(s => s.id === pair.target);
+      if (!s1 || !s2) return;
+      const sharedNames = s1.namedMeasures.filter(m => s2.namedMeasures.includes(m));
+
+      rHtml += `<tr><td style="white-space:nowrap;">${escapeHTML(pair.source)} + ${escapeHTML(pair.target)}</td>`;
+      rHtml += `<td style="font-size:.72rem;">${escapeHTML(sharedNames.join(', '))}</td>`;
+
+      domainKeys.forEach(dk => {
+        const in1 = s1.riskDomains.includes(dk);
+        const in2 = s2.riskDomains.includes(dk);
+        if (in1 && in2) rHtml += '<td style="text-align:center;"><span class="cov-yes">Both</span></td>';
+        else if (in1 || in2) rHtml += '<td style="text-align:center;"><span class="cov-partial">One</span></td>';
+        else rHtml += '<td style="text-align:center;"><span class="cov-no">&mdash;</span></td>';
+      });
+      rHtml += '</tr>';
+    });
+
+    rHtml += '</tbody></table></div>';
+    document.getElementById('risk-overlap-content').innerHTML = rHtml;
+  } else {
+    document.getElementById('risk-overlap-content').innerHTML = '<p style="color:var(--text-muted);">No dataset pairs currently share named gambling measures.</p>';
+  }
+});
+</script>
+</body>
+</html>
