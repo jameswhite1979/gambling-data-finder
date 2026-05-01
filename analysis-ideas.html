@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ideas - Gambling Data Finder</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.ideas-intro{color:var(--text-muted);font-size:.9rem;line-height:1.6;margin-bottom:1.4rem;max-width:none}
+.ideas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin:1rem 0 1.6rem}
+.idea-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow-sm)}
+.idea-card-num{font-family:var(--font-display);font-size:1.65rem;font-weight:700;color:var(--navy);line-height:1.1}
+.idea-card-label{font-size:.76rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em;margin-top:.25rem}
+.ideas-section{margin:2rem 0}
+.ideas-section h2{font-family:var(--font-display);font-size:1.12rem;color:var(--navy);margin-bottom:.7rem;padding-bottom:.4rem;border-bottom:2px solid var(--border)}
+.ideas-section p{color:var(--text-muted);font-size:.85rem;line-height:1.55;margin-bottom:.85rem}
+.ideas-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius)}
+.ideas-table{width:100%;border-collapse:collapse;font-size:.78rem}
+.ideas-table th{background:var(--navy);color:#fff;font-weight:600;text-align:left;padding:.5rem .6rem;white-space:nowrap;font-size:.68rem;text-transform:uppercase;letter-spacing:.03em}
+.ideas-table td{padding:.5rem .6rem;border-top:1px solid var(--border);vertical-align:top}
+.ideas-table tr:nth-child(even){background:var(--border-light)}
+.ideas-table a{color:var(--amber);font-weight:600}
+.ideas-pill{display:inline-block;padding:.12rem .45rem;border-radius:10px;font-size:.7rem;font-weight:700;background:#dbeafe;color:#1e40af;white-space:nowrap}
+.ideas-pill-high{background:#d1fae5;color:#065f46}
+.ideas-pill-med{background:#fef3c7;color:#92400e}
+.ideas-pill-low{background:#fee2e2;color:#991b1b}
+.matrix-scroll{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius)}
+.gap-matrix{border-collapse:collapse;font-size:.68rem;min-width:100%}
+.gap-matrix th{background:var(--navy);color:#fff;padding:.4rem .45rem;position:sticky;top:0;z-index:4;white-space:nowrap;text-align:center}
+.gap-matrix th:first-child{left:0;z-index:5;text-align:left}
+.gap-matrix td{border:1px solid var(--border);padding:.32rem .4rem;text-align:center;min-width:50px}
+.gap-matrix td:first-child{position:sticky;left:0;background:var(--card);z-index:3;text-align:left;font-weight:600;color:var(--navy);white-space:nowrap}
+.cell-both{background:#d1fae5;color:#065f46;font-weight:700}
+.cell-risk{background:#dbeafe;color:#1e40af;font-weight:700}
+.cell-gamb{background:#fef3c7;color:#92400e;font-weight:700}
+.cell-none{background:#f8fafc;color:var(--slate-muted)}
+.missing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem}
+.missing-item{border:1px solid var(--border);border-radius:var(--radius);padding:.85rem;background:var(--card)}
+.missing-item h3{font-size:.9rem;color:var(--navy);margin:0 0 .35rem}
+.missing-item p{font-size:.8rem;margin:0;color:var(--text-muted)}
+.ideas-note{background:var(--amber-bg);border:1px solid #fde68a;border-radius:var(--radius);padding:.85rem 1rem;color:#92400e;font-size:.84rem;line-height:1.5;margin:1rem 0}
+</style>
+</head>
+<body>
+<div id="header"></div>
+
+<div class="page-content">
+  <h1 style="font-size:1.4rem;color:var(--navy);margin-bottom:.3rem;">Ideas</h1>
+  <p class="ideas-intro">This page turns the catalogue into candidate secondary-analysis ideas. It is built around two core features: a Risk/Protective Factor Gap Matrix and a Research Question Generator. Together they identify datasets that combine gambling measures with risk or protective factors, highlight under-studied domains, and suggest cross-dataset research questions that may be worth developing.</p>
+
+  <div id="idea-summary"><div class="loading">Loading analysis ideas...</div></div>
+
+  <div class="ideas-section">
+    <h2>Risk/protective factor gap matrix</h2>
+    <p>Rows are datasets and columns are risk/protective factor domains. A filled cell means the dataset has gambling variables and at least one variable in that domain, making it a candidate for questions about risk, protection or gambling harm pathways.</p>
+    <div id="gap-matrix-content"><div class="loading">Loading matrix...</div></div>
+  </div>
+
+  <div class="ideas-section">
+    <h2>Best datasets for new analysis</h2>
+    <p>These rankings prioritise datasets with gambling measures plus the relevant risk, protective, harm or longitudinal structure.</p>
+    <div id="dataset-rankings"><div class="loading">Loading rankings...</div></div>
+  </div>
+
+  <div class="ideas-section">
+    <h2>Research Question Generator</h2>
+    <p>Questions are generated where multiple datasets share a named gambling measure or a gambling harm construct and also contain a relevant risk/protective domain.</p>
+    <div id="question-content"><div class="loading">Loading questions...</div></div>
+  </div>
+
+  <div class="ideas-section">
+    <h2>Under-studied domains</h2>
+    <p>Domains with limited overlap between gambling variables and risk/protective factor coverage are likely to be weaker areas for current secondary analysis.</p>
+    <div id="understudied-content"><div class="loading">Loading gaps...</div></div>
+  </div>
+
+  <div class="ideas-section">
+    <h2>Missing but important ideas</h2>
+    <p>These topics are conceptually important for young people's gambling harm research, but may be weakly captured or inconsistently measured in the current catalogue.</p>
+    <div id="missing-content"><div class="loading">Loading missing domains...</div></div>
+  </div>
+
+  <div class="ideas-section">
+    <h2>High-value primary data collection gaps</h2>
+    <p>These gaps point to new data collection or enhancement opportunities where existing secondary datasets may not be enough.</p>
+    <div id="primary-gap-content"><div class="loading">Loading primary gaps...</div></div>
+  </div>
+</div>
+
+<div id="footer"></div>
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  document.getElementById('header').innerHTML = renderNav('analysis-ideas');
+  document.getElementById('footer').innerHTML = renderFooter();
+  updateBasketCount();
+
+  const [datasetsRaw, variablesRaw, facets] = await Promise.all([
+    fetchJSON('data/datasets.json'),
+    loadVariables(),
+    fetchJSON('data/facets.json'),
+  ]);
+
+  const datasets = (datasetsRaw || []).filter(d => d.Dataset_ID && !['GREO_REPO','UKLLC','AHAH'].includes(d.Dataset_ID));
+  const variables = (variablesRaw || []).filter(v => v.include_website !== 'No');
+  const datasetIds = new Set(datasets.map(d => d.Dataset_ID));
+  const usableVars = variables.filter(v => datasetIds.has(v.dataset_id));
+  const gamblingVars = usableVars.filter(v => v.role === 'Gambling measure');
+  const riskVars = usableVars.filter(v => v.role === 'Risk/protective factor');
+
+  const domainDefs = [
+    { key:'mental', label:'Mental health', terms:['mental','wellbeing','anxiety','depress','psychological','ghq','sdq','wemwbs','who-5','phq'] },
+    { key:'substance', label:'Substance use', terms:['substance','alcohol','cannabis','drug','tobacco','smoking','e-cigarette'] },
+    { key:'socio', label:'Socioeconomic position', terms:['socioeconomic','deprivation','income','poverty','education','employment','housing','family sep','fas'] },
+    { key:'family', label:'Family/household', terms:['family','household','parent','parental','sibling','home'] },
+    { key:'peer', label:'Peers/social support', terms:['peer','friend','social support','bully'] },
+    { key:'school', label:'School/education', terms:['school','education','attainment','attendance','teacher'] },
+    { key:'digital', label:'Digital environment', terms:['digital','social media','gaming','loot box','online','internet'] },
+    { key:'adversity', label:'Adversity', terms:['adversity','trauma','abuse','neglect','violence','victim'] },
+    { key:'protective', label:'Protective assets', terms:['protective','resilience','support','connectedness','assets','help-seeking','help seeking'] },
+    { key:'ineq', label:'Inequalities', terms:['inequalit','ethnic','gender','disability','migration','sexuality','deprivation'] },
+  ];
+
+  function dsName(id) {
+    const d = datasets.find(x => x.Dataset_ID === id);
+    return d ? (d['Dataset name'] || id) : id;
+  }
+  function textForVar(v) {
+    return [
+      v.risk_domain, v.construct_category, v.variable_label, v.variable_name,
+      v.named_measure, v.meta_analysis_note
+    ].join(' ').toLowerCase();
+  }
+  function hasTerms(text, terms) {
+    return terms.some(t => text.includes(t));
+  }
+  function datasetStats(ds) {
+    const id = ds.Dataset_ID;
+    const vars = usableVars.filter(v => v.dataset_id === id);
+    const gamb = vars.filter(v => v.role === 'Gambling measure');
+    const risk = vars.filter(v => v.role === 'Risk/protective factor');
+    const harm = gamb.filter(v => {
+      const txt = textForVar(v);
+      return txt.includes('harm') || txt.includes('problem gambling') || txt.includes('pgsi') || txt.includes('consequence') || txt.includes('severity');
+    });
+    const protective = risk.filter(v => hasTerms(textForVar(v), domainDefs.find(d => d.key === 'protective').terms));
+    const namedMeasures = [...new Set(gamb.map(v => v.named_measure).filter(Boolean))];
+    const domains = {};
+    domainDefs.forEach(d => {
+      domains[d.key] = risk.filter(v => hasTerms(textForVar(v), d.terms)).length;
+    });
+    const design = (ds['Study design'] || '').toLowerCase();
+    const longitudinal = design.includes('longitudinal') || design.includes('cohort') || design.includes('panel') || design.includes('repeated');
+    const domainCount = Object.values(domains).filter(n => n > 0).length;
+    const ideaScore = (gamb.length ? 4 : 0) + Math.min(domainCount, 6) + Math.min(namedMeasures.length, 3) + (harm.length ? 2 : 0) + (longitudinal ? 2 : 0);
+    return { id, name: dsName(id), ds, vars, gamb, risk, harm, protective, namedMeasures, domains, domainCount, longitudinal, ideaScore };
+  }
+
+  const stats = datasets.map(datasetStats).filter(s => s.gamb.length || s.risk.length);
+  const withGambling = stats.filter(s => s.gamb.length);
+  const withRiskAndGambling = stats.filter(s => s.gamb.length && s.risk.length);
+  const withProtection = stats.filter(s => s.gamb.length && s.protective.length);
+  const withHarm = stats.filter(s => s.harm.length);
+  const longitudinal = stats.filter(s => s.gamb.length && s.longitudinal);
+
+  renderSummary(stats, withRiskAndGambling, withProtection, withHarm, longitudinal);
+  renderGapMatrix(withGambling);
+  renderRankings(stats);
+  renderQuestions(stats);
+  renderUnderstudied(stats);
+  renderMissingImportant(stats, usableVars);
+  renderPrimaryGaps(stats);
+
+  function renderSummary() {
+    document.getElementById('idea-summary').innerHTML = `<div class="ideas-grid">
+      <div class="idea-card"><div class="idea-card-num">${withRiskAndGambling.length}</div><div class="idea-card-label">Datasets with gambling plus risk/protective factors</div></div>
+      <div class="idea-card"><div class="idea-card-num">${withProtection.length}</div><div class="idea-card-label">Datasets with protective factors</div></div>
+      <div class="idea-card"><div class="idea-card-num">${withHarm.length}</div><div class="idea-card-label">Datasets with gambling harm outcomes</div></div>
+      <div class="idea-card"><div class="idea-card-num">${longitudinal.length}</div><div class="idea-card-label">Longitudinal opportunities</div></div>
+    </div>
+    <div class="ideas-note">Use these outputs as a first-pass prioritisation. Candidate datasets still need detailed checks of item wording, timing, age bands, sample size and access conditions before analysis or meta-analysis.</div>`;
+  }
+
+  function matrixCell(s, d) {
+    const hasG = s.gamb.length > 0;
+    const hasD = s.domains[d.key] > 0;
+    if (hasG && hasD) return '<td class="cell-both">G + R</td>';
+    if (hasD) return '<td class="cell-risk">R</td>';
+    if (hasG) return '<td class="cell-gamb">G</td>';
+    return '<td class="cell-none">&mdash;</td>';
+  }
+
+  function renderGapMatrix(rows) {
+    const sorted = rows.slice().sort((a, b) => b.domainCount - a.domainCount || b.gamb.length - a.gamb.length);
+    let html = '<div class="matrix-scroll"><table class="gap-matrix"><thead><tr><th>Dataset</th>';
+    domainDefs.forEach(d => { html += `<th>${escapeHTML(d.label)}</th>`; });
+    html += '</tr></thead><tbody>';
+    sorted.forEach(s => {
+      html += `<tr><td><a href="study.html?id=${encodeURIComponent(s.id)}">${escapeHTML(s.id)}</a></td>`;
+      domainDefs.forEach(d => { html += matrixCell(s, d); });
+      html += '</tr>';
+    });
+    html += '</tbody></table></div><div class="score-legend" style="margin-top:.7rem;"><span class="score-legend-item"><span style="display:inline-block;width:14px;height:14px;background:#d1fae5;border-radius:2px;"></span> G + R = gambling plus risk/protective domain</span><span class="score-legend-item"><span style="display:inline-block;width:14px;height:14px;background:#fef3c7;border-radius:2px;"></span> G = gambling only</span><span class="score-legend-item"><span style="display:inline-block;width:14px;height:14px;background:#dbeafe;border-radius:2px;"></span> R = risk/protective domain only</span></div>';
+    document.getElementById('gap-matrix-content').innerHTML = html;
+  }
+
+  function topRows(rows, scoreFn, limit) {
+    return rows.slice().sort((a, b) => scoreFn(b) - scoreFn(a) || a.name.localeCompare(b.name)).slice(0, limit);
+  }
+  function datasetLinks(rows) {
+    return rows.map(s => `<a href="study.html?id=${encodeURIComponent(s.id)}">${escapeHTML(s.id)}</a>`).join(', ');
+  }
+  function renderRankingTable(title, rows, reasonFn) {
+    let html = `<h3>${escapeHTML(title)}</h3><div class="ideas-table-wrap"><table class="ideas-table"><thead><tr><th>Dataset</th><th>Why it is useful</th><th>Signals</th></tr></thead><tbody>`;
+    rows.forEach(s => {
+      html += `<tr><td><a href="study.html?id=${encodeURIComponent(s.id)}">${escapeHTML(s.name)}</a></td><td>${escapeHTML(reasonFn(s))}</td><td><span class="ideas-pill">${s.gamb.length} gambling vars</span> <span class="ideas-pill ideas-pill-high">${s.domainCount} domains</span>${s.longitudinal ? ' <span class="ideas-pill ideas-pill-med">Longitudinal</span>' : ''}</td></tr>`;
+    });
+    html += '</tbody></table></div>';
+    return html;
+  }
+  function renderRankings() {
+    const riskRows = topRows(stats.filter(s => s.gamb.length && s.risk.length), s => s.ideaScore + s.risk.length / 20, 6);
+    const protectiveRows = topRows(stats.filter(s => s.gamb.length && s.protective.length), s => s.protective.length + s.domainCount + s.gamb.length / 20, 6);
+    const harmRows = topRows(stats.filter(s => s.harm.length), s => s.harm.length + s.domainCount + (s.longitudinal ? 3 : 0), 6);
+    const longRows = topRows(stats.filter(s => s.gamb.length && s.longitudinal), s => s.domainCount + s.harm.length + s.gamb.length / 20, 6);
+    document.getElementById('dataset-rankings').innerHTML =
+      renderRankingTable('Best datasets for risk factor analysis', riskRows, s => `Combines gambling variables with ${s.domainCount} risk/protective domains.`) +
+      renderRankingTable('Best datasets for protective factor analysis', protectiveRows, s => `Includes gambling variables and ${s.protective.length} protective-factor records or support/resilience indicators.`) +
+      renderRankingTable('Best datasets for gambling harm outcomes', harmRows, s => `Includes ${s.harm.length} gambling harm, severity, consequence or problem-gambling records.`) +
+      renderRankingTable('Best longitudinal opportunities', longRows, s => `Longitudinal or repeated design with gambling variables and ${s.domainCount} risk/protective domains.`);
+  }
+
+  function renderQuestions() {
+    const sharedMeasures = {};
+    stats.forEach(s => s.namedMeasures.forEach(m => {
+      if (!sharedMeasures[m]) sharedMeasures[m] = [];
+      sharedMeasures[m].push(s);
+    }));
+    const questionDefs = [
+      { domain:'mental', question:'How are mental health and wellbeing associated with gambling participation, severity or harm in young people?' },
+      { domain:'substance', question:'Do gambling harms cluster with alcohol, tobacco, cannabis or other substance-use risks?' },
+      { domain:'socio', question:'Are socioeconomic disadvantage and area deprivation associated with gambling harm or riskier gambling patterns?' },
+      { domain:'family', question:'How does family or household context shape gambling initiation, intensity or harm?' },
+      { domain:'peer', question:'Are peer relationships and social support protective against gambling harms?' },
+      { domain:'school', question:'Are gambling harms associated with school connectedness, attendance, attainment or educational disengagement?' },
+      { domain:'digital', question:'How do gaming, loot boxes, online activity or social media exposure relate to gambling harms?' },
+      { domain:'protective', question:'Which protective assets appear to buffer young people against gambling harms?' },
+      { domain:'ineq', question:'Which inequalities shape exposure to gambling, gambling harms or recovery/help-seeking?' },
+    ];
+    let html = '<div class="ideas-table-wrap"><table class="ideas-table"><thead><tr><th>Candidate question</th><th>Candidate datasets</th><th>Shared measure route</th><th>Feasibility</th></tr></thead><tbody>';
+    questionDefs.forEach(q => {
+      const candidates = stats.filter(s => s.gamb.length && s.domains[q.domain] > 0);
+      if (!candidates.length) return;
+      const measureRoutes = Object.keys(sharedMeasures).filter(m => sharedMeasures[m].some(s => candidates.includes(s)) && sharedMeasures[m].length >= 2);
+      const feasibility = candidates.length >= 4 ? 'High' : candidates.length >= 2 ? 'Moderate' : 'Exploratory';
+      const pillClass = feasibility === 'High' ? 'ideas-pill-high' : feasibility === 'Moderate' ? 'ideas-pill-med' : 'ideas-pill-low';
+      html += `<tr><td>${escapeHTML(q.question)}</td><td>${datasetLinks(candidates.slice(0, 8))}</td><td>${escapeHTML(measureRoutes.slice(0, 5).join(', ') || 'Construct-level comparison')}</td><td><span class="ideas-pill ${pillClass}">${feasibility}</span></td></tr>`;
+    });
+    html += '</tbody></table></div>';
+    document.getElementById('question-content').innerHTML = html;
+  }
+
+  function renderUnderstudied() {
+    const rows = domainDefs.map(d => {
+      const candidateCount = stats.filter(s => s.gamb.length && s.domains[d.key] > 0).length;
+      const variableCount = stats.reduce((sum, s) => sum + (s.gamb.length ? s.domains[d.key] : 0), 0);
+      return { ...d, candidateCount, variableCount };
+    }).sort((a, b) => a.candidateCount - b.candidateCount || a.label.localeCompare(b.label));
+    let html = '<div class="ideas-table-wrap"><table class="ideas-table"><thead><tr><th>Domain</th><th>Datasets with gambling plus domain</th><th>Risk/protective records in those datasets</th><th>Interpretation</th></tr></thead><tbody>';
+    rows.forEach(r => {
+      const interp = r.candidateCount <= 2 ? 'Potential gap or weak synthesis base' : r.candidateCount <= 5 ? 'Some coverage, but harmonisation may be limited' : 'Relatively stronger secondary-analysis base';
+      html += `<tr><td>${escapeHTML(r.label)}</td><td>${r.candidateCount}</td><td>${r.variableCount}</td><td>${escapeHTML(interp)}</td></tr>`;
+    });
+    html += '</tbody></table></div>';
+    document.getElementById('understudied-content').innerHTML = html;
+  }
+
+  function countKeywordDatasets(items, terms) {
+    const ids = new Set();
+    items.forEach(v => {
+      if (hasTerms(textForVar(v), terms)) ids.add(v.dataset_id);
+    });
+    return ids;
+  }
+  function renderMissingImportant() {
+    const missing = [
+      { title:'Advertising and marketing exposure', terms:['advertising','marketing','promotion','sponsorship','sports betting advert'], why:'Needed to test how commercial exposure shapes gambling normalisation and harm.' },
+      { title:'Influencers, social media gambling content', terms:['influencer','social media','streaming','content creator','tiktok','instagram'], why:'Important for contemporary youth exposure, especially where gambling and entertainment content blur.' },
+      { title:'Loot boxes, skins and gaming monetisation', terms:['loot box','loot boxes','skin betting','gaming','in-game','microtransaction'], why:'Helps connect gaming environments with gambling-like risk and later gambling behaviour.' },
+      { title:'Crypto, trading and speculative products', terms:['crypto','cryptocurrency','trading','spread betting','investment','speculative'], why:'May capture newer risk pathways that sit between finance, gaming and gambling.' },
+      { title:'Financial stress, debt and money management', terms:['debt','financial stress','money','income','afford','borrow','sold anything'], why:'Critical for understanding harm mechanisms, not just gambling participation.' },
+      { title:'Affected others and family harm', terms:['affected others','family harm','parent gambling','others gambling','household gambling'], why:'Young people may be harmed by someone else gambling, not only their own gambling.' },
+      { title:'Help-seeking, service use and recovery', terms:['help-seeking','help seeking','service','treatment','support','advice'], why:'Needed to understand whether harms are recognised and what support pathways exist.' },
+      { title:'Stigma, shame and secrecy', terms:['stigma','shame','secret','hidden','guilt'], why:'Could explain under-reporting, delayed help-seeking and hidden family impacts.' },
+      { title:'School attendance, attainment and exclusion', terms:['attendance','attainment','exclusion','school absence','truancy'], why:'Needed to study the educational consequences of gambling harm.' },
+    ];
+    const html = '<div class="missing-grid">' + missing.map(m => {
+      const ids = countKeywordDatasets(usableVars, m.terms);
+      const cls = ids.size <= 1 ? 'ideas-pill-low' : ids.size <= 3 ? 'ideas-pill-med' : 'ideas-pill-high';
+      return `<div class="missing-item"><h3>${escapeHTML(m.title)} <span class="ideas-pill ${cls}">${ids.size} datasets flagged</span></h3><p>${escapeHTML(m.why)}</p></div>`;
+    }).join('') + '</div>';
+    document.getElementById('missing-content').innerHTML = html;
+  }
+
+  function renderPrimaryGaps() {
+    const gaps = [
+      ['Prospective harm pathways', 'Repeated measures that put risk/protective factors before gambling harm, then follow later outcomes.'],
+      ['Youth-specific harm outcomes', 'Items on school impact, family conflict, debt, sleep, wellbeing, stigma and affected-others harm.'],
+      ['Digital gambling ecology', 'Consistent measures of advertising exposure, influencers, loot boxes, skins, esports betting and gambling-like finance products.'],
+      ['Protective mechanisms', 'Better coverage of social support, parental monitoring, school connectedness, digital literacy and help-seeking.'],
+      ['Inequalities and subgroup power', 'Larger samples and consistent measures for ethnicity, disability, deprivation, care experience, migration and LGBTQ+ status.'],
+      ['Harmonised gambling modules', 'A compact youth gambling and harm module repeated across surveys to support stronger synthesis.'],
+    ];
+    let html = '<div class="ideas-table-wrap"><table class="ideas-table"><thead><tr><th>Gap</th><th>Why it matters for new data collection</th></tr></thead><tbody>';
+    gaps.forEach(g => { html += `<tr><td>${escapeHTML(g[0])}</td><td>${escapeHTML(g[1])}</td></tr>`; });
+    html += '</tbody></table></div>';
+    document.getElementById('primary-gap-content').innerHTML = html;
+  }
+});
+</script>
+</body>
+</html>
