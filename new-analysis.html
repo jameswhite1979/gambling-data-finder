@@ -53,13 +53,20 @@
 .network-edge-strong{stroke:var(--amber);stroke-opacity:.6;stroke-width:2}
 .network-edge-medium{stroke:var(--teal);stroke-opacity:.4;stroke-width:1.5}
 
-.section-intro{color:var(--text-muted);font-size:.9rem;margin-bottom:1.5rem;max-width:800px}
+.section-intro{color:var(--text-muted);font-size:.9rem;margin-bottom:1.5rem;max-width:none;line-height:1.6}
 .subsection{margin:2rem 0}
 .subsection h2{font-family:var(--font-display);font-size:1.15rem;color:var(--navy);margin-bottom:.8rem;padding-bottom:.4rem;border-bottom:2px solid var(--border)}
 .subsection h3{font-family:var(--font-display);font-size:1rem;color:var(--navy);margin-bottom:.6rem}
 
 .score-legend{display:flex;flex-wrap:wrap;gap:.5rem .8rem;margin:.8rem 0;font-size:.78rem;color:var(--text-muted)}
 .score-legend-item{display:flex;align-items:center;gap:.3rem}
+.method-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin:1.25rem 0 1.75rem}
+.method-panel{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow-sm)}
+.method-panel h2{font-family:var(--font-display);font-size:1rem;color:var(--navy);margin:0 0 .55rem}
+.method-panel p,.method-panel li{color:var(--text-muted);font-size:.84rem;line-height:1.55}
+.method-panel ul{margin:.55rem 0 0;padding-left:1.1rem}
+.measure-hit{display:inline-block;width:16px;height:16px;border-radius:50%;background:#059669}
+.measure-miss{color:var(--slate-muted)}
 </style>
 </head>
 <body>
@@ -68,6 +75,26 @@
 <div class="page-content">
   <h1 style="font-size:1.4rem;color:var(--navy);margin-bottom:.3rem;">New analysis: readiness and synthesis potential</h1>
   <p class="section-intro">This page assesses each dataset's readiness for secondary analysis and identifies where cross-dataset synthesis or meta-analysis may be feasible. Readiness scores reflect data quality, measurement detail, access routes and risk/protective factor coverage. Compatibility flags indicate potential for harmonisation across datasets.</p>
+
+  <div class="method-grid">
+    <section class="method-panel">
+      <h2>How readiness is scored</h2>
+      <p>Readiness is a 0-20 score based on eleven documented features: under-25 coverage, gambling measure coverage, named or validated gambling measures, public variable/question wording metadata, risk/protective factor breadth, validated risk/protective measures, longitudinal design, inequality variables, access route clarity, published research use and compatibility with other datasets.</p>
+    </section>
+    <section class="method-panel">
+      <h2>What synthesis-ready means</h2>
+      <p>Synthesis-ready datasets are those flagged A or B. They have named gambling measures that also appear in another dataset and enough overlapping risk/protective factor coverage to support harmonisation, pooled descriptive work, comparative analysis or meta-analysis after detailed checks of wording, scoring, age bands and survey timing.</p>
+    </section>
+    <section class="method-panel">
+      <h2>Compatibility flags</h2>
+      <ul>
+        <li><strong>A:</strong> two or more shared named gambling measures and broad risk/protective factor overlap.</li>
+        <li><strong>B:</strong> at least one shared named gambling measure and moderate risk/protective factor overlap.</li>
+        <li><strong>C:</strong> gambling data are present, but synthesis potential needs more checking.</li>
+        <li><strong>D:</strong> limited current evidence for gambling-measure harmonisation.</li>
+      </ul>
+    </section>
+  </div>
 
   <div id="summary-cards"><div class="loading">Loading analysis data...</div></div>
 
@@ -85,7 +112,7 @@
 
   <div class="subsection">
     <h2>Shared gambling measures across datasets</h2>
-    <p style="color:var(--text-muted);font-size:.85rem;margin-bottom:.8rem;">The matrix below shows how many named gambling measures are shared between each pair of datasets. Shared measures indicate potential for harmonisation, pooled analysis or meta-analytic comparison.</p>
+    <p style="color:var(--text-muted);font-size:.85rem;margin-bottom:.8rem;">The matrix below shows which named gambling measures, such as PGSI, appear in each dataset. Columns are gambling measures and rows are datasets; repeated ticks identify potential harmonisation routes.</p>
     <div id="overlap-content"><div class="loading">Loading overlap data...</div></div>
   </div>
 
@@ -110,13 +137,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('footer').innerHTML = renderFooter();
   updateBasketCount();
 
-  const [datasets, variables, publications, metaCheck, questionnaires, gamblingMeasures] = await Promise.all([
+  const [datasets, variables, publications, metaCheck, questionnaires, gamblingMeasures, facets] = await Promise.all([
     fetchJSON('data/datasets.json'),
     loadVariables(),
     fetchJSON('data/publications.json'),
     fetchJSON('data/metadata_check.json'),
     fetchJSON('data/questionnaires.json'),
     fetchJSON('data/gambling_measures.json'),
+    fetchJSON('data/facets.json'),
   ]);
 
   if (!datasets || !variables) {
@@ -294,29 +322,34 @@ document.addEventListener('DOMContentLoaded', async () => {
     return m1.filter(m => m2.includes(m)).length;
   }
 
-  let oHtml = '<div class="overlap-matrix-scroll"><table class="overlap-matrix"><thead><tr><th></th>';
-  dsIds.forEach(id => { oHtml += `<th>${escapeHTML(id)}</th>`; });
+  const facetMeasureNames = [...new Set((facets?.named_measures || []).filter(Boolean))]
+    .filter(measure => variables.some(v =>
+      v.role === 'Gambling measure' &&
+      v.named_measure === measure &&
+      dsIds.includes(v.dataset_id)
+    ))
+    .sort((a, b) => a.localeCompare(b));
+  const measureNames = facetMeasureNames.length
+    ? facetMeasureNames
+    : [...new Set(datasetsWithMeasures.flatMap(s => s.namedMeasures))].sort((a, b) => a.localeCompare(b));
+
+  let oHtml = '<div class="overlap-matrix-scroll"><table class="overlap-matrix"><thead><tr><th>Dataset</th>';
+  measureNames.forEach(measure => { oHtml += `<th title="${escapeHTML(measure)}">${escapeHTML(measure)}</th>`; });
   oHtml += '</tr></thead><tbody>';
 
-  dsIds.forEach(id1 => {
-    oHtml += `<tr><td>${escapeHTML(id1)}</td>`;
-    dsIds.forEach(id2 => {
-      if (id1 === id2) {
-        const own = datasetsWithMeasures.find(s => s.id === id1)?.namedMeasures.length || 0;
-        oHtml += `<td class="cell-diag">${own}</td>`;
+  datasetsWithMeasures.forEach(s => {
+    oHtml += `<tr><td>${escapeHTML(s.id)}</td>`;
+    measureNames.forEach(measure => {
+      if (s.namedMeasures.includes(measure)) {
+        oHtml += '<td class="cell-high"><span class="measure-hit" title="Present"></span></td>';
       } else {
-        const count = countShared(id1, id2);
-        let cls = 'cell-none';
-        if (count >= 3) cls = 'cell-high';
-        else if (count >= 2) cls = 'cell-med';
-        else if (count >= 1) cls = 'cell-low';
-        oHtml += `<td class="${cls}">${count || '&mdash;'}</td>`;
+        oHtml += '<td class="cell-none"><span class="measure-miss">&mdash;</span></td>';
       }
     });
     oHtml += '</tr>';
   });
   oHtml += '</tbody></table></div>';
-  oHtml += '<div class="score-legend" style="margin-top:.6rem;"><span class="score-legend-item"><span style="display:inline-block;width:14px;height:14px;background:#d1fae5;border-radius:2px;"></span> 3+ shared</span><span class="score-legend-item"><span style="display:inline-block;width:14px;height:14px;background:#dbeafe;border-radius:2px;"></span> 2 shared</span><span class="score-legend-item"><span style="display:inline-block;width:14px;height:14px;background:#eff6ff;border-radius:2px;"></span> 1 shared</span><span class="score-legend-item"><span style="display:inline-block;width:14px;height:14px;background:var(--border-light);border-radius:2px;"></span> None</span></div>';
+  oHtml += '<div class="score-legend" style="margin-top:.6rem;"><span class="score-legend-item"><span class="measure-hit"></span> Measure present in dataset</span><span class="score-legend-item"><span style="display:inline-block;width:14px;height:14px;background:var(--border-light);border-radius:2px;"></span> Not identified</span></div>';
   document.getElementById('overlap-content').innerHTML = oHtml;
 
   // Network diagram (SVG)
