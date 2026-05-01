@@ -53,14 +53,14 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-display);font-weight:600;line-height:1.
   display:flex;align-items:center;justify-content:space-between;
   gap:1rem;white-space:nowrap;
 }
-.logo{display:flex;flex-direction:column;gap:.05rem;text-decoration:none;max-width:360px;flex:0 0 auto}
+.logo{display:flex;flex-direction:column;gap:.05rem;text-decoration:none;max-width:430px;flex:0 0 auto}
 .logo:hover{text-decoration:none}
-.logo-text{font-family:var(--font-display);font-size:1.55rem;font-weight:700;color:#fff;letter-spacing:0;line-height:1}
+.logo-text{font-family:var(--font-display);font-size:1.95rem;font-weight:700;color:#fff;letter-spacing:0;line-height:1}
 .logo-sub{font-size:.72rem;color:var(--amber-light);font-weight:500;letter-spacing:.03em;text-transform:uppercase;line-height:1.2}
 
 nav{display:flex;gap:.15rem;align-items:center;flex-wrap:nowrap;overflow-x:auto;min-width:0}
 nav a{
-  color:rgba(255,255,255,.75);font-size:.82rem;font-weight:500;
+  color:rgba(255,255,255,.75);font-size:.95rem;font-weight:500;
   padding:.4rem .55rem;border-radius:6px;white-space:nowrap;flex:0 0 auto;
   transition:all var(--transition);
 }
@@ -93,7 +93,7 @@ nav a.active{color:var(--amber-light);background:rgba(217,119,6,.15)}
   pointer-events:none;
 }
 .hero-inner{max-width:var(--max-w);margin:0 auto;padding:0 1.5rem;position:relative;z-index:1}
-.hero h1{font-size:2.2rem;font-weight:700;margin-bottom:.5rem;letter-spacing:-.02em;max-width:980px;white-space:nowrap}
+.hero h1{font-size:2.2rem;font-weight:700;margin-bottom:.5rem;letter-spacing:0;max-width:980px;white-space:nowrap}
 .hero-sub{color:rgba(255,255,255,.7);font-size:1.05rem;max-width:760px;margin-bottom:1.6rem}
 
 /* Hero search */
@@ -704,9 +704,9 @@ nav a.active{color:var(--amber-light);background:rgba(217,119,6,.15)}
 }
 @media(max-width:640px){
   .header-inner{gap:.5rem;padding:.5rem .75rem}
-  .logo-text{font-size:1.15rem}
+  .logo-text{font-size:1.35rem}
   nav{gap:.12rem}
-  nav a{padding:.32rem .42rem;font-size:.76rem}
+  nav a{padding:.32rem .42rem;font-size:.82rem}
   .metrics-grid{grid-template-columns:repeat(2,1fr)}
   .studies-grid{grid-template-columns:1fr}
   .topic-grid{grid-template-columns:1fr}
