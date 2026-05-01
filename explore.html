@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore - Gambling Data Finder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header"></div>
+
+<div class="page-content" style="padding-top:1.5rem;">
+  <h1 style="font-size:1.4rem;color:var(--navy);margin-bottom:.3rem;">Explore by topic</h1>
+  <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:1.5rem;">Use the folder tree on the left to explore gambling participation, gambling-related harm, standardised measures and risk/protective factors relevant to children and young people. The plus sign indicates that a folder contains subtopics.</p>
+</div>
+
+<div class="explore-layout">
+  <div class="topic-tree">
+    <h3>Topics</h3>
+    <div id="tree-container"></div>
+  </div>
+  <div>
+    <div id="topic-title" style="display:none;">
+      <h2 style="font-size:1.2rem;color:var(--navy);margin-bottom:.3rem;" id="topic-name"></h2>
+      <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:1rem;" id="topic-desc"></p>
+      <div style="display:flex;gap:1rem;margin-bottom:1rem;">
+        <a id="topic-search-link" href="#" class="btn btn-primary btn-sm">Search all variables &rarr;</a>
+      </div>
+    </div>
+    <div id="topic-results">
+      <div class="loading" style="padding:3rem;text-align:center;">
+        <p style="color:var(--text-muted);">Select a topic from the tree to explore matching variables and studies.</p>
+      </div>
+    </div>
+    <div class="pagination" id="topic-pagination"></div>
+  </div>
+</div>
+
+<div id="footer"></div>
+<script src="app.js"></script>
+<script>
+const TOPIC_FOLDERS = [
+  {
+    name:'Gambling participation and products',
+    children:[
+      { name:'Participation and spend', children:['Gambling participation','Gambling spend'] },
+      { name:'Digital gambling and exposure', children:['Gaming / loot boxes','Gambling advertising / exposure'] }
+    ]
+  },
+  {
+    name:'Gambling-related harm and measures',
+    children:[
+      { name:'Harms and derived indicators', children:['Problem gambling / harm','Derived gambling measure'] },
+      { name:'Standardised instruments', children:['PGSI','DSM-IV-MR-J','DSM-IV-PG','SOGS-RA','CPGI'] }
+    ]
+  },
+  {
+    name:'Social and environmental context',
+    children:[
+      { name:'Attitudes and family context', children:['Gambling attitudes','Family / peer gambling'] },
+      { name:'Peers, household and digital environment', children:['Peers / social support','Family / household','Digital environment'] }
+    ]
+  },
+  {
+    name:'Health, wellbeing and behaviours',
+    children:[
+      { name:'Health and wellbeing', children:['Mental health / wellbeing','Substance use'] },
+      { name:'Risk and protective experiences', children:['Adversity','Protective assets'] }
+    ]
+  },
+  {
+    name:'Demographic and education context',
+    children:[
+      { name:'Participant characteristics', children:['Socioeconomic position / demographics'] },
+      { name:'Education', children:['School / education'] }
+    ]
+  },
+  {
+    name:'Metadata and study administration',
+    children:['Administrative metadata']
+  }
+];
+
+let allVars = [];
+let currentPage = 1;
+const PER_PAGE = 30;
+
+document.addEventListener('DOMContentLoaded', async () => {
+  document.getElementById('header').innerHTML = renderNav('explore');
+  document.getElementById('footer').innerHTML = renderFooter();
+  updateBasketCount();
+
+  allVars = await loadVariables() || [];
+  buildTree();
+});
+
+function buildTree() {
+  const container = document.getElementById('tree-container');
+  container.innerHTML = '';
+  TOPIC_FOLDERS.forEach(topic => {
+    container.appendChild(renderTreeNode(topic, 0));
+  });
+}
+
+function renderTreeNode(node, depth) {
+  if (typeof node === 'string') {
+    const item = document.createElement('div');
+    item.className = `tree-item tree-leaf tree-depth-${Math.min(depth, 3)}`;
+    const count = countMatches(node);
+    item.innerHTML = `<span class="tree-spacer"></span><span class="tree-label">${escapeHTML(node)}</span><span class="topic-count">${count.toLocaleString()}</span>`;
+    item.onclick = (e) => { e.stopPropagation(); selectTopic(node, item); };
+    return item;
+  }
+
+  const group = document.createElement('div');
+  group.className = 'tree-node';
+
+  const header = document.createElement('div');
+  header.className = `tree-item tree-folder tree-depth-${Math.min(depth, 3)}`;
+  header.innerHTML = `<span class="tree-toggle">+</span><span class="tree-label">${escapeHTML(node.name)}</span><span class="topic-count">${countFolderMatches(node).toLocaleString()}</span>`;
+  header.onclick = (e) => {
+    e.stopPropagation();
+    const ch = group.querySelector(':scope > .tree-children');
+    const open = ch.classList.toggle('open');
+    header.querySelector('.tree-toggle').textContent = open ? '-' : '+';
+  };
+  group.appendChild(header);
+
+  const children = document.createElement('div');
+  children.className = 'tree-children';
+  node.children.forEach(child => {
+    children.appendChild(renderTreeNode(child, depth + 1));
+  });
+  group.appendChild(children);
+  return group;
+}
+
+function countMatches(name) {
+  return allVars.filter(v =>
+    v.construct_category === name || v.risk_domain === name || v.named_measure === name
+  ).length;
+}
+
+function countFolderMatches(node) {
+  return node.children.reduce((total, child) => {
+    return total + (typeof child === 'string' ? countMatches(child) : countFolderMatches(child));
+  }, 0);
+}
+
+function selectTopic(name, el) {
+  document.querySelectorAll('.tree-item.active').forEach(e => e.classList.remove('active'));
+  if (el) el.classList.add('active');
+
+  const matches = allVars.filter(v =>
+    v.construct_category === name || v.risk_domain === name || v.named_measure === name
+  );
+
+  document.getElementById('topic-title').style.display = '';
+  document.getElementById('topic-name').textContent = name;
+  document.getElementById('topic-desc').textContent = `${matches.length.toLocaleString()} variables across ${new Set(matches.map(v=>v.dataset_id)).size} datasets`;
+
+  const filterParam = allVars.some(v => v.construct_category === name) ? 'construct' :
+                      allVars.some(v => v.risk_domain === name) ? 'risk_domain' : 'named_measure';
+  document.getElementById('topic-search-link').href = `search.html?${filterParam}=${encodeURIComponent(name)}`;
+
+  currentPage = 1;
+  renderTopicPage(matches);
+}
+
+function renderTopicPage(matches) {
+  const container = document.getElementById('topic-results');
+  renderResults(container, matches, currentPage, PER_PAGE);
+  renderPagination(document.getElementById('topic-pagination'), matches.length, currentPage, PER_PAGE, p => {
+    currentPage = p; renderTopicPage(matches); window.scrollTo(0, 0);
+  });
+}
+</script>
+</body>
+</html>

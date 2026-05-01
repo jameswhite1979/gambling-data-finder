@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Datasets — Gambling Data Finder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header"></div>
+
+<div class="page-content">
+  <h1 style="font-size:1.4rem;color:var(--navy);margin-bottom:.3rem;">Special datasets</h1>
+  <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:2rem;">Datasets that complement individual-level surveys for children and young people's gambling harm research, including linked, geospatial, administrative and transactional data.</p>
+
+  <div class="detail-section">
+    <h2>Geospatial gambling environment data</h2>
+    <p style="font-size:.9rem;color:var(--text-muted);margin-bottom:1rem;">Area-level datasets that measure neighbourhood exposure to gambling venues and related environmental features. These can support prevention and policy studies when linked to cohort or survey data via geographic identifiers.</p>
+    <div class="coverage-wrapper">
+      <table class="detail-table" id="geo-table">
+        <thead><tr>
+          <th>Dataset</th>
+          <th>Coverage</th>
+          <th>Spatial resolution</th>
+          <th>Key variables</th>
+          <th>Access</th>
+          <th>Link</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="detail-section">
+    <h2>Linked administrative or transactional data</h2>
+    <p style="font-size:.9rem;color:var(--text-muted);margin-bottom:1rem;">Administrative and transactional datasets that can be linked to surveys or used independently to study gambling exposure, spend and harms.</p>
+    <div class="coverage-wrapper">
+      <table class="detail-table" id="admin-table">
+        <thead><tr>
+          <th>Dataset</th>
+          <th>Population</th>
+          <th>Data type</th>
+          <th>Time period</th>
+          <th>Access</th>
+          <th>Link</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="detail-section">
+    <h2>Replication and experimental data</h2>
+    <p style="font-size:.9rem;color:var(--text-muted);margin-bottom:1rem;">Published replication datasets from gambling research studies, typically available through open repositories.</p>
+    <div class="coverage-wrapper">
+      <table class="detail-table" id="replication-table">
+        <thead><tr>
+          <th>Dataset</th>
+          <th>Population</th>
+          <th>Design</th>
+          <th>Sample</th>
+          <th>Access</th>
+          <th>Link</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div id="footer"></div>
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  document.getElementById('header').innerHTML = renderNav('');
+  document.getElementById('footer').innerHTML = renderFooter();
+  updateBasketCount();
+
+  const datasets = await fetchJSON('data/datasets.json');
+  if (!datasets) return;
+
+  const geoData = datasets.filter(d => {
+    const design = (d['Study design']||'').toLowerCase();
+    return design.includes('contextual') || design.includes('geospatial') || design.includes('environmental');
+  });
+  const replicationData = datasets.filter(d => {
+    const design = (d['Study design']||'').toLowerCase();
+    return design.includes('replication') || design.includes('experimental');
+  });
+  const adminData = datasets.filter(d => {
+    const design = (d['Study design']||'').toLowerCase();
+    return design.includes('administrative') || design.includes('linkage') || design.includes('registry');
+  });
+
+  function fillTable(tableId, items, rowFn) {
+    const tbody = document.getElementById(tableId).querySelector('tbody');
+    if (items.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--text-muted);padding:1.5rem;">No datasets in this category yet.</td></tr>';
+      return;
+    }
+    items.forEach(d => { tbody.innerHTML += rowFn(d); });
+  }
+
+  fillTable('geo-table', geoData, d => {
+    const url = makeURL(d['Dataset/home URL']);
+    return `<tr>
+      <td><a href="study.html?id=${encodeURIComponent(d['Dataset_ID'])}" style="font-weight:600;">${escapeHTML(d['Dataset name'])}</a></td>
+      <td>${escapeHTML(d['Country']||'')}</td>
+      <td>${escapeHTML(d['Age focus / population']||'')}</td>
+      <td style="font-size:.8rem;">${escapeHTML(truncate(d['Gambling measure summary']||'', 100))}</td>
+      <td>${escapeHTML(d['Access type']||d['Access difficulty']||'')}</td>
+      <td>${url ? `<a href="${escapeHTML(url)}" target="_blank">View</a>` : ''}</td>
+    </tr>`;
+  });
+
+  fillTable('replication-table', replicationData, d => {
+    const url = makeURL(d['Dataset/home URL']);
+    return `<tr>
+      <td><a href="study.html?id=${encodeURIComponent(d['Dataset_ID'])}" style="font-weight:600;">${escapeHTML(d['Dataset name'])}</a></td>
+      <td>${escapeHTML(d['Age focus / population']||'')}</td>
+      <td>${escapeHTML(d['Study design']||'')}</td>
+      <td style="font-size:.8rem;">${escapeHTML(truncate(d['Gambling measure summary']||'', 80))}</td>
+      <td>${escapeHTML(d['Access type']||d['Access difficulty']||'')}</td>
+      <td>${url ? `<a href="${escapeHTML(url)}" target="_blank">View</a>` : ''}</td>
+    </tr>`;
+  });
+
+  fillTable('admin-table', adminData, d => {
+    const url = makeURL(d['Dataset/home URL']);
+    return `<tr>
+      <td><a href="study.html?id=${encodeURIComponent(d['Dataset_ID'])}" style="font-weight:600;">${escapeHTML(d['Dataset name'])}</a></td>
+      <td>${escapeHTML(d['Age focus / population']||'')}</td>
+      <td>${escapeHTML(d['Study design']||'')}</td>
+      <td>${escapeHTML(d['Country']||'')}</td>
+      <td>${escapeHTML(d['Access type']||d['Access difficulty']||'')}</td>
+      <td>${url ? `<a href="${escapeHTML(url)}" target="_blank">View</a>` : ''}</td>
+    </tr>`;
+  });
+});
+</script>
+</body>
+</html>

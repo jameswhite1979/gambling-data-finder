@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How-to Guides - Gambling Data Finder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header"></div>
+
+<div class="content-page">
+  <h1>How-to guides</h1>
+  <p style="color:var(--text-muted);margin-bottom:1.5rem;">Step-by-step guides for using the Gambling Data Finder as a CYP-GHRIP evidence mapping and data discovery resource.</p>
+
+  <div class="accordion">
+    <div class="accordion-item open">
+      <div class="accordion-header">How to search for gambling variables by keyword <span class="accordion-arrow">v</span></div>
+      <div class="accordion-body">
+        <ol style="padding-left:1.2rem;line-height:1.8;">
+          <li>Use the search box on the home page or open the <a href="search.html">Search page</a>.</li>
+          <li>Type a keyword such as "PGSI", "lottery", "online", "harm" or "participation".</li>
+          <li>The search matches variable names, labels, measure names, study names and categories.</li>
+          <li>Use filters to narrow results by role, study, topic, risk domain, wave or age group.</li>
+          <li>Open the linked study page to review access routes and source documentation.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="accordion-item open">
+      <div class="accordion-header">How to explore gambling topics and risk factors <span class="accordion-arrow">v</span></div>
+      <div class="accordion-body">
+        <ol style="padding-left:1.2rem;line-height:1.8;">
+          <li>Go to the <a href="explore.html">Explore page</a>.</li>
+          <li>Expand topic groups such as gambling behaviour, gambling harms or risk/protective factors.</li>
+          <li>Select a sub-topic to see matching variables across studies.</li>
+          <li>Use the pre-filtered search link to inspect and export the full set of matching records.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="accordion-item open">
+      <div class="accordion-header">How to find studies relevant to adolescents or young adults <span class="accordion-arrow">v</span></div>
+      <div class="accordion-body">
+        <ol style="padding-left:1.2rem;line-height:1.8;">
+          <li>Go to the <a href="search.html">Search page</a>.</li>
+          <li>Set the Role filter to "Gambling measure".</li>
+          <li>Set the Age group filter to a relevant label such as "Adolescents", "11-17" or "16-24".</li>
+          <li>Review the study, wave and questionnaire information on each result card.</li>
+          <li>Use the <a href="visualisations.html">Visualisations page</a> to see wider age group coverage.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="accordion-item open">
+      <div class="accordion-header">How to compare gambling harm measures across studies <span class="accordion-arrow">v</span></div>
+      <div class="accordion-body">
+        <ol style="padding-left:1.2rem;line-height:1.8;">
+          <li>Go to the <a href="measures.html">Measures page</a>.</li>
+          <li>Review recurring instruments such as PGSI, DSM-derived measures and SOGS-RA.</li>
+          <li>Click a measure name to search for all variables using that measure.</li>
+          <li>Compare variable labels, wording, wave information and compatibility notes before planning harmonisation.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="accordion-item open">
+      <div class="accordion-header">How to assess whether a study is ready to use <span class="accordion-arrow">v</span></div>
+      <div class="accordion-body">
+        <ol style="padding-left:1.2rem;line-height:1.8;">
+          <li>Open the <a href="coverage.html">Coverage page</a>.</li>
+          <li>Check whether variable names, documentation, questionnaires, sources and access information are available.</li>
+          <li>Open the study page to inspect access conditions and documentation links.</li>
+          <li>Treat partial documentation as a prompt for manual review or contact with the study team.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="accordion-item open">
+      <div class="accordion-header">How to find original questionnaire wording <span class="accordion-arrow">v</span></div>
+      <div class="accordion-body">
+        <ol style="padding-left:1.2rem;line-height:1.8;">
+          <li>Search for the variable or measure of interest.</li>
+          <li>Open the linked study page.</li>
+          <li>Check the Questionnaires and Sources &amp; documentation sections for questionnaire PDFs, codebooks or data dictionaries.</li>
+          <li>If wording is not available, note the gap for follow-up with the data owner or study team.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="accordion-item open">
+      <div class="accordion-header">How to export records for an evidence map or access request <span class="accordion-arrow">v</span></div>
+      <div class="accordion-body">
+        <ol style="padding-left:1.2rem;line-height:1.8;">
+          <li>Search or browse until you find variables, questions or questionnaires of interest.</li>
+          <li>Click "Add to basket" on each record you want to keep.</li>
+          <li>Go to the <a href="basket.html">Basket page</a>.</li>
+          <li>Download your selection as CSV or Excel.</li>
+          <li>Use the export to support a data access application, evidence map, analysis plan or stakeholder discussion.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="footer"></div>
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('header').innerHTML = renderNav('');
+  document.getElementById('footer').innerHTML = renderFooter();
+  updateBasketCount();
+});
+</script>
+</body>
+</html>

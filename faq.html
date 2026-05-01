@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs - Gambling Data Finder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header"></div>
+
+<div class="content-page">
+  <h1>Frequently asked questions</h1>
+
+  <div class="accordion">
+    <div class="accordion-item open">
+      <div class="accordion-header">What is CYP-GHRIP? <span class="accordion-arrow">v</span></div>
+      <div class="accordion-body"><p>CYP-GHRIP is the Children and Young People Gambling Harm Research and Innovation Partnership. The partnership is building research infrastructure to support prevention and policy studies on gambling participation and harm among children, young people and emerging adults.</p></div>
+    </div>
+    <div class="accordion-item open">
+      <div class="accordion-header">What is this website for? <span class="accordion-arrow">v</span></div>
+      <div class="accordion-body"><p>The site is a searchable metadata catalogue. It helps users identify studies, variables, questionnaires, gambling measures, risk/protective factors, participant characteristics and access routes that may support future research.</p></div>
+    </div>
+    <div class="accordion-item open">
+      <div class="accordion-header">Which datasets are included? <span class="accordion-arrow">v</span></div>
+      <div class="accordion-body"><p>The catalogue indexes cohort studies, population surveys, panel studies and relevant contextual or administrative datasets. The focus is on sources with gambling participation, gambling harm, risk/protective factor or related metadata relevant to children and young people. See the <a href="coverage.html">coverage matrix</a> for the current list and completeness status.</p></div>
+    </div>
+    <div class="accordion-item open">
+      <div class="accordion-header">Does the website host the data? <span class="accordion-arrow">v</span></div>
+      <div class="accordion-body"><p>No. This is a metadata catalogue only. It indexes variable names, labels, questionnaire wording, documentation links and access information, but it does not host restricted individual-level data. Dataset records point to the original repository or study team for access.</p></div>
+    </div>
+    <div class="accordion-item open">
+      <div class="accordion-header">How were gambling-related variables identified? <span class="accordion-arrow">v</span></div>
+      <div class="accordion-body"><p>Variables were identified through searches of data dictionaries, questionnaires, codebooks and open data archives. Gambling-related terms, measure names and harm concepts were used to flag candidate items, which were then reviewed and categorised for the catalogue.</p></div>
+    </div>
+    <div class="accordion-item open">
+      <div class="accordion-header">What is the difference between a dataset, wave, questionnaire, variable and question? <span class="accordion-arrow">v</span></div>
+      <div class="accordion-body">
+        <p><strong>Dataset / study:</strong> The overall data collection, such as a cohort, survey or panel study.</p>
+        <p><strong>Wave / sweep:</strong> A time point or round of data collection within a study.</p>
+        <p><strong>Questionnaire / instrument:</strong> The form or survey document used to collect data at a given wave.</p>
+        <p><strong>Variable:</strong> A data column in a dataset, identified by a variable name and label.</p>
+        <p><strong>Question:</strong> The original wording used in the questionnaire that maps to one or more variables.</p>
+      </div>
+    </div>
+    <div class="accordion-item open">
+      <div class="accordion-header">How do I find gambling harms or gambling participation measures? <span class="accordion-arrow">v</span></div>
+      <div class="accordion-body"><p>Use the home-page search box or the <a href="search.html">Search page</a> with terms such as "harm", "PGSI", "problem gambling", "participation" or "online". You can also use the Explore page to browse topic categories directly.</p></div>
+    </div>
+    <div class="accordion-item open">
+      <div class="accordion-header">How do I find studies relevant to adolescents or young adults? <span class="accordion-arrow">v</span></div>
+      <div class="accordion-body"><p>Use the Age group filter on the Search page and combine it with the Role filter set to "Gambling measure". The Visualisations page also summarises age group coverage across the catalogue.</p></div>
+    </div>
+    <div class="accordion-item open">
+      <div class="accordion-header">How do I access restricted data? <span class="accordion-arrow">v</span></div>
+      <div class="accordion-body"><p>Each study page includes an access section with repository links, application routes and notes on open, safeguarded, controlled or study-managed access. You will need to apply through the study team or repository directly.</p></div>
+    </div>
+    <div class="accordion-item open">
+      <div class="accordion-header">Why are some records incomplete? <span class="accordion-arrow">v</span></div>
+      <div class="accordion-body"><p>The catalogue is a living evidence-mapping resource. Some studies have full variable-level metadata, while others currently have high-level documentation only. Coverage flags show where further extraction, data-owner contact or manual review is needed.</p></div>
+    </div>
+    <div class="accordion-item open">
+      <div class="accordion-header">Can I save a list of variables or studies? <span class="accordion-arrow">v</span></div>
+      <div class="accordion-body"><p>Yes. Use the "Add to basket" button on search results to collect items. The Basket page lets you review and export your selection as CSV or Excel for data access requests, protocol development or evidence mapping.</p></div>
+    </div>
+    <div class="accordion-item open">
+      <div class="accordion-header">How can data owners suggest corrections? <span class="accordion-arrow">v</span></div>
+      <div class="accordion-body"><p>If you are a data owner and notice errors, missing variables or outdated access information, please contact the CYP-GHRIP data availability team. Contributions and corrections are welcome.</p></div>
+    </div>
+  </div>
+</div>
+
+<div id="footer"></div>
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('header').innerHTML = renderNav('faq');
+  document.getElementById('footer').innerHTML = renderFooter();
+  updateBasketCount();
+});
+</script>
+</body>
+</html>

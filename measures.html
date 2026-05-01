@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Measures — Gambling Data Finder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header"></div>
+
+<div class="page-content">
+  <h1 style="font-size:1.4rem;color:var(--navy);margin-bottom:.3rem;">Standardised gambling measures</h1>
+  <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:1.5rem;">Standardised and recurring gambling participation and harm measures found across the indexed studies. Use this page to compare instruments and assess harmonisation potential for CYP-GHRIP evidence mapping.</p>
+
+  <div id="measures-content"><div class="loading">Loading measures data...</div></div>
+</div>
+
+<div id="footer"></div>
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  document.getElementById('header').innerHTML = renderNav('measures');
+  document.getElementById('footer').innerHTML = renderFooter();
+  updateBasketCount();
+
+  const [variables, facets, gamblingMeasures] = await Promise.all([
+    loadVariables(),
+    fetchJSON('data/facets.json'),
+    fetchJSON('data/gambling_measures.json'),
+  ]);
+
+  const container = document.getElementById('measures-content');
+  if (!facets || !facets.named_measures || !variables) {
+    container.innerHTML = '<p>Unable to load measures data.</p>';
+    return;
+  }
+
+  const measures = facets.named_measures.filter(m => m).sort();
+  const rows = measures.map(m => {
+    const vars = variables.filter(v => v.named_measure === m);
+    const datasets = [...new Set(vars.map(v => v.dataset_id))];
+    const constructs = [...new Set(vars.map(v => v.construct_category).filter(Boolean))];
+    const gmEntry = gamblingMeasures ? gamblingMeasures.find(g => g['Named measure'] === m || g['Variable/item ID'] === m) : null;
+    return { name: m, varCount: vars.length, datasets, constructs, gmEntry };
+  });
+
+  let html = `<table class="measures-table">
+    <thead><tr>
+      <th>Measure</th>
+      <th>Construct</th>
+      <th>Variables</th>
+      <th>Datasets using it</th>
+      <th>Compatibility note</th>
+    </tr></thead><tbody>`;
+
+  rows.forEach(r => {
+    const note = r.gmEntry ? (r.gmEntry['Meta-analysis compatibility note'] || '') : '';
+    html += `<tr>
+      <td><a href="search.html?named_measure=${encodeURIComponent(r.name)}" style="font-weight:600;">${escapeHTML(r.name)}</a></td>
+      <td>${escapeHTML(r.constructs.join(', '))}</td>
+      <td style="text-align:center;font-weight:600;">${r.varCount.toLocaleString()}</td>
+      <td>${r.datasets.map(d => `<a href="study.html?id=${encodeURIComponent(d)}">${escapeHTML(d)}</a>`).join(', ')}</td>
+      <td style="font-size:.8rem;color:var(--text-muted);">${escapeHTML(truncate(note, 120))}</td>
+    </tr>`;
+  });
+
+  html += '</tbody></table>';
+  container.innerHTML = html;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+﻿[
+    {
+        "Dataset ID":  "ALSPAC",
+        "Paper / documentation title":  "CLOSER/ALSPAC gambling questionnaire records",
+        "Authors / year":  "CLOSER/ALSPAC",
+        "Source type":  "Metadata records",
+        "Gambling measure used":  "Gambling questionnaire/PGSI/CPGI-derived variables",
+        "Risk/protective factors analysed":  "Rich cohort variables",
+        "URL / DOI":  "https://discovery.closer.ac.uk/",
+        "Notes":  "Use for variable-level extraction"
+    },
+    {
+        "Dataset ID":  "APMS",
+        "Paper / documentation title":  "APMS 2023/24 Gambling behaviour chapter",
+        "Authors / year":  "NHS England, 2025",
+        "Source type":  "Official report",
+        "Gambling measure used":  "PGSI",
+        "Risk/protective factors analysed":  "Psychiatric morbidity",
+        "URL / DOI":  "https://digital.nhs.uk/data-and-information/publications/statistical/adult-psychiatric-morbidity-survey/survey-of-mental-health-and-wellbeing-england-2023-24/gambling-behaviour",
+        "Notes":  "Recent adult mental-health dataset"
+    },
+    {
+        "Dataset ID":  "EAGS",
+        "Paper / documentation title":  "Emerging Adults Gambling Survey protocol/publication",
+        "Authors / year":  "Wardle et al., 2020",
+        "Source type":  "Protocol/data description",
+        "Gambling measure used":  "PGSI and gambling behaviours",
+        "Risk/protective factors analysed":  "Gaming/social media/health behaviours",
+        "URL / DOI":  "https://wellcomeopenresearch.org/articles/5-240",
+        "Notes":  "Useful for extraction of constructs"
+    },
+    {
+        "Dataset ID":  "EAGS",
+        "Paper / documentation title":  "Suicidality and gambling among young adults in Great Britain",
+        "Authors / year":  "Wardle et al., 2021",
+        "Source type":  "Peer-reviewed paper",
+        "Gambling measure used":  "PGSI",
+        "Risk/protective factors analysed":  "Suicidality/mental health",
+        "URL / DOI":  "https://pmc.ncbi.nlm.nih.gov/articles/PMC7788474/",
+        "Notes":  "Demonstrates use of EAGS for mental health-gambling analysis"
+    },
+    {
+        "Dataset ID":  "EAGS",
+        "Paper / documentation title":  "The Emerging Adults Gambling Survey: study protocol",
+        "Authors / year":  "Wardle, 2020",
+        "Source type":  "Protocol",
+        "Gambling measure used":  "Gambling behaviours/harms and longitudinal design",
+        "Risk/protective factors analysed":  "Digital technology/gaming/social media and young adults",
+        "URL / DOI":  "https://doi.org/10.12688/wellcomeopenres.15969.1",
+        "Notes":  "Uploaded protocol confirms ages 16-24, Wave 1 n=3549 and Wave 2 planned; useful source for study design."
+    },
+    {
+        "Dataset ID":  "EAGS",
+        "Paper / documentation title":  "The relationship between problematic gambling severity and engagement with gambling products",
+        "Authors / year":  "Wardle and Tipping, 2023",
+        "Source type":  "Peer-reviewed paper",
+        "Gambling measure used":  "Problem Gambling Severity Index (PGSI); 19 gambling activities",
+        "Risk/protective factors analysed":  "Eysenck Impulsivity Scale; socio-demographic/economic characteristics; gambling involvement",
+        "URL / DOI":  "https://doi.org/10.1111/add.16125",
+        "Notes":  "Uploaded paper demonstrates longitudinal analysis of young adults aged 16-26."
+    },
+    {
+        "Dataset ID":  "ESPAD",
+        "Paper / documentation title":  "ESPAD Report 2019 / 2024 data portal",
+        "Authors / year":  "ESPAD consortium",
+        "Source type":  "Official report/data portal",
+        "Gambling measure used":  "Gambling for money / online gambling / problematic gambling",
+        "Risk/protective factors analysed":  "Substance use/gaming/wellbeing",
+        "URL / DOI":  "https://data.espad.org/",
+        "Notes":  "Cross-national school survey"
+    },
+    {
+        "Dataset ID":  "GIBS",
+        "Paper / documentation title":  "Gambling Impact and Behavior Study, 1997â€“1999",
+        "Authors / year":  "NORC/ICPSR",
+        "Source type":  "Data documentation",
+        "Gambling measure used":  "Problem-gambling diagnostic assessment",
+        "Risk/protective factors analysed":  "Mental health/substance/demographic variables",
+        "URL / DOI":  "https://www.icpsr.umich.edu/web/NAHDAP/studies/2778",
+        "Notes":  "Historical US youth/adult data"
+    },
+    {
+        "Dataset ID":  "GUI98",
+        "Paper / documentation title":  "Adolescent online gambling in Growing Up in Ireland",
+        "Authors / year":  "GREO summary of published analysis",
+        "Source type":  "Evidence summary",
+        "Gambling measure used":  "Online gambling",
+        "Risk/protective factors analysed":  "Demographic/socioeconomic/health",
+        "URL / DOI":  "https://www.greo.ca/",
+        "Notes":  "Confirms waves 3 and 4 gambling variables"
+    },
+    {
+        "Dataset ID":  "HSE",
+        "Paper / documentation title":  "Health Survey for England 2021 Gambling report",
+        "Authors / year":  "NHS Digital, 2023",
+        "Source type":  "Official report",
+        "Gambling measure used":  "PGSI",
+        "Risk/protective factors analysed":  "Health/demographics",
+        "URL / DOI":  "https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2021-part-2/gambling",
+        "Notes":  "Confirms PGSI"
+    },
+    {
+        "Dataset ID":  "OSDUHS",
+        "Paper / documentation title":  "Cross Validation of the Gambling Problem Severity Subscale",
+        "Authors / year":  "Turner et al., 2018",
+        "Source type":  "Peer-reviewed paper",
+        "Gambling measure used":  "CAGI/GPSS",
+        "Risk/protective factors analysed":  "Adolescent gambling validation",
+        "URL / DOI":  "https://link.springer.com/article/10.1007/s10899-017-9731-1",
+        "Notes":  "Confirms CAGI/GPSS use"
+    },
+    {
+        "Dataset ID":  "OSDUHS",
+        "Paper / documentation title":  "Traumatic brain injuries and problem gambling in youth",
+        "Authors / year":  "Turner et al., 2020",
+        "Source type":  "Peer-reviewed paper",
+        "Gambling measure used":  "Youth problem gambling measure",
+        "Risk/protective factors analysed":  "TBI and covariates",
+        "URL / DOI":  "https://pmc.ncbi.nlm.nih.gov/articles/PMC7531994/",
+        "Notes":  "Confirms gambling analyses in OSDUHS"
+    },
+    {
+        "Dataset ID":  "SHES_2017_2018_2019_2021",
+        "Paper / documentation title":  "Scottish Health Survey 2017/2018/2019/2021 Gambling chapter",
+        "Authors / year":  "Scottish Government, 2022",
+        "Source type":  "Official report",
+        "Gambling measure used":  "PGSI",
+        "Risk/protective factors analysed":  "Health/demographics",
+        "URL / DOI":  "https://www.gov.scot/publications/scottish-health-survey-2021-volume-1-main-report/pages/14/",
+        "Notes":  "Confirms PGSI"
+    },
+    {
+        "Dataset ID":  "SHRN",
+        "Paper / documentation title":  "Gambling among adolescents in Wales / SHRN data paper",
+        "Authors / year":  "SHRN team / Wardle-related papers",
+        "Source type":  "Peer-reviewed paper",
+        "Gambling measure used":  "Past-year/past-week gambling and harm item",
+        "Risk/protective factors analysed":  "School/youth risk factors",
+        "URL / DOI":  "https://academic.oup.com/ije/article/50/4/1077/6216951",
+        "Notes":  "Data profile confirms SHRN resource"
+    },
+    {
+        "Dataset ID":  "OSDUHS",
+        "Paper / documentation title":  "The Mental Health and Well-Being of Ontario Students, 1991â€“2023: Findings from the Ontario Student Drug Use and Health Survey",
+        "Authors / year":  "Boak \u0026 Hamilton, 2024",
+        "Source type":  "Report",
+        "Gambling measure used":  "Online gambling; gambling while playing a video game/loot boxes/in-game currency/skins betting; gambling in other ways",
+        "Risk/protective factors analysed":  "Mental health, physical health, bullying, cyberbullying, video gaming, social media use, school climate, sex, grade, region",
+        "URL / DOI":  "https://www.camh.ca/osduhs",
+        "Notes":  "Confirms 2023 OSDUHS includes grades 7-12 with N=10,145 students and gambling/digital behaviour indicators."
+    },
+    {
+        "Dataset ID":  "HBSC",
+        "Paper / documentation title":  "Patterns of Gambling and Other Risky Behaviors among Adolescents. A Latent Class Analysis Study on the 2021/22 Health Behaviors in School Children Survey Data",
+        "Authors / year":  "Aresi et al., 2026",
+        "Source type":  "Peer-reviewed paper",
+        "Gambling measure used":  "Any gambling in last 12 months; South Oaks Gambling Screenâ€“Revised for Adolescents (SOGS-RA)",
+        "Risk/protective factors analysed":  "Tobacco, alcohol, drunkenness, cannabis, other substance use, self-rated health, Cantril Ladder life satisfaction, sex, age cohort, school type",
+        "URL / DOI":  "https://doi.org/10.1007/s10899-026-10479-2",
+        "Notes":  "Confirms HBSC Lombardy 2021/22 gambling data among ages 15 and 17; 11- and 13-year-olds excluded because gambling and other health behaviour data were not available."
+    },
+    {
+        "Dataset ID":  "GSLN_UGANDA",
+        "Paper / documentation title":  "Gambling, Saving, and Lumpy Liquidity Needs",
+        "Authors / year":  "Herskowitz, 2021",
+        "Source type":  "Peer-reviewed paper",
+        "Gambling measure used":  "Sports betting demand, targeted payouts, winnings",
+        "Risk/protective factors analysed":  "Savings, liquidity constraints, income, consumption",
+        "URL / DOI":  "https://doi.org/10.1257/app.20180177",
+        "Notes":  "American Economic Journal: Applied Economics 13(1), 72-104. Replication data at openICPSR project 115162."
+    },
+    {
+        "Dataset ID":  "AHAH",
+        "Paper / documentation title":  "Open data on health-related neighbourhood features in Great Britain",
+        "Authors / year":  "Daras et al., 2019",
+        "Source type":  "Foundational paper",
+        "Gambling measure used":  "Gambling outlet accessibility (area-level)",
+        "Risk/protective factors analysed":  "Built environment, retail hazards, health services, green/blue space, air quality",
+        "URL / DOI":  "https://github.com/GeographicDataService/ahah/tree/v5",
+        "Notes":  "AHAH v5 released February 2026. Composite index covering ~1.7M postcodes at LSOA/Data Zone level."
+    }
+]

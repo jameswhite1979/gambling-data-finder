@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search — Gambling Data Finder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+<div class="search-layout">
+
+  <!-- LEFT: Filter sidebar -->
+  <aside class="filter-sidebar">
+    <h3>Filters</h3>
+
+    <div class="filter-group">
+      <label class="filter-label" for="filter-role">Role</label>
+      <select class="filter-select" id="filter-role"></select>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label" for="filter-dataset">Study</label>
+      <select class="filter-select" id="filter-dataset"></select>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label" for="filter-construct">Category</label>
+      <select class="filter-select" id="filter-construct"></select>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label" for="filter-risk">Risk domain</label>
+      <select class="filter-select" id="filter-risk"></select>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label" for="filter-measure">Measure</label>
+      <select class="filter-select" id="filter-measure"></select>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label" for="filter-wave">Wave / Year</label>
+      <select class="filter-select" id="filter-wave"></select>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label" for="filter-age">Age group</label>
+      <select class="filter-select" id="filter-age"></select>
+    </div>
+
+    <div class="filter-actions">
+      <button type="button" class="btn btn-primary" id="btn-filter">Filter</button>
+      <button type="button" class="btn btn-outline" id="btn-reset">Reset</button>
+    </div>
+  </aside>
+
+  <!-- RIGHT: Search bar + results -->
+  <div class="results-panel">
+
+    <form class="search-bar" id="search-form">
+      <input type="text" id="search-input" placeholder="Search gambling harm, participation, risk factors, measures..." autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+
+    <div class="results-header" id="results-header" style="display:none;">
+      <span class="results-count" id="results-count"></span>
+      <span class="results-timing" id="results-timing"></span>
+    </div>
+
+    <div id="results-container">
+      <div class="loading" id="loading">Loading variables...</div>
+    </div>
+
+    <div class="pagination" id="pagination"></div>
+
+  </div>
+
+</div>
+
+<div id="footer"></div>
+
+<script src="app.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  let allVariables = [];
+  let currentResults = [];
+  let currentPage = 1;
+  const PER_PAGE = 50;
+
+  // ---- DOM refs ----
+  const $header        = document.getElementById('header');
+  const $footer        = document.getElementById('footer');
+  const $form          = document.getElementById('search-form');
+  const $searchInput   = document.getElementById('search-input');
+  const $resultsHeader = document.getElementById('results-header');
+  const $resultsCount  = document.getElementById('results-count');
+  const $resultsTiming = document.getElementById('results-timing');
+  const $resultsBox    = document.getElementById('results-container');
+  const $pagination    = document.getElementById('pagination');
+  const $btnFilter     = document.getElementById('btn-filter');
+  const $btnReset      = document.getElementById('btn-reset');
+
+  // Filter selects
+  const $fRole      = document.getElementById('filter-role');
+  const $fDataset   = document.getElementById('filter-dataset');
+  const $fConstruct = document.getElementById('filter-construct');
+  const $fRisk      = document.getElementById('filter-risk');
+  const $fMeasure   = document.getElementById('filter-measure');
+  const $fWave      = document.getElementById('filter-wave');
+  const $fAge       = document.getElementById('filter-age');
+
+  // ---- Helpers ----
+  function getFilters() {
+    return {
+      role:          $fRole.value,
+      dataset:       $fDataset.value,
+      construct:     $fConstruct.value,
+      risk_domain:   $fRisk.value,
+      named_measure: $fMeasure.value,
+      wave_year:     $fWave.value,
+      age_group:     $fAge.value,
+    };
+  }
+
+  function showRange(page, total) {
+    const start = Math.min((page - 1) * PER_PAGE + 1, total);
+    const end   = Math.min(page * PER_PAGE, total);
+    return total === 0
+      ? '0 results'
+      : start + '–' + end + ' of ' + total.toLocaleString() + ' results';
+  }
+
+  // ---- Search + render ----
+  function doSearch(evt) {
+    if (evt) evt.preventDefault();
+    var query   = $searchInput.value.trim();
+    var filters = getFilters();
+    var out     = searchVariables(allVariables, query, filters);
+
+    currentResults = out.results;
+    currentPage    = 1;
+
+    $resultsHeader.style.display = 'flex';
+    $resultsCount.textContent    = showRange(1, currentResults.length);
+    $resultsTiming.textContent   = '(' + out.elapsed + ' s)';
+
+    renderPage();
+  }
+
+  function renderPage() {
+    renderResults($resultsBox, currentResults, currentPage, PER_PAGE);
+
+    $resultsCount.textContent = showRange(currentPage, currentResults.length);
+
+    renderPagination($pagination, currentResults.length, currentPage, PER_PAGE, function (page) {
+      currentPage = page;
+      renderPage();
+      window.scrollTo({ top: $resultsBox.offsetTop - 90, behavior: 'smooth' });
+    });
+  }
+
+  function resetFilters() {
+    $searchInput.value = '';
+    $fRole.value       = '';
+    $fDataset.value    = '';
+    $fConstruct.value  = '';
+    $fRisk.value       = '';
+    $fMeasure.value    = '';
+    $fWave.value       = '';
+    $fAge.value        = '';
+
+    currentResults = [];
+    currentPage    = 1;
+
+    $resultsHeader.style.display = 'none';
+    $resultsBox.innerHTML        = '';
+    $pagination.innerHTML        = '';
+  }
+
+  // ---- Read URL params and pre-fill ----
+  function readParams() {
+    var p = new URLSearchParams(window.location.search);
+    if (p.get('q'))         $searchInput.value = p.get('q');
+    if (p.get('role'))      $fRole.value       = p.get('role');
+    if (p.get('dataset'))   $fDataset.value    = p.get('dataset');
+    if (p.get('construct')) $fConstruct.value   = p.get('construct');
+    if (p.get('risk_domain')) $fRisk.value      = p.get('risk_domain');
+    if (p.get('named_measure')) $fMeasure.value = p.get('named_measure');
+    if (p.get('wave_year')) $fWave.value        = p.get('wave_year');
+    if (p.get('age_group')) $fAge.value         = p.get('age_group');
+
+    // Return true if any param was present
+    return !!(p.get('q') || p.get('role') || p.get('dataset') || p.get('construct') ||
+              p.get('risk_domain') || p.get('named_measure') || p.get('wave_year') || p.get('age_group'));
+  }
+
+  // ---- Initialise ----
+  document.addEventListener('DOMContentLoaded', async function () {
+
+    // Inject nav + footer
+    $header.innerHTML = renderNav('search');
+    $footer.innerHTML = renderFooter();
+    updateBasketCount();
+
+    // Load facets and populate dropdowns
+    var facets = await fetchJSON('data/facets.json');
+    if (facets) {
+      populateSelect($fRole,      facets.roles,                '', 'All roles');
+      populateSelect($fDataset,   facets.datasets,             '', 'All studies');
+      populateSelect($fConstruct, facets.construct_categories,  '', 'All categories');
+      populateSelect($fRisk,      facets.risk_domains,          '', 'All domains');
+      populateSelect($fMeasure,   facets.named_measures,        '', 'All measures');
+      populateSelect($fWave,      facets.wave_years,            '', 'All waves / years');
+      populateSelect($fAge,       facets.age_groups,            '', 'All age groups');
+    }
+
+    // Pre-fill from URL params (must happen after selects are populated)
+    var hasParams = readParams();
+
+    // Load variables (show spinner)
+    $resultsBox.innerHTML = '<div class="loading">Loading 32,000+ variables...</div>';
+    allVariables = (await loadVariables()) || [];
+    $resultsBox.innerHTML = '';
+
+    // If URL params were present, run search immediately
+    if (hasParams) {
+      doSearch();
+    }
+
+    // Event listeners
+    $form.addEventListener('submit', doSearch);
+    $btnFilter.addEventListener('click', doSearch);
+    $btnReset.addEventListener('click', resetFilters);
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dataset — Gambling Data Finder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<div class="study-hero" id="study-hero">
+  <div class="study-hero-inner">
+    <div class="study-hero-id" id="study-hero-id"></div>
+    <h1 id="study-name">Loading...</h1>
+    <div class="study-hero-badges" id="study-hero-badges"></div>
+    <div class="study-stats" id="study-stats"></div>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="detail-section" id="overview-section" style="display:none">
+    <h2>Overview</h2>
+    <dl class="info-grid" id="overview-grid"></dl>
+  </div>
+
+  <div class="detail-section" id="access-section" style="display:none">
+    <h2>Data access</h2>
+    <dl class="info-grid" id="access-grid"></dl>
+  </div>
+
+  <div class="detail-section" id="sources-section" style="display:none">
+    <h2>Sources &amp; documentation</h2>
+    <table class="detail-table" id="sources-table">
+      <thead><tr><th>Type</th><th>Title</th><th>URL</th><th>Access</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="detail-section" id="questionnaires-section" style="display:none">
+    <h2>Questionnaires</h2>
+    <table class="detail-table" id="questionnaires-table">
+      <thead><tr><th>Wave / year</th><th>Age group</th><th>Title</th><th>Type</th><th>URL</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="detail-section" id="publications-section" style="display:none">
+    <h2>Publications</h2>
+    <table class="detail-table" id="publications-table">
+      <thead><tr><th>Title</th><th>Authors / year</th><th>Type</th><th>URL</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="detail-section" id="search-section" style="display:none">
+    <a href="#" id="search-study-link" class="btn btn-primary">Search variables in this study</a>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+  // Inject shared nav and footer
+  document.getElementById('site-header').innerHTML = renderNav('');
+  document.getElementById('site-footer').innerHTML = renderFooter();
+  updateBasketCount();
+
+  const params = new URLSearchParams(window.location.search);
+  const studyId = params.get('id');
+  if (!studyId) {
+    document.getElementById('study-name').textContent = 'No dataset specified';
+    return;
+  }
+
+  // Load all data files in parallel
+  const [datasets, sources, questionnaires, access, publications, variables] = await Promise.all([
+    fetchJSON('data/datasets.json'),
+    fetchJSON('data/sources.json'),
+    fetchJSON('data/questionnaires.json'),
+    fetchJSON('data/access.json'),
+    fetchJSON('data/publications.json'),
+    fetchJSON('data/variables.json'),
+  ]);
+
+  // Find dataset
+  const ds = datasets ? datasets.find(d => d['Dataset_ID'] === studyId) : null;
+  if (!ds) {
+    document.getElementById('study-name').textContent = 'Dataset not found: ' + studyId;
+    return;
+  }
+
+  const dsName = ds['Dataset name'] || studyId;
+
+  // Dynamic title
+  document.title = dsName + ' — Gambling Data Finder';
+
+  // Hero: ID badge and name
+  document.getElementById('study-hero-id').textContent = studyId;
+  document.getElementById('study-name').textContent = dsName;
+
+  // Hero: badges for study design, access type, country
+  const badgesEl = document.getElementById('study-hero-badges');
+  if (ds['Study design']) {
+    badgesEl.innerHTML += '<span class="badge badge-other">' + escapeHTML(ds['Study design']) + '</span>';
+  }
+  if (ds['Access type']) {
+    badgesEl.innerHTML += accessBadge(ds['Access type']);
+  }
+  if (ds['Country']) {
+    badgesEl.innerHTML += '<span class="badge badge-meta">' + escapeHTML(ds['Country']) + '</span>';
+  }
+
+  // Count variables for this study
+  const studyVars = variables ? variables.filter(v => v.dataset_id === studyId) : [];
+  const gamblingVars = studyVars.filter(v => v.role === 'Gambling measure');
+  const riskVars = studyVars.filter(v => v.role === 'Risk/protective factor');
+  const studyQs = questionnaires ? questionnaires.filter(q => q['Dataset_ID'] === studyId) : [];
+  const studySources = sources ? sources.filter(s => s['Dataset_ID'] === studyId) : [];
+
+  // Stats bar
+  const statsEl = document.getElementById('study-stats');
+  var statItems = [
+    { num: studyVars.length, label: 'Variables' },
+    { num: gamblingVars.length, label: 'Gambling measures' },
+    { num: riskVars.length, label: 'Risk / protective' },
+    { num: studyQs.length, label: 'Questionnaires' },
+    { num: studySources.length, label: 'Sources' },
+  ];
+  statItems.forEach(function(s) {
+    var div = document.createElement('div');
+    div.className = 'study-stat';
+    div.innerHTML = '<div class="study-stat-num">' + s.num.toLocaleString() + '</div><div class="study-stat-label">' + s.label + '</div>';
+    statsEl.appendChild(div);
+  });
+
+  // Warning tag if no variables extracted yet
+  if (studyVars.length === 0) {
+    var warn = document.createElement('span');
+    warn.className = 'tag tag-warning';
+    warn.style.alignSelf = 'center';
+    warn.textContent = 'No variables extracted yet';
+    statsEl.appendChild(warn);
+  }
+
+  // ---- Overview section ----
+  var overviewFields = [
+    ['Country', 'Country'],
+    ['Study design', 'Study design'],
+    ['Age focus / population', 'Age focus / population'],
+    ['Gambling measure summary', 'Gambling measure summary'],
+    ['Key risk/protective domains', 'Key risk/protective domains confirmed'],
+  ];
+  var grid = document.getElementById('overview-grid');
+  var hasOverview = false;
+  overviewFields.forEach(function(pair) {
+    var label = pair[0], key = pair[1];
+    var val = ds[key];
+    if (val) {
+      grid.innerHTML += '<dt>' + escapeHTML(label) + '</dt><dd>' + escapeHTML(val) + '</dd>';
+      hasOverview = true;
+    }
+  });
+  if (ds['Dataset/home URL']) {
+    var homeUrl = makeURL(ds['Dataset/home URL']);
+    grid.innerHTML += '<dt>Homepage</dt><dd><a href="' + escapeHTML(homeUrl) + '" target="_blank">' + escapeHTML(truncate(homeUrl, 60)) + '</a></dd>';
+    hasOverview = true;
+  }
+  if (hasOverview) document.getElementById('overview-section').style.display = '';
+
+  // ---- Data access section ----
+  var studyAccess = access ? access.find(function(a) { return a['Dataset_ID'] === studyId; }) : null;
+  if (studyAccess) {
+    var ag = document.getElementById('access-grid');
+    var accessFields = [
+      ['Access status', 'Access status'],
+      ['Access route', 'Access route'],
+      ['Cost / fee', 'Cost/fee'],
+      ['Ethics / proposal required', 'Ethics/proposal likely?'],
+      ['TRE / secure environment', 'TRE / secure environment'],
+      ['Data format', 'Data format / notes'],
+    ];
+    var hasAccess = false;
+    accessFields.forEach(function(pair) {
+      var label = pair[0], key = pair[1];
+      var val = studyAccess[key];
+      if (val) {
+        ag.innerHTML += '<dt>' + escapeHTML(label) + '</dt><dd>' + escapeHTML(val) + '</dd>';
+        hasAccess = true;
+      }
+    });
+    if (studyAccess['Access request URL'] && studyAccess['Access request URL'] !== 'Not yet available') {
+      var accessUrl = makeURL(studyAccess['Access request URL']);
+      ag.innerHTML += '<dt>Access request</dt><dd><a href="' + escapeHTML(accessUrl) + '" target="_blank">' + escapeHTML(truncate(accessUrl, 60)) + '</a></dd>';
+      hasAccess = true;
+    }
+    if (hasAccess) document.getElementById('access-section').style.display = '';
+  }
+
+  // ---- Sources & documentation ----
+  if (studySources.length > 0) {
+    var srcTbody = document.getElementById('sources-table').querySelector('tbody');
+    studySources.forEach(function(s) {
+      var url = makeURL(s['URL']);
+      var tr = document.createElement('tr');
+      tr.innerHTML =
+        '<td>' + escapeHTML(s['Resource type'] || '') + '</td>' +
+        '<td>' + escapeHTML(s['Title / description'] || '') + '</td>' +
+        '<td>' + (url ? '<a href="' + escapeHTML(url) + '" target="_blank">' + escapeHTML(truncate(url, 50)) + '</a>' : '') + '</td>' +
+        '<td>' + escapeHTML(s['Public or gated'] || '') + '</td>';
+      srcTbody.appendChild(tr);
+    });
+    document.getElementById('sources-section').style.display = '';
+  }
+
+  // ---- Questionnaires ----
+  if (studyQs.length > 0) {
+    var qTbody = document.getElementById('questionnaires-table').querySelector('tbody');
+    studyQs.forEach(function(q) {
+      var url = makeURL(q['URL']);
+      var tr = document.createElement('tr');
+      tr.innerHTML =
+        '<td>' + escapeHTML(q['Wave / year'] || '') + '</td>' +
+        '<td>' + escapeHTML(q['Age group'] || '') + '</td>' +
+        '<td>' + escapeHTML(q['Questionnaire / metadata title'] || '') + '</td>' +
+        '<td>' + escapeHTML(q['File type'] || '') + '</td>' +
+        '<td>' + (url ? '<a href="' + escapeHTML(url) + '" target="_blank">' + escapeHTML(truncate(url, 50)) + '</a>' : '') + '</td>';
+      qTbody.appendChild(tr);
+    });
+    document.getElementById('questionnaires-section').style.display = '';
+  }
+
+  // ---- Publications ----
+  var studyPubs = publications ? publications.filter(function(p) { return p['Dataset ID'] === studyId; }) : [];
+  if (studyPubs.length > 0) {
+    var pTbody = document.getElementById('publications-table').querySelector('tbody');
+    studyPubs.forEach(function(p) {
+      var url = makeURL(p['URL / DOI']);
+      var tr = document.createElement('tr');
+      tr.innerHTML =
+        '<td>' + escapeHTML(p['Paper / documentation title'] || '') + '</td>' +
+        '<td>' + escapeHTML(p['Authors / year'] || '') + '</td>' +
+        '<td>' + escapeHTML(p['Source type'] || '') + '</td>' +
+        '<td>' + (url ? '<a href="' + escapeHTML(url) + '" target="_blank">' + escapeHTML(truncate(url, 50)) + '</a>' : '') + '</td>';
+      pTbody.appendChild(tr);
+    });
+    document.getElementById('publications-section').style.display = '';
+  }
+
+  // ---- Search variables button ----
+  var searchLink = document.getElementById('search-study-link');
+  searchLink.href = 'search.html?dataset=' + encodeURIComponent(studyId);
+  document.getElementById('search-section').style.display = '';
+});
+</script>
+</body>
+</html>

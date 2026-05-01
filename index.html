@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gambling Data Finder &mdash; CYP-GHRIP</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header injected by JS -->
+<div id="header"></div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Data on gambling among children and young people</h1>
+    <p class="hero-sub">Identify datasets or studies that include information on gambling participation, gambling-related harm, risk and protective factors, participant characteristics, and routes for accessing the data.</p>
+
+    <form class="hero-search" action="search.html" method="get">
+      <input type="text" name="q" placeholder="Search variables, measures, studies..." autocomplete="off">
+      <select name="role">
+        <option value="">All items</option>
+        <option value="Gambling measure">Gambling measures</option>
+        <option value="Risk/protective factor">Risk/protective factors</option>
+        <option value="Other variable">Other variables</option>
+      </select>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</section>
+
+<!-- ===== METRIC CARDS ===== -->
+<div class="metrics">
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-num" id="metric-datasets">&mdash;</div>
+      <div class="metric-label">Datasets</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num" id="metric-questionnaires">&mdash;</div>
+      <div class="metric-label">Questionnaires</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num" id="metric-variables">&mdash;</div>
+      <div class="metric-label">Variables</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num" id="metric-gambling">&mdash;</div>
+      <div class="metric-label">Gambling questions</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== EXPLORE DATASETS ===== -->
+<section class="section">
+  <div class="section-header">
+    <h2>Explore available studies and datasets</h2>
+    <a href="studies.html">View all &rarr;</a>
+  </div>
+  <div class="studies-grid" id="studies-grid">
+    <div class="loading">Loading datasets...</div>
+  </div>
+</section>
+
+<!-- Footer injected by JS -->
+<div id="footer"></div>
+
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+
+  /* ---- Inject shared header & footer ---- */
+  document.getElementById('header').innerHTML = renderNav('home');
+  document.getElementById('footer').innerHTML = renderFooter();
+  updateBasketCount();
+
+  /* ---- Metric cards from summary.json ---- */
+  const summary = await fetchJSON('data/summary.json');
+  if (summary) {
+    document.getElementById('metric-datasets').textContent = summary.datasets.toLocaleString();
+    document.getElementById('metric-questionnaires').textContent = summary.questionnaires.toLocaleString();
+    document.getElementById('metric-variables').textContent = summary.variables.toLocaleString();
+    document.getElementById('metric-gambling').textContent = summary.gambling_measures.toLocaleString();
+    const footerDate = document.getElementById('footer-date');
+    if (footerDate) footerDate.textContent = summary.last_updated || '';
+  }
+
+  /* ---- Study / dataset cards ---- */
+  var datasets = await fetchJSON('data/datasets.json');
+  if (datasets) {
+    var grid = document.getElementById('studies-grid');
+    grid.innerHTML = '';
+
+    var sorted = datasets
+      .filter(function(d) { return d['Dataset name'] || d['Dataset_ID']; })
+      .sort(function(a, b) {
+        return (a['Dataset name'] || '').localeCompare(b['Dataset name'] || '');
+      });
+
+    sorted.forEach(function(d) {
+      var id = d['Dataset_ID'] || d['Dataset name'];
+      var name = d['Dataset name'] || id;
+      var country = d['Country'] || '';
+      var age = d['Age focus / population'] || '';
+      var design = d['Study design'] || '';
+
+      var card = document.createElement('a');
+      card.href = 'study.html?id=' + encodeURIComponent(id);
+      card.className = 'study-card';
+      card.innerHTML =
+        '<div class="study-card-id">' + escapeHTML(id) + '</div>' +
+        '<div class="study-card-name">' + escapeHTML(name) + '</div>' +
+        '<div class="study-card-meta">' +
+          escapeHTML(country) +
+          (design ? ' &middot; ' + escapeHTML(design) : '') +
+        '</div>' +
+        '<div class="study-card-stats">' +
+          (age ? '<span class="study-card-stat">' + escapeHTML(age) + '</span>' : '') +
+        '</div>';
+      grid.appendChild(card);
+    });
+  }
+
+});
+</script>
+</body>
+</html>

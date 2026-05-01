@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your List — Gambling Data Finder</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .basket-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .basket-grid > .basket-section:last-child {
+    grid-column: 1 / -1;
+  }
+  @media (max-width: 900px) {
+    .basket-grid {
+      grid-template-columns: 1fr;
+    }
+    .basket-grid > .basket-section:last-child {
+      grid-column: auto;
+    }
+  }
+  .basket-bottom {
+    margin-top: 2rem;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<script src="app.js"></script>
+<script>document.body.insertAdjacentHTML('afterbegin', renderNav('basket'));</script>
+
+<div class="basket-banner">
+  <div class="basket-banner-inner">This is your active list.</div>
+</div>
+
+<div class="page-content" id="basket-page">
+  <div class="loading" id="basket-loading">Loading your list...</div>
+</div>
+
+<script>document.body.insertAdjacentHTML('beforeend', renderFooter());</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  updateBasketCount();
+  renderBasketPage();
+});
+
+function renderBasketPage() {
+  const container = document.getElementById('basket-page');
+  const basket = getBasket();
+
+  if (basket.length === 0) {
+    container.innerHTML =
+      '<div class="basket-empty">' +
+        '<p>Your list is empty.</p>' +
+        '<p style="margin-top:.5rem;font-size:.9rem;">Use the <a href="search.html">search page</a> to find variables, questions and questionnaires for evidence mapping or data access planning, then add them to your list.</p>' +
+      '</div>';
+    return;
+  }
+
+  const grouped = getBasketGrouped();
+  let html = '<div class="basket-grid">';
+  html += buildSection('variable', 'Variables', grouped.variables);
+  html += buildSection('question', 'Questions', grouped.questions);
+  html += buildSection('questionnaire', 'Questionnaires', grouped.questionnaires);
+  html += '</div>';
+  html += '<div class="basket-bottom"><button class="btn btn-danger" onclick="doClearAll()">Clear all</button></div>';
+  container.innerHTML = html;
+}
+
+function buildSection(type, label, items) {
+  var count = items.length;
+  var html = '<div class="basket-section" id="section-' + type + '">';
+  html += '<div class="basket-section-header">';
+  html += '<h3>' + escapeHTML(label) + ' (' + count + ')</h3>';
+  if (count > 0) {
+    html += '<div class="dropdown">';
+    html += '<button class="btn btn-primary btn-sm dropdown-btn" onclick="toggleDropdown(this)">Download Metadata &#9662;</button>';
+    html += '<div class="dropdown-menu">';
+    html += '<button class="dropdown-item" onclick="doDownloadCSV(\'' + type + '\')">CSV</button>';
+    html += '<button class="dropdown-item" onclick="doDownloadExcel(\'' + type + '\')">Excel</button>';
+    html += '<button class="dropdown-item" onclick="doDownloadPDF(\'' + type + '\')">PDF Codebook</button>';
+    html += '</div></div>';
+  }
+  html += '</div>';
+  html += '<div class="basket-section-body">';
+  if (count === 0) {
+    html += '<div class="basket-empty" style="padding:1.5rem;"><p>No ' + label.toLowerCase() + ' in your list.</p></div>';
+  } else {
+    items.forEach(function (item) {
+      var globalIdx = getGlobalIndex(item);
+      html += renderBasketItem(item, globalIdx, type);
+    });
+  }
+  html += '</div></div>';
+  return html;
+}
+
+function getGlobalIndex(item) {
+  var basket = getBasket();
+  var key = basketKey(item);
+  for (var i = 0; i < basket.length; i++) {
+    if (basketKey(basket[i]) === key) return i;
+  }
+  return -1;
+}
+
+function renderBasketItem(item, globalIdx, type) {
+  var title = '';
+  var meta = '';
+
+  if (type === 'variable') {
+    title = escapeHTML(item.variable_label || item.variable_name || '(no label)');
+    meta = buildMetaLine(item);
+  } else if (type === 'question') {
+    title = escapeHTML(item.question_text || item.variable_label || item.title || '(no question text)');
+    meta = buildMetaLine(item);
+  } else {
+    title = escapeHTML(item.title || item.questionnaire_name || item.named_measure || '(untitled)');
+    meta = buildMetaLine(item);
+  }
+
+  var html = '<div class="basket-item">';
+  html += '<input type="checkbox" class="basket-item-check" checked data-idx="' + globalIdx + '">';
+  html += '<div class="basket-item-content">';
+  html += '<div class="basket-item-title">' + title + '</div>';
+  html += '<div class="basket-item-meta">' + meta + '</div>';
+  html += '</div>';
+  html += '<button class="basket-item-remove" onclick="doRemove(' + globalIdx + ')" title="Remove from list">&times;</button>';
+  html += '</div>';
+  return html;
+}
+
+function buildMetaLine(item) {
+  var parts = [];
+  if (item.dataset_name || item.dataset_id) {
+    var studyLabel = escapeHTML(item.dataset_name || item.dataset_id);
+    parts.push('Study: <a href="study.html?id=' + encodeURIComponent(item.dataset_id || '') + '">' + studyLabel + '</a>');
+  }
+  if (item.wave_year) {
+    parts.push('Wave: ' + escapeHTML(item.wave_year));
+  }
+  if (item.variable_name && item.item_type !== 'questionnaire') {
+    parts.push('Var: ' + escapeHTML(item.variable_name));
+  }
+  if (item.named_measure) {
+    parts.push('Measure: ' + escapeHTML(item.named_measure));
+  }
+  if (item.role) {
+    parts.push('Role: ' + escapeHTML(item.role));
+  }
+  return parts.join(' &middot; ');
+}
+
+function doRemove(idx) {
+  removeFromBasket(idx);
+  renderBasketPage();
+}
+
+function doClearAll() {
+  if (confirm('Remove all items from your list?')) {
+    clearBasket();
+    renderBasketPage();
+  }
+}
+
+/* ---- Download helpers ---- */
+
+function getCheckedItems(type) {
+  var grouped = getBasketGrouped();
+  var items;
+  if (type === 'variable') items = grouped.variables;
+  else if (type === 'question') items = grouped.questions;
+  else items = grouped.questionnaires;
+
+  var section = document.getElementById('section-' + type);
+  if (!section) return items;
+
+  var checkboxes = section.querySelectorAll('.basket-item-check');
+  var checked = [];
+  for (var i = 0; i < checkboxes.length; i++) {
+    if (checkboxes[i].checked && items[i]) {
+      checked.push(items[i]);
+    }
+  }
+  return checked.length > 0 ? checked : items;
+}
+
+function doDownloadCSV(type) {
+  var items = getCheckedItems(type);
+  if (!items.length) return;
+  downloadCSV(items, 'ghripps_' + type + 's.csv');
+}
+
+function doDownloadExcel(type) {
+  var items = getCheckedItems(type);
+  if (!items.length) return;
+  downloadExcel(items, 'ghripps_' + type + 's.xml');
+}
+
+function doDownloadPDF(type) {
+  var items = getCheckedItems(type);
+  if (!items.length) return;
+
+  var label = type.charAt(0).toUpperCase() + type.slice(1) + 's';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8">';
+  html += '<title>' + escapeHTML(label) + ' Codebook — Gambling Data Finder</title>';
+  html += '<style>';
+  html += 'body{font-family:"Segoe UI",system-ui,sans-serif;max-width:800px;margin:2rem auto;padding:0 1.5rem;color:#1a1a2e;line-height:1.5}';
+  html += 'h1{font-size:1.4rem;border-bottom:2px solid #d97706;padding-bottom:.4rem;margin-bottom:1.5rem}';
+  html += '.item{margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid #e2e8f0}';
+  html += '.item-title{font-weight:700;font-size:1rem;color:#0f172a}';
+  html += '.item-meta{font-size:.85rem;color:#64748b;margin-top:.25rem}';
+  html += '.item-meta span{margin-right:1rem}';
+  html += '@media print{body{margin:0;padding:1cm} .no-print{display:none}}';
+  html += '</style></head><body>';
+  html += '<h1>' + escapeHTML(label) + ' Codebook</h1>';
+  html += '<p style="font-size:.85rem;color:#64748b;margin-bottom:1.5rem">' + items.length + ' item(s) exported from the CYP-GHRIP Gambling Data Finder</p>';
+
+  items.forEach(function (item, i) {
+    html += '<div class="item">';
+    if (type === 'variable') {
+      html += '<div class="item-title">' + escapeHTML(item.variable_label || item.variable_name || '(no label)') + '</div>';
+      html += '<div class="item-meta">';
+      if (item.variable_name) html += '<span><strong>Variable:</strong> ' + escapeHTML(item.variable_name) + '</span>';
+      if (item.dataset_name || item.dataset_id) html += '<span><strong>Study:</strong> ' + escapeHTML(item.dataset_name || item.dataset_id) + '</span>';
+      if (item.wave_year) html += '<span><strong>Wave:</strong> ' + escapeHTML(item.wave_year) + '</span>';
+      if (item.role) html += '<span><strong>Role:</strong> ' + escapeHTML(item.role) + '</span>';
+      if (item.named_measure) html += '<span><strong>Measure:</strong> ' + escapeHTML(item.named_measure) + '</span>';
+      if (item.construct_category) html += '<span><strong>Category:</strong> ' + escapeHTML(item.construct_category) + '</span>';
+      if (item.age_group) html += '<span><strong>Age group:</strong> ' + escapeHTML(item.age_group) + '</span>';
+      html += '</div>';
+    } else if (type === 'question') {
+      html += '<div class="item-title">' + escapeHTML(item.question_text || item.variable_label || item.title || '(no text)') + '</div>';
+      html += '<div class="item-meta">';
+      if (item.variable_name) html += '<span><strong>Variable:</strong> ' + escapeHTML(item.variable_name) + '</span>';
+      if (item.dataset_name || item.dataset_id) html += '<span><strong>Study:</strong> ' + escapeHTML(item.dataset_name || item.dataset_id) + '</span>';
+      if (item.wave_year) html += '<span><strong>Wave:</strong> ' + escapeHTML(item.wave_year) + '</span>';
+      if (item.named_measure) html += '<span><strong>Measure:</strong> ' + escapeHTML(item.named_measure) + '</span>';
+      html += '</div>';
+    } else {
+      html += '<div class="item-title">' + escapeHTML(item.title || item.questionnaire_name || item.named_measure || '(untitled)') + '</div>';
+      html += '<div class="item-meta">';
+      if (item.dataset_name || item.dataset_id) html += '<span><strong>Study:</strong> ' + escapeHTML(item.dataset_name || item.dataset_id) + '</span>';
+      if (item.wave_year) html += '<span><strong>Wave:</strong> ' + escapeHTML(item.wave_year) + '</span>';
+      html += '</div>';
+    }
+    html += '</div>';
+  });
+
+  html += '<p class="no-print" style="margin-top:2rem;text-align:center"><button onclick="window.print()" style="padding:.5rem 1.5rem;font-size:.9rem;cursor:pointer">Print / Save as PDF</button></p>';
+  html += '</body></html>';
+
+  var win = window.open('', '_blank');
+  if (win) {
+    win.document.write(html);
+    win.document.close();
+  }
+}
+</script>
+</body>
+</html>

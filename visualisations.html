@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Visualisations - Gambling Data Finder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header"></div>
+
+<div class="page-content">
+  <h1 style="font-size:1.4rem;color:var(--navy);margin-bottom:.3rem;">Data visualisations</h1>
+  <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:1.5rem;">Explore the shape of the CYP-GHRIP data landscape: study coverage, variable depth, gambling measures, access routes, geography, age groups and filtered search summaries.</p>
+
+  <div class="viz-grid">
+    <div class="viz-card viz-card-wide">
+      <h3>Dataset coverage matrix</h3>
+      <p>Counts and metadata completeness by study or dataset.</p>
+      <div id="coverage-matrix"><div class="loading">Loading coverage matrix...</div></div>
+    </div>
+
+    <div class="viz-card">
+      <h3>Variables by dataset</h3>
+      <p>Studies with the largest number of indexed variables.</p>
+      <div id="variables-by-dataset"><div class="loading">Loading chart...</div></div>
+    </div>
+
+    <div class="viz-card">
+      <h3>Gambling measures by dataset</h3>
+      <p>Studies with the most variables classified as gambling measures.</p>
+      <div id="gambling-by-dataset"><div class="loading">Loading chart...</div></div>
+    </div>
+
+    <div class="viz-card">
+      <h3>Data access overview</h3>
+      <p>Broad access categories inferred from each study's access information.</p>
+      <div id="access-overview"><div class="loading">Loading chart...</div></div>
+    </div>
+
+    <div class="viz-card">
+      <h3>Country and geography coverage</h3>
+      <p>Number of studies or datasets by country or geographic scope.</p>
+      <div id="country-coverage"><div class="loading">Loading chart...</div></div>
+    </div>
+
+    <div class="viz-card viz-card-wide">
+      <h3>Age group coverage</h3>
+      <p>Indexed variables by age group or population label.</p>
+      <div id="age-coverage"><div class="loading">Loading chart...</div></div>
+    </div>
+
+    <div class="viz-card viz-card-wide">
+      <h3>Search results summary</h3>
+      <p>Filter the variable index and see the shape of the matching records.</p>
+      <div class="viz-toolbar">
+        <div class="filter-group">
+          <label class="filter-label" for="viz-query">Keyword</label>
+          <input class="filter-select" id="viz-query" type="text" placeholder="Search gambling harm, participation, risk factors...">
+        </div>
+        <div class="filter-group">
+          <label class="filter-label" for="viz-role">Role</label>
+          <select class="filter-select" id="viz-role"></select>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label" for="viz-construct">Topic</label>
+          <select class="filter-select" id="viz-construct"></select>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label" for="viz-dataset">Dataset</label>
+          <select class="filter-select" id="viz-dataset"></select>
+        </div>
+        <button class="btn btn-primary" id="viz-reset" type="button">Reset</button>
+      </div>
+      <div id="search-summary"><div class="loading">Loading summary...</div></div>
+    </div>
+  </div>
+</div>
+
+<div id="footer"></div>
+<script src="app.js"></script>
+<script>
+const CHART_COLORS = ['#0d9488','#d97706','#334155','#e11d48','#059669','#7c3aed','#0284c7','#ca8a04','#be123c','#475569'];
+let datasets = [];
+let variables = [];
+let questionnaires = [];
+let sources = [];
+let metaCheck = [];
+let facets = null;
+
+document.addEventListener('DOMContentLoaded', async () => {
+  document.getElementById('header').innerHTML = renderNav('visualisations');
+  document.getElementById('footer').innerHTML = renderFooter();
+  updateBasketCount();
+
+  [datasets, variables, questionnaires, sources, metaCheck, facets] = await Promise.all([
+    fetchJSON('data/datasets.json'),
+    loadVariables(),
+    fetchJSON('data/questionnaires.json'),
+    fetchJSON('data/sources.json'),
+    fetchJSON('data/metadata_check.json'),
+    fetchJSON('data/facets.json'),
+  ]);
+
+  datasets = datasets || [];
+  variables = variables || [];
+  questionnaires = questionnaires || [];
+  sources = sources || [];
+  metaCheck = metaCheck || [];
+
+  renderCoverageMatrix();
+  renderVariablesByDataset();
+  renderGamblingByDataset();
+  renderAccessOverview();
+  renderCountryCoverage();
+  renderAgeCoverage();
+  setupSearchSummary();
+});
+
+function countBy(items, getter) {
+  const counts = {};
+  items.forEach(item => {
+    const key = getter(item) || 'Unknown';
+    counts[key] = (counts[key] || 0) + 1;
+  });
+  return counts;
+}
+
+function topCounts(counts, limit) {
+  return Object.keys(counts)
+    .map(label => ({ label, value: counts[label] }))
+    .sort((a, b) => b.value - a.value || a.label.localeCompare(b.label))
+    .slice(0, limit);
+}
+
+function datasetName(id) {
+  const d = datasets.find(x => x['Dataset_ID'] === id);
+  return d ? (d['Dataset name'] || id) : id;
+}
+
+function renderBar(containerId, rows, options) {
+  const el = document.getElementById(containerId);
+  if (!rows.length) {
+    el.innerHTML = '<div class="viz-empty">No data available.</div>';
+    return;
+  }
+  const max = Math.max(...rows.map(r => r.value), 1);
+  const color = options.color || CHART_COLORS[0];
+  el.innerHTML = '<div class="bar-chart">' + rows.map(r => {
+    const pct = Math.max((r.value / max) * 100, 1);
+    const labelClass = options.labelClass || '';
+    const row = `<div class="bar-row">
+      <div class="bar-label ${labelClass}" title="${escapeHTML(r.label)}">${escapeHTML(r.label)}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${color};"></div></div>
+      <div class="bar-val">${r.value.toLocaleString()}</div>
+    </div>`;
+    return r.href ? `<a class="bar-row-link" href="${r.href}">${row}</a>` : row;
+  }).join('') + '</div>';
+}
+
+function renderDonut(containerId, rows) {
+  const el = document.getElementById(containerId);
+  if (!rows.length) {
+    el.innerHTML = '<div class="viz-empty">No data available.</div>';
+    return;
+  }
+  const total = rows.reduce((sum, r) => sum + r.value, 0);
+  let offset = 25;
+  const circles = rows.map((r, i) => {
+    const pct = total ? (r.value / total) * 100 : 0;
+    const circle = `<circle cx="80" cy="80" r="62" fill="none" stroke="${CHART_COLORS[i % CHART_COLORS.length]}" stroke-width="24" stroke-dasharray="${pct} ${100 - pct}" stroke-dashoffset="${offset}" pathLength="100"></circle>`;
+    offset -= pct;
+    return circle;
+  }).join('');
+  const legend = rows.map((r, i) => {
+    const pct = total ? Math.round((r.value / total) * 100) : 0;
+    return `<div class="legend-item">
+      <span class="legend-dot" style="background:${CHART_COLORS[i % CHART_COLORS.length]}"></span>
+      <span class="legend-label">${escapeHTML(r.label)}</span>
+      <span class="legend-val">${r.value.toLocaleString()} (${pct}%)</span>
+    </div>`;
+  }).join('');
+  el.innerHTML = `<div class="donut-container">
+    <svg class="donut-svg" viewBox="0 0 160 160" aria-hidden="true">
+      <circle cx="80" cy="80" r="62" fill="none" stroke="#f1f5f9" stroke-width="24"></circle>
+      ${circles}
+      <text x="80" y="75" text-anchor="middle" style="font:700 22px var(--font-display);fill:var(--navy);">${total.toLocaleString()}</text>
+      <text x="80" y="95" text-anchor="middle" style="font:500 11px var(--font-body);fill:var(--text-muted);">datasets</text>
+    </svg>
+    <div class="donut-legend">${legend}</div>
+  </div>`;
+}
+
+function renderCoverageMatrix() {
+  const varCounts = countBy(variables, v => v.dataset_id);
+  const gambCounts = countBy(variables.filter(v => v.role === 'Gambling measure'), v => v.dataset_id);
+  const qCounts = countBy(questionnaires, q => q['Dataset_ID']);
+  const srcCounts = countBy(sources, s => s['Dataset_ID']);
+  const metaMap = {};
+  metaCheck.forEach(m => { metaMap[m['Dataset_ID']] = m; });
+  const maxVars = Math.max(...Object.values(varCounts), 1);
+  const maxGamb = Math.max(...Object.values(gambCounts), 1);
+
+  function countCell(value, max) {
+    const intensity = value ? 0.16 + (value / max) * 0.74 : 0;
+    const bg = value ? `rgba(13,148,136,${intensity})` : '#f8fafc';
+    const color = intensity > .55 ? '#fff' : 'var(--navy)';
+    return `<td class="heatmap-cell" style="background:${bg};color:${color};">${value ? value.toLocaleString() : '0'}</td>`;
+  }
+  function statusCell(value) {
+    const v = (value || '').toLowerCase();
+    if (v.startsWith('yes')) return '<td class="heatmap-cell" style="background:#d1fae5;color:#065f46;">Yes</td>';
+    if (v.startsWith('partial')) return '<td class="heatmap-cell" style="background:#fef3c7;color:#92400e;">Partial</td>';
+    return '<td class="heatmap-cell" style="background:#f8fafc;color:var(--text-muted);">No</td>';
+  }
+
+  const rows = datasets
+    .slice()
+    .sort((a, b) => (b['Dataset name'] || '').localeCompare(a['Dataset name'] || ''))
+    .sort((a, b) => (varCounts[b['Dataset_ID']] || 0) - (varCounts[a['Dataset_ID']] || 0));
+
+  let html = `<div class="heatmap-scroll"><table class="heatmap-table coverage-mini-table">
+    <thead><tr>
+      <th>Dataset</th><th>Variables</th><th>Gambling measures</th><th>Questionnaires</th><th>Sources</th><th>Variable names</th><th>Documentation</th><th>Access</th>
+    </tr></thead><tbody>`;
+  rows.forEach(d => {
+    const id = d['Dataset_ID'];
+    const mc = metaMap[id] || {};
+    html += `<tr>
+      <td class="heatmap-row-label"><a class="viz-table-link" href="study.html?id=${encodeURIComponent(id)}">${escapeHTML(d['Dataset name'] || id)}</a></td>
+      ${countCell(varCounts[id] || 0, maxVars)}
+      ${countCell(gambCounts[id] || 0, maxGamb)}
+      ${countCell(qCounts[id] || 0, Math.max(...Object.values(qCounts), 1))}
+      ${countCell(srcCounts[id] || 0, Math.max(...Object.values(srcCounts), 1))}
+      ${statusCell(mc['Variable names public?'])}
+      ${statusCell(mc['Question wording public?'])}
+      <td class="heatmap-cell" style="background:#fff;color:var(--text-muted);">${escapeHTML(classifyAccess(d))}</td>
+    </tr>`;
+  });
+  html += '</tbody></table></div><div class="heatmap-legend"><span>Lower</span><span class="heatmap-legend-bar"></span><span>Higher</span></div>';
+  document.getElementById('coverage-matrix').innerHTML = html;
+}
+
+function renderVariablesByDataset() {
+  const rows = topCounts(countBy(variables, v => v.dataset_id), 15).map(r => ({
+    label: datasetName(r.label),
+    value: r.value,
+    href: 'study.html?id=' + encodeURIComponent(r.label)
+  }));
+  renderBar('variables-by-dataset', rows, { color: '#0d9488', labelClass: 'bar-label-wide' });
+}
+
+function renderGamblingByDataset() {
+  const rows = topCounts(countBy(variables.filter(v => v.role === 'Gambling measure'), v => v.dataset_id), 15).map(r => ({
+    label: datasetName(r.label),
+    value: r.value,
+    href: 'study.html?id=' + encodeURIComponent(r.label)
+  }));
+  renderBar('gambling-by-dataset', rows, { color: '#d97706', labelClass: 'bar-label-wide' });
+}
+
+function classifyAccess(d) {
+  const text = ((d['Access type'] || '') + ' ' + (d['Access difficulty'] || '')).toLowerCase();
+  if (!text.trim()) return 'Unknown';
+  if (text.includes('open') || text.includes('public')) return 'Open/public metadata';
+  if (text.includes('controlled') || text.includes('managed') || text.includes('application') || text.includes('registration') || text.includes('safeguarded')) return 'Controlled/managed';
+  if (text.includes('gated') || text.includes('restricted') || text.includes('tre')) return 'Restricted/TRE';
+  return 'Other/unclear';
+}
+
+function renderAccessOverview() {
+  renderDonut('access-overview', topCounts(countBy(datasets, classifyAccess), 8));
+}
+
+function renderCountryCoverage() {
+  const rows = topCounts(countBy(datasets, d => d['Country']), 12);
+  renderBar('country-coverage', rows, { color: '#334155', labelClass: 'bar-label-country' });
+}
+
+function renderAgeCoverage() {
+  const rows = topCounts(countBy(variables, v => v.age_group || 'Unspecified'), 18);
+  renderBar('age-coverage', rows, { color: '#7c3aed', labelClass: 'bar-label-wide' });
+}
+
+function setupSearchSummary() {
+  const query = document.getElementById('viz-query');
+  const role = document.getElementById('viz-role');
+  const construct = document.getElementById('viz-construct');
+  const dataset = document.getElementById('viz-dataset');
+  const reset = document.getElementById('viz-reset');
+
+  populateSelect(role, facets ? facets.roles : [], '', 'All roles');
+  populateSelect(construct, facets ? facets.construct_categories : [], '', 'All topics');
+  populateSelect(dataset, facets ? facets.datasets : [], '', 'All datasets');
+
+  function update() {
+    const filters = {
+      role: role.value,
+      dataset: dataset.value,
+      construct: construct.value,
+      risk_domain: '',
+      named_measure: '',
+      wave_year: '',
+      age_group: ''
+    };
+    const out = searchVariables(variables, query.value.trim(), filters);
+    renderSearchSummary(out.results);
+  }
+
+  [query, role, construct, dataset].forEach(el => el.addEventListener('input', update));
+  [role, construct, dataset].forEach(el => el.addEventListener('change', update));
+  reset.addEventListener('click', () => {
+    query.value = '';
+    role.value = '';
+    construct.value = '';
+    dataset.value = '';
+    update();
+  });
+  update();
+}
+
+function renderSearchSummary(results) {
+  const uniqueDatasets = new Set(results.map(v => v.dataset_id).filter(Boolean));
+  const gambling = results.filter(v => v.role === 'Gambling measure').length;
+  const risk = results.filter(v => v.role === 'Risk/protective factor').length;
+  const measures = new Set(results.map(v => v.named_measure).filter(Boolean)).size;
+  const topicRows = topCounts(countBy(results, v => v.construct_category || 'Uncategorised'), 10);
+  const datasetRows = topCounts(countBy(results, v => v.dataset_id || 'Unknown'), 10).map(r => ({
+    label: datasetName(r.label),
+    value: r.value,
+    href: r.label === 'Unknown' ? '' : 'study.html?id=' + encodeURIComponent(r.label)
+  }));
+
+  document.getElementById('search-summary').innerHTML = `
+    <div class="viz-summary-grid">
+      <div class="viz-summary-card"><div class="viz-summary-num">${results.length.toLocaleString()}</div><div class="viz-summary-label">Variables</div></div>
+      <div class="viz-summary-card"><div class="viz-summary-num">${uniqueDatasets.size.toLocaleString()}</div><div class="viz-summary-label">Datasets</div></div>
+      <div class="viz-summary-card"><div class="viz-summary-num">${gambling.toLocaleString()}</div><div class="viz-summary-label">Gambling measures</div></div>
+      <div class="viz-summary-card"><div class="viz-summary-num">${risk.toLocaleString()}</div><div class="viz-summary-label">Risk/protective</div></div>
+      <div class="viz-summary-card"><div class="viz-summary-num">${measures.toLocaleString()}</div><div class="viz-summary-label">Named measures</div></div>
+    </div>
+    <div class="viz-summary-panels">
+      <div class="viz-summary-panel"><h3>Matching topics</h3><div id="summary-topics"></div></div>
+      <div class="viz-summary-panel"><h3>Matching datasets</h3><div id="summary-datasets"></div></div>
+    </div>`;
+  renderBar('summary-topics', topicRows, { color: '#059669', labelClass: 'bar-label-wide' });
+  renderBar('summary-datasets', datasetRows, { color: '#0284c7', labelClass: 'bar-label-wide' });
+}
+</script>
+</body>
+</html>

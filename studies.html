@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Datasets — Gambling Data Finder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header"></div>
+
+<div class="page-content">
+  <h1 style="font-size:1.4rem;color:var(--navy);margin-bottom:.3rem;">All studies and datasets</h1>
+  <p style="color:var(--text-muted);margin-bottom:1.5rem;font-size:.9rem;" id="studies-summary"></p>
+
+  <div class="studies-grid" id="studies-grid">
+    <div class="loading">Loading datasets...</div>
+  </div>
+</div>
+
+<div id="footer"></div>
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  document.getElementById('header').innerHTML = renderNav('');
+  document.getElementById('footer').innerHTML = renderFooter();
+  updateBasketCount();
+
+  const [datasets, variables] = await Promise.all([
+    fetchJSON('data/datasets.json'),
+    loadVariables(),
+  ]);
+
+  const grid = document.getElementById('studies-grid');
+  grid.innerHTML = '';
+
+  if (!datasets || datasets.length === 0) {
+    grid.innerHTML = '<p>No datasets found.</p>';
+    return;
+  }
+
+  document.getElementById('studies-summary').textContent =
+    `${datasets.length} studies and datasets with ${(variables||[]).length.toLocaleString()} variables indexed for CYP-GHRIP evidence mapping`;
+
+  const varCounts = {};
+  const gambCounts = {};
+  if (variables) {
+    variables.forEach(v => {
+      varCounts[v.dataset_id] = (varCounts[v.dataset_id]||0) + 1;
+      if (v.role === 'Gambling measure') gambCounts[v.dataset_id] = (gambCounts[v.dataset_id]||0) + 1;
+    });
+  }
+
+  const sorted = datasets
+    .filter(d => d['Dataset_ID'] || d['Dataset name'])
+    .sort((a, b) => (a['Dataset name']||'').localeCompare(b['Dataset name']||''));
+
+  sorted.forEach(d => {
+    const id = d['Dataset_ID'] || d['Dataset name'];
+    const name = d['Dataset name'] || id;
+    const country = d['Country'] || '';
+    const age = d['Age focus / population'] || '';
+    const design = d['Study design'] || '';
+    const nVars = varCounts[id] || 0;
+    const nGamb = gambCounts[id] || 0;
+    const accessType = d['Access type'] || d['Access difficulty'] || '';
+
+    const card = document.createElement('a');
+    card.href = `study.html?id=${encodeURIComponent(id)}`;
+    card.className = 'study-card';
+    card.innerHTML = `
+      <div class="study-card-id">${escapeHTML(id)}</div>
+      <div class="study-card-name">${escapeHTML(name)}</div>
+      <div class="study-card-meta">${escapeHTML(country)}${design ? ' · ' + escapeHTML(design) : ''}${age ? ' · ' + escapeHTML(age) : ''}</div>
+      <div class="study-card-stats">
+        <span class="study-card-stat">${nVars.toLocaleString()} variables</span>
+        ${nGamb ? `<span class="study-card-stat">${nGamb.toLocaleString()} gambling</span>` : ''}
+        ${accessType ? `<span class="study-card-stat" style="color:var(--text-muted);">${escapeHTML(truncate(accessType, 25))}</span>` : ''}
+      </div>`;
+    grid.appendChild(card);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dataset Coverage — Gambling Data Finder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header"></div>
+
+<div class="coverage-wide">
+  <h1 style="font-size:1.4rem;color:var(--navy);margin-bottom:.3rem;">Dataset coverage</h1>
+  <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:1.5rem;">Overview of what metadata is available for each study or dataset relevant to children and young people's gambling harm research. Use this to identify data access routes, extracted measures and gaps for further review.</p>
+
+  <div class="coverage-wrapper">
+    <div id="coverage-content"><div class="loading">Loading coverage data...</div></div>
+  </div>
+</div>
+
+<div id="footer"></div>
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  document.getElementById('header').innerHTML = renderNav('coverage');
+  document.getElementById('footer').innerHTML = renderFooter();
+  updateBasketCount();
+
+  const [datasets, variables, questionnaires, sources, metaCheck] = await Promise.all([
+    fetchJSON('data/datasets.json'),
+    loadVariables(),
+    fetchJSON('data/questionnaires.json'),
+    fetchJSON('data/sources.json'),
+    fetchJSON('data/metadata_check.json'),
+  ]);
+
+  if (!datasets) { document.getElementById('coverage-content').innerHTML = '<p>Unable to load data.</p>'; return; }
+
+  const varCounts = {}, gambCounts = {}, qCounts = {}, srcCounts = {};
+  (variables||[]).forEach(v => { varCounts[v.dataset_id] = (varCounts[v.dataset_id]||0) + 1; if (v.role === 'Gambling measure') gambCounts[v.dataset_id] = (gambCounts[v.dataset_id]||0) + 1; });
+  (questionnaires||[]).forEach(q => { qCounts[q['Dataset_ID']] = (qCounts[q['Dataset_ID']]||0) + 1; });
+  (sources||[]).forEach(s => { srcCounts[s['Dataset_ID']] = (srcCounts[s['Dataset_ID']]||0) + 1; });
+
+  const metaMap = {};
+  (metaCheck||[]).forEach(m => { metaMap[m['Dataset_ID']] = m; });
+
+  const sorted = datasets.sort((a,b) => (a['Dataset name']||'').localeCompare(b['Dataset name']||''));
+
+  let html = `<table class="coverage-table">
+    <thead><tr>
+      <th>Dataset</th>
+      <th>Country</th>
+      <th>Design</th>
+      <th>Age group</th>
+      <th>Variables</th>
+      <th>Gambling measures</th>
+      <th>Questionnaires</th>
+      <th>Sources</th>
+      <th>Variable names</th>
+      <th>Documentation</th>
+      <th>Access</th>
+    </tr></thead><tbody>`;
+
+  sorted.forEach(d => {
+    const id = d['Dataset_ID'];
+    const mc = metaMap[id] || {};
+    const nv = varCounts[id] || 0;
+    const ng = gambCounts[id] || 0;
+    const nq = qCounts[id] || 0;
+    const ns = srcCounts[id] || 0;
+
+    function tick(val) {
+      if (!val) return '<span class="cov-no">—</span>';
+      const v = val.toLowerCase();
+      if (v.startsWith('yes')) return '<span class="cov-yes">Yes</span>';
+      if (v.startsWith('partial')) return '<span class="cov-partial">Partial</span>';
+      return '<span class="cov-no">' + escapeHTML(val) + '</span>';
+    }
+
+    html += `<tr>
+      <td><a href="study.html?id=${encodeURIComponent(id)}" style="color:var(--amber);font-weight:600;">${escapeHTML(d['Dataset name']||id)}</a></td>
+      <td>${escapeHTML(d['Country']||'')}</td>
+      <td>${escapeHTML(d['Study design']||'')}</td>
+      <td>${escapeHTML(d['Age focus / population']||'')}</td>
+      <td class="cov-num" style="font-weight:600;">${nv ? nv.toLocaleString() : '<span class="cov-no">0</span>'}</td>
+      <td class="cov-num" style="font-weight:600;">${ng ? ng.toLocaleString() : '<span class="cov-no">0</span>'}</td>
+      <td class="cov-num">${nq || '<span class="cov-no">0</span>'}</td>
+      <td class="cov-num">${ns || '<span class="cov-no">0</span>'}</td>
+      <td>${tick(mc['Variable names public?'])}</td>
+      <td>${tick(mc['Question wording public?'])}</td>
+      <td style="font-size:.72rem;">${escapeHTML(d['Access type']||d['Access difficulty']||'')}</td>
+    </tr>`;
+  });
+
+  html += '</tbody></table>';
+  document.getElementById('coverage-content').innerHTML = html;
+});
+</script>
+</body>
+</html>
