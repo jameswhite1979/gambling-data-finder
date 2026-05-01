@@ -36,9 +36,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
-  const measures = facets.named_measures.filter(m => m).sort();
+  const gamblingMeasureNames = new Set(
+    variables
+      .filter(v => v.role === 'Gambling measure' && v.named_measure)
+      .map(v => v.named_measure)
+  );
+  const measures = facets.named_measures
+    .filter(m => m && gamblingMeasureNames.has(m))
+    .sort((a, b) => a.localeCompare(b));
   const rows = measures.map(m => {
-    const vars = variables.filter(v => v.named_measure === m);
+    const vars = variables.filter(v => v.role === 'Gambling measure' && v.named_measure === m);
     const datasets = [...new Set(vars.map(v => v.dataset_id))];
     const constructs = [...new Set(vars.map(v => v.construct_category).filter(Boolean))];
     const gmEntry = gamblingMeasures ? gamblingMeasures.find(g => g['Named measure'] === m || g['Variable/item ID'] === m) : null;
