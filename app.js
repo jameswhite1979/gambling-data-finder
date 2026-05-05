@@ -66,6 +66,9 @@ function renderNav(activePage) {
   return `<header class="site-header">
   <div class="header-inner">
     <a href="index.html" class="logo"><span class="logo-text">Gambling Data Finder</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('nav-open');this.setAttribute('aria-expanded',this.classList.contains('open'))">
+      <span class="nav-toggle-icon"></span>
+    </button>
     <nav>
       ${links}
       <a href="basket.html" class="nav-basket-link${activePage === 'basket' ? ' active' : ''}">

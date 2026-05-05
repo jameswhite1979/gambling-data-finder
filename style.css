@@ -67,6 +67,24 @@ nav a{
 nav a:hover{color:#fff;background:rgba(255,255,255,.1)}
 nav a.active{color:var(--amber-light);background:rgba(217,119,6,.15)}
 
+/* Hamburger toggle - hidden on desktop */
+.nav-toggle{
+  display:none;background:none;border:none;cursor:pointer;
+  padding:.5rem;margin-left:auto;
+}
+.nav-toggle-icon,
+.nav-toggle-icon::before,
+.nav-toggle-icon::after{
+  display:block;width:24px;height:2.5px;background:#fff;border-radius:2px;
+  transition:all .3s ease;position:relative;
+}
+.nav-toggle-icon::before,.nav-toggle-icon::after{content:'';position:absolute;left:0;width:24px}
+.nav-toggle-icon::before{top:-7px}
+.nav-toggle-icon::after{top:7px}
+.nav-toggle.open .nav-toggle-icon{background:transparent}
+.nav-toggle.open .nav-toggle-icon::before{top:0;transform:rotate(45deg)}
+.nav-toggle.open .nav-toggle-icon::after{top:0;transform:rotate(-45deg)}
+
 .nav-basket-link{position:relative}
 .basket-badge{
   position:absolute;top:2px;right:2px;
@@ -702,11 +720,25 @@ nav a.active{color:var(--amber-light);background:rgba(217,119,6,.15)}
   .viz-toolbar{grid-template-columns:1fr}
   .bar-label-wide,.bar-label-country{width:115px}
 }
-@media(max-width:640px){
-  .header-inner{gap:.5rem;padding:.5rem .75rem}
+@media(max-width:768px){
+  .nav-toggle{display:block}
+  .header-inner{flex-wrap:wrap;padding:.5rem .75rem}
   .logo-text{font-size:1.35rem}
-  nav{gap:.12rem}
-  nav a{padding:.32rem .42rem;font-size:.82rem}
+  nav{
+    display:none;flex-direction:column;align-items:stretch;
+    width:100%;overflow:visible;gap:0;
+    background:var(--navy-light);border-radius:var(--radius);
+    margin-top:.4rem;padding:.4rem 0;
+  }
+  nav.nav-open{display:flex}
+  nav a{
+    padding:.65rem 1rem;font-size:1rem;border-radius:0;
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  nav a:last-child{border-bottom:none}
+  nav a:hover,nav a.active{background:rgba(255,255,255,.08)}
+}
+@media(max-width:640px){
   .metrics-grid{grid-template-columns:repeat(2,1fr)}
   .studies-grid{grid-template-columns:1fr}
   .topic-grid{grid-template-columns:1fr}
