@@ -459,5 +459,485 @@
   "URL / DOI": "https://www.samhsa.gov/data/publication/gambling-lottery-sociodemographic-correlates-across-lifespan",
   "Notes": "SAMHSA/CBHSQ record identifies NSDUH use for a Journal of Gambling Studies paper on lottery gambling across the lifespan.",
   "Search source": "Targeted PubMed/web/Google Scholar-style search, 2026-05-05"
+ },
+ {
+  "Dataset ID": "ALSPAC",
+  "Paper / documentation title": "Gambling in children and adolescents",
+  "Authors / year": "Emond and Griffiths, 2020",
+  "Source type": "Review",
+  "URL / DOI": "https://doi.org/10.1093/bmb/ldaa027",
+  "Notes": "Review using ALSPAC and Gambling Commission data on prevalence, risk factors, online gambling. PMID 32932525."
+ },
+ {
+  "Dataset ID": "ALSPAC",
+  "Paper / documentation title": "Predicting disordered gambling across adolescence and young adulthood from polygenic contributions to Big 5 personality traits",
+  "Authors / year": "Spychala et al., 2021",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1111/add.15648",
+  "Notes": "Polygenic scores for Big 5 traits and disordered gambling at ages 17, 20, 24. PMID 34342067."
+ },
+ {
+  "Dataset ID": "ALSPAC",
+  "Paper / documentation title": "The relationship between PGSI scores and suicidality: Results of a 9-year cohort study",
+  "Authors / year": "Bastiani et al., 2025",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1111/add.70156",
+  "Notes": "PGSI and suicide attempts at ages 24-25; longitudinal 1-5 year prediction. PMID 40957451."
+ },
+ {
+  "Dataset ID": "ALSPAC",
+  "Paper / documentation title": "Gambling by Young Adults in the UK During COVID-19 Lockdown",
+  "Authors / year": "Emond et al., 2021",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1007/s10899-021-10029-y",
+  "Notes": "Gambling frequency and activities during first COVID-19 lockdown in May 2020. PMID 33997939."
+ },
+ {
+  "Dataset ID": "ALSPAC",
+  "Paper / documentation title": "Adolescent body dissatisfaction and disordered eating: Predictors of later risky health behaviours",
+  "Authors / year": "Bornioli et al., 2019",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1016/j.socscimed.2019.112458",
+  "Notes": "Body dissatisfaction at 14 predicting gambling and other risky behaviours at 21. PMID 31450163."
+ },
+ {
+  "Dataset ID": "ALSPAC",
+  "Paper / documentation title": "Externalizing as a common genetic influence for substance use and behavioral conditions: A developmental perspective",
+  "Authors / year": "Deng et al., 2025",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1111/add.70163",
+  "Notes": "Externalizing polygenic risk scores predicting gambling alongside substance use across ages. PMID 40767372."
+ },
+ {
+  "Dataset ID": "ALSPAC",
+  "Paper / documentation title": "Multiple risk behaviour in adolescence is associated with substantial adverse health and social outcomes",
+  "Authors / year": "Campbell et al., 2020",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1016/j.ypmed.2020.106157",
+  "Notes": "Multiple risk behaviours at age 16 predicting problem gambling at age 18. PMID 32473267."
+ },
+ {
+  "Dataset ID": "MCS",
+  "Paper / documentation title": "Early-life maternal attachment and risky health behaviours in adolescence",
+  "Authors / year": "Reyes et al., 2021",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1186/s12889-021-12141-5",
+  "Notes": "Maternal attachment at 9 months predicting gambling at age 17. Only genuine MCS gambling paper (20 others use Cambridge Gambling Task). PMID 34749702."
+ },
+ {
+  "Dataset ID": "HSE",
+  "Paper / documentation title": "The association between health-related quality of life and problem gambling severity",
+  "Authors / year": "Moore et al., 2024",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1186/s12889-024-17816-3",
+  "Notes": "EQ-5D health utilities and PGSI categories using HSE data. PMID 38347455."
+ },
+ {
+  "Dataset ID": "HSE",
+  "Paper / documentation title": "The association between gambling frequency and risk of harm: Analysis using health survey data from England and Scotland",
+  "Authors / year": "Moore et al., 2026",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1111/add.70344",
+  "Notes": "Gambling frequency and PGSI scores across six waves of HSE and SHeS. PMID 41700531."
+ },
+ {
+  "Dataset ID": "HSE",
+  "Paper / documentation title": "The prevalence and clustering of alcohol consumption, gambling, smoking, and excess weight in an English adult population",
+  "Authors / year": "Burton et al., 2023",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1016/j.ypmed.2023.107683",
+  "Notes": "Clustering of at-risk gambling with drinking, smoking, overweight in HSE 2012-2018. PMID 37633599."
+ },
+ {
+  "Dataset ID": "HSE",
+  "Paper / documentation title": "Gambling and wellbeing: Uneven gains and deficits across risk levels",
+  "Authors / year": "Forrest et al., 2026",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1016/j.socscimed.2026.119060",
+  "Notes": "Subjective wellbeing across gambling risk spectrum in HSE. PMID 41633232."
+ },
+ {
+  "Dataset ID": "HSE",
+  "Paper / documentation title": "Exploring the impact on emotional wellbeing of having a spouse with elevated PGSI scores",
+  "Authors / year": "Tipping et al., 2025",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1111/add.70154",
+  "Notes": "Partner PGSI scores and individual emotional wellbeing using HSE and SHeS. PMID 40899112."
+ },
+ {
+  "Dataset ID": "HSE",
+  "Paper / documentation title": "The association between increasing levels of gambling harm and emotional health outcomes below the threshold of disordered gambling",
+  "Authors / year": "Tipping et al., 2025",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1016/j.puhe.2025.105899",
+  "Notes": "PGSI scores below 8 and mental health/wellbeing outcomes in HSE and SHeS. PMID 40782593."
+ },
+ {
+  "Dataset ID": "APMS",
+  "Paper / documentation title": "Latent class analysis of co-morbidity in the Adult Psychiatric Morbidity Survey 2007",
+  "Authors / year": "Weich et al., 2011",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1017/S0033291711000249",
+  "Notes": "Problem gambling as one of 15 mental health/behavioural problems in latent class co-morbidity analysis. PMID 21375797."
+ },
+ {
+  "Dataset ID": "APMS",
+  "Paper / documentation title": "Problem Gambling in the UK: Implications for Health, Psychosocial Adjustment and Health Care Utilization",
+  "Authors / year": "Cowlishaw and Kessler, 2015",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1159/000437260",
+  "Notes": "Problem gambling associations with mental/physical health, psychosocial adjustment, health care use. PMID 26343859."
+ },
+ {
+  "Dataset ID": "APMS",
+  "Paper / documentation title": "Gambling problems and the impact of family in UK armed forces veterans",
+  "Authors / year": "Dighton et al., 2018",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1556/2006.7.2018.25",
+  "Notes": "Problem gambling in UK veterans vs non-veterans using APMS 2007. PMID 29739238."
+ },
+ {
+  "Dataset ID": "APMS",
+  "Paper / documentation title": "Association Between Problem Gambling and Functional Disability",
+  "Authors / year": "Jacob et al., 2022",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1097/ADM.0000000000000880",
+  "Notes": "Problem gambling and functional disability (ADL/IADL) in UK adults. PMID 34128488."
+ },
+ {
+  "Dataset ID": "APMS",
+  "Paper / documentation title": "Relationship between ADHD symptoms and problem gambling: A mediation analysis",
+  "Authors / year": "Jacob et al., 2018",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1556/2006.7.2018.72",
+  "Notes": "ADHD symptoms and problem gambling with mediation by CMDs, BPD traits, stressful life events. PMID 30238788."
+ },
+ {
+  "Dataset ID": "BGPS",
+  "Paper / documentation title": "Disordered gambling, type of gambling and gambling involvement in the BGPS 2007",
+  "Authors / year": "LaPlante et al., 2009",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1093/eurpub/ckp177",
+  "Notes": "Gambling types and disordered gambling; gambling involvement as predictor. PMID 19892851."
+ },
+ {
+  "Dataset ID": "BGPS",
+  "Paper / documentation title": "Validation of the 8-item Attitudes Towards Gambling Scale (ATGS-8)",
+  "Authors / year": "Canale et al., 2016",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1016/j.addbeh.2015.12.009",
+  "Notes": "Psychometric validation of ATGS-8 in BGPS 2010. PMID 26722993."
+ },
+ {
+  "Dataset ID": "BGPS",
+  "Paper / documentation title": "The Extent and Distribution of Gambling-Related Harms and the Prevention Paradox",
+  "Authors / year": "Canale et al., 2016",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1556/2006.5.2016.023",
+  "Notes": "Prevention paradox: gambling harms distributed across low-to-moderate risk gamblers in BGPS 2010. PMID 27156382."
+ },
+ {
+  "Dataset ID": "BGPS",
+  "Paper / documentation title": "Sociodemographic correlates of internet gambling: findings from the 2007 BGPS",
+  "Authors / year": "Griffiths et al., 2009",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1089/cpb.2008.0196",
+  "Notes": "First national analysis of internet gamblers vs non-internet gamblers. PMID 19072080."
+ },
+ {
+  "Dataset ID": "BGPS",
+  "Paper / documentation title": "Validation of the reasons for gambling questionnaire (RGQ) in a British population survey",
+  "Authors / year": "Canale et al., 2015",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1016/j.addbeh.2015.01.035",
+  "Notes": "Validation of RGQ five-factor structure in BGPS 2010. PMID 25746361."
+ },
+ {
+  "Dataset ID": "BGPS",
+  "Paper / documentation title": "Gambling Motives: Application of the RGQ in an Australian Population Survey",
+  "Authors / year": "Francis et al., 2015",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1007/s10899-014-9458-1",
+  "Notes": "Cross-national comparison of gambling motives using RGQ developed for BGPS 2010. PMID 24705633."
+ },
+ {
+  "Dataset ID": "ADDHEALTH",
+  "Paper / documentation title": "Unraveling the Impact of Early Adversity and Perpetration on Problematic Gambling in Young Adults",
+  "Authors / year": "Falise et al., 2025",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1007/s10899-025-10439-2",
+  "Notes": "Childhood adversity and problematic gambling in 16,760 young adults aged 24-32. PMID 41082064."
+ },
+ {
+  "Dataset ID": "ADDHEALTH",
+  "Paper / documentation title": "A closer look at sex differences in genetic and environmental influences on gambling",
+  "Authors / year": "Slutske and Richmond-Rakerd, 2014",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1111/add.12345",
+  "Notes": "Genetic vs environmental influences on gambling in Add Health twins aged 18-28. PMID 24033632."
+ },
+ {
+  "Dataset ID": "ADDHEALTH",
+  "Paper / documentation title": "Confounding Bias in the Relationship Between Problem Gambling and Crime",
+  "Authors / year": "Dennison et al., 2021",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1007/s10899-020-09939-0",
+  "Notes": "Problem gambling and criminal behaviour; propensity score analysis in young adults. PMID 32185650."
+ },
+ {
+  "Dataset ID": "ADDHEALTH",
+  "Paper / documentation title": "Risk factors for homelessness: evidence from a population-based study",
+  "Authors / year": "Shelton et al., 2009",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1176/ps.2009.60.4.465",
+  "Notes": "Gambling addiction as one risk factor for lifetime homelessness. PMID 19339321."
+ },
+ {
+  "Dataset ID": "GUI98",
+  "Paper / documentation title": "A Longitudinal Examination of Young People's Gambling Behaviours and Participation in Team Sports",
+  "Authors / year": "Duggan and Mohan, 2022",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1007/s10899-022-10175-x",
+  "Notes": "Team sport participation and gambling at ages 17-20; online gambling increase from 2.6% to 9.3%. PMID 36527539."
+ },
+ {
+  "Dataset ID": "GUI98",
+  "Paper / documentation title": "Frequency of gambling, mental health, and financial stress among young adults",
+  "Authors / year": "Mohan, 2025",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1186/s12889-025-24930-3",
+  "Notes": "Weekly/monthly gambling at age 20 and associations with depression, life satisfaction, loan repayment difficulties. PMID 41382047."
+ },
+ {
+  "Dataset ID": "ESPAD",
+  "Paper / documentation title": "Gaming and gambling behaviours among Italian adolescents: a cross-sectional study",
+  "Authors / year": "Mosconi et al., 2025",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1016/S2468-2667(25)00274-9",
+  "Notes": "ESPAD Italia 2023; gaming-gambling convergence; SOGS-RA; loot box spending. Lancet Public Health. PMID 41391469."
+ },
+ {
+  "Dataset ID": "ESPAD",
+  "Paper / documentation title": "Cross-jurisdictional factors linked to gambling frequency in adolescents from 28 European countries: a machine learning approach",
+  "Authors / year": "Testa et al., 2025",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1016/j.psychres.2025.116602",
+  "Notes": "Random forest ML identifying predictors of gambling frequency across 28 countries. PMID 40578225."
+ },
+ {
+  "Dataset ID": "ESPAD",
+  "Paper / documentation title": "Non-prescribed pharmaceutical stimulants use among adolescents",
+  "Authors / year": "Baroni et al., 2023",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1016/j.drugalcdep.2023.110906",
+  "Notes": "ESPAD Italia 2019; gambling as risky behaviour co-occurring with stimulant use. PMID 37549544."
+ },
+ {
+  "Dataset ID": "ESPAD",
+  "Paper / documentation title": "Risk Factors for Excessive Social Media Use Differ from Those of Gambling and Gaming in Finnish Youth",
+  "Authors / year": "Castrén et al., 2022",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.3390/ijerph19042406",
+  "Notes": "ESPAD 2019 Finland; excessive social media vs gambling vs gaming risk factors. PMID 35206593."
+ },
+ {
+  "Dataset ID": "ESPAD",
+  "Paper / documentation title": "Money used in gaming is associated with problem gambling: Results of the ESPAD 2019 Finland",
+  "Authors / year": "Castrén et al., 2021",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1556/2006.2021.00076",
+  "Notes": "In-game spending and loot boxes as risk for gambling; parental monitoring protective. PMID 34797777."
+ },
+ {
+  "Dataset ID": "ESPAD",
+  "Paper / documentation title": "Gambling among 16-year-olds and associated covariates: A Nordic comparison",
+  "Authors / year": "Spångberg and Svensson, 2020",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1177/1403494820923814",
+  "Notes": "Nordic cross-country gambling comparison using ESPAD 2015. PMID 32522086."
+ },
+ {
+  "Dataset ID": "ESPAD",
+  "Paper / documentation title": "Problem gambling among Czech adolescents: An exploration of its relationship to early initiation of tobacco smoking",
+  "Authors / year": "Špolc et al., 2019",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1556/2006.8.2019.04",
+  "Notes": "ESPAD Czech Republic 2015; early daily smoking onset doubles risk of problem gambling. PMID 30704262."
+ },
+ {
+  "Dataset ID": "ESPAD",
+  "Paper / documentation title": "Prevalence of youth gambling and potential influence of substance use and other risk factors throughout 33 European countries",
+  "Authors / year": "Molinaro et al., 2018",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1111/add.14275",
+  "Notes": "22.6% of 16-year-olds gambled past year across 33 European countries. ESPAD 2015. PMID 29806197."
+ },
+ {
+  "Dataset ID": "ESPAD",
+  "Paper / documentation title": "I Am Becoming More and More Like My Eldest Brother!: Older siblings, adolescent gambling severity, and parental role",
+  "Authors / year": "Canale et al., 2017",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1007/s10899-016-9643-5",
+  "Notes": "ESPAD Italia 2012; older gambling siblings increase at-risk/problem gambling. PMID 27718036."
+ },
+ {
+  "Dataset ID": "ESPAD",
+  "Paper / documentation title": "Adolescent Gambling-Oriented Attitudes Mediate the Relationship Between Perceived Parental Knowledge and Adolescent Gambling",
+  "Authors / year": "Canale et al., 2016",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1007/s11121-016-0683-y",
+  "Notes": "ESPAD Italia 2012; parental knowledge reduces gambling via adolescent attitudes. PMID 27448214."
+ },
+ {
+  "Dataset ID": "ESPAD",
+  "Paper / documentation title": "Country- and individual-level determinants of probable problematic gambling in adolescence",
+  "Authors / year": "Molinaro et al., 2014",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1111/add.12719",
+  "Notes": "ESPAD 2011 multi-level analysis across 9 European countries; parental caring protective. PMID 25171305."
+ },
+ {
+  "Dataset ID": "ESPAD",
+  "Paper / documentation title": "Methodological background and descriptive features of the ESPAD 2011 Study in Hungary",
+  "Authors / year": "Gyepesi et al., 2013",
+  "Source type": "Methodological paper",
+  "URL / DOI": "",
+  "Notes": "Hungarian ESPAD 2011 methodology; gambling included as behavioural addiction measure. PMID 23689434."
+ },
+ {
+  "Dataset ID": "HBSC",
+  "Paper / documentation title": "The effects of social isolation and problematic social media use on well-being in a sample of young Italian gamblers",
+  "Authors / year": "Floridi et al., 2025",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.15167/2421-4248/jpmh2025.66.2.3581",
+  "Notes": "HBSC Italy 2021/22 Tuscany; social isolation, social media, wellbeing across gambler types. PMID 41235053."
+ },
+ {
+  "Dataset ID": "HBSC",
+  "Paper / documentation title": "A Southern addiction evaluation project: investigating the impact of addiction through a survey HBSC based",
+  "Authors / year": "Genovese et al., 2024",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.7417/CT.2024.5047",
+  "Notes": "HBSC-based survey in Southern Italy (Messina); gambling prevalence decreasing. PMID 38571473."
+ },
+ {
+  "Dataset ID": "HBSC",
+  "Paper / documentation title": "Should I give kids money? The role of pocket money on at-risk behaviors in Italian adolescents",
+  "Authors / year": "Lozza et al., 2023",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.4415/ANN_23_01_06",
+  "Notes": "HBSC Italy 2018 Lombardy; pocket money associated with gambling among 15-year-olds. PMID 36974703."
+ },
+ {
+  "Dataset ID": "HBSC",
+  "Paper / documentation title": "Alcohol use and misuse: a profile of adolescents from 2018 Italian HBSC data",
+  "Authors / year": "Charrier et al., 2020",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.4415/ANN_20_04_18",
+  "Notes": "HBSC Italy 2018; 21% heavy drinkers cluster also had 52% gambling experience. PMID 33346182."
+ },
+ {
+  "Dataset ID": "HBSC",
+  "Paper / documentation title": "Relative deprivation and disordered gambling in youths",
+  "Authors / year": "Elgar et al., 2018",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1136/jech-2017-209858",
+  "Notes": "HBSC Italy 2013/14; relative deprivation linked to 4x increase in disordered gambling symptoms. PMID 29514922."
+ },
+ {
+  "Dataset ID": "HBSC",
+  "Paper / documentation title": "Income Inequality and Adolescent Gambling Severity: Findings from a Large-Scale Italian Representative Survey",
+  "Authors / year": "Canale et al., 2017",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.3389/fpsyg.2017.01318",
+  "Notes": "HBSC Italy 2013/14; regional income inequality predicts gambling severity; North-South gradient. PMID 28824499."
+ },
+ {
+  "Dataset ID": "HBSC",
+  "Paper / documentation title": "Is Medicine Use for Nervousness Associated with Adolescent At-Risk or Problem Gambling?",
+  "Authors / year": "Canale et al., 2017",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1159/000479001",
+  "Notes": "HBSC Italy 2013/14; medicine use for nervousness 3x odds of at-risk/problem gambling. PMID 28797002."
+ },
+ {
+  "Dataset ID": "OSDUHS",
+  "Paper / documentation title": "Childhood ADHD and addictive behaviours in adolescence: a Canadian sample",
+  "Authors / year": "Ostojic et al., 2014",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://pubmed.ncbi.nlm.nih.gov/24872828/",
+  "Notes": "ADHD youth non-significant trend toward more gambling; OSDUHS as population comparison. PMID 24872828."
+ },
+ {
+  "Dataset ID": "MANITOBA_YA",
+  "Paper / documentation title": "Co-development of Problem Gambling and Depression Symptoms in Emerging Adults",
+  "Authors / year": "Edgerton et al., 2018",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1007/s10899-018-9760-4",
+  "Notes": "MLSYA 4 waves; 5 joint trajectory classes of depression and problem gambling. PMID 29468344."
+ },
+ {
+  "Dataset ID": "MANITOBA_YA",
+  "Paper / documentation title": "Investigating Possible Reciprocal Relations Between Depressive and Problem Gambling Symptoms in Emerging Adults",
+  "Authors / year": "Chinneck et al., 2016",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1177/0706743715625934",
+  "Notes": "MLSYA 4 waves; depression and problem gambling correlated but neither is a risk factor for the other. PMID 27253700."
+ },
+ {
+  "Dataset ID": "MANITOBA_YA",
+  "Paper / documentation title": "Validation of the Gambling Motives Questionnaire in Emerging Adults",
+  "Authors / year": "Lambe et al., 2015",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1007/s10899-014-9467-0",
+  "Notes": "GMQ three-factor structure validated; enhancement motives predict problem gambling independently. PMID 24871297."
+ },
+ {
+  "Dataset ID": "GSGB",
+  "Paper / documentation title": "Gambling, smoking and alcohol use in Great Britain: insights from the 2023 Gambling Survey of Great Britain",
+  "Authors / year": "Kock et al., 2026",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1016/j.addbeh.2026.108641",
+  "Notes": "GSGB 2023 (n=9,742); PGSI dose-dependent association with AUDIT-C and smoking. PMID 41690257."
+ },
+ {
+  "Dataset ID": "GSGB",
+  "Paper / documentation title": "Gambling products, gambling problems and gambling involvement: comparative analysis from GSGB and HSE",
+  "Authors / year": "Wardle and Tipping, 2025",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1016/j.addbeh.2025.108429",
+  "Notes": "GSGB 2023 + HSE 2015-2018; online casino and EGMs independently associated with elevated PGSI. PMID 40966826."
+ },
+ {
+  "Dataset ID": "GIBS",
+  "Paper / documentation title": "Past-year recreational gambling in a nationally representative sample: correlates of casino, non-casino, and both casino/non-casino gambling",
+  "Authors / year": "Franco et al., 2011",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1016/j.psychres.2011.04.008",
+  "Notes": "GIBS (n=2,417); casino vs non-casino recreational gamblers. PMID 21550124."
+ },
+ {
+  "Dataset ID": "GIBS",
+  "Paper / documentation title": "Income differences and recreational gambling",
+  "Authors / year": "Barry et al., 2007",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1097/ADM.0b013e318125088f",
+  "Notes": "GIBS 1998 (n=2,417); income differences in recreational gambling behaviour. PMID 21768950."
+ },
+ {
+  "Dataset ID": "GIBS",
+  "Paper / documentation title": "Gender differences in adolescent gambling",
+  "Authors / year": "Desai et al., 2005",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1080/10401230500295636",
+  "Notes": "GIBS 1998 (n=534 adolescents); gender differences in gambling and psychiatric comorbidity. PMID 16402759."
+ },
+ {
+  "Dataset ID": "GIBS",
+  "Paper / documentation title": "The influence of religiosity on gambling participation",
+  "Authors / year": "Lam, 2006",
+  "Source type": "Peer-reviewed article",
+  "URL / DOI": "https://doi.org/10.1007/s10899-006-9018-4",
+  "Notes": "GIBS/NGISC 1999 data; religious participation negatively associated with gambling. PMID 16826457."
  }
 ]
