@@ -79,13 +79,7 @@
     <div id="question-content"><div class="loading">Loading questions...</div></div>
   </div>
 
-  <div class="ideas-section">
-    <h2>Under-studied domains</h2>
-    <p>Domains with limited overlap between gambling variables and risk/protective factor coverage are likely to be weaker areas for current secondary analysis.</p>
-    <div id="understudied-content"><div class="loading">Loading gaps...</div></div>
-  </div>
-
-  <div class="ideas-section">
+<div class="ideas-section">
     <h2>Missing but important ideas</h2>
     <p>These topics are conceptually important for young people's gambling harm research, but may be weakly captured or inconsistently measured in the current catalogue.</p>
     <div id="missing-content"><div class="loading">Loading missing domains...</div></div>
@@ -198,7 +192,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   renderGapMatrix(withGambling);
   renderRankings(stats);
   renderQuestions(stats);
-  renderUnderstudied(stats);
   renderMissingImportant(stats, usableVars);
   renderPrimaryGaps(stats);
 
@@ -304,21 +297,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
     html += '</tbody></table></div>';
     document.getElementById('question-content').innerHTML = html;
-  }
-
-  function renderUnderstudied() {
-    const rows = domainDefs.map(d => {
-      const candidateCount = stats.filter(s => s.gamb.length && s.domains[d.key] > 0).length;
-      const variableCount = stats.reduce((sum, s) => sum + (s.gamb.length ? s.domains[d.key] : 0), 0);
-      return { ...d, candidateCount, variableCount };
-    }).sort((a, b) => a.candidateCount - b.candidateCount || a.label.localeCompare(b.label));
-    let html = '<div class="ideas-table-wrap"><table class="ideas-table"><thead><tr><th>Domain</th><th>Datasets with gambling plus domain</th><th>Risk/protective records in those datasets</th><th>Interpretation</th></tr></thead><tbody>';
-    rows.forEach(r => {
-      const interp = r.candidateCount <= 2 ? 'Potential gap or weak synthesis base' : r.candidateCount <= 5 ? 'Some coverage, but harmonisation may be limited' : 'Relatively stronger secondary-analysis base';
-      html += `<tr><td>${escapeHTML(r.label)}</td><td>${r.candidateCount}</td><td>${r.variableCount}</td><td>${escapeHTML(interp)}</td></tr>`;
-    });
-    html += '</tbody></table></div>';
-    document.getElementById('understudied-content').innerHTML = html;
   }
 
   function countKeywordDatasets(items, terms) {
