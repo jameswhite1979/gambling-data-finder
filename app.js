@@ -31,6 +31,7 @@ function roleBadgeClass(role) {
   const r = role.toLowerCase();
   if (r.includes('gambling')) return 'badge badge-gambling';
   if (r.includes('risk') || r.includes('protective')) return 'badge badge-risk';
+  if (r.includes('questionnaire') || r === 'question') return 'badge badge-contextual';
   if (r.includes('meta')) return 'badge badge-meta';
   return 'badge badge-other';
 }
@@ -128,7 +129,7 @@ function removeFromBasket(idx) {
   const b = getBasket(); b.splice(idx, 1); saveBasket(b);
 }
 function basketKey(item) {
-  return (item.dataset_id||'') + '|' + (item.variable_name||item.title||'') + '|' + (item.wave_year||'') + '|' + (item.item_type||'variable');
+  return (item.dataset_id||'') + '|' + (item.variable_name||item.questionnaire_id||item.title||'') + '|' + (item.wave_year||'') + '|' + (item.item_type||'variable');
 }
 function isInBasket(item) {
   return getBasket().some(x => basketKey(x) === basketKey(item));
@@ -229,6 +230,9 @@ function searchVariables(variables, query, filters) {
     results = results.filter(v => {
       const txt = (
         (v.variable_name||'') + ' ' + (v.variable_label||'') + ' ' +
+        (v.question_text||'') + ' ' + (v.title||'') + ' ' +
+        (v.questionnaire_title||'') + ' ' + (v.questionnaire_url||'') + ' ' +
+        (v.file_type||'') + ' ' + (v.notes||'') + ' ' +
         (v.named_measure||'') + ' ' + (v.dataset_name||'') + ' ' +
         (v.dataset_id||'') + ' ' + (v.construct_category||'') + ' ' +
         (v.risk_domain||'') + ' ' + (v.wave_year||'')
@@ -246,6 +250,54 @@ function searchVariables(variables, query, filters) {
   if (filters.age_group) results = results.filter(v => v.age_group === filters.age_group);
 
   return { results, elapsed: ((performance.now() - t0) / 1000).toFixed(2) };
+}
+
+function questionnaireToSearchItem(q) {
+  return {
+    item_type: 'questionnaire',
+    role: 'Questionnaire',
+    questionnaire_id: q['Questionnaire_ID'] || '',
+    title: q['Questionnaire / metadata title'] || '',
+    questionnaire_title: q['Questionnaire / metadata title'] || '',
+    dataset_id: q['Dataset_ID'] || '',
+    dataset_name: q['Dataset name'] || q['Dataset_ID'] || '',
+    wave_year: q['Wave / year'] || '',
+    age_group: q['Age group'] || '',
+    construct_category: 'Questionnaire / codebook',
+    file_type: q['File type'] || '',
+    questionnaire_url: q['URL'] || '',
+    variable_url: q['URL'] || '',
+    metadata_status: [
+      q['Public or gated'] ? 'Access: ' + q['Public or gated'] : '',
+      q['Variable names visible?'] ? 'Variable names visible: ' + q['Variable names visible?'] : '',
+      q['Question wording visible?'] ? 'Question wording visible: ' + q['Question wording visible?'] : ''
+    ].filter(Boolean).join('; '),
+    notes: q['Notes'] || ''
+  };
+}
+
+function variableQuestionToSearchItem(v) {
+  return {
+    ...v,
+    item_type: 'question',
+    role: 'Question',
+    construct_category: v.construct_category || 'Source question',
+    variable_label: v.question_text || v.variable_label || '',
+    question_text: v.question_text || v.variable_label || '',
+    title: v.question_text || v.variable_label || v.variable_name || ''
+  };
+}
+
+function buildSearchIndex(variables, questionnaires) {
+  const items = [];
+  (variables || []).forEach(v => {
+    items.push({ ...v, item_type: v.item_type || 'variable' });
+    if (v.question_text && v.question_text.trim()) {
+      items.push(variableQuestionToSearchItem(v));
+    }
+  });
+  (questionnaires || []).forEach(q => items.push(questionnaireToSearchItem(q)));
+  return items;
 }
 
 // ================================================================
@@ -266,18 +318,25 @@ function renderResults(container, results, page, perPage) {
     const inB = isInBasket(v);
     const card = document.createElement('div');
     card.className = 'result-card';
+    const title = v.item_type === 'questionnaire'
+      ? (v.title || v.questionnaire_title || '(untitled questionnaire)')
+      : v.item_type === 'question'
+        ? (v.question_text || v.variable_label || v.variable_name || '(no question text)')
+        : (v.variable_label || v.variable_name || '(no label)');
     card.innerHTML = `
       <div class="result-main">
         <span class="${roleBadgeClass(v.role)}">${escapeHTML(v.role || 'Variable')}</span>
         ${v.construct_category && v.construct_category !== 'Uncategorised' ? `<span class="badge badge-other">${escapeHTML(v.construct_category)}</span>` : ''}
         <br>
-        <span class="result-title">${escapeHTML(v.variable_label || v.variable_name || '(no label)')}</span>
+        <span class="result-title">${escapeHTML(title)}</span>
         <div class="result-meta">
           ${v.variable_name ? `<span class="result-meta-item"><strong>Var:</strong> ${escapeHTML(v.variable_name)}</span>` : ''}
+          ${v.questionnaire_id ? `<span class="result-meta-item"><strong>Questionnaire:</strong> ${escapeHTML(v.questionnaire_id)}</span>` : ''}
           <span class="result-meta-item"><strong>Study:</strong> <a href="study.html?id=${encodeURIComponent(v.dataset_id)}">${escapeHTML(v.dataset_name || v.dataset_id)}</a></span>
           ${v.wave_year ? `<span class="result-meta-item"><strong>Wave:</strong> ${escapeHTML(v.wave_year)}</span>` : ''}
           ${v.named_measure ? `<span class="result-meta-item"><strong>Measure:</strong> ${escapeHTML(v.named_measure)}</span>` : ''}
           ${v.age_group ? `<span class="result-meta-item"><strong>Age:</strong> ${escapeHTML(v.age_group)}</span>` : ''}
+          ${v.file_type ? `<span class="result-meta-item"><strong>Type:</strong> ${escapeHTML(v.file_type)}</span>` : ''}
         </div>
       </div>
       <div class="result-actions">

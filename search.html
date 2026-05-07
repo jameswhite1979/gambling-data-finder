@@ -210,7 +210,12 @@
     // Load facets and populate dropdowns
     var facets = await fetchJSON('data/facets.json');
     if (facets) {
-      populateSelect($fRole,      facets.roles,                '', 'All roles');
+      var roles = (facets.roles || []).slice();
+      ['Question', 'Questionnaire'].forEach(function (role) {
+        if (roles.indexOf(role) === -1) roles.push(role);
+      });
+      roles.sort();
+      populateSelect($fRole,      roles,                       '', 'All roles');
       populateSelect($fDataset,   facets.datasets,             '', 'All studies');
       populateSelect($fConstruct, facets.construct_categories,  '', 'All categories');
       populateSelect($fRisk,      facets.risk_domains,          '', 'All domains');
@@ -223,8 +228,10 @@
     var hasParams = readParams();
 
     // Load variables (show spinner)
-    $resultsBox.innerHTML = '<div class="loading">Loading 32,000+ variables...</div>';
-    allVariables = (await loadVariables()) || [];
+    $resultsBox.innerHTML = '<div class="loading">Loading variables, questions and questionnaires...</div>';
+    var variables = (await loadVariables()) || [];
+    var questionnaires = (await fetchJSON('data/questionnaires.json')) || [];
+    allVariables = buildSearchIndex(variables, questionnaires);
     $resultsBox.innerHTML = '';
 
     // If URL params were present, run search immediately
