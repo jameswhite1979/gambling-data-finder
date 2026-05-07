@@ -239,6 +239,10 @@ function searchVariables(variables, query, filters) {
       ).toLowerCase();
       return terms.every(t => txt.includes(t));
     });
+    results = results
+      .map(v => ({ item: v, score: searchResultScore(v, terms) }))
+      .sort((a, b) => b.score - a.score)
+      .map(x => x.item);
   }
 
   if (filters.role) results = results.filter(v => v.role === filters.role);
@@ -250,6 +254,31 @@ function searchVariables(variables, query, filters) {
   if (filters.age_group) results = results.filter(v => v.age_group === filters.age_group);
 
   return { results, elapsed: ((performance.now() - t0) / 1000).toFixed(2) };
+}
+
+function searchResultScore(v, terms) {
+  const role = (v.role || '').toLowerCase();
+  const type = (v.item_type || 'variable').toLowerCase();
+  const title = (v.title || v.variable_label || '').toLowerCase();
+  const question = (v.question_text || '').toLowerCase();
+  const questionnaire = ((v.questionnaire_title || '') + ' ' + (v.questionnaire_id || '') + ' ' + (v.file_type || '')).toLowerCase();
+  const variable = ((v.variable_name || '') + ' ' + (v.variable_label || '')).toLowerCase();
+  const metadata = ((v.dataset_name || '') + ' ' + (v.dataset_id || '') + ' ' + (v.wave_year || '') + ' ' + (v.notes || '')).toLowerCase();
+  let score = 0;
+
+  terms.forEach(t => {
+    if (type === t || role === t) score += 120;
+    if (type.includes(t) || role.includes(t)) score += 80;
+    if (title.includes(t)) score += 35;
+    if (question.includes(t)) score += type === 'question' ? 55 : 20;
+    if (questionnaire.includes(t)) score += type === 'questionnaire' ? 70 : 25;
+    if (variable.includes(t)) score += 18;
+    if (metadata.includes(t)) score += 8;
+  });
+
+  if (type === 'questionnaire') score += 18;
+  if (type === 'question') score += 12;
+  return score;
 }
 
 function questionnaireToSearchItem(q) {
@@ -292,7 +321,8 @@ function buildSearchIndex(variables, questionnaires) {
   const items = [];
   (variables || []).forEach(v => {
     items.push({ ...v, item_type: v.item_type || 'variable' });
-    if (v.question_text && v.question_text.trim()) {
+    const sourceQuestion = (v.question_text || v.variable_label || '').trim();
+    if (sourceQuestion) {
       items.push(variableQuestionToSearchItem(v));
     }
   });
