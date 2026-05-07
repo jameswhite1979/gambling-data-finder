@@ -27,6 +27,43 @@
     text-align: center;
     padding-bottom: 1rem;
   }
+  .basket-item {
+    align-items: flex-start;
+  }
+  .basket-item-content {
+    min-width: 0;
+  }
+  .basket-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .45rem .85rem;
+    margin-top: .65rem;
+    font-size: .78rem;
+    color: var(--text-muted);
+  }
+  .basket-detail {
+    min-width: 0;
+  }
+  .basket-detail dt {
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0 0 .1rem;
+  }
+  .basket-detail dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+  .basket-detail-wide {
+    grid-column: 1 / -1;
+  }
+  .basket-detail a {
+    color: var(--amber);
+  }
+  @media (max-width: 720px) {
+    .basket-detail-grid {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 </head>
 <body>
@@ -45,10 +82,33 @@
 <script>document.body.insertAdjacentHTML('beforeend', renderFooter());</script>
 
 <script>
+var basketContext = {
+  datasets: {},
+  access: {},
+  sources: {}
+};
+
 document.addEventListener('DOMContentLoaded', function () {
   updateBasketCount();
-  renderBasketPage();
+  loadBasketContext().then(renderBasketPage);
 });
+
+async function loadBasketContext() {
+  try {
+    var datasets = await fetchJSON('data/datasets.json') || [];
+    var access = await fetchJSON('data/access.json') || [];
+    var sources = await fetchJSON('data/sources.json') || [];
+    datasets.forEach(function (d) { basketContext.datasets[d['Dataset_ID']] = d; });
+    access.forEach(function (a) { basketContext.access[a['Dataset_ID']] = a; });
+    sources.forEach(function (s) {
+      var id = s['Dataset_ID'];
+      if (!basketContext.sources[id]) basketContext.sources[id] = [];
+      basketContext.sources[id].push(s);
+    });
+  } catch (e) {
+    console.warn('Unable to load basket context', e);
+  }
+}
 
 function renderBasketPage() {
   const container = document.getElementById('basket-page');
@@ -130,8 +190,91 @@ function renderBasketItem(item, globalIdx, type) {
   html += '<div class="basket-item-content">';
   html += '<div class="basket-item-title">' + title + '</div>';
   html += '<div class="basket-item-meta">' + meta + '</div>';
+  html += renderItemDetails(item, type);
   html += '</div>';
   html += '<button class="basket-item-remove" onclick="doRemove(' + globalIdx + ')" title="Remove from list">&times;</button>';
+  html += '</div>';
+  return html;
+}
+
+function valueOrDash(value) {
+  value = (value === undefined || value === null) ? '' : String(value).trim();
+  return value || 'Not extracted';
+}
+
+function linkOrText(value) {
+  value = (value === undefined || value === null) ? '' : String(value).trim();
+  if (!value) return 'Not extracted';
+  if (/^https?:\/\//i.test(value)) {
+    return '<a href="' + escapeHTML(value) + '" target="_blank" rel="noopener">' + escapeHTML(truncate(value, 80)) + '</a>';
+  }
+  return escapeHTML(value);
+}
+
+function detailBlock(label, value, isUrl, wide) {
+  return '<dl class="basket-detail' + (wide ? ' basket-detail-wide' : '') + '">' +
+    '<dt>' + escapeHTML(label) + '</dt>' +
+    '<dd>' + (isUrl ? linkOrText(value) : escapeHTML(valueOrDash(value))) + '</dd>' +
+    '</dl>';
+}
+
+function getDatasetRecord(item) {
+  return basketContext.datasets[item.dataset_id] || {};
+}
+
+function getAccessRecord(item) {
+  return basketContext.access[item.dataset_id] || {};
+}
+
+function getPrimarySourceUrl(item) {
+  var sources = basketContext.sources[item.dataset_id] || [];
+  var preferred = sources.find(function (s) {
+    return /variable|catalogue|metadata|questionnaire/i.test(s['Resource type'] || s['Title / description'] || '');
+  }) || sources[0] || {};
+  return preferred.URL || '';
+}
+
+function getAccessUrl(item) {
+  var access = getAccessRecord(item);
+  var ds = getDatasetRecord(item);
+  return item.access_url ||
+    access['Access request URL'] ||
+    ds['Access request URL'] ||
+    access['Data access documentation URL'] ||
+    ds['Dataset/home URL'] ||
+    item.variable_url ||
+    item.questionnaire_url ||
+    '';
+}
+
+function getQuestionnaireTitle(item) {
+  return item.questionnaire_title ||
+    item.questionnaire_name ||
+    item.questionnaire ||
+    item.questionnaire_url ||
+    item['Questionnaire / codebook URL'] ||
+    '';
+}
+
+function renderItemDetails(item, type) {
+  if (type !== 'variable' && type !== 'question') return '';
+  var access = getAccessRecord(item);
+  var html = '<div class="basket-detail-grid">';
+  html += detailBlock('Name', item.variable_name || item['Variable/item ID'], false, false);
+  html += detailBlock('Label', item.variable_label || item['Variable label or exact question'], false, false);
+  html += detailBlock('Question', item.question_text || item.variable_label || item['Variable label or exact question'], false, true);
+  html += detailBlock('Dataset', item.dataset_name || item.dataset_id, false, false);
+  html += detailBlock('Wave / age', [item.wave_year, item.age_group].filter(Boolean).join(' / '), false, false);
+  html += detailBlock('Response categories', item.response_options || item.value_labels || item.response_categories, false, true);
+  html += detailBlock('Questionnaire / codebook', getQuestionnaireTitle(item), true, true);
+  html += detailBlock('Variable metadata URL', item.variable_url, true, true);
+  html += detailBlock('Data access URL', getAccessUrl(item), true, true);
+  if (access['Access route'] || access['Access status']) {
+    html += detailBlock('Access route', access['Access route'] || access['Access status'], false, false);
+  }
+  if (item.metadata_status) {
+    html += detailBlock('Metadata status', item.metadata_status, false, false);
+  }
   html += '</div>';
   return html;
 }
@@ -194,13 +337,43 @@ function getCheckedItems(type) {
 function doDownloadCSV(type) {
   var items = getCheckedItems(type);
   if (!items.length) return;
-  downloadCSV(items, 'ghripps_' + type + 's.csv');
+  downloadCSV(items.map(function (item) { return normaliseExportRow(item, type); }), 'ghripps_' + type + 's.csv');
 }
 
 function doDownloadExcel(type) {
   var items = getCheckedItems(type);
   if (!items.length) return;
-  downloadExcel(items, 'ghripps_' + type + 's.xml');
+  downloadExcel(items.map(function (item) { return normaliseExportRow(item, type); }), 'ghripps_' + type + 's.xml');
+}
+
+function normaliseExportRow(item, type) {
+  var access = getAccessRecord(item);
+  var ds = getDatasetRecord(item);
+  return {
+    item_type: type,
+    dataset_id: item.dataset_id || '',
+    dataset_name: item.dataset_name || ds['Dataset name'] || '',
+    wave_year: item.wave_year || '',
+    age_group: item.age_group || '',
+    variable_name: item.variable_name || item['Variable/item ID'] || '',
+    variable_label: item.variable_label || item['Variable label or exact question'] || '',
+    question_text: item.question_text || item.variable_label || item['Variable label or exact question'] || '',
+    response_categories: item.response_options || item.value_labels || item.response_categories || '',
+    questionnaire: getQuestionnaireTitle(item),
+    questionnaire_url: item.questionnaire_url || '',
+    construct_category: item.construct_category || '',
+    named_measure: item.named_measure || '',
+    role: item.role || '',
+    risk_domain: item.risk_domain || '',
+    timing: item.timing || '',
+    variable_metadata_url: item.variable_url || '',
+    access_url: getAccessUrl(item),
+    access_route: access['Access route'] || access['Access status'] || item.access_type || ds['Access type'] || '',
+    access_notes: access['Data format / notes'] || access.Notes || ds['Notes / uncertainties'] || '',
+    source_url: getPrimarySourceUrl(item),
+    metadata_status: item.metadata_status || '',
+    meta_analysis_note: item.meta_analysis_note || ''
+  };
 }
 
 function doDownloadPDF(type) {
