@@ -136,23 +136,6 @@
   "Notes": ""
  },
  {
-  "Dataset_ID": "GREO_REPO",
-  "Dataset name": "GREO / Borealis gambling data repository",
-  "Access status": "Open repository plus dataset-specific terms",
-  "Access route": "Varies by deposited dataset",
-  "Access request URL": "https://borealisdata.ca/dataverse/greo",
-  "Data access documentation URL": "https://borealisdata.ca/dataverse/greo",
-  "Open/public items": "",
-  "Gated items": "",
-  "Cost/fee": "Usually not stated / may vary",
-  "Ethics/proposal likely?": "Likely for managed/controlled access; not for public-use downloads unless institution requires",
-  "Named contact/form": "See access URL / study helpdesk",
-  "TRE / secure environment": "No / not primary",
-  "Data format / notes": "Formats and licence conditions to verify in data documentation",
-  "Source URLs": "https://www.greo.ca/en/greo-resource/data-repository.aspx ; https://borealisdata.ca/dataverse/greo",
-  "Notes": ""
- },
- {
   "Dataset_ID": "GSGB",
   "Dataset name": "Gambling Survey for Great Britain",
   "Access status": "UKDS registered access / Gambling Commission data release",
@@ -374,23 +357,6 @@
   "Notes": ""
  },
  {
-  "Dataset_ID": "UKLLC",
-  "Dataset name": "UK Longitudinal Linkage Collaboration",
-  "Access status": "TRE application",
-  "Access route": "Trusted research environment only",
-  "Access request URL": "https://ukllc.ac.uk/access/",
-  "Data access documentation URL": "https://ukllc.ac.uk/",
-  "Open/public items": "",
-  "Gated items": "",
-  "Cost/fee": "Usually not stated / may vary",
-  "Ethics/proposal likely?": "Likely for managed/controlled access; not for public-use downloads unless institution requires",
-  "Named contact/form": "See access URL / study helpdesk",
-  "TRE / secure environment": "Yes",
-  "Data format / notes": "Formats and licence conditions to verify in data documentation",
-  "Source URLs": "https://ukllc.ac.uk/",
-  "Notes": ""
- },
- {
   "Dataset_ID": "USOC",
   "Dataset name": "Understanding Society",
   "Access status": "UKDS access",
@@ -591,5 +557,39 @@
   "Contact": "clsdata@ucl.ac.uk",
   "UKDS SN (sweep 4)": "3535",
   "UKDS SN (leisure diary)": "8949"
+ },
+ {
+  "Dataset_ID": "NSWYGS_2020",
+  "Dataset name": "NSW Youth Gambling Study 2020",
+  "Access status": "Published report publicly available; underlying microdata access unclear",
+  "Access route": "Contact study team / Office of Responsible Gambling",
+  "Access request URL": "https://www.gambleaware.nsw.gov.au/resources-and-education/check-out-our-research/published-research/nsw-youth-gambling-study-2020",
+  "Data access documentation URL": "https://www.gambleaware.nsw.gov.au/resources-and-education/check-out-our-research/published-research/nsw-youth-gambling-study-2020",
+  "Open/public items": "Full report PDF and research summary PDF publicly downloadable",
+  "Gated items": "Underlying survey microdata; focus group transcripts",
+  "Cost/fee": "Not stated",
+  "Ethics/proposal likely?": "Likely required for microdata access",
+  "Named contact/form": "info@responsiblegambling.nsw.gov.au ; 02 9995 0992",
+  "TRE / secure environment": "Not stated",
+  "Data format / notes": "Reports available as PDF. Microdata format and access conditions not publicly documented.",
+  "Source URLs": "https://www.gambleaware.nsw.gov.au/resources-and-education/check-out-our-research/published-research/nsw-youth-gambling-study-2020",
+  "Notes": "Commissioned by NSW Responsible Gambling Fund. Survey conducted by research team at CQUniversity and Central Queensland University."
+ },
+ {
+  "Dataset_ID": "NSWYGS_2024",
+  "Dataset name": "NSW Longitudinal Youth Gambling Study 2024",
+  "Access status": "Published report publicly available; underlying microdata access unclear",
+  "Access route": "Contact study team / Office of Responsible Gambling",
+  "Access request URL": "https://www.gambleaware.nsw.gov.au/resources-and-education/check-out-our-research/published-research/nsw-longitudinal-youth-gambling-study-2024",
+  "Data access documentation URL": "https://www.gambleaware.nsw.gov.au/resources-and-education/check-out-our-research/published-research/nsw-longitudinal-youth-gambling-study-2024",
+  "Open/public items": "Full report PDF publicly downloadable (22.5MB)",
+  "Gated items": "Underlying longitudinal survey microdata; qualitative interview transcripts",
+  "Cost/fee": "Not stated",
+  "Ethics/proposal likely?": "Likely required for microdata access",
+  "Named contact/form": "info@responsiblegambling.nsw.gov.au ; 02 9995 0992",
+  "TRE / secure environment": "Not stated",
+  "Data format / notes": "Report available as PDF. Microdata format and access conditions not publicly documented.",
+  "Source URLs": "https://www.gambleaware.nsw.gov.au/resources-and-education/check-out-our-research/published-research/nsw-longitudinal-youth-gambling-study-2024",
+  "Notes": "Commissioned by Office of Responsible Gambling. Longitudinal follow-up of NSWYGS_2020 participants."
  }
 ]

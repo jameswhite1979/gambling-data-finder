@@ -462,34 +462,6 @@
   "Notes": "Added from archive-search inventory during de-duplication cleanup"
  },
  {
-  "Questionnaire_ID": "Q_0036",
-  "Dataset_ID": "GREO_REPO",
-  "Dataset name": "GREO / Borealis gambling data repository",
-  "Wave / year": "Ongoing repository",
-  "Age group": "Mixed studies; under-25 eligibility varies",
-  "Questionnaire / metadata title": "Questionnaire URL from archive-search inventory",
-  "File type": "URL",
-  "URL": "https://borealisdata.ca/dataverse/greo",
-  "Public or gated": "Public",
-  "Variable names visible?": "Unclear",
-  "Question wording visible?": "Unclear",
-  "Notes": "Added from archive-search inventory during de-duplication cleanup"
- },
- {
-  "Questionnaire_ID": "Q_0037",
-  "Dataset_ID": "UKLLC",
-  "Dataset name": "UK Longitudinal Linkage Collaboration",
-  "Wave / year": "Ongoing",
-  "Age group": "Multiple UK longitudinal cohorts; under-25 depends study",
-  "Questionnaire / metadata title": "Questionnaire URL from archive-search inventory",
-  "File type": "URL",
-  "URL": "https://ukllc.ac.uk/",
-  "Public or gated": "Public",
-  "Variable names visible?": "Unclear",
-  "Question wording visible?": "Unclear",
-  "Notes": "Added from archive-search inventory during de-duplication cleanup"
- },
- {
   "Questionnaire_ID": "Q_0039",
   "Dataset_ID": "ALSPAC",
   "Dataset name": "ALSPAC",
@@ -1258,5 +1230,33 @@
   "Variable names visible?": "Yes",
   "Question wording visible?": "Yes/partial",
   "Notes": "Full context verified from BCS70 Age 16 Document G. Betting/gambling is one option in a broader list including sweets/snacks/fizzy drinks, alcohol, cigarettes, newspapers/magazines/books, clothes/makeup, sports costs, records/cassettes, hobby equipment, presents, cinema/concert tickets, disco/gig/dances, sports fixtures and travel fares."
+ },
+ {
+  "Questionnaire_ID": "Q_NSWYGS2020_001",
+  "Dataset_ID": "NSWYGS_2020",
+  "Dataset name": "NSW Youth Gambling Study 2020",
+  "Wave / year": "2020",
+  "Age group": "12-17",
+  "Questionnaire / metadata title": "NSW Youth Gambling Study 2020 full report and appendices",
+  "File type": "PDF",
+  "URL": "https://www.gambleaware.nsw.gov.au/-/media/files/nsw-youth-gambling-study-2020-full-report-and-appendices.ashx",
+  "Public or gated": "Public",
+  "Variable names visible?": "Partial",
+  "Question wording visible?": "Partial (within report text and appendices)",
+  "Notes": "Online survey of 2,220 young people aged 12-17. Recruited via household flyers, Qualtrics panel, and digital advertising. 16 focus groups with 104 participants across 8 NSW locations."
+ },
+ {
+  "Questionnaire_ID": "Q_NSWYGS2024_001",
+  "Dataset_ID": "NSWYGS_2024",
+  "Dataset name": "NSW Longitudinal Youth Gambling Study 2024",
+  "Wave / year": "2020 and 2024",
+  "Age group": "12-17 at baseline; 16-21 at follow-up",
+  "Questionnaire / metadata title": "NSW Longitudinal Youth Gambling Study 2024 report",
+  "File type": "PDF",
+  "URL": "https://www.gambleaware.nsw.gov.au/-/media/files/published-research-pdfs/nsw-longitudinal-youth-gambling-study-2024-report.ashx",
+  "Public or gated": "Public",
+  "Variable names visible?": "Partial",
+  "Question wording visible?": "Partial (within report text)",
+  "Notes": "Two-wave longitudinal survey (n=229) plus qualitative interviews (n=50, aged 18-23). Also includes systematic review of longitudinal youth gambling research 1995-2024."
  }
 ]
