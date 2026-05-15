@@ -1,11 +1,11 @@
 {
- "datasets": 37,
- "variables": 7932,
- "questionnaires": 97,
- "gambling_measures": 4229,
- "gambling_variables": 3242,
- "risk_protective_variables": 4472,
- "source_urls": 345,
+ "datasets": 34,
+ "variables": 7920,
+ "questionnaires": 94,
+ "gambling_measures": 4223,
+ "gambling_variables": 3235,
+ "risk_protective_variables": 4467,
+ "source_urls": 339,
  "last_updated": "2026-05-15",
- "publications": 58
+ "publications": 55
 }

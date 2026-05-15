@@ -461,26 +461,6 @@
   "Search source": "Targeted PubMed/web/Google Scholar-style search, 2026-05-05"
  },
  {
-  "Publication_ID": "PUB_SEARCH_0049",
-  "Dataset ID": "NSWYGS_2020",
-  "Paper / documentation title": "NSW Youth Gambling Study 2020",
-  "Authors / year": "Hing N, Russell A, King D, Rockloff M, Browne M, Greer N, Newall P, Sproston K, Chen L, Coughlin S, 2020",
-  "Source type": "Commissioned research report",
-  "URL / DOI": "https://www.gambleaware.nsw.gov.au/resources-and-education/check-out-our-research/published-research/nsw-youth-gambling-study-2020",
-  "Notes": "Commissioned by NSW Responsible Gambling Fund. Cross-sectional mixed-methods study of gambling and simulated gambling among 12-17 year olds in NSW. Online survey (n=2,220), focus groups (n=104), and literature review.",
-  "Search source": "GambleAware NSW published research page, 2026-05-11"
- },
- {
-  "Publication_ID": "PUB_SEARCH_0050",
-  "Dataset ID": "NSWYGS_2024",
-  "Paper / documentation title": "NSW Longitudinal Youth Gambling Study 2024",
-  "Authors / year": "Hing N, Lole L, Dellosa G, Tulloch C, Browne M, Russell AMT, Rockloff M, 2025",
-  "Source type": "Commissioned research report",
-  "URL / DOI": "https://www.gambleaware.nsw.gov.au/resources-and-education/check-out-our-research/published-research/nsw-longitudinal-youth-gambling-study-2024",
-  "Notes": "Published 2025. Commissioned by Office of Responsible Gambling. First longitudinal gambling study with young people in NSW. Three components: systematic review of longitudinal youth gambling research (1995-2024), two-wave longitudinal survey (n=229, ages 12-17 in 2020 re-surveyed at ages 16-21 in 2024), and qualitative interviews (n=50, aged 18-23).",
-  "Search source": "GambleAware NSW published research page, 2026-05-11"
- },
- {
   "Publication_ID": "PUB_GA_TSS_001",
   "Dataset ID": "GA_TSS",
   "Paper / documentation title": "Annual GB Treatment and Support Survey 2024",
@@ -574,18 +554,6 @@
   "Risk/protective factors analysed": "Depression (RADS-SF), wellbeing (WHO-5), social connectedness, alcohol, income, demographics, deprivation",
   "URL / DOI": "https://doi.org/10.1186/s40405-016-0017-9",
   "Notes": "Uses Youth'07 nationally representative NZ survey; 9,107 students aged 12-19; 2,234 past-year gamblers analysed.",
-  "Search source": "User-provided link, 2026-05-15"
- },
- {
-  "Publication_ID": "PUB_KOREA_001",
-  "Dataset ID": "KOREA_NYGP",
-  "Paper / documentation title": "The Gambling Factors Related with the Level of Adolescent Problem Gambler",
-  "Authors / year": "Kang, Ok, Kim, Lee, 2019",
-  "Source type": "Peer-reviewed article",
-  "Gambling measure used": "CAGI/GPSS (9 items)",
-  "Risk/protective factors analysed": "Gender, age, residential area, relationships with gamblers, gambling facility accessibility",
-  "URL / DOI": "https://doi.org/10.3390/ijerph16122110",
-  "Notes": "14,011 adolescents aged 13-17 from 2015 Korean National Survey on Youth Gambling Problems.",
   "Search source": "User-provided link, 2026-05-15"
  },
  {

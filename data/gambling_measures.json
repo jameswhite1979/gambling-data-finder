@@ -59002,71 +59002,6 @@
   "Measure classification": "Single item"
  },
  {
-  "Dataset_ID": "NSWYGS_2020",
-  "Dataset name": "NSW Youth Gambling Study 2020",
-  "Wave / year": "2020",
-  "Age group": "12-17",
-  "Variable/item ID": "Monetary gambling participation",
-  "Variable label or exact question": "Past-year monetary gambling participation among young people aged 12-17 in NSW (29.8% prevalence)",
-  "Named measure": "",
-  "Construct category": "Gambling participation",
-  "Questionnaire / codebook URL": "https://www.gambleaware.nsw.gov.au/-/media/files/nsw-youth-gambling-study-2020-full-report-and-appendices.ashx",
-  "Metadata status": "Published report; exact variable names/question wording to extract from report appendices",
-  "Meta-analysis compatibility note": "Australian youth sample; prevalence estimates may differ from UK due to regulatory context and survey methodology"
- },
- {
-  "Dataset_ID": "NSWYGS_2020",
-  "Dataset name": "NSW Youth Gambling Study 2020",
-  "Wave / year": "2020",
-  "Age group": "12-17",
-  "Variable/item ID": "Simulated gambling participation",
-  "Variable label or exact question": "Participation in games with gambling components / simulated gambling among young people aged 12-17 in NSW (40.1% prevalence)",
-  "Named measure": "",
-  "Construct category": "Gaming / loot boxes",
-  "Questionnaire / codebook URL": "https://www.gambleaware.nsw.gov.au/-/media/files/nsw-youth-gambling-study-2020-full-report-and-appendices.ashx",
-  "Metadata status": "Published report; exact variable names/question wording to extract from report appendices",
-  "Meta-analysis compatibility note": "Covers simulated gambling and gambling-like gaming products; useful for cross-study comparison of gaming/gambling overlap"
- },
- {
-  "Dataset_ID": "NSWYGS_2020",
-  "Dataset name": "NSW Youth Gambling Study 2020",
-  "Wave / year": "2020",
-  "Age group": "12-17",
-  "Variable/item ID": "Problem/at-risk gambling",
-  "Variable label or exact question": "Problem gambling (1.5%) and at-risk gambling (2.2%) classifications among young people aged 12-17 in NSW",
-  "Named measure": "",
-  "Construct category": "Problem gambling / harm",
-  "Questionnaire / codebook URL": "https://www.gambleaware.nsw.gov.au/-/media/files/nsw-youth-gambling-study-2020-full-report-and-appendices.ashx",
-  "Metadata status": "Published report; exact screening instrument to confirm from report",
-  "Meta-analysis compatibility note": "Problem gambling screen used to be confirmed; comparability to PGSI/DSM/SOGS-RA to assess"
- },
- {
-  "Dataset_ID": "NSWYGS_2024",
-  "Dataset name": "NSW Longitudinal Youth Gambling Study 2024",
-  "Wave / year": "2020 and 2024",
-  "Age group": "12-17 at baseline; 16-21 at follow-up",
-  "Variable/item ID": "Gambling status classification (longitudinal)",
-  "Variable label or exact question": "Participants classified at each wave as: non-gambling, simulated gambling only, monetary gambling, or at-risk/problem gambling. Longitudinal transitions tracked across waves.",
-  "Named measure": "",
-  "Construct category": "Gambling participation",
-  "Questionnaire / codebook URL": "https://www.gambleaware.nsw.gov.au/-/media/files/published-research-pdfs/nsw-longitudinal-youth-gambling-study-2024-report.ashx",
-  "Metadata status": "Published report; exact classification criteria and variable names to extract from report",
-  "Meta-analysis compatibility note": "Longitudinal transition data (simulated to monetary gambling); unique design for tracking gambling trajectories in young people"
- },
- {
-  "Dataset_ID": "NSWYGS_2024",
-  "Dataset name": "NSW Longitudinal Youth Gambling Study 2024",
-  "Wave / year": "2020 and 2024",
-  "Age group": "12-17 at baseline; 16-21 at follow-up",
-  "Variable/item ID": "At-risk/problem gambling (longitudinal)",
-  "Variable label or exact question": "At-risk/problem gambling at each wave. Approximately 13% reported at-risk/problem gambling in both waves; 70% showed consistency across waves.",
-  "Named measure": "",
-  "Construct category": "Problem gambling / harm",
-  "Questionnaire / codebook URL": "https://www.gambleaware.nsw.gov.au/-/media/files/published-research-pdfs/nsw-longitudinal-youth-gambling-study-2024-report.ashx",
-  "Metadata status": "Published report; exact screening instrument to confirm from report",
-  "Meta-analysis compatibility note": "Longitudinal stability of at-risk/problem gambling classification; 70% consistency across waves is a key finding"
- },
- {
   "Dataset_ID": "GA_TSS",
   "Dataset name": "GambleAware Annual GB Treatment and Support Survey",
   "Wave / year": "2019-2024",
@@ -59169,19 +59104,6 @@
   "Questionnaire / codebook URL": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4998168/",
   "Metadata status": "Published paper; custom items (no standard instrument)",
   "Meta-analysis compatibility note": "Custom items; comparability to PGSI/SOGS limited but frequency/spending items potentially harmonisable"
- },
- {
-  "Dataset_ID": "KOREA_NYGP",
-  "Dataset name": "Korean National Survey on Youth Gambling Problems",
-  "Wave / year": "2015",
-  "Age group": "13-17",
-  "Variable/item ID": "CAGI/GPSS score",
-  "Variable label or exact question": "CAGI Gambling Problem Severity Scale (9 of 24 items, 4-point Likert, 0-27 points). Lifetime/past 3-month gambling, types, frequency, time, money, age of onset.",
-  "Named measure": "CAGI",
-  "Construct category": "Problem gambling / harm",
-  "Questionnaire / codebook URL": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6617330/",
-  "Metadata status": "Published paper; CAGI validated for adolescents",
-  "Meta-analysis compatibility note": "CAGI/GPSS directly comparable to Canadian YGS and OSDUHS"
  },
  {
   "Dataset_ID": "FINLAND_SHP",

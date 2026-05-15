@@ -1232,34 +1232,6 @@
   "Notes": "Full context verified from BCS70 Age 16 Document G. Betting/gambling is one option in a broader list including sweets/snacks/fizzy drinks, alcohol, cigarettes, newspapers/magazines/books, clothes/makeup, sports costs, records/cassettes, hobby equipment, presents, cinema/concert tickets, disco/gig/dances, sports fixtures and travel fares."
  },
  {
-  "Questionnaire_ID": "Q_NSWYGS2020_001",
-  "Dataset_ID": "NSWYGS_2020",
-  "Dataset name": "NSW Youth Gambling Study 2020",
-  "Wave / year": "2020",
-  "Age group": "12-17",
-  "Questionnaire / metadata title": "NSW Youth Gambling Study 2020 full report and appendices",
-  "File type": "PDF",
-  "URL": "https://www.gambleaware.nsw.gov.au/-/media/files/nsw-youth-gambling-study-2020-full-report-and-appendices.ashx",
-  "Public or gated": "Public",
-  "Variable names visible?": "Partial",
-  "Question wording visible?": "Partial (within report text and appendices)",
-  "Notes": "Online survey of 2,220 young people aged 12-17. Recruited via household flyers, Qualtrics panel, and digital advertising. 16 focus groups with 104 participants across 8 NSW locations."
- },
- {
-  "Questionnaire_ID": "Q_NSWYGS2024_001",
-  "Dataset_ID": "NSWYGS_2024",
-  "Dataset name": "NSW Longitudinal Youth Gambling Study 2024",
-  "Wave / year": "2020 and 2024",
-  "Age group": "12-17 at baseline; 16-21 at follow-up",
-  "Questionnaire / metadata title": "NSW Longitudinal Youth Gambling Study 2024 report",
-  "File type": "PDF",
-  "URL": "https://www.gambleaware.nsw.gov.au/-/media/files/published-research-pdfs/nsw-longitudinal-youth-gambling-study-2024-report.ashx",
-  "Public or gated": "Public",
-  "Variable names visible?": "Partial",
-  "Question wording visible?": "Partial (within report text)",
-  "Notes": "Two-wave longitudinal survey (n=229) plus qualitative interviews (n=50, aged 18-23). Also includes systematic review of longitudinal youth gambling research 1995-2024."
- },
- {
   "Questionnaire_ID": "Q_GA_TSS_001",
   "Dataset_ID": "GA_TSS",
   "Dataset name": "GambleAware Annual GB Treatment and Support Survey",
@@ -1328,20 +1300,6 @@
   "Variable names visible?": "Construct-level (gambling activities, frequency, spend, motivations, WHO-5, RADS-SF)",
   "Question wording visible?": "Summary descriptions in paper",
   "Notes": "Part of Youth2000 survey series. Data access via formal proposal to Auckland AHRG (Dr Terry Fleming)."
- },
- {
-  "Questionnaire_ID": "Q_KOREA_NYGP_01",
-  "Dataset_ID": "KOREA_NYGP",
-  "Dataset name": "Korean National Survey on Youth Gambling Problems",
-  "Wave / year": "2015",
-  "Age group": "13-17",
-  "Questionnaire / metadata title": "Kang et al. 2019 - Korean youth gambling: CAGI/GPSS, gambling behaviours, risk factors",
-  "File type": "Published paper (Int J Environ Res Public Health)",
-  "URL": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6617330/",
-  "Public or gated": "Open access",
-  "Variable names visible?": "Construct-level (CAGI GPSS 9 items, gambling types, frequency, online/offline)",
-  "Question wording visible?": "CAGI/GPSS items referenced; some items described in paper",
-  "Notes": "Data access: submit application + written oath to Korea Center on Gambling Problems; de-identified raw data provided via email."
  },
  {
   "Questionnaire_ID": "Q_FINLAND_SHP_01",
