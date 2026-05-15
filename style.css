@@ -223,8 +223,8 @@ nav a.active{color:var(--amber-light);background:rgba(217,119,6,.15)}
 .viz-empty{padding:1.2rem;text-align:center;color:var(--text-muted);font-size:.85rem;background:var(--border-light);border-radius:var(--radius)}
 .bar-row-link{color:inherit;text-decoration:none}
 .bar-row-link:hover .bar-label{color:var(--amber)}
-.bar-label-wide{width:170px}
-.bar-label-country{width:130px}
+.bar-label-wide{width:300px}
+.bar-label-country{width:180px}
 .viz-table-link{color:var(--amber);font-weight:600}
 .coverage-mini-table{min-width:920px}
 
@@ -718,7 +718,7 @@ nav a.active{color:var(--amber-light);background:rgba(217,119,6,.15)}
   .hero-search select{border-left:none;border-top:1px solid var(--border)}
   .metrics-grid{grid-template-columns:repeat(3,1fr)}
   .viz-toolbar{grid-template-columns:1fr}
-  .bar-label-wide,.bar-label-country{width:115px}
+  .bar-label-wide{width:200px}.bar-label-country{width:140px}
 }
 @media(max-width:768px){
   .nav-toggle{display:block}
