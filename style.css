@@ -224,7 +224,7 @@ nav a.active{color:var(--amber-light);background:rgba(217,119,6,.15)}
 .bar-row-link{color:inherit;text-decoration:none}
 .bar-row-link:hover .bar-label{color:var(--amber)}
 .bar-label-wide{width:170px}
-.bar-label-country{width:130px}
+.bar-label-country{width:auto;min-width:130px;max-width:none;overflow:visible;text-overflow:clip}
 .viz-table-link{color:var(--amber);font-weight:600}
 .coverage-mini-table{min-width:920px}
 
@@ -718,7 +718,7 @@ nav a.active{color:var(--amber-light);background:rgba(217,119,6,.15)}
   .hero-search select{border-left:none;border-top:1px solid var(--border)}
   .metrics-grid{grid-template-columns:repeat(3,1fr)}
   .viz-toolbar{grid-template-columns:1fr}
-  .bar-label-wide,.bar-label-country{width:115px}
+  .bar-label-wide{width:115px}.bar-label-country{width:auto;min-width:100px}
 }
 @media(max-width:768px){
   .nav-toggle{display:block}
