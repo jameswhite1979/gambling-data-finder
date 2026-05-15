@@ -45,12 +45,6 @@
     </div>
 
     <div class="viz-card viz-card-wide">
-      <h3>Age group coverage</h3>
-      <p>Indexed variables by age group or population label.</p>
-      <div id="age-coverage"><div class="loading">Loading chart...</div></div>
-    </div>
-
-    <div class="viz-card viz-card-wide">
       <h3>Search results summary</h3>
       <p>Filter the variable index and see the shape of the matching records.</p>
       <div class="viz-toolbar">
@@ -113,7 +107,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   renderGamblingByDataset();
   renderAccessOverview();
   renderCountryCoverage();
-  renderAgeCoverage();
   setupSearchSummary();
 });
 
@@ -275,11 +268,6 @@ function renderAccessOverview() {
 function renderCountryCoverage() {
   const rows = topCounts(countBy(datasets, d => d['Country']), 12);
   renderBar('country-coverage', rows, { color: '#334155', labelClass: 'bar-label-country' });
-}
-
-function renderAgeCoverage() {
-  const rows = topCounts(countBy(variables, v => v.age_group || 'Unspecified'), 18);
-  renderBar('age-coverage', rows, { color: '#7c3aed', labelClass: 'bar-label-wide' });
 }
 
 function setupSearchSummary() {
