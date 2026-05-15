@@ -223,15 +223,14 @@ nav a.active{color:var(--amber-light);background:rgba(217,119,6,.15)}
 .viz-empty{padding:1.2rem;text-align:center;color:var(--text-muted);font-size:.85rem;background:var(--border-light);border-radius:var(--radius)}
 .bar-row-link{color:inherit;text-decoration:none}
 .bar-row-link:hover .bar-label{color:var(--amber)}
-.bar-label-wide{width:auto;min-width:170px}
-.bar-label-country{width:auto;min-width:130px}
+.bar-label-wide{width:170px}
+.bar-label-country{width:130px}
 .viz-table-link{color:var(--amber);font-weight:600}
 .coverage-mini-table{min-width:920px}
 
 .bar-chart{display:flex;flex-direction:column;gap:.4rem}
 .bar-row{display:flex;align-items:center;gap:.6rem;font-size:.75rem}
 .bar-label{width:100px;text-align:right;color:var(--text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex-shrink:0}
-.bar-label.bar-label-wide,.bar-label.bar-label-country{width:auto;max-width:none;overflow:visible;text-overflow:clip;white-space:nowrap}
 .bar-track{flex:1;height:20px;background:var(--border-light);border-radius:3px;overflow:hidden;position:relative}
 .bar-fill{height:100%;border-radius:3px;transition:width .6s ease;min-width:2px}
 .bar-val{width:40px;font-weight:600;color:var(--navy);font-size:.75rem}
@@ -719,7 +718,7 @@ nav a.active{color:var(--amber-light);background:rgba(217,119,6,.15)}
   .hero-search select{border-left:none;border-top:1px solid var(--border)}
   .metrics-grid{grid-template-columns:repeat(3,1fr)}
   .viz-toolbar{grid-template-columns:1fr}
-  .bar-label.bar-label-wide,.bar-label.bar-label-country{min-width:100px}
+  .bar-label-wide,.bar-label-country{width:115px}
 }
 @media(max-width:768px){
   .nav-toggle{display:block}
