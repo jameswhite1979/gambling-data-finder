@@ -24,7 +24,23 @@
   "YPGS",
   "YPGS_2025",
   "NSWYGS_2020",
-  "NSWYGS_2024"
+  "NSWYGS_2024",
+  "GA_TSS",
+  "ASSAD",
+  "YOUTH07_NZ",
+  "CANADA_YGS",
+  "CCHS_YOUTH",
+  "US_WELTE_YOUTH",
+  "KOREA_NYGP",
+  "FINLAND_SHP",
+  "FINLAND_AHLS",
+  "SWEDEN_CAN",
+  "IPSAD_ITALY",
+  "HK_YOUTH_GAMBLING",
+  "MACAU_GAMBLING",
+  "EUNETADB",
+  "SPAIN_ADOLESCENT",
+  "VRGF_SIMULATED"
  ],
  "construct_categories": [
   "Administrative metadata",
@@ -102,7 +118,10 @@
   "Self-rated health",
   "Suicidality item(s)",
   "WEMWBS",
-  "WHO-5"
+  "WHO-5",
+  "CAGI",
+  "CPGI",
+  "MAGS"
  ],
  "wave_years": [
   "20+ / It\u00e2\u20ac\u2122s All About You 20+",
@@ -180,6 +199,8 @@
   "Year 1 2023",
   "Year 2 / 2024",
   "Year 2, 2024",
+  "2019-2024",
+  "2023-2024",
   "You and your life",
   "Your Changing Life",
   "cLon_3a",
@@ -260,6 +281,7 @@
   "Under 25 / longitudinal cohort",
   "Wave IV adults; retrospective/longitudinal adolescent cohort; Wave V older adult follow-up",
   "Years 7-11",
-  "Young person / G1"
+  "Young person / G1",
+  "18+ (retrospective pre-18)"
  ]
 }

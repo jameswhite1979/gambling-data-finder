@@ -1258,5 +1258,47 @@
   "Variable names visible?": "Partial",
   "Question wording visible?": "Partial (within report text)",
   "Notes": "Two-wave longitudinal survey (n=229) plus qualitative interviews (n=50, aged 18-23). Also includes systematic review of longitudinal youth gambling research 1995-2024."
+ },
+ {
+  "Questionnaire_ID": "Q_GA_TSS_001",
+  "Dataset_ID": "GA_TSS",
+  "Dataset name": "GambleAware Annual GB Treatment and Support Survey",
+  "Wave / year": "2019-2024",
+  "Age group": "18+",
+  "Questionnaire / metadata title": "GeoDS/CDRC variable dictionary for Treatment and Support Survey",
+  "File type": "Variable dictionary (behind login)",
+  "URL": "https://data.geods.ac.uk/dataset/gambleaware-treatment-and-support-survey-data",
+  "Public or gated": "Gated (login required)",
+  "Variable names visible?": "Yes (behind login)",
+  "Question wording visible?": "Partial",
+  "Notes": "Variable dictionary available via GeoDS portal. 962 variables (2022), 924 (2020), 242 (2019 P1), 736 (2019 P2). Login required to view or download."
+ },
+ {
+  "Questionnaire_ID": "Q_GA_TSS_002",
+  "Dataset_ID": "GA_TSS",
+  "Dataset name": "GambleAware Annual GB Treatment and Support Survey",
+  "Wave / year": "2024",
+  "Age group": "18+",
+  "Questionnaire / metadata title": "Annual GB Treatment and Support Survey 2024 report",
+  "File type": "PDF",
+  "URL": "https://www.gambleaware.org/our-research/publication-library/articles/annual-gb-treatment-and-support-survey-2024/",
+  "Public or gated": "Public",
+  "Variable names visible?": "No",
+  "Question wording visible?": "Partial (within report text)",
+  "Notes": "~18,000 adults. Fieldwork November 2024. Published September 2025. Contains PGSI thresholds and gambling participation breakdowns."
+ },
+ {
+  "Questionnaire_ID": "Q_GA_TSS_003",
+  "Dataset_ID": "GA_TSS",
+  "Dataset name": "GambleAware Annual GB Treatment and Support Survey",
+  "Wave / year": "2023",
+  "Age group": "18+",
+  "Questionnaire / metadata title": "Annual GB Treatment and Support Survey 2023 report",
+  "File type": "PDF",
+  "URL": "https://www.gambleaware.org/our-research/publication-library/articles/annual-gb-treatment-and-support-survey-2023/",
+  "Public or gated": "Public",
+  "Variable names visible?": "No",
+  "Question wording visible?": "Partial (within report text)",
+  "Notes": "~18,000 adults. Fieldwork November 2023. Published August 2024. Includes retrospective under-18 gambling items."
  }
 ]
