@@ -28,19 +28,8 @@
   "GA_TSS",
   "ASSAD",
   "YOUTH07_NZ",
-  "CANADA_YGS",
-  "CCHS_YOUTH",
-  "US_WELTE_YOUTH",
   "KOREA_NYGP",
-  "FINLAND_SHP",
-  "FINLAND_AHLS",
-  "SWEDEN_CAN",
-  "IPSAD_ITALY",
-  "HK_YOUTH_GAMBLING",
-  "MACAU_GAMBLING",
-  "EUNETADB",
-  "SPAIN_ADOLESCENT",
-  "VRGF_SIMULATED"
+  "FINLAND_SHP"
  ],
  "construct_categories": [
   "Administrative metadata",
@@ -120,11 +109,10 @@
   "WEMWBS",
   "WHO-5",
   "CAGI",
-  "CPGI",
-  "MAGS"
+  "CPGI"
  ],
  "wave_years": [
-  "20+ / It\u00e2\u20ac\u2122s All About You 20+",
+  "20+ / Itâ€™s All About You 20+",
   "2010",
   "2016",
   "2017/2018/2019/2021",

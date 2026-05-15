@@ -1300,5 +1300,61 @@
   "Variable names visible?": "No",
   "Question wording visible?": "Partial (within report text)",
   "Notes": "~18,000 adults. Fieldwork November 2023. Published August 2024. Includes retrospective under-18 gambling items."
+ },
+ {
+  "Questionnaire_ID": "Q_ASSAD_01",
+  "Dataset_ID": "ASSAD",
+  "Dataset name": "Australian Secondary School Alcohol and Drug Survey",
+  "Wave / year": "2017",
+  "Age group": "12-17",
+  "Questionnaire / metadata title": "Freund et al. 2022 - Gambling among young Australians (ASSAD 2017 gambling module)",
+  "File type": "Published paper (J Gambling Studies)",
+  "URL": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9653348/",
+  "Public or gated": "Open access",
+  "Variable names visible?": "Construct-level (DSM-IV-MR-J items, participation types, modalities)",
+  "Question wording visible?": "Summary descriptions in paper; exact wording from corresponding author",
+  "Notes": "First ASSAD wave to include gambling module. Dashboard data on data.gov.au; microdata from corresponding author on reasonable request."
+ },
+ {
+  "Questionnaire_ID": "Q_YOUTH07_NZ_01",
+  "Dataset_ID": "YOUTH07_NZ",
+  "Dataset name": "Youth'07 - New Zealand Youth Health and Wellbeing Survey",
+  "Wave / year": "2007",
+  "Age group": "12-19",
+  "Questionnaire / metadata title": "Rossen et al. 2016 - Gambling and problem gambling in NZ adolescents (Youth2000 series)",
+  "File type": "Published paper (Asian J Gambling Issues Public Health)",
+  "URL": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4998168/",
+  "Public or gated": "Open access",
+  "Variable names visible?": "Construct-level (gambling activities, frequency, spend, motivations, WHO-5, RADS-SF)",
+  "Question wording visible?": "Summary descriptions in paper",
+  "Notes": "Part of Youth2000 survey series. Data access via formal proposal to Auckland AHRG (Dr Terry Fleming)."
+ },
+ {
+  "Questionnaire_ID": "Q_KOREA_NYGP_01",
+  "Dataset_ID": "KOREA_NYGP",
+  "Dataset name": "Korean National Survey on Youth Gambling Problems",
+  "Wave / year": "2015",
+  "Age group": "13-17",
+  "Questionnaire / metadata title": "Kang et al. 2019 - Korean youth gambling: CAGI/GPSS, gambling behaviours, risk factors",
+  "File type": "Published paper (Int J Environ Res Public Health)",
+  "URL": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6617330/",
+  "Public or gated": "Open access",
+  "Variable names visible?": "Construct-level (CAGI GPSS 9 items, gambling types, frequency, online/offline)",
+  "Question wording visible?": "CAGI/GPSS items referenced; some items described in paper",
+  "Notes": "Data access: submit application + written oath to Korea Center on Gambling Problems; de-identified raw data provided via email."
+ },
+ {
+  "Questionnaire_ID": "Q_FINLAND_SHP_01",
+  "Dataset_ID": "FINLAND_SHP",
+  "Dataset name": "Finnish School Health Promotion Study",
+  "Wave / year": "2017/2019/2021",
+  "Age group": "14-16",
+  "Questionnaire / metadata title": "Raitasalo et al. 2024 - Youth gambling and origin (Finnish School Health Promotion Study)",
+  "File type": "Published paper (J Gambling Studies)",
+  "URL": "https://link.springer.com/article/10.1007/s10899-024-10321-7",
+  "Public or gated": "Open access",
+  "Variable names visible?": "Construct-level (gambling frequency, substance use, school, peers, family)",
+  "Question wording visible?": "Summary descriptions in paper",
+  "Notes": "Data available via Finnish Social Science Data Archive (FSD/Aila, catalogue FSD3551) with user licence, and via THL data request."
  }
 ]
