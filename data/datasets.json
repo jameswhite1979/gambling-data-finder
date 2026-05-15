@@ -2,7 +2,7 @@
  {
   "Dataset_ID": "ALSPAC",
   "Dataset name": "Avon Longitudinal Study of Parents and Children",
-  "Country": "UK - England",
+  "Country": "England",
   "Owner / data controller": "University of Bristol / ALSPAC",
   "Study design": "Birth cohort",
   "Age focus / population": "Adolescence; CLOSER file F17 gambling",
@@ -26,7 +26,7 @@
  {
   "Dataset_ID": "BIB_AOW",
   "Dataset name": "Born in Bradford - Age of Wonder",
-  "Country": "UK - England",
+  "Country": "England",
   "Owner / data controller": "Born in Bradford",
   "Study design": "Longitudinal cohort/school survey",
   "Age focus / population": "Adolescents; post-16 questionnaire also relevant",
@@ -242,7 +242,7 @@
  {
   "Dataset_ID": "ADDHEALTH",
   "Dataset name": "National Longitudinal Study of Adolescent to Adult Health",
-  "Country": "USA",
+  "Country": "United States",
   "Owner / data controller": "UNC Carolina Population Center / ICPSR",
   "Study design": "Longitudinal cohort",
   "Age focus / population": "Adolescents followed into adulthood",
@@ -314,7 +314,7 @@
  {
   "Dataset_ID": "OSDUHS",
   "Dataset name": "Ontario Student Drug Use and Health Survey",
-  "Country": "Canada - Ontario",
+  "Country": "Canada",
   "Owner / data controller": "CAMH",
   "Study design": "Repeated cross-sectional school survey",
   "Age focus / population": "Grades 7-12",
@@ -338,7 +338,7 @@
  {
   "Dataset_ID": "MANITOBA_YA",
   "Dataset name": "Manitoba Longitudinal Study of Young Adults",
-  "Country": "Canada - Manitoba",
+  "Country": "Canada",
   "Owner / data controller": "GREO/Borealis repository",
   "Study design": "Longitudinal young adult survey",
   "Age focus / population": "Young adults",
@@ -554,7 +554,7 @@
  {
   "Dataset_ID": "HSE2016",
   "Dataset name": "Health Survey for England 2016",
-  "Country": "UK - England",
+  "Country": "England",
   "Owner / data controller": "NatCen / NHS Digital / UK Data Service",
   "Study design": "Repeated cross-sectional health survey",
   "Age focus / population": "Age 16+ adults; includes 16-24 young adults",
@@ -578,7 +578,7 @@
  {
   "Dataset_ID": "HSE2018",
   "Dataset name": "Health Survey for England 2018",
-  "Country": "UK - England",
+  "Country": "England",
   "Owner / data controller": "NatCen / NHS Digital / UK Data Service",
   "Study design": "Repeated cross-sectional health survey",
   "Age focus / population": "Age 16+ adults; includes 16-24 young adults",
@@ -674,7 +674,7 @@
  {
   "Dataset_ID": "NCDS",
   "Dataset name": "1958 National Child Development Study",
-  "Country": "UK - England, Scotland, Wales",
+  "Country": "UK",
   "Owner / data controller": "Centre for Longitudinal Studies, UCL / ESRC",
   "Study design": "Birth cohort",
   "Age focus / population": "Born March 1958; sweep 4 (age 23) contains gambling item",
@@ -699,7 +699,7 @@
  {
   "Dataset_ID": "BCS70",
   "Dataset name": "1970 British Cohort Study",
-  "Country": "UK - England, Scotland, Wales",
+  "Country": "UK",
   "Owner / data controller": "Centre for Longitudinal Studies, UCL / ESRC",
   "Study design": "Birth cohort",
   "Age focus / population": "Born April 1970; sweep 4 (age 15/16) contains gambling items",
