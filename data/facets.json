@@ -50,6 +50,7 @@
   "Impulsivity",
   "Low self-control",
   "Parent gambling",
+  "Perceived skill/control/risk",
   "Problem gambling / harm",
   "Risk/protective factor",
   "Sensation seeking",
@@ -89,6 +90,8 @@
  "named_measures": [
   "ATGS",
   "Brief PG indicator",
+  "Bristol Social Adjustment Guide",
+  "CES-D",
   "CPGI",
   "Cambridge Gambling Task",
   "Cantril Ladder",
@@ -109,18 +112,18 @@
   "ESPAD tobacco items",
   "FAS",
   "GHQ",
+  "GRCS",
   "None",
   "PGSI",
   "PHQ-4",
+  "Rutter Behaviour Scale",
   "SDQ",
   "SGHS",
   "SOGS-RA",
   "Self-rated health",
   "Suicidality item(s)",
   "WEMWBS",
-  "WHO-5",
-  "CAGI",
-  "CPGI"
+  "WHO-5"
  ],
  "wave_years": [
   "20+ / Itâ€™s All About You 20+",
