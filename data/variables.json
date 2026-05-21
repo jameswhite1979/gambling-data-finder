@@ -757,7 +757,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_u: YP assessment of whether gambling makes them happier: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_048",
@@ -776,7 +777,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_v: YP assessment of whether they cannot function without gambling: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_049",
@@ -795,7 +797,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_w: YP assessment of whether praying helps them win: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_050",
@@ -814,7 +817,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_x: YP assessment of whether losses when gambling, are bound to be followed by a series of wins: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_051",
@@ -833,7 +837,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_y: YP assessment of whether relating their winnings to their skill and ability makes them continue gambling: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_052",
@@ -852,7 +857,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_z: YP assessment of whether gambling makes things seem better: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_053",
@@ -871,7 +877,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_aa: YP assessment of whether it is difficult to stop gambling as they are so out of control: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_054",
@@ -890,7 +897,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_ab: YP assessment of whether they believe that specific numbers and colours can help increase their chances of winning: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_055",
@@ -909,7 +917,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_ac: YP assessment of whether they believe a series of losses will provide them with a learning experience that will help them win later: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_056",
@@ -928,7 +937,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_ad: YP assessment of whether relating their losses to bad luck and bad circumstances makes them continue gambling: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_057",
@@ -947,7 +957,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_ae: YP assessment of whether they feel gambling makes the future brighter: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_058",
@@ -966,7 +977,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_af: YP assessment of whether their desire to gamble is so overpowering: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_059",
@@ -985,7 +997,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_ag: YP assessment of whether they collect specific objects that help increase their chances of winning: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_060",
@@ -1004,7 +1017,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_ah: YP feels that when they have a win once, they will definitely win again: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_061",
@@ -1023,7 +1037,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_ai: YP assessment of whether relating their losses to probability makes them continue gambling: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_062",
@@ -1042,7 +1057,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_aj: YP assessment of whether they feel that having a gamble helps reduce tension and stress: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_063",
@@ -1061,7 +1077,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_ak: YP assessment of whether they are not strong enough to stop gambling: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_064",
@@ -1080,7 +1097,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_al: YP assessment of whether they have specific rituals and behaviours that increase their chances of winning: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_065",
@@ -1099,7 +1117,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_am: YP assessment of whether there are times that they feel lucky and thus, gamble at those times only: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_066",
@@ -1118,7 +1137,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_an: YP assessment of whether remembering how much money they won last time makes them continue gambling: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_067",
@@ -1137,7 +1157,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_ao: YP feels that they will never be able to stop gambling: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_068",
@@ -1156,7 +1177,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_ap: YP feels that they have some control over predicting their gambling wins: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_069",
@@ -1175,7 +1197,8 @@
   "questionnaire_url": "https://discovery.closer.ac.uk/item/uk.alspac/81dcf1bf-8c66-4ef4-b569-953e4368fef8/3",
   "metadata_status": "Public CLOSER variable list; direct URL added when individually retrieved",
   "meta_analysis_note": "ALSPAC-specific labels; several participation/harm/cognition constructs may require harmonisation",
-  "include_website": "Yes"
+  "include_website": "Yes",
+  "question_text": "Q18_aq: YP feels that if they keep changing their numbers they have less chances of winning than if they keep the same numbers every time: F17 gambling"
  },
  {
   "variable_row_id": "V_ALSPAC_004",
