@@ -312,8 +312,8 @@ function renderSearchSummary(results) {
   const gambling = results.filter(v => v.role === 'Gambling measure').length;
   const risk = results.filter(v => v.role === 'Risk/protective factor').length;
   const measures = new Set(results.map(v => v.named_measure).filter(Boolean)).size;
-  const topicRows = topCounts(countBy(results, v => v.construct_category || 'Uncategorised'), 10);
-  const datasetRows = topCounts(countBy(results, v => v.dataset_id || 'Unknown'), 10).map(r => ({
+  const topicRows = topCounts(countBy(results, v => v.construct_category || 'Uncategorised'), Infinity);
+  const datasetRows = topCounts(countBy(results, v => v.dataset_id || 'Unknown'), Infinity).map(r => ({
     label: datasetName(r.label),
     value: r.value,
     href: r.label === 'Unknown' ? '' : 'study.html?id=' + encodeURIComponent(r.label)
