@@ -561,7 +561,7 @@
  },
  {
   "Questionnaire_ID": "Q_UP_GSGB_Y2",
-  "Dataset_ID": "GSGB_Y2_2024",
+  "Dataset_ID": "GSGB",
   "Dataset name": "Gambling Survey for Great Britain Year 2, 2024",
   "Wave / year": "Year 2 / 2024",
   "Age group": "18+; extract emerging adult subgroup",
@@ -575,7 +575,7 @@
  },
  {
   "Questionnaire_ID": "Q_UP_GSGB_DD",
-  "Dataset_ID": "GSGB_Y2_2024",
+  "Dataset_ID": "GSGB",
   "Dataset name": "Gambling Survey for Great Britain Year 2, 2024",
   "Wave / year": "Year 2 / 2024",
   "Age group": "18+; extract emerging adult subgroup",
@@ -589,7 +589,7 @@
  },
  {
   "Questionnaire_ID": "Q_UP_YPGS_2025",
-  "Dataset_ID": "YPGS_2025",
+  "Dataset_ID": "YPGS",
   "Dataset name": "Young People and Gambling Survey 2025",
   "Wave / year": "2025",
   "Age group": "11-17",
@@ -603,7 +603,7 @@
  },
  {
   "Questionnaire_ID": "Q_UP_YPGS_DD",
-  "Dataset_ID": "YPGS_2025",
+  "Dataset_ID": "YPGS",
   "Dataset name": "Young People and Gambling Survey 2025",
   "Wave / year": "2025",
   "Age group": "11-17",
@@ -1314,5 +1314,19 @@
   "Variable names visible?": "Construct-level (gambling frequency, substance use, school, peers, family)",
   "Question wording visible?": "Summary descriptions in paper",
   "Notes": "Data available via Finnish Social Science Data Archive (FSD/Aila, catalogue FSD3551) with user licence, and via THL data request."
+ },
+ {
+  "Questionnaire_ID": "MLSYA_CODEBOOK",
+  "Dataset_ID": "MANITOBA_YA",
+  "Dataset name": "Manitoba Longitudinal Study of Young Adults",
+  "Wave / year": "Waves 1-4 (2007-2011)",
+  "Age group": "Young adults (18-20 at baseline)",
+  "Questionnaire / metadata title": "MLSYA Codebook MASTER (Greo/Borealis)",
+  "File type": "PDF codebook",
+  "URL": "https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683/SP3/9OQJOC",
+  "Public or gated": "Public",
+  "Variable names visible?": "Yes",
+  "Question wording visible?": "Yes",
+  "Notes": "Public codebook; dataset access via Greo application"
  }
 ]
