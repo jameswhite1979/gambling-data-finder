@@ -3557,7 +3557,7 @@
  },
  {
   "Source_ID": "SRC_0349",
-  "Dataset_ID": "GSGB_Y2_2024",
+  "Dataset_ID": "GSGB",
   "Dataset name": "Gambling Survey for Great Britain Year 2, 2024",
   "Resource type": "Data dictionary PDF",
   "Title / description": "Uploaded data dictionary - Gambling Survey for Great Britain Year 2, 2024 data dictionary.pdf",
@@ -3571,7 +3571,7 @@
  },
  {
   "Source_ID": "SRC_0350",
-  "Dataset_ID": "GSGB_Y2_2024",
+  "Dataset_ID": "GSGB",
   "Dataset name": "Gambling Survey for Great Britain Year 2, 2024",
   "Resource type": "Questionnaire PDF",
   "Title / description": "Uploaded questionnaire - Gambling Survey for Great Britain Year 2, 2024 questionnaire.pdf",
@@ -3585,7 +3585,7 @@
  },
  {
   "Source_ID": "SRC_0351",
-  "Dataset_ID": "GSGB_Y2_2024",
+  "Dataset_ID": "GSGB",
   "Dataset name": "Gambling Survey for Great Britain Year 2, 2024",
   "Resource type": "Variables XLSX",
   "Title / description": "Uploaded variable catalogue - Gambling Survey for Great Britain Year 2, 2024 variables.xlsx",
@@ -3669,7 +3669,7 @@
  },
  {
   "Source_ID": "SRC_0357",
-  "Dataset_ID": "YPGS_2025",
+  "Dataset_ID": "YPGS",
   "Dataset name": "Young People and Gambling Survey 2025",
   "Resource type": "Questionnaire PDF",
   "Title / description": "Uploaded questionnaire - Young people and gambling survey 2025 questionnaire.pdf",
@@ -3683,7 +3683,7 @@
  },
  {
   "Source_ID": "SRC_0358",
-  "Dataset_ID": "YPGS_2025",
+  "Dataset_ID": "YPGS",
   "Dataset name": "Young People and Gambling Survey 2025",
   "Resource type": "Data dictionary XLSX",
   "Title / description": "Uploaded data dictionary - Young People and Gambling Survey, 2025 data dictionary.xlsx",
@@ -3697,7 +3697,7 @@
  },
  {
   "Source_ID": "SRC_0359",
-  "Dataset_ID": "YPGS_2025",
+  "Dataset_ID": "YPGS",
   "Dataset name": "Young People and Gambling Survey 2025",
   "Resource type": "Dataset catalogue",
   "Title / description": "UKDS study 9499 catalogue record",
@@ -3711,7 +3711,7 @@
  },
  {
   "Source_ID": "SRC_0360",
-  "Dataset_ID": "YPGS_2025",
+  "Dataset_ID": "YPGS",
   "Dataset name": "Young People and Gambling Survey 2025",
   "Resource type": "Official statistics",
   "Title / description": "Gambling Commission Young People and Gambling 2025 official statistics",
@@ -3725,7 +3725,7 @@
  },
  {
   "Source_ID": "SRC_0361",
-  "Dataset_ID": "GSGB_Y2_2024",
+  "Dataset_ID": "GSGB",
   "Dataset name": "Gambling Survey for Great Britain Year 2, 2024",
   "Resource type": "Dataset catalogue",
   "Title / description": "UKDS study 9507 catalogue record",
@@ -3739,7 +3739,7 @@
  },
  {
   "Source_ID": "SRC_0362",
-  "Dataset_ID": "GSGB_Y2_2024",
+  "Dataset_ID": "GSGB",
   "Dataset name": "Gambling Survey for Great Britain Year 2, 2024",
   "Resource type": "Official statistics",
   "Title / description": "Gambling Commission GSGB Year 2 annual report",

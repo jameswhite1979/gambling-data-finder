@@ -52,19 +52,6 @@
   "Source URLs": "https://doi.org/10.12688/wellcomeopenres.15969.1"
  },
  {
-  "Dataset_ID": "GSGB_Y2_2024",
-  "Dataset name": "Gambling Survey for Great Britain Year 2, 2024",
-  "Public catalogue/tool checked": "Yes",
-  "CLOSER result": "Not relevant/not in CLOSER",
-  "Study-specific public metadata route": "UKDS study 9507 plus uploaded questionnaire/variables/dictionary",
-  "Variable names public?": "Yes",
-  "Question wording public?": "Yes",
-  "Raw data access status": "UKDS registered/safeguarded data access",
-  "Metadata access needed?": "No for metadata now uploaded",
-  "Next extraction action": "Complete PGSI/activity/health variable tagging from uploaded variable catalogue",
-  "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/studies/study/9507 ; https://www.gamblingcommission.gov.uk/statistics-and-research/publication/statistics-on-gambling-participation-annual-report-year-2-2024-official"
- },
- {
   "Dataset_ID": "MCS",
   "Dataset name": "Millennium Cohort Study",
   "Public catalogue/tool checked": "Yes",
@@ -115,19 +102,6 @@
   "Metadata access needed?": "No until public variable search is exhausted",
   "Next extraction action": "Use Understanding Society variable search to extract full variable names/labels before adding to Access_Needed",
   "Source URLs": "https://www.discovery.closer.ac.uk/item/uk.iser.ukhls/d8e2dcdb-d790-4163-8656-de77c633a604/1 ; https://www.understandingsociety.ac.uk/documentation/mainstage/variables/"
- },
- {
-  "Dataset_ID": "YPGS_2025",
-  "Dataset name": "Young People and Gambling Survey 2025",
-  "Public catalogue/tool checked": "Yes",
-  "CLOSER result": "Not relevant/not in CLOSER",
-  "Study-specific public metadata route": "UKDS study 9499 plus uploaded questionnaire and data dictionary",
-  "Variable names public?": "Yes",
-  "Question wording public?": "Yes",
-  "Raw data access status": "UKDS registered/safeguarded data access",
-  "Metadata access needed?": "No for metadata now uploaded",
-  "Next extraction action": "Complete variable extraction from uploaded data dictionary; link public UKDS/Gambling Commission pages",
-  "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/studies/study/9499 ; https://www.gamblingcommission.gov.uk/statistics-and-research/publication/young-people-and-gambling-2025-official-statistics"
  },
  {
   "Dataset_ID": "HSE2016",
@@ -427,5 +401,18 @@
   "Metadata access needed?": "Possibly",
   "Next extraction action": "Complete",
   "Source URLs": "https://cls-data.ucl.ac.uk/explore/variable-search"
+ },
+ {
+  "Dataset_ID": "YPGS",
+  "Dataset name": "Young People and Gambling Survey 2025",
+  "Public catalogue/tool checked": "Yes",
+  "CLOSER result": "Not relevant/not in CLOSER",
+  "Study-specific public metadata route": "UKDS study 9499 plus uploaded questionnaire and data dictionary",
+  "Variable names public?": "Yes",
+  "Question wording public?": "Yes",
+  "Raw data access status": "UKDS registered/safeguarded data access",
+  "Metadata access needed?": "No for metadata now uploaded",
+  "Next extraction action": "Complete variable extraction from uploaded data dictionary; link public UKDS/Gambling Commission pages",
+  "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/studies/study/9499 ; https://www.gamblingcommission.gov.uk/statistics-and-research/publication/young-people-and-gambling-2025-official-statistics"
  }
 ]
