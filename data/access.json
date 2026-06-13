@@ -591,5 +591,22 @@
   "Data format / notes": "Very large sample; repeated cross-sectional",
   "Source URLs": "https://link.springer.com/article/10.1007/s10899-024-10321-7",
   "Notes": ""
+ },
+ {
+  "Dataset_ID": "MANITOBA_YA",
+  "Dataset name": "Manitoba Longitudinal Study of Young Adults",
+  "Access status": "Public codebook/report; individual-level dataset by application",
+  "Access route": "Application via Greo (hosted on Borealis dataverse)",
+  "Access request URL": "https://info629522.typeform.com/to/LHsjAV9x",
+  "Data access documentation URL": "https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683/SP3/9OQJOC",
+  "Open/public items": "Codebook (MLSYA Codebook MASTER.pdf) and final report (PDF)",
+  "Gated items": "Individual-level dataset (MLSYA Dataset MASTER .tab)",
+  "Cost/fee": "None stated",
+  "Ethics/proposal likely?": "Application required",
+  "Named contact/form": "Greo application form",
+  "TRE / secure environment": "",
+  "Data format / notes": "Tab-delimited; 2,304 variables, 679 participants, 4 annual waves 2007-2011",
+  "Source URLs": "https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683/SP3/9OQJOC",
+  "Notes": "Codebook publicly downloadable; dataset access via Greo application."
  }
 ]
