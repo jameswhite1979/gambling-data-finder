@@ -1328,5 +1328,19 @@
   "Variable names visible?": "Yes",
   "Question wording visible?": "Yes",
   "Notes": "Public codebook; dataset access via Greo application"
+ },
+ {
+  "Questionnaire_ID": "Q_HSESHES2016_VARLIST",
+  "Dataset_ID": "HSE_SHES_2016",
+  "Dataset name": "Gambling in England and Scotland, 2016: Combined HSE/SHeS",
+  "Wave / year": "2016",
+  "Age group": "Adults aged 16+; includes 16-24 young adults",
+  "Questionnaire / metadata title": "SN 8416 archived dataset variable list (all variables, v2)",
+  "File type": "Variable list (XLSX)",
+  "URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/8416",
+  "Public or gated": "Public (variable list); microdata gated",
+  "Variable names visible?": "Yes",
+  "Question wording visible?": "Variable labels visible",
+  "Notes": "Official UKDS variable list used to index gambling, problem-gambling (PGSI, DSM-IV) and risk/protective variables."
  }
 ]
