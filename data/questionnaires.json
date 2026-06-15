@@ -448,20 +448,6 @@
   "Notes": "Added from archive-search inventory during de-duplication cleanup"
  },
  {
-  "Questionnaire_ID": "Q_0035",
-  "Dataset_ID": "NSDUH",
-  "Dataset name": "National Survey on Drug Use and Health",
-  "Wave / year": "Annual series",
-  "Age group": "Civilian non-institutionalized population aged 12+",
-  "Questionnaire / metadata title": "Questionnaire URL from archive-search inventory",
-  "File type": "URL",
-  "URL": "https://www.icpsr.umich.edu/web/NAHDAP/series/64/variables",
-  "Public or gated": "Public",
-  "Variable names visible?": "Unclear",
-  "Question wording visible?": "Unclear",
-  "Notes": "Added from archive-search inventory during de-duplication cleanup"
- },
- {
   "Questionnaire_ID": "Q_0039",
   "Dataset_ID": "ALSPAC",
   "Dataset name": "ALSPAC",

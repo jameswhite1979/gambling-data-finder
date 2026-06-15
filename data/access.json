@@ -238,23 +238,6 @@
   "Notes": ""
  },
  {
-  "Dataset_ID": "NSDUH",
-  "Dataset name": "National Survey on Drug Use and Health",
-  "Access status": "ICPSR/SAMHSA public and restricted access",
-  "Access route": "Open/registration + restricted options",
-  "Access request URL": "https://www.icpsr.umich.edu/web/NAHDAP/series/64",
-  "Data access documentation URL": "https://www.icpsr.umich.edu/web/NAHDAP/series/64",
-  "Open/public items": "",
-  "Gated items": "",
-  "Cost/fee": "Usually not stated / may vary",
-  "Ethics/proposal likely?": "Likely for managed/controlled access; not for public-use downloads unless institution requires",
-  "Named contact/form": "See access URL / study helpdesk",
-  "TRE / secure environment": "No / not primary",
-  "Data format / notes": "Formats and licence conditions to verify in data documentation",
-  "Source URLs": "https://www.icpsr.umich.edu/web/NAHDAP/series/64 ; https://www.icpsr.umich.edu/web/NAHDAP/series/64/variables",
-  "Notes": ""
- },
- {
   "Dataset_ID": "NSW",
   "Dataset name": "National Survey for Wales gambling module",
   "Access status": "UKDS registered access",
