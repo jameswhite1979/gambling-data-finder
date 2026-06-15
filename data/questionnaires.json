@@ -1344,17 +1344,17 @@
   "Notes": "Official UKDS variable list used to index gambling, problem-gambling (PGSI, DSM-IV) and risk/protective variables."
  },
  {
-  "Questionnaire_ID": "Q_GIBS_NODS",
+  "Questionnaire_ID": "Q_GIBS_CODEBOOK",
   "Dataset_ID": "GIBS",
   "Dataset name": "Gambling Impact and Behavior Study",
-  "Wave / year": "1998-1999",
-  "Age group": "Adults 18+ (RDD telephone survey); youth aged 16-17 (youth telephone survey)",
-  "Questionnaire / metadata title": "GIBS report (NORC 1999) - NODS screen (Table 2)",
-  "File type": "Public report (PDF)",
-  "URL": "https://govinfo.library.unt.edu/ngisc/reports/gibstdy.pdf",
-  "Public or gated": "Public report; ICPSR microdata + codebook gated",
-  "Variable names visible?": "Instrument items visible (official ICPSR variable names in gated codebook)",
-  "Question wording visible?": "Yes (NODS items verbatim)",
-  "Notes": "NODS (NORC DSM-IV Screen) item wording from the public GIBS report; used to index GIBS problem-gambling measures."
+  "Wave / year": "1998-1999 (Youth Survey)",
+  "Age group": "Youth aged 16-17",
+  "Questionnaire / metadata title": "ICPSR 2778 Youth Survey Codebook (dataset 0002)",
+  "File type": "PDF codebook",
+  "URL": "https://www.icpsr.umich.edu/web/NAHDAP/studies/2778",
+  "Public or gated": "Codebook documents variables; microdata gated (ICPSR/NAHDAP)",
+  "Variable names visible?": "Yes",
+  "Question wording visible?": "Yes",
+  "Notes": "Official ICPSR codebook used to index GIBS youth-survey gambling and risk/protective variables (NODS problem gambling, participation, spend, motives, treatment, substance use, mental health)."
  }
 ]
