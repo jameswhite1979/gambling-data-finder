@@ -1356,5 +1356,19 @@
   "Variable names visible?": "Yes",
   "Question wording visible?": "Yes",
   "Notes": "Official ICPSR codebook used to index GIBS youth-survey gambling and risk/protective variables (NODS problem gambling, participation, spend, motives, treatment, substance use, mental health)."
+ },
+ {
+  "Questionnaire_ID": "Q_GUI98_W4",
+  "Dataset_ID": "GUI98",
+  "Dataset name": "Growing Up in Ireland Cohort '98",
+  "Wave / year": "Wave 4 (age 20, 2019)",
+  "Age group": "Young people aged 20",
+  "Questionnaire / metadata title": "GUI Cohort '98 Wave 4 (age 20) Young Person questionnaire",
+  "File type": "PDF questionnaire",
+  "URL": "https://issda.ucd.ie/dataset.xhtml?persistentId=doi:10.7929/ISSDA/YBURA1",
+  "Public or gated": "Questionnaire public on ISSDA Dataverse; microdata restricted (AMF via ISSDA; RMF via CSO)",
+  "Variable names visible?": "Questionnaire item numbers (B41-B43); AMF data file excludes gambling - data variable names in gated RMF",
+  "Question wording visible?": "Yes",
+  "Notes": "Gambling asked only at age 20 (3-item module); NOT at 17/18. Gambling items excluded from public AMF data."
  }
 ]

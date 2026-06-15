@@ -65655,5 +65655,47 @@
   "Metadata status": "Official ICPSR codebook (ICPSR 2778, dataset 0002 Youth Survey; 02778-0002-Codebook.pdf), accessed 2026-06-15. Variable name, label and question wording verbatim. Microdata via ICPSR/NAHDAP registered access.",
   "Meta-analysis compatibility note": "NODS (NORC DSM-IV Screen for Gambling Problems) - DSM-IV-based; comparable with other datasets using DSM-IV problem-gambling criteria.",
   "col_11": ""
+ },
+ {
+  "Dataset_ID": "GUI98",
+  "Dataset name": "Growing Up in Ireland Cohort '98",
+  "Wave / year": "Wave 4 (age 20, 2019)",
+  "Age group": "Young people aged 20",
+  "Variable/item ID": "B41",
+  "Variable label or exact question": "B41. Do you ever buy lottery tickets such as scratch cards or lotto? (frequency: a few times a week / once a week / once or twice a month / occasionally / a few times a year / never)",
+  "Named measure": "",
+  "Construct category": "Gambling participation",
+  "Questionnaire / codebook URL": "https://issda.ucd.ie/dataset.xhtml?persistentId=doi:10.7929/ISSDA/YBURA1",
+  "Metadata status": "Item wording verbatim from the public GUI Cohort '98 Wave 4 (age 20) Young Person questionnaire (ISSDA Dataverse doi:10.7929/ISSDA/YBURA1), accessed 2026-06-15. Gambling items are NOT released in the anonymised AMF microdata; analysis-ready variables require the Researcher Microdata File (RMF) via the CSO.",
+  "Meta-analysis compatibility note": "Brief 3-item gambling participation/frequency module (6-point scale, in person or online). Limited harmonisation with PGSI/DSM-IV problem-gambling screens; comparable for participation/frequency only.",
+  "col_11": ""
+ },
+ {
+  "Dataset_ID": "GUI98",
+  "Dataset name": "Growing Up in Ireland Cohort '98",
+  "Wave / year": "Wave 4 (age 20, 2019)",
+  "Age group": "Young people aged 20",
+  "Variable/item ID": "B42",
+  "Variable label or exact question": "B42. Do you ever play casino tables or video games for money, such as craps, blackjack, roulette, slot machines or video poker? (6-point frequency scale)",
+  "Named measure": "",
+  "Construct category": "Gambling participation",
+  "Questionnaire / codebook URL": "https://issda.ucd.ie/dataset.xhtml?persistentId=doi:10.7929/ISSDA/YBURA1",
+  "Metadata status": "Item wording verbatim from the public GUI Cohort '98 Wave 4 (age 20) Young Person questionnaire (ISSDA Dataverse doi:10.7929/ISSDA/YBURA1), accessed 2026-06-15. Gambling items are NOT released in the anonymised AMF microdata; analysis-ready variables require the Researcher Microdata File (RMF) via the CSO.",
+  "Meta-analysis compatibility note": "Brief 3-item gambling participation/frequency module (6-point scale, in person or online). Limited harmonisation with PGSI/DSM-IV problem-gambling screens; comparable for participation/frequency only.",
+  "col_11": ""
+ },
+ {
+  "Dataset_ID": "GUI98",
+  "Dataset name": "Growing Up in Ireland Cohort '98",
+  "Wave / year": "Wave 4 (age 20, 2019)",
+  "Age group": "Young people aged 20",
+  "Variable/item ID": "B43",
+  "Variable label or exact question": "B43. Have you ever played any other games, such as cards or bingo, for money; or bet on horse races or sporting events; or taken part in any other kinds of gambling for money? (6-point frequency scale)",
+  "Named measure": "",
+  "Construct category": "Gambling participation",
+  "Questionnaire / codebook URL": "https://issda.ucd.ie/dataset.xhtml?persistentId=doi:10.7929/ISSDA/YBURA1",
+  "Metadata status": "Item wording verbatim from the public GUI Cohort '98 Wave 4 (age 20) Young Person questionnaire (ISSDA Dataverse doi:10.7929/ISSDA/YBURA1), accessed 2026-06-15. Gambling items are NOT released in the anonymised AMF microdata; analysis-ready variables require the Researcher Microdata File (RMF) via the CSO.",
+  "Meta-analysis compatibility note": "Brief 3-item gambling participation/frequency module (6-point scale, in person or online). Limited harmonisation with PGSI/DSM-IV problem-gambling screens; comparable for participation/frequency only.",
+  "col_11": ""
  }
 ]
