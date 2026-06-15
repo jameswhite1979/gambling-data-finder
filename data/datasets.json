@@ -520,7 +520,7 @@
   "Access request URL": "https://www.icpsr.umich.edu/web/NAHDAP/studies/2778",
   "Access type": "ICPSR/NAHDAP access",
   "Access difficulty": "Open/registration or standard ICPSR access",
-  "Gambling measure summary": "Gambling behaviour/attitudes and problem-gambling diagnostic assessment",
+  "Gambling measure summary": "Problem gambling assessed with the NODS (NORC DSM-IV Screen for Gambling Problems): 10 DSM-IV criteria measured both lifetime and past-12-months, with derived NODS scores (0-10) and gambler classification (nongambler / low-risk / at-risk / problem / pathological). Administered in the adult RDD survey and the youth (16-17) survey. Item wording from the public GIBS report (NORC 1999); official variable names in the gated ICPSR-2778 codebook.",
   "Key risk/protective domains confirmed": "Mental health/suicide/substance and demographics according to documentation; limited longitudinal utility",
   "Seed/source status": "Archive search",
   "Screening status": "Include - youth historical comparator",
