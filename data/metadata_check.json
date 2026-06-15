@@ -273,19 +273,6 @@
   "Source URLs": "https://doi.org/10.1007/s10899-026-10479-2"
  },
  {
-  "Dataset_ID": "GSLN_UGANDA",
-  "Dataset name": "Gambling, Saving, and Lumpy Liquidity Needs",
-  "Public catalogue/tool checked": "Yes",
-  "CLOSER result": "Not a CLOSER source",
-  "Study-specific public metadata route": "openICPSR replication data package",
-  "Variable names public?": "Yes - in replication data files",
-  "Question wording public?": "Some documentation available; full extraction needed",
-  "Raw data access status": "Open/public download",
-  "Metadata access needed?": "No - publicly available",
-  "Next extraction action": "Download replication data package and extract variable-level details",
-  "Source URLs": "https://www.openicpsr.org/openicpsr/project/115162/version/V1/view"
- },
- {
   "Dataset_ID": "AHAH",
   "Dataset name": "Access to Healthy Assets and Hazards",
   "Public catalogue/tool checked": "Yes",

@@ -1162,20 +1162,6 @@
   "Notes": "Includes gambling module C43-C49 and O13a-O13l, parental gambling O19bi, and prevention exposure C58d."
  },
  {
-  "Questionnaire_ID": "Q_2027",
-  "Dataset_ID": "GSLN_UGANDA",
-  "Dataset name": "Gambling, Saving, and Lumpy Liquidity Needs",
-  "Wave / year": "2015-2016",
-  "Age group": "Adults 18-40; emerging adults included",
-  "Questionnaire / metadata title": "openICPSR replication data and documentation",
-  "File type": "Replication data package",
-  "URL": "https://www.openicpsr.org/openicpsr/project/115162/version/V1/view",
-  "Public or gated": "Public",
-  "Variable names visible?": "Yes",
-  "Question wording visible?": "Some documentation; full extraction needed",
-  "Notes": "Replication data for Herskowitz (2021). Three phases of data collection with sports bettors in Kampala."
- },
- {
   "Questionnaire_ID": "Q_2028",
   "Dataset_ID": "AHAH",
   "Dataset name": "Access to Healthy Assets and Hazards",

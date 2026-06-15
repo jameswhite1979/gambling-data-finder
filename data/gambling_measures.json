@@ -58926,20 +58926,6 @@
   "col_11": ""
  },
  {
-  "Dataset_ID": "GSLN_UGANDA",
-  "Dataset name": "Gambling, Saving, and Lumpy Liquidity Needs",
-  "Wave / year": "2015-2016",
-  "Age group": "Adults 18-40; emerging adults included",
-  "Variable/item ID": "Sports betting variables",
-  "Variable label or exact question": "Individual-level sports betting demand, targeted payouts, winnings, betting frequency, and savings intervention effects among 1,708 bettors in Kampala, Uganda",
-  "Named measure": "",
-  "Construct category": "Gambling participation",
-  "Questionnaire / codebook URL": "https://www.openicpsr.org/openicpsr/project/115162/version/V1/view",
-  "Metadata status": "Public replication data; variable-level extraction needed",
-  "Meta-analysis compatibility note": "Sports betting specific; Uganda context; may have limited comparability with UK gambling surveys but valuable for cross-country analysis",
-  "col_11": ""
- },
- {
   "Dataset_ID": "AHAH",
   "Dataset name": "Access to Healthy Assets and Hazards",
   "Wave / year": "v5 / 2021-22 boundaries",

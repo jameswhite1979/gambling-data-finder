@@ -4312,34 +4312,6 @@
   "Notes": "Paper confirms gambling and risk/protective variables but not full variable-level codebook."
  },
  {
-  "Source_ID": "SRC_2025",
-  "Dataset_ID": "GSLN_UGANDA",
-  "Dataset name": "Gambling, Saving, and Lumpy Liquidity Needs",
-  "Resource type": "Replication data / codebook",
-  "Title / description": "openICPSR replication data for Herskowitz (2021)",
-  "URL": "https://www.openicpsr.org/openicpsr/project/115162/version/V1/view",
-  "Public or gated": "Public",
-  "Variable names visible?": "Yes",
-  "Question wording visible?": "Some documentation; full extraction needed",
-  "Recommended website field": "codebook_variable_url",
-  "Priority": "High",
-  "Notes": ""
- },
- {
-  "Source_ID": "SRC_2026",
-  "Dataset_ID": "GSLN_UGANDA",
-  "Dataset name": "Gambling, Saving, and Lumpy Liquidity Needs",
-  "Resource type": "Journal article",
-  "Title / description": "Herskowitz (2021) Gambling, Saving, and Lumpy Liquidity Needs. AEJ: Applied Economics 13(1), 72-104",
-  "URL": "https://doi.org/10.1257/app.20180177",
-  "Public or gated": "Public",
-  "Variable names visible?": "No",
-  "Question wording visible?": "No",
-  "Recommended website field": "publication_url",
-  "Priority": "High",
-  "Notes": ""
- },
- {
   "Source_ID": "SRC_2027",
   "Dataset_ID": "AHAH",
   "Dataset name": "Access to Healthy Assets and Hazards",

@@ -160,16 +160,6 @@
   "Notes": "Confirms HBSC Lombardy 2021/22 gambling data among ages 15 and 17; 11- and 13-year-olds excluded because gambling and other health behaviour data were not available."
  },
  {
-  "Dataset ID": "GSLN_UGANDA",
-  "Paper / documentation title": "Gambling, Saving, and Lumpy Liquidity Needs",
-  "Authors / year": "Herskowitz, 2021",
-  "Source type": "Peer-reviewed paper",
-  "Gambling measure used": "Sports betting demand, targeted payouts, winnings",
-  "Risk/protective factors analysed": "Savings, liquidity constraints, income, consumption",
-  "URL / DOI": "https://doi.org/10.1257/app.20180177",
-  "Notes": "American Economic Journal: Applied Economics 13(1), 72-104. Replication data at openICPSR project 115162."
- },
- {
   "Dataset ID": "AHAH",
   "Paper / documentation title": "Open data on health-related neighbourhood features in Great Britain",
   "Authors / year": "Daras et al., 2019",
