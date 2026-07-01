@@ -46,15 +46,23 @@ Optional: `question_text` (full questionnaire wording, makes it searchable).
 
 Row ID types: `GM` (gambling measure), `RF` (risk factor), `META` (metadata), `OV` (other).
 
-## Step 3: Merge and rebuild (fixed script)
+## Step 3: Merge (fixed script)
 
 ```bash
 node C:/Users/wppjw/gambling-data-finder/.claude/commands/scripts/merge-variables.js /tmp/new-records.json
 ```
 
-Deduplicates by `variable_row_id` and `dataset_id|variable_name`, then rebuilds facets.json and summary.json.
+Deduplicates by `variable_row_id` and `dataset_id|variable_name`.
 
-## Step 4: Check explore.html topic tree
+## Step 4: Validate and rebuild derived files
+
+```bash
+python C:/Users/wppjw/.claude/skills/ghripps-add-dataset/scripts/validate_and_update.py <DATASET_ID>
+```
+
+This validates all JSON files, fixes facets.json, and recounts summary.json.
+
+## Step 5: Check explore.html topic tree
 
 If new construct categories or risk domains were added, update the `TOPIC_FOLDERS` constant in `explore.html`.
 

@@ -31,19 +31,18 @@ Each variable record in `variables.json` has: `variable_row_id`, `dataset_id`, `
 `facets.json` and `summary.json` are derived from the other data files. After editing any data file, rebuild them:
 
 ```
-node .claude/commands/scripts/rebuild-website-data.js
+python C:\Users\wppjw\.claude\skills\ghripps-add-dataset\scripts\validate_and_update.py <DATASET_ID>
 ```
 
-Summary fields: `datasets` = datasets.json length, `gambling_measures` = gambling_measures.json length, `gambling_variables` / `risk_protective_variables` = role counts from variables.json, `questionnaires` / `publications` / `source_urls` = respective file lengths.
+This validates all 9 JSON files, checks cross-references, fixes facets.json, and recounts summary.json.
 
-## Reusable scripts
+## Skills and scripts
 
-Run these directly — do not regenerate the logic:
-
-| Task | Command |
-|------|---------|
-| Rebuild facets + summary | `node .claude/commands/scripts/rebuild-website-data.js` |
-| Merge new variables | Write new records to a temp JSON file, then `node .claude/commands/scripts/merge-variables.js <file>` |
+| Task | How |
+|------|-----|
+| Add a new dataset | `/ghripps-add-dataset` — full workflow with validation |
+| Rebuild facets + summary | `python C:\Users\wppjw\.claude\skills\ghripps-add-dataset\scripts\validate_and_update.py <DATASET_ID>` |
+| Merge new variables into existing dataset | Write new records to a temp JSON file, then `node .claude/commands/scripts/merge-variables.js <file>` |
 | Read a data dictionary | `node .claude/commands/scripts/search-dictionary.js <xlsx> [--alspac\|--mcs] [--sheet name] [--list-sheets]` |
 | Deploy to GitHub Pages | `bash .claude/commands/scripts/deploy-website.sh` then `git add`, `git commit`, `git push` |
 
