@@ -384,12 +384,12 @@
   "Source URLs": "https://www.understandingsociety.ac.uk/documentation/mainstage/modules/gambling/ ; https://www.understandingsociety.ac.uk/documentation/mainstage/dataset-documentation/variable/onlgam/"
  },
  {
-  “Dataset_ID”: “BGPS”,
-  “Dataset name”: “British Gambling Prevalence Survey”,
-  “Country”: “Great Britain”,
-  “Owner / data controller”: “Gambling Commission / NatCen; UKDS”,
-  “Study design”: “Repeated cross-sectional adult survey”,
-  “Age focus / population”: “Adults aged 16+; includes 16-24 year olds”,
+  "Dataset_ID": "BGPS",
+  "Dataset name": "British Gambling Prevalence Survey",
+  "Country": "Great Britain",
+  "Owner / data controller": "Gambling Commission / NatCen; UKDS",
+  "Study design": "Repeated cross-sectional adult survey",
+  "Age focus / population": "Adults aged 16+; includes 16-24 year olds",
   "In URL database v4?": "No",
   "In archive search v3?": "Yes",
   "Dataset/home URL": "https://datacatalogue.ukdataservice.ac.uk/series/series/200004#abstract",
