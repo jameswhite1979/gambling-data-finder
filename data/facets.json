@@ -15,9 +15,6 @@
   "GSGB",
   "GUI98",
   "HBSC",
-  "HSE2016",
-  "HSE2018",
-  "HSE2021",
   "HSE_SHES_2016",
   "MANITOBA_YA",
   "MCS",
@@ -28,7 +25,8 @@
   "SHRN",
   "USOC",
   "YOUTH07_NZ",
-  "YPGS"
+  "YPGS",
+  "HSE"
  ],
  "construct_categories": [
   "ADHD symptoms",

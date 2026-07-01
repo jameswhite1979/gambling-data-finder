@@ -239,7 +239,7 @@
  },
  {
   "Questionnaire_ID": "Q_0018",
-  "Dataset_ID": "UKHLS",
+  "Dataset_ID": "USOC",
   "Dataset name": "Understanding Society / UK Household Longitudinal Study",
   "Wave / year": "Wave 13 gambling module confirmed",
   "Age group": "Adults and household members aged 16+; includes 16â€“24 subset",
@@ -911,7 +911,7 @@
  },
  {
   "Questionnaire_ID": "Q_HSE2016_2016",
-  "Dataset_ID": "HSE2016",
+  "Dataset_ID": "HSE",
   "Dataset name": "Health Survey for England 2016",
   "Wave / year": "2016",
   "Age group": "Age 16+ adults; includes 16-24 young adults",
@@ -925,7 +925,7 @@
  },
  {
   "Questionnaire_ID": "Q_HSE2018_2018",
-  "Dataset_ID": "HSE2018",
+  "Dataset_ID": "HSE",
   "Dataset name": "Health Survey for England 2018",
   "Wave / year": "2018",
   "Age group": "Age 16+ adults; includes 16-24 young adults",
@@ -939,7 +939,7 @@
  },
  {
   "Questionnaire_ID": "Q_HSE2021_2021",
-  "Dataset_ID": "HSE2021",
+  "Dataset_ID": "HSE",
   "Dataset name": "Health Survey for England 2021",
   "Wave / year": "2021",
   "Age group": "Age 16+ adults; includes 16-24 young adults",

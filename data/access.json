@@ -306,23 +306,6 @@
   "Notes": "Need SHRN variable names/data dictionary if available."
  },
  {
-  "Dataset_ID": "UKHLS",
-  "Dataset name": "Understanding Society / UK Household Longitudinal Study",
-  "Access status": "UKDS / controlled variants for special licence",
-  "Access route": "Standard safeguarded / controlled",
-  "Access request URL": "https://www.understandingsociety.ac.uk/documentation/access-data/",
-  "Data access documentation URL": "https://www.understandingsociety.ac.uk/documentation/mainstage/modules/gambling/",
-  "Open/public items": "",
-  "Gated items": "",
-  "Cost/fee": "Usually not stated / may vary",
-  "Ethics/proposal likely?": "Likely for managed/controlled access; not for public-use downloads unless institution requires",
-  "Named contact/form": "See access URL / study helpdesk",
-  "TRE / secure environment": "No / not primary",
-  "Data format / notes": "Formats and licence conditions to verify in data documentation",
-  "Source URLs": "https://www.understandingsociety.ac.uk/documentation/mainstage/modules/gambling/ ; https://www.understandingsociety.ac.uk/documentation/mainstage/dataset-documentation/variable/onlgam/",
-  "Notes": ""
- },
- {
   "Dataset_ID": "USOC",
   "Dataset name": "Understanding Society",
   "Access status": "UKDS access",

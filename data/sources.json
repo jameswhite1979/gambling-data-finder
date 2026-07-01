@@ -855,7 +855,7 @@
  },
  {
   "Source_ID": "SRC_0064",
-  "Dataset_ID": "UKHLS",
+  "Dataset_ID": "USOC",
   "Dataset name": "Understanding Society / UK Household Longitudinal Study",
   "Resource type": "Metadata / data profile",
   "Title / description": "Metadata / data profile URL",
@@ -869,7 +869,7 @@
  },
  {
   "Source_ID": "SRC_0065",
-  "Dataset_ID": "UKHLS",
+  "Dataset_ID": "USOC",
   "Dataset name": "Understanding Society / UK Household Longitudinal Study",
   "Resource type": "Questionnaire",
   "Title / description": "Questionnaire URL",
@@ -883,7 +883,7 @@
  },
  {
   "Source_ID": "SRC_0066",
-  "Dataset_ID": "UKHLS",
+  "Dataset_ID": "USOC",
   "Dataset name": "Understanding Society / UK Household Longitudinal Study",
   "Resource type": "Dataset/home page",
   "Title / description": "Dataset URL",
@@ -897,7 +897,7 @@
  },
  {
   "Source_ID": "SRC_0067",
-  "Dataset_ID": "UKHLS",
+  "Dataset_ID": "USOC",
   "Dataset name": "Understanding Society / UK Household Longitudinal Study",
   "Resource type": "Access request",
   "Title / description": "Access request URL",
@@ -911,7 +911,7 @@
  },
  {
   "Source_ID": "SRC_0068",
-  "Dataset_ID": "UKHLS",
+  "Dataset_ID": "USOC",
   "Dataset name": "Understanding Society / UK Household Longitudinal Study",
   "Resource type": "Source/reference",
   "Title / description": "Supporting source URL",
@@ -925,7 +925,7 @@
  },
  {
   "Source_ID": "SRC_0069",
-  "Dataset_ID": "UKHLS",
+  "Dataset_ID": "USOC",
   "Dataset name": "Understanding Society / UK Household Longitudinal Study",
   "Resource type": "Source/reference",
   "Title / description": "Supporting source URL",
@@ -2129,7 +2129,7 @@
  },
  {
   "Source_ID": "SRC_0187",
-  "Dataset_ID": "UKHLS",
+  "Dataset_ID": "USOC",
   "Dataset name": "Understanding Society / UK Household Longitudinal Study",
   "Resource type": "Gambling measure metadata/questionnaire",
   "Title / description": "Gambling behaviour / online gambling Module name confirmed; specific scale to verify",
@@ -2381,7 +2381,7 @@
  },
  {
   "Source_ID": "SRC_0220",
-  "Dataset_ID": "UKHLS",
+  "Dataset_ID": "USOC",
   "Dataset name": "Understanding Society / UK Household Longitudinal Study",
   "Resource type": "Risk/protective factor metadata",
   "Title / description": "Mental health / household context",
@@ -2577,7 +2577,7 @@
  },
  {
   "Source_ID": "SRC_0246",
-  "Dataset_ID": "UKHLS",
+  "Dataset_ID": "USOC",
   "Dataset name": "Understanding Society / UK Household Longitudinal Study",
   "Resource type": "Access documentation",
   "Title / description": "Access documentation URL",
@@ -3893,7 +3893,7 @@
  },
  {
   "Source_ID": "UPLOAD_HSE2016_2016",
-  "Dataset_ID": "HSE2016",
+  "Dataset_ID": "HSE",
   "Dataset name": "Health Survey for England 2016",
   "Resource type": "Uploaded data dictionary",
   "Title / description": "Uploaded UK Data Archive data dictionary: HSE 2016 data dictionary.rtf; file hse16_eul_v5; 2717 variables; 10067 cases.",
@@ -3907,7 +3907,7 @@
  },
  {
   "Source_ID": "UPLOAD_HSE2018_2018",
-  "Dataset_ID": "HSE2018",
+  "Dataset_ID": "HSE",
   "Dataset name": "Health Survey for England 2018",
   "Resource type": "Uploaded data dictionary",
   "Title / description": "Uploaded UK Data Archive data dictionary: HSE 2018 data dictionary.rtf; file hse_2018_eul_15082022; 1591 variables; 10250 cases.",
@@ -3921,7 +3921,7 @@
  },
  {
   "Source_ID": "UPLOAD_HSE2021_2021",
-  "Dataset_ID": "HSE2021",
+  "Dataset_ID": "HSE",
   "Dataset name": "Health Survey for England 2021",
   "Resource type": "Uploaded data dictionary",
   "Title / description": "Uploaded UK Data Archive data dictionary: HSE 2021 data dictionary.rtf; file hse_2021_eul_v1; 2018 variables; 7120 cases.",
