@@ -149,7 +149,7 @@
   "Named contact/form": "See access URL / study helpdesk",
   "TRE / secure environment": "No / not primary",
   "Data format / notes": "Formats and licence conditions to verify in data documentation",
-  "Source URLs": "https://www.gamblingcommission.gov.uk/about-us/guide/page/availability-of-research-data-on-the-uk-data-service ; https://www.gamblingcommission.gov.uk/statistics-and-research/gambling-survey-for-great-britain",
+  "Source URLs": "https://www.gamblingcommission.gov.uk/about-us/guide/page/availability-of-research-data-on-the-uk-data-service ; https://www.gamblingcommission.gov.uk/statistics-and-research/consumer-gambling-behaviour/series/gambling-survey-for-great-britain",
   "Notes": ""
  },
  {
@@ -157,8 +157,8 @@
   "Dataset name": "Growing Up in Ireland Cohort '98",
   "Access status": "ISSDA application / data request",
   "Access route": "Standard safeguarded application",
-  "Access request URL": "https://www.ucd.ie/issda/data/growingupinirelandgui/",
-  "Data access documentation URL": "https://www.ucd.ie/issda/data/growingupinirelandgui/",
+  "Access request URL": "https://www.ucd.ie/issda/gui/",
+  "Data access documentation URL": "https://www.ucd.ie/issda/gui/",
   "Open/public items": "",
   "Gated items": "",
   "Cost/fee": "Usually not stated / may vary",
@@ -166,7 +166,7 @@
   "Named contact/form": "See access URL / study helpdesk",
   "TRE / secure environment": "No / not primary",
   "Data format / notes": "Formats and licence conditions to verify in data documentation",
-  "Source URLs": "https://www.ucd.ie/issda/data/growingupinirelandgui/ ; https://www.greo.ca/",
+  "Source URLs": "https://www.ucd.ie/issda/gui/ ; https://www.greo.ca/",
   "Notes": ""
  },
  {

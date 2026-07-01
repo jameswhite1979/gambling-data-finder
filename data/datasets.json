@@ -45,7 +45,7 @@
   "Seed/source status": "Pre-identified in evidence review; URL extraction added",
   "Screening status": "Include - high priority",
   "Notes / uncertainties": "Public questionnaire links and public BiB GitHub data dictionary available; raw data access remains study-managed.",
-  "Source URLs": "https://borninbradford.github.io/datadict/ ; https://borninbradford.nhs.uk/research/how-to-access-data/ ; https://borninbradford.nhs.uk/research/documents-data-access/questionnaires/"
+  "Source URLs": "https://borninbradford.github.io/datadict/ ; https://borninbradford.nhs.uk/research/how-to-access-data/ ; https://borninbradford.nhs.uk/our-data/questionnaires/"
  },
  {
   "Dataset_ID": "MCS",
@@ -117,7 +117,7 @@
   "Seed/source status": "Pre-identified in evidence review; questionnaire URL added",
   "Screening status": "Include - high priority",
   "Notes / uncertainties": "Public questionnaire gives item number/question wording; dataset variable names likely require SHRN data request.",
-  "Source URLs": "https://www.shrn.org.uk/the-data-resource/ ; https://academic.oup.com/ije/article/50/4/1077/6216951"
+  "Source URLs": "https://www.shrn.org.uk/national-data-and-reports/ ; https://academic.oup.com/ije/article/50/4/1077/6216951"
  },
  {
   "Dataset_ID": "EAGS",
@@ -180,7 +180,7 @@
   "Catalogue URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/9346",
   "Metadata / data profile URL": "https://doc.ukdataservice.ac.uk/doc/9346/mrdoc/pdf/9346_gsgb_year_1_user_guide.pdf",
   "Questionnaire URL(s)": "https://doc.ukdataservice.ac.uk/doc/9346/mrdoc/pdf/9346_gsgb_questionnaire_and_participant_documents.pdf",
-  "Codebook / variable URL(s)": "https://doc.ukdataservice.ac.uk/doc/9346/mrdoc/pdf/9346_gsgb_year_1_derived_variables_specification.pdf",
+  "Codebook / variable URL(s)": "https://doc.ukdataservice.ac.uk/doc/9346/mrdoc/pdf/9346_gsgb_year_1_user_guide.pdf",
   "Access request URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/9346",
   "Access type": "UKDS registered access; public documentation",
   "Access difficulty": "Registration / safeguarded",
@@ -189,7 +189,7 @@
   "Seed/source status": "Archive-discovered",
   "Screening status": "Include - high priority for 18-24",
   "Notes / uncertainties": "Useful for 18-24 and PGSI-related harmonisation; public questionnaire and derived-variable documentation available.",
-  "Source URLs": "https://www.gamblingcommission.gov.uk/about-us/guide/page/availability-of-research-data-on-the-uk-data-service ; https://www.gamblingcommission.gov.uk/statistics-and-research/gambling-survey-for-great-britain"
+  "Source URLs": "https://www.gamblingcommission.gov.uk/about-us/guide/page/availability-of-research-data-on-the-uk-data-service ; https://www.gamblingcommission.gov.uk/statistics-and-research/consumer-gambling-behaviour/series/gambling-survey-for-great-britain"
  },
  {
   "Dataset_ID": "APMS",
@@ -299,8 +299,8 @@
   "Dataset/home URL": "https://www.camh.ca/en/science-and-research/institutes-and-centres/institute-for-mental-health-policy-research/ontario-student-drug-use-and-health-survey---osduhs",
   "Catalogue URL": "",
   "Metadata / data profile URL": "https://www.camh.ca/-/media/research-files/osduhs-drug-use-report_2023.pdf",
-  "Questionnaire URL(s)": "https://www.yorku.ca/research/isr/wp-content/uploads/sites/753/2024/10/FormB-SS_2025OSDUHS.pdf",
-  "Codebook / variable URL(s)": "https://www.yorku.ca/research/isr/wp-content/uploads/sites/753/2024/10/FormB-SS_2025OSDUHS.pdf",
+  "Questionnaire URL(s)": "https://www.isryorku.ca/osduhs/",
+  "Codebook / variable URL(s)": "https://www.isryorku.ca/osduhs/",
   "Access request URL": "https://www.camh.ca/en/science-and-research/institutes-and-centres/institute-for-mental-health-policy-research/ontario-student-drug-use-and-health-survey---osduhs",
   "Access type": "Study/data-owner route",
   "Access difficulty": "Controlled",
@@ -347,7 +347,7 @@
   "Dataset/home URL": "https://datacatalogue.ukdataservice.ac.uk/series/series/200004#abstract",
   "Catalogue URL": "",
   "Metadata / data profile URL": "https://datacatalogue.ukdataservice.ac.uk/series/series/200004#abstract",
-  "Questionnaire URL(s)": "https://doc.ukdataservice.ac.uk/doc/6899/mrdoc/pdf/6899userguide.pdf",
+  "Questionnaire URL(s)": "https://datacatalogue.ukdataservice.ac.uk/studies/study/6899",
   "Codebook / variable URL(s)": "",
   "Access request URL": "https://ukdataservice.ac.uk/help/get-in-touch/",
   "Access type": "UKDS registered access",
@@ -442,10 +442,10 @@
   "In archive search v3?": "Yes",
   "Dataset/home URL": "https://www.growingup.gov.ie/",
   "Catalogue URL": "",
-  "Metadata / data profile URL": "https://www.ucd.ie/issda/data/growingupinirelandgui/",
-  "Questionnaire URL(s)": "https://www.growingup.gov.ie/pubs/GUI-Cohort98-at-20-Questionnaires.zip",
+  "Metadata / data profile URL": "https://www.ucd.ie/issda/gui/",
+  "Questionnaire URL(s)": "https://www.growingup.gov.ie/questionnaires/",
   "Codebook / variable URL(s)": "",
-  "Access request URL": "https://www.ucd.ie/issda/data/growingupinirelandgui/",
+  "Access request URL": "https://www.ucd.ie/issda/gui/",
   "Access type": "ISSDA application / data request",
   "Access difficulty": "Registration / safeguarded",
   "Gambling measure summary": "Brief 3-item gambling participation/frequency module at age 20 (Wave 4): lottery/scratchcards, casino tables/slot machines/video poker, and other betting (cards, bingo, horse/sports betting), each on a 6-point frequency scale (in person or online). Wording from the public Young Person questionnaire. NOTE: gambling items are excluded from the public AMF microdata - the analysis-ready variables require the Researcher Microdata File (RMF) via the CSO. No gambling items at 17/18.",
@@ -453,7 +453,7 @@
   "Seed/source status": "Archive search",
   "Screening status": "Include - high priority non-UK",
   "Notes / uncertainties": "Verified 2026-06-15: gambling is a 3-item module at age 20 only (not 17/18). Gambling variables are not in the released AMF; RMF (CSO Officer of Statistics) needed for data. Useful as a youth participation comparator but not for problem-gambling harmonisation.",
-  "Source URLs": "https://www.ucd.ie/issda/data/growingupinirelandgui/ ; https://www.greo.ca/"
+  "Source URLs": "https://www.ucd.ie/issda/gui/ ; https://www.greo.ca/"
  },
  {
   "Dataset_ID": "GIBS",
