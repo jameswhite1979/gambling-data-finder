@@ -71,7 +71,7 @@
  },
  {
   "Dataset ID": "GIBS",
-  "Paper / documentation title": "Gambling Impact and Behavior Study, 1997â€“1999",
+  "Paper / documentation title": "Gambling Impact and Behavior Study, 1997-1999",
   "Authors / year": "NORC/ICPSR",
   "Source type": "Data documentation",
   "Gambling measure used": "Problem-gambling diagnostic assessment",
@@ -141,7 +141,7 @@
  },
  {
   "Dataset ID": "OSDUHS",
-  "Paper / documentation title": "The Mental Health and Well-Being of Ontario Students, 1991â€“2023: Findings from the Ontario Student Drug Use and Health Survey",
+  "Paper / documentation title": "The Mental Health and Well-Being of Ontario Students, 1991-2023: Findings from the Ontario Student Drug Use and Health Survey",
   "Authors / year": "Boak & Hamilton, 2024",
   "Source type": "Report",
   "Gambling measure used": "Online gambling; gambling while playing a video game/loot boxes/in-game currency/skins betting; gambling in other ways",
@@ -154,7 +154,7 @@
   "Paper / documentation title": "Patterns of Gambling and Other Risky Behaviors among Adolescents. A Latent Class Analysis Study on the 2021/22 Health Behaviors in School Children Survey Data",
   "Authors / year": "Aresi et al., 2026",
   "Source type": "Peer-reviewed paper",
-  "Gambling measure used": "Any gambling in last 12 months; South Oaks Gambling Screenâ€“Revised for Adolescents (SOGS-RA)",
+  "Gambling measure used": "Any gambling in last 12 months; South Oaks Gambling Screen-Revised for Adolescents (SOGS-RA)",
   "Risk/protective factors analysed": "Tobacco, alcohol, drunkenness, cannabis, other substance use, self-rated health, Cantril Ladder life satisfaction, sex, age cohort, school type",
   "URL / DOI": "https://doi.org/10.1007/s10899-026-10479-2",
   "Notes": "Confirms HBSC Lombardy 2021/22 gambling data among ages 15 and 17; 11- and 13-year-olds excluded because gambling and other health behaviour data were not available."
