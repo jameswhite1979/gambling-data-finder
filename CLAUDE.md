@@ -31,7 +31,7 @@ Each variable record in `variables.json` has: `variable_row_id`, `dataset_id`, `
 `facets.json` and `summary.json` are derived from the other data files. After editing any data file, rebuild them:
 
 ```
-python C:\Users\wppjw\.claude\skills\ghripps-add-dataset\scripts\validate_and_update.py <DATASET_ID>
+python scripts/validate_and_update.py <DATASET_ID> --data-dir data
 ```
 
 This validates all 9 JSON files, checks cross-references, fixes facets.json, and recounts summary.json.
@@ -41,7 +41,7 @@ This validates all 9 JSON files, checks cross-references, fixes facets.json, and
 | Task | How |
 |------|-----|
 | Add a new dataset | `/ghripps-add-dataset` — full workflow with validation |
-| Rebuild facets + summary | `python C:\Users\wppjw\.claude\skills\ghripps-add-dataset\scripts\validate_and_update.py <DATASET_ID>` |
+| Rebuild facets + summary | `python scripts/validate_and_update.py <DATASET_ID> --data-dir data` |
 | Merge new variables into existing dataset | Write new records to a temp JSON file, then `node .claude/commands/scripts/merge-variables.js <file>` |
 | Read a data dictionary | `node .claude/commands/scripts/search-dictionary.js <xlsx> [--alspac\|--mcs] [--sheet name] [--list-sheets]` |
 | Deploy to GitHub Pages | `bash .claude/commands/scripts/deploy-website.sh` then `git add`, `git commit`, `git push` |
