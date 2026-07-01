@@ -187,7 +187,7 @@
   "Gambling measure summary": "Gambling participation and PGSI; product-level gambling",
   "Key risk/protective domains confirmed": "Demographics, health/wellbeing, risk factors depending questionnaire; variable-level extraction needed",
   "Seed/source status": "Archive-discovered",
-  "Screening status": "Include - high priority for 18â€“24",
+  "Screening status": "Include - high priority for 18-24",
   "Notes / uncertainties": "Useful for 18-24 and PGSI-related harmonisation; public questionnaire and derived-variable documentation available.",
   "Source URLs": "https://www.gamblingcommission.gov.uk/about-us/guide/page/availability-of-research-data-on-the-uk-data-service ; https://www.gamblingcommission.gov.uk/statistics-and-research/gambling-survey-for-great-britain"
  },
@@ -365,7 +365,7 @@
   "Country": "United Kingdom",
   "Owner / data controller": "Institute for Social and Economic Research, University of Essex; UKDS",
   "Study design": "Longitudinal household panel",
-  "Age focus / population": "Adults and household members aged 16+; includes 16â€“24 subset",
+  "Age focus / population": "Adults and household members aged 16+; includes 16-24 year olds",
   "In URL database v4?": "No",
   "In archive search v3?": "Yes",
   "Dataset/home URL": "https://www.understandingsociety.ac.uk/",
@@ -404,7 +404,7 @@
   "Key risk/protective domains confirmed": "Demographics, health/substance and socioeconomic factors depending year",
   "Seed/source status": "Archive search",
   "Screening status": "Include - useful historical comparator",
-  "Notes / uncertainties": "Useful for trend/older 16â€“24 analyses; age and measures comparable to later adult surveys to assess",
+  "Notes / uncertainties": "Useful for trend/older 16-24 analyses; age and measures comparable to later adult surveys to assess",
   "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/studies/study/6899"
  },
  {
@@ -413,7 +413,7 @@
   "Country": "England",
   "Owner / data controller": "NHS England / NatCen; UKDS",
   "Study design": "Repeated cross-sectional household health survey",
-  "Age focus / population": "Adults aged 16+; includes 16â€“24",
+  "Age focus / population": "Adults aged 16+; includes 16-24 year olds",
   "In URL database v4?": "No",
   "In archive search v3?": "Yes",
   "Dataset/home URL": "https://datacatalogue.ukdataservice.ac.uk/series/series/2000021",
@@ -427,7 +427,7 @@
   "Gambling measure summary": "Gambling participation and PGSI in 2021; earlier years may include PGSI/DSM variants",
   "Key risk/protective domains confirmed": "Physical/mental health, alcohol, smoking, BMI, socioeconomic and inequality variables",
   "Seed/source status": "Archive search",
-  "Screening status": "Include - high priority adult 16â€“24",
+  "Screening status": "Include - high priority adult 16-24",
   "Notes / uncertainties": "Strong health/risk-factor data; harmonisation across years and UK nations needs care",
   "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/series/series/2000021 ; https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2021-part-2/gambling"
  },
@@ -437,7 +437,7 @@
   "Country": "England and Scotland",
   "Owner / data controller": "NHS Digital / Scottish Government / NatCen; UKDS",
   "Study design": "Combined cross-sectional household survey data",
-  "Age focus / population": "Adults aged 16+; includes 16â€“24",
+  "Age focus / population": "Adults aged 16+; includes 16-24 year olds",
   "In URL database v4?": "No",
   "In archive search v3?": "Yes",
   "Dataset/home URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/8416",
@@ -451,7 +451,7 @@
   "Gambling measure summary": "Past-year participation across 19 gambling activities (National Lottery, scratchcards, bingo, machines, casino, online gambling/betting, sports/horse/dog betting, spread betting, private betting), plus full problem-gambling screens: the PGSI (9 items + score/bands) and DSM-IV problem gambling (10 items + score), with combined problem-gambling derivations. Variable names and labels from the official UKDS SN 8416 variable list.",
   "Key risk/protective domains confirmed": "Mental health and wellbeing (WEMWBS, GHQ-12), substance use (smoking and alcohol consumption), physical health (longstanding illness, conditions, BMI/anthropometry), and socioeconomic and demographic factors (income, NS-SEC, education, employment, tenure, ethnicity). From the official UKDS SN 8416 variable list.",
   "Seed/source status": "Archive search",
-  "Screening status": "Include - adult 16â€“24 comparator",
+  "Screening status": "Include - adult 16-24 comparator",
   "Notes / uncertainties": "Useful harmonised England/Scotland comparator",
   "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/studies/study/8416"
  },
