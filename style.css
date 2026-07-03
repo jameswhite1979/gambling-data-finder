@@ -756,3 +756,51 @@ nav a.active{color:var(--amber-light);background:rgba(217,119,6,.15)}
   .footer-inner{grid-template-columns:1fr}
   .study-stats{flex-direction:column}
 }
+
+/* ===== STUDY PAGE: AT-A-GLANCE SIDEBAR ===== */
+.study-layout{
+  max-width:var(--max-w);margin:1.5rem auto;padding:0 1.5rem;
+  display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:1.4rem;align-items:start;
+}
+.study-main{min-width:0}
+.study-main .detail-section:first-child{margin-top:0}
+.glance{
+  position:sticky;top:1rem;
+  background:var(--card);border:1px solid var(--border-light);
+  border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);overflow:hidden;
+}
+.glance-head{
+  background:var(--navy);color:#fff;padding:.8rem 1.2rem;
+  font-family:var(--font-display);font-weight:700;font-size:.85rem;
+  letter-spacing:.06em;text-transform:uppercase;border-bottom:3px solid var(--amber);
+}
+.glance-row{
+  display:flex;gap:.8rem;padding:.75rem 1.2rem;
+  border-bottom:1px solid var(--border-light);align-items:flex-start;
+}
+.glance-row:last-of-type{border-bottom:none}
+.glance-icon{
+  flex:0 0 auto;width:30px;height:30px;border-radius:7px;
+  background:var(--amber-bg);display:flex;align-items:center;justify-content:center;color:var(--amber);
+}
+.glance-icon svg{width:16px;height:16px}
+.glance-label{font-size:.66rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.glance-value{font-family:var(--font-display);font-size:.92rem;font-weight:600;color:var(--navy);line-height:1.35}
+.glance-value-sm{font-family:var(--font-body);font-size:.82rem;font-weight:500;color:var(--text);line-height:1.45}
+.glance-sub{font-size:.74rem;color:var(--text-muted);line-height:1.4}
+.measure-chip{
+  display:inline-block;background:var(--teal-bg);color:var(--teal);
+  border:1px solid #a5f3fc;border-radius:99px;padding:.05rem .55rem;
+  font-size:.72rem;font-weight:700;margin:.15rem .2rem 0 0;
+}
+.measure-chip.none{background:var(--border-light);color:var(--text-muted);border-color:var(--border)}
+.glance-cta{
+  display:block;margin:.9rem 1.2rem 1.1rem;padding:.7rem 1rem;
+  background:var(--amber);color:#fff;text-align:center;border-radius:var(--radius);
+  font-family:var(--font-display);font-weight:600;font-size:.9rem;
+}
+.glance-cta:hover{background:#1d4ed8;color:#fff;text-decoration:none}
+@media (max-width:900px){
+  .study-layout{grid-template-columns:1fr}
+  .glance{position:static;order:-1}
+}

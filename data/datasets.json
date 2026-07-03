@@ -22,7 +22,12 @@
   "Screening status": "Include - high priority",
   "Notes / uncertainties": "Updated from uploaded ALSPAC variable-name workbooks on 2026-04-29. Variable labels are available, but exact questionnaire wording, response coding and public variable-level URLs still need verification for many items.",
   "Source URLs": "https://www.bristol.ac.uk/alspac/researchers/access/ ; https://discovery.closer.ac.uk/",
-  "Number of datasets": 13
+  "Number of datasets": 13,
+  "Population size": "≈14,500 pregnancies",
+  "Population size note": "G1 cohort plus G0 parents",
+  "Age gambling measured": "17–30 (+ parents)",
+  "Years covered": "2008–2022",
+  "Linkage": "Education (NPD), health records, genetics, neighbourhood — via ALSPAC proposal"
  },
  {
   "Dataset_ID": "BIB_AOW",
@@ -47,7 +52,12 @@
   "Screening status": "Include - high priority",
   "Notes / uncertainties": "Public questionnaire links and public BiB GitHub data dictionary available; raw data access remains study-managed.",
   "Source URLs": "https://borninbradford.github.io/datadict/ ; https://borninbradford.nhs.uk/research/how-to-access-data/ ; https://borninbradford.nhs.uk/our-data/questionnaires/",
-  "Number of datasets": 2
+  "Number of datasets": 2,
+  "Population size": "≈30,000 adolescents (target)",
+  "Population size note": "Bradford secondary schools",
+  "Age gambling measured": "12–18",
+  "Years covered": "2024/25–2025/26",
+  "Linkage": "Routine health and education records via Connected Bradford"
  },
  {
   "Dataset_ID": "MCS",
@@ -72,7 +82,12 @@
   "Screening status": "Include - high priority",
   "Notes / uncertainties": "Uploaded longitudinal data dictionary provides variable-level metadata; questionnaire PDFs/CLOSER variable pages still needed for exact question wording and response coding.",
   "Source URLs": "https://cls.ucl.ac.uk/cls-studies/millennium-cohort-study/ ; https://beta.ukdataservice.ac.uk/datacatalogue/series/series?id=2000031",
-  "Number of datasets": 4
+  "Number of datasets": 4,
+  "Population size": "≈19,000",
+  "Population size note": "Children born 2000–02",
+  "Age gambling measured": "11, 14 (17, 23 documented)",
+  "Years covered": "2012–2023",
+  "Linkage": "Education, health and geographic data via UKDS/CLS"
  },
  {
   "Dataset_ID": "USOC",
@@ -97,7 +112,12 @@
   "Screening status": "",
   "Notes / uncertainties": "Gambling module available in Wave 13 only. CLOSER exposes a Wave 8 gambling/betting activities code-set/category page; full variable-level extraction should use the public Understanding Society variable search before any login route.",
   "Source URLs": "",
-  "Number of datasets": 2
+  "Number of datasets": 2,
+  "Population size": "≈40,000 households",
+  "Population size note": "At wave 1; adults interviewed each wave",
+  "Age gambling measured": "16+",
+  "Years covered": "2016–18 (wave 8), 2021–23 (wave 13)",
+  "Linkage": "Admin data and fine geography via Special Licence / Secure Lab"
  },
  {
   "Dataset_ID": "SHRN",
@@ -122,7 +142,12 @@
   "Screening status": "Include - high priority",
   "Notes / uncertainties": "Public questionnaire gives item number/question wording; dataset variable names likely require SHRN data request.",
   "Source URLs": "https://www.shrn.org.uk/national-data-and-reports/ ; https://academic.oup.com/ije/article/50/4/1077/6216951",
-  "Number of datasets": 4
+  "Number of datasets": 4,
+  "Population size": ">100,000 students per wave",
+  "Population size note": "Wales secondary schools",
+  "Age gambling measured": "11–16",
+  "Years covered": "2019–2025 (biennial)",
+  "Linkage": "School-level linkage via SAIL Databank"
  },
  {
   "Dataset_ID": "EAGS",
@@ -147,7 +172,12 @@
   "Screening status": "Include - seeded and confirmed by literature",
   "Notes / uncertainties": "Questionnaires/supplementary files identified through OSF and publications; full variable names not yet fully extracted from files.",
   "Source URLs": "https://wellcomeopenresearch.org/articles/5-240 ; https://pmc.ncbi.nlm.nih.gov/articles/PMC7788474/",
-  "Number of datasets": 3
+  "Number of datasets": 3,
+  "Population size": "≈3,500",
+  "Population size note": "Aged 16–24 at wave 1",
+  "Age gambling measured": "16–24",
+  "Years covered": "2019–2021 (3 waves)",
+  "Linkage": "None"
  },
  {
   "Dataset_ID": "YPGS",
@@ -172,7 +202,12 @@
   "Screening status": "Include - high priority",
   "Notes / uncertainties": "Strong public questionnaire/report documentation and UKDS catalogue links; historic datasets 2011-2019 and 2022-2025 are indexed.",
   "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/studies/study/9499 ; https://www.gamblingcommission.gov.uk/about-us/guide/page/availability-of-research-data-on-the-uk-data-service",
-  "Number of datasets": 13
+  "Number of datasets": 13,
+  "Population size": "≈3,000 pupils / year",
+  "Population size note": "School-based sample",
+  "Age gambling measured": "11–17",
+  "Years covered": "2011–2019, 2022–2025",
+  "Linkage": "None"
  },
  {
   "Dataset_ID": "GSGB",
@@ -197,7 +232,12 @@
   "Screening status": "Include - high priority for 18-24",
   "Notes / uncertainties": "Useful for 18-24 and PGSI-related harmonisation; public questionnaire and derived-variable documentation available.",
   "Source URLs": "https://www.gamblingcommission.gov.uk/about-us/guide/page/availability-of-research-data-on-the-uk-data-service ; https://www.gamblingcommission.gov.uk/statistics-and-research/consumer-gambling-behaviour/series/gambling-survey-for-great-britain",
-  "Number of datasets": 2
+  "Number of datasets": 2,
+  "Population size": "≈10,000–20,000 / year",
+  "Population size note": "10k in 2023; ≈20k from 2024",
+  "Age gambling measured": "18+",
+  "Years covered": "2023–ongoing",
+  "Linkage": "None"
  },
  {
   "Dataset_ID": "APMS",
@@ -222,7 +262,12 @@
   "Screening status": "Include - mental health high value",
   "Notes / uncertainties": "High value for gambling and mental health; variable-level source requires further access/document checking.",
   "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/studies/study/8203 ; https://digital.nhs.uk/data-and-information/publications/statistical/adult-psychiatric-morbidity-survey",
-  "Number of datasets": 3
+  "Number of datasets": 3,
+  "Population size": "≈7,500 adults per survey",
+  "Population size note": "Household residents, England",
+  "Age gambling measured": "16+",
+  "Years covered": "2007, 2014, 2023/24",
+  "Linkage": "None routine"
  },
  {
   "Dataset_ID": "ADDHEALTH",
@@ -247,7 +292,12 @@
   "Screening status": "Include - high priority international",
   "Notes / uncertainties": "Navigator/codebooks support variable-level searching; restricted variables require data agreement.",
   "Source URLs": "https://www.icpsr.umich.edu/web/ICPSR/studies/21600 ; https://addhealth.cpc.unc.edu/documentation/",
-  "Number of datasets": 2
+  "Number of datasets": 2,
+  "Population size": "≈20,700",
+  "Population size note": "Adolescents at wave I (1994–95)",
+  "Age gambling measured": "18–26 (wave III), 24–32 (wave IV)",
+  "Years covered": "2001–02, 2008",
+  "Linkage": "Contextual/admin data in restricted-use files"
  },
  {
   "Dataset_ID": "ESPAD",
@@ -272,7 +322,12 @@
   "Screening status": "Include - international high value, access unclear",
   "Notes / uncertainties": "Primarily substance-use survey; gambling items require wave/country/module confirmation.",
   "Source URLs": "https://data.espad.org/ ; https://www.espad.org/",
-  "Number of datasets": 2
+  "Number of datasets": 2,
+  "Population size": "≈100,000 students per round",
+  "Population size note": "≈35 European countries",
+  "Age gambling measured": "15–16",
+  "Years covered": "2015, 2019, 2024",
+  "Linkage": "None"
  },
  {
   "Dataset_ID": "HBSC",
@@ -297,7 +352,12 @@
   "Screening status": "Include as conditional candidate",
   "Notes / uncertainties": "Publication confirms data availability for Lombardy HBSC 2021/22 but paper is not a codebook; exact questionnaire wording and variable names needed.",
   "Source URLs": "https://doi.org/10.1007/s10899-026-10479-2",
-  "Number of datasets": 2
+  "Number of datasets": 2,
+  "Population size": "≈280,000 (2021/22)",
+  "Population size note": "44 countries; ≈4,500 per country",
+  "Age gambling measured": "11–15",
+  "Years covered": "2013/14, 2021/22 (country-specific)",
+  "Linkage": "None"
  },
  {
   "Dataset_ID": "OSDUHS",
@@ -322,7 +382,12 @@
   "Screening status": "Include - access unclear",
   "Notes / uncertainties": "2023 report confirms data availability and published indicators but is not a codebook; exact item wording and variable names still need questionnaire/data dictionary.",
   "Source URLs": "https://www.camh.ca/osduhs",
-  "Number of datasets": 5
+  "Number of datasets": 5,
+  "Population size": "≈10,000 students per cycle",
+  "Population size note": "Ontario, grades 7–12",
+  "Age gambling measured": "12–18",
+  "Years covered": "2009–2025 (selected cycles)",
+  "Linkage": "None"
  },
  {
   "Dataset_ID": "MANITOBA_YA",
@@ -347,7 +412,12 @@
   "Screening status": "",
   "Notes / uncertainties": "Potentially useful for gambling, psychosocial and substance-use risk/protective factors.",
   "Source URLs": "",
-  "Number of datasets": 4
+  "Number of datasets": 4,
+  "Population size": "≈680",
+  "Population size note": "Young adults, Manitoba",
+  "Age gambling measured": "18–24",
+  "Years covered": "2007–2011 (4 waves)",
+  "Linkage": "None"
  },
  {
   "Dataset_ID": "BGPS",
@@ -372,7 +442,12 @@
   "Screening status": "Include - useful historical comparator",
   "Notes / uncertainties": "Useful for trend/older 16-24 analyses; age and measures comparable to later adult surveys to assess",
   "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/studies/study/6899",
-  "Number of datasets": 3
+  "Number of datasets": 3,
+  "Population size": "≈7,700–9,000 per survey",
+  "Population size note": "Adults 16+, Great Britain",
+  "Age gambling measured": "16+",
+  "Years covered": "1999, 2007, 2010",
+  "Linkage": "None"
  },
  {
   "Dataset_ID": "HSE",
@@ -397,7 +472,12 @@
   "Screening status": "Include - high priority adult 16-24",
   "Notes / uncertainties": "Strong health/risk-factor data; gambling modules included in 2012, 2015, 2016, 2018, 2021. Harmonisation across years needs care.",
   "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/series/series/2000021 ; https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2021-part-2/gambling",
-  "Number of datasets": 5
+  "Number of datasets": 5,
+  "Population size": "≈8,000 adults / year",
+  "Population size note": "+ ≈2,000 children per annual sample",
+  "Age gambling measured": "16+",
+  "Years covered": "2012–2021 (5 module years)",
+  "Linkage": "HES and mortality records via NHS England (approval needed)"
  },
  {
   "Dataset_ID": "HSE_SHES_2016",
@@ -422,7 +502,12 @@
   "Screening status": "Include - adult 16-24 comparator",
   "Notes / uncertainties": "Useful harmonised England/Scotland comparator",
   "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/studies/study/8416",
-  "Number of datasets": 1
+  "Number of datasets": 1,
+  "Population size": "≈12,300 adults",
+  "Population size note": "HSE 2016 + SHeS 2016 combined",
+  "Age gambling measured": "16+",
+  "Years covered": "2016",
+  "Linkage": "None (standalone deposit)"
  },
  {
   "Dataset_ID": "NSW",
@@ -447,7 +532,12 @@
   "Screening status": "Include - adult/emerging adult Wales",
   "Notes / uncertainties": "Under-25 subsample likely small; variable-level detail pending",
   "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/studies/study/9144 ; https://www.gov.wales/gambling-national-survey-wales-april-2022-march-2023",
-  "Number of datasets": 1
+  "Number of datasets": 1,
+  "Population size": "≈11,000 adults / year",
+  "Population size note": "Household survey, Wales",
+  "Age gambling measured": "16+",
+  "Years covered": "2022–23",
+  "Linkage": "Available in SAIL Databank"
  },
  {
   "Dataset_ID": "GUI98",
@@ -472,7 +562,12 @@
   "Screening status": "Include - high priority non-UK",
   "Notes / uncertainties": "Verified 2026-06-15: gambling is a 3-item module at age 20 only (not 17/18). Gambling variables are not in the released AMF; RMF (CSO Officer of Statistics) needed for data. Useful as a youth participation comparator but not for problem-gambling harmonisation.",
   "Source URLs": "https://www.growingup.gov.ie/information-for-researchers/#ir06 ; https://www.greo.ca/",
-  "Number of datasets": 2
+  "Number of datasets": 2,
+  "Population size": "≈8,500",
+  "Population size note": "Children aged 9 at wave 1",
+  "Age gambling measured": "17/18, 20",
+  "Years covered": "2015/16, 2018/19",
+  "Linkage": "None routine (ISSDA/CSO research files)"
  },
  {
   "Dataset_ID": "GIBS",
@@ -497,7 +592,12 @@
   "Screening status": "Include - youth historical comparator",
   "Notes / uncertainties": "Historical US comparator; less relevant for current digital gambling",
   "Source URLs": "https://www.icpsr.umich.edu/web/NAHDAP/studies/2778",
-  "Number of datasets": 1
+  "Number of datasets": 1,
+  "Population size": "≈2,400 adults + 534 youths",
+  "Population size note": "US national sample",
+  "Age gambling measured": "16+ (youth 16–17)",
+  "Years covered": "1998–1999",
+  "Linkage": "None"
  },
  {
   "Dataset_ID": "SHES_2017_2018_2019_2021",
@@ -522,7 +622,12 @@
   "Screening status": "Include - gambling module years identified",
   "Notes / uncertainties": "SHeS runs annually 1995-2024 but gambling questions only asked in 2012-2017 and 2021. The 2018 and 2019 survey years did not include the gambling module. Uploaded data dictionary covers 2017/2018/2019/2021 combined file (shes17181921i_eul; 1780 variables; 25128 cases) but gambling variables are only present for 2017 and 2021 within that file.",
   "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/studies/study/9518 ; https://www.scotpho.org.uk/risk-factors/gambling/key-data-sources/ ; https://www.gov.scot/publications/scottish-health-survey-2017-volume-1-main-report/pages/104/",
-  "Number of datasets": 7
+  "Number of datasets": 7,
+  "Population size": "≈4,800 adults / year",
+  "Population size note": "Scottish households",
+  "Age gambling measured": "16+",
+  "Years covered": "2012–2017, 2021",
+  "Linkage": "Hospital records (SMR) and mortality via eDRIS"
  },
  {
   "Dataset_ID": "AHAH",
@@ -547,7 +652,12 @@
   "Screening status": "Include - contextual/linkage dataset",
   "Notes / uncertainties": "AHAH v5 released February 2026. Python toolkit available on GitHub. Higher AHAH scores indicate less healthy environments. Based on Daras et al. (2019) 'Open data on health-related neighbourhood features in Great Britain'. Data sources include NHS Digital, NHS Scotland, DEFRA, Ordnance Survey, OpenStreetMap, and Gambling Commission data. Useful for linking area-level gambling exposure to individual-level cohort data.",
   "Source URLs": "https://data.geods.ac.uk/dataset/access-to-healthy-assets-hazards-ahah ; https://github.com/GeographicDataService/ahah/tree/v5 ; https://guidebook.ukllc.ac.uk/docs/linked_geo_data/environmental_datasets/neighbourhood_datasets/ahah/ahah",
-  "Number of datasets": 1
+  "Number of datasets": 1,
+  "Population size": "41,729 small areas",
+  "Population size note": "GB LSOAs / data zones",
+  "Age gambling measured": "n/a (area-level index)",
+  "Years covered": "v5: 2021–22",
+  "Linkage": "Joins to any dataset with LSOA codes"
  },
  {
   "Dataset_ID": "NCDS",
@@ -573,7 +683,12 @@
   "Screening status": "Include - additional birth cohort dataset",
   "Notes / uncertainties": "Gambling item is in sweep 4 only (age 23, 1981/82). Retrospective adult data: participants aged 23 at gambling measurement. No validated gambling harm scale; single participation/frequency item only. Age 23 achieved sample verified from CLS Age 23 Sweep page.",
   "Source URLs": "https://cls.ucl.ac.uk/cls-studies/1958-national-child-development-study/ ; https://cls-data.ucl.ac.uk/explore/variable-search ; https://ukdataservice.ac.uk/ (SN 5566 for sweep 4) ; https://discovery.closer.ac.uk/ ; https://ukdataservice.ac.uk/ ; clsdata@ucl.ac.uk",
-  "Number of datasets": 1
+  "Number of datasets": 1,
+  "Population size": "≈17,400",
+  "Population size note": "Births in one week, March 1958",
+  "Age gambling measured": "23",
+  "Years covered": "1981",
+  "Linkage": "Education and health records via UKDS/CLS"
  },
  {
   "Dataset_ID": "BCS70",
@@ -599,7 +714,12 @@
   "Screening status": "Include - additional birth cohort dataset",
   "Notes / uncertainties": "Gambling items at age 15/16 (1986). Direct under-18 gambling data. No validated gambling harm scale. q22.10 is a direct betting-shop participation/frequency item. gg6.14 wording and context verified from CLS/UKDS Document G: spending preference and ranking question.",
   "Source URLs": "https://cls.ucl.ac.uk/cls-studies/1970-british-cohort-study/ ; https://cls-data.ucl.ac.uk/explore/variable-search ; https://ukdataservice.ac.uk/ (SN 3535 for sweep 4 main ; SN 8949 for leisure diary) ; https://discovery.closer.ac.uk/ ; https://ukdataservice.ac.uk/ ; clsdata@ucl.ac.uk",
-  "Number of datasets": 1
+  "Number of datasets": 1,
+  "Population size": "≈17,000",
+  "Population size note": "All GB births, one week of April 1970",
+  "Age gambling measured": "15/16",
+  "Years covered": "1986",
+  "Linkage": "Education records via UKDS/CLS"
  },
  {
   "Dataset_ID": "GA_TSS",
@@ -625,7 +745,12 @@
   "Screening status": "Include - high priority",
   "Notes / uncertainties": "Conducted annually by YouGov since 2019; one of the largest gambling harm surveys worldwide. Data weighted by age, gender, UK region, social grade and ethnic group. LSOA-level geographies available for 2019, 2020, 2022 waves. Variables per wave: 962 (2022), 924 (2020), 242 (2019 P1), 736 (2019 P2). Data format CSV. Supplemented by ~30 qualitative interviews/focus groups per wave. Aggregated data tables (Excel) publicly available 2021-2024. Local area data profiles available 2022-2024.",
   "Source URLs": "https://www.gambleaware.org/our-research/publication-library/treatment-and-support-survey/ ; https://datacatalogue.ukdataservice.ac.uk/studies/study/9536 ; https://data.geods.ac.uk/dataset/gambleaware-treatment-and-support-survey-data",
-  "Number of datasets": 6
+  "Number of datasets": 6,
+  "Population size": "≈18,000 adults / year",
+  "Population size note": "YouGov online panel, GB",
+  "Age gambling measured": "18+",
+  "Years covered": "2019–2024 (annual)",
+  "Linkage": "None (LSOA geography in some waves)"
  },
  {
   "Dataset_ID": "ASSAD",
@@ -649,7 +774,12 @@
   "Screening status": "Include - international youth gambling",
   "Notes / uncertainties": "ASSAD has run since 1984 covering alcohol, tobacco and drugs among Australian school students; gambling module first added in 2017. Publication: Freund et al., 2022, J Gambling Studies. DOI: 10.1007/s10899-021-10098-z",
   "Source URLs": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9653348/",
-  "Number of datasets": 1
+  "Number of datasets": 1,
+  "Population size": "≈20,000 students per round",
+  "Population size note": "Australian secondary schools",
+  "Age gambling measured": "12–17",
+  "Years covered": "2017",
+  "Linkage": "None"
  },
  {
   "Dataset_ID": "YOUTH07_NZ",
@@ -673,7 +803,12 @@
   "Screening status": "Include - international youth gambling",
   "Notes / uncertainties": "Data collected in 2007. Publication: Rossen et al., 2016, Asian J Gambling Issues Public Health. DOI: 10.1186/s40405-016-0017-9. Part of the Youth2000 survey series (Youth2000, Youth'07, Youth'12).",
   "Source URLs": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4998168/",
-  "Number of datasets": 1
+  "Number of datasets": 1,
+  "Population size": "≈9,100",
+  "Population size note": "NZ secondary school students",
+  "Age gambling measured": "13–17",
+  "Years covered": "2007",
+  "Linkage": "None"
  },
  {
   "Dataset_ID": "FINLAND_SHP",
@@ -697,6 +832,11 @@
   "Screening status": "Include - international youth gambling",
   "Notes / uncertainties": "Very large sample. Publication: Raitasalo et al., 2024, J Gambling Studies. DOI: 10.1007/s10899-024-10321-7. Focus on youth origin/migration as risk factor. See also AHLS (Adolescent Health and Lifestyle Survey) for complementary Finnish data.",
   "Source URLs": "https://link.springer.com/article/10.1007/s10899-024-10321-7",
-  "Number of datasets": 3
+  "Number of datasets": 3,
+  "Population size": "≈250,000 students per round",
+  "Population size note": "Nationwide school census survey",
+  "Age gambling measured": "14–20",
+  "Years covered": "2017, 2019, 2021",
+  "Linkage": "None routine"
  }
 ]
