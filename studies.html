@@ -5,12 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All Datasets — Gambling Data Finder</title>
 <link rel="stylesheet" href="style.css">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="Browse all studies and datasets holding gambling data on children and young people.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gambling Data Finder">
+<meta property="og:title" content="All Datasets — Gambling Data Finder">
+<meta property="og:description" content="Browse all studies and datasets holding gambling data on children and young people.">
+<meta property="og:url" content="https://jameswhite1979.github.io/gambling-data-finder/studies.html">
+<meta property="og:image" content="https://jameswhite1979.github.io/gambling-data-finder/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 <div id="header"></div>
 
 <div class="page-content">
-  <h1 style="font-size:1.4rem;color:var(--navy);margin-bottom:.3rem;">All studies and datasets</h1>
+  <div class="section-header-row" style="margin-bottom:.3rem">
+    <h1 style="font-size:1.4rem;color:var(--navy);">All studies and datasets</h1>
+    <a href="compare.html" class="show-more">Compare studies &rarr;</a>
+  </div>
   <p style="color:var(--text-muted);margin-bottom:1.5rem;font-size:.9rem;" id="studies-summary"></p>
 
   <div class="studies-grid" id="studies-grid">
@@ -26,9 +39,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('footer').innerHTML = renderFooter();
   updateBasketCount();
 
-  const [datasets, variables] = await Promise.all([
+  // Per-study counts come from the small precomputed study_stats.json
+  const [datasets, stats, summary] = await Promise.all([
     fetchJSON('data/datasets.json'),
-    loadVariables(),
+    fetchJSON('data/study_stats.json'),
+    fetchJSON('data/summary.json'),
   ]);
 
   const grid = document.getElementById('studies-grid');
@@ -40,14 +55,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   document.getElementById('studies-summary').textContent =
-    `${datasets.length} studies and datasets with ${(variables||[]).length.toLocaleString()} variables indexed for CYP-GHRIP evidence mapping`;
+    `${datasets.length} studies and datasets with ${((summary && summary.variables) || 0).toLocaleString()} variables indexed for CYP-GHRIP evidence mapping`;
 
   const varCounts = {};
   const gambCounts = {};
-  if (variables) {
-    variables.forEach(v => {
-      varCounts[v.dataset_id] = (varCounts[v.dataset_id]||0) + 1;
-      if (v.role === 'Gambling measure') gambCounts[v.dataset_id] = (gambCounts[v.dataset_id]||0) + 1;
+  if (stats) {
+    Object.keys(stats).forEach(id => {
+      varCounts[id] = stats[id].variables || 0;
+      gambCounts[id] = stats[id].gambling || 0;
     });
   }
 

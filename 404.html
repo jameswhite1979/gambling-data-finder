@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — Gambling Data Finder</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/gambling-data-finder/style.css">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<div class="page-content">
+  <div class="err-hero">
+    <div class="err-code">404</div>
+    <div class="err-msg">That page or study doesn't exist &mdash; it may have been merged or renamed.</div>
+    <div class="err-actions">
+      <a class="btn-err btn-err-amber" href="/gambling-data-finder/studies.html">Browse all studies</a>
+      <a class="btn-err btn-err-ghost" href="/gambling-data-finder/search.html">Search variables</a>
+      <a class="btn-err btn-err-ghost" href="/gambling-data-finder/index.html">Home</a>
+    </div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+
+<script src="/gambling-data-finder/app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('site-header').innerHTML = renderNav('');
+  document.getElementById('site-footer').innerHTML = renderFooter();
+  updateBasketCount();
+});
+</script>
+</body>
+</html>

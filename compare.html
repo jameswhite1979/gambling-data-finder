@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compare studies — Gambling Data Finder</title>
+<meta name="description" content="Compare gambling datasets side by side: population size, ages, years covered, gambling measures and data access.">
+<link rel="stylesheet" href="style.css">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gambling Data Finder">
+<meta property="og:title" content="Compare studies — Gambling Data Finder">
+<meta property="og:description" content="Compare gambling datasets side by side: population size, ages, years covered, gambling measures and data access.">
+<meta property="og:url" content="https://jameswhite1979.github.io/gambling-data-finder/compare.html">
+<meta property="og:image" content="https://jameswhite1979.github.io/gambling-data-finder/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<div class="study-hero">
+  <div class="study-hero-inner">
+    <div class="study-hero-id">Compare</div>
+    <h1>Compare studies</h1>
+    <div class="hero-sub" style="color:rgba(255,255,255,.7);font-size:.95rem;margin-top:.4rem">Pick two or three studies to see their key facts side by side.</div>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="compare-bar" id="compare-bar">
+    <select id="cmp-0" aria-label="First study"></select>
+    <span class="compare-vs">vs</span>
+    <select id="cmp-1" aria-label="Second study"></select>
+    <span class="compare-vs">vs</span>
+    <select id="cmp-2" aria-label="Third study (optional)"></select>
+  </div>
+
+  <div class="compare-scroll">
+    <table class="compare-table" id="compare-table" style="display:none">
+      <thead><tr id="cmp-head"><th class="compare-rowlabel"></th></tr></thead>
+      <tbody id="cmp-body"></tbody>
+    </table>
+  </div>
+  <div class="loading" id="cmp-loading">Loading studies...</div>
+</div>
+
+<div id="site-footer"></div>
+
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+  document.getElementById('site-header').innerHTML = renderNav('');
+  document.getElementById('site-footer').innerHTML = renderFooter();
+  updateBasketCount();
+
+  const [datasets, stats, access] = await Promise.all([
+    fetchJSON('data/datasets.json'),
+    fetchJSON('data/study_stats.json'),
+    fetchJSON('data/access.json'),
+  ]);
+  document.getElementById('cmp-loading').style.display = 'none';
+  if (!datasets || !stats) return;
+
+  const byId = {};
+  datasets.forEach(function(d) { byId[d['Dataset_ID']] = d; });
+  const accessById = {};
+  (access || []).forEach(function(a) { if (!accessById[a['Dataset_ID']]) accessById[a['Dataset_ID']] = a; });
+
+  const sorted = datasets.slice().sort(function(a, b) {
+    return (a['Dataset name'] || '').localeCompare(b['Dataset name'] || '');
+  });
+
+  // Populate the three selects (third one optional)
+  const sels = [0, 1, 2].map(function(i) { return document.getElementById('cmp-' + i); });
+  sels.forEach(function(sel, i) {
+    var opt = document.createElement('option');
+    opt.value = '';
+    opt.textContent = i === 2 ? 'None (optional)' : 'Choose a study...';
+    sel.appendChild(opt);
+    sorted.forEach(function(d) {
+      var o = document.createElement('option');
+      o.value = d['Dataset_ID'];
+      o.textContent = d['Dataset name'] || d['Dataset_ID'];
+      sel.appendChild(o);
+    });
+    sel.addEventListener('change', render);
+  });
+
+  // Prefill from ?ids=A,B,C
+  const wanted = (new URLSearchParams(location.search).get('ids') || '').split(',').filter(Boolean);
+  wanted.slice(0, 3).forEach(function(id, i) { if (byId[id]) sels[i].value = id; });
+
+  function chipCell(id) {
+    var named = (stats[id] && stats[id].named_measures) || [];
+    if (named.length === 0) return '<span class="measure-chip none">Bespoke items</span>';
+    return named.slice(0, 6).map(function(n) { return '<span class="measure-chip">' + escapeHTML(n) + '</span>'; }).join(' ');
+  }
+
+  function render() {
+    var ids = sels.map(function(s) { return s.value; }).filter(Boolean);
+    var table = document.getElementById('compare-table');
+    if (ids.length < 2) { table.style.display = 'none'; return; }
+
+    var head = document.getElementById('cmp-head');
+    head.innerHTML = '<th class="compare-rowlabel"></th>' + ids.map(function(id) {
+      var d = byId[id];
+      return '<th><small>' + escapeHTML(id) + '</small><a href="study.html?id=' + encodeURIComponent(id) + '">' + escapeHTML(d['Dataset name'] || id) + '</a></th>';
+    }).join('');
+
+    function row(label, fn) {
+      return '<tr><th class="compare-rowlabel">' + escapeHTML(label) + '</th>' + ids.map(function(id) {
+        return '<td>' + fn(id) + '</td>';
+      }).join('') + '</tr>';
+    }
+    function field(key) {
+      return function(id) { return escapeHTML(byId[id][key] || ''); };
+    }
+    function stat(key) {
+      return function(id) { return ((stats[id] && stats[id][key]) || 0).toLocaleString(); };
+    }
+
+    document.getElementById('cmp-body').innerHTML =
+      row('Study design', field('Study design')) +
+      row('Population size', function(id) {
+        var d = byId[id];
+        return escapeHTML(d['Population size'] || '') +
+          (d['Population size note'] ? '<div class="compare-note">' + escapeHTML(d['Population size note']) + '</div>' : '');
+      }) +
+      row('Age gambling measured', field('Age gambling measured')) +
+      row('Years covered', field('Years covered')) +
+      row('Gambling measures', chipCell) +
+      row('Geographic coverage', field('Country')) +
+      row('Access', function(id) {
+        var a = accessById[id];
+        var route = (a && a['Access route']) || byId[id]['Access difficulty'] || '';
+        var cost = (a && a['Cost/fee']) || '';
+        return escapeHTML(route) + (cost ? '<div class="compare-note">' + escapeHTML(cost) + '</div>' : '');
+      }) +
+      row('Linkage', field('Linkage')) +
+      row('Variables held', stat('variables')) +
+      row('Gambling measure records', stat('measures')) +
+      row('Questionnaires', stat('questionnaires'));
+
+    table.style.display = '';
+  }
+
+  render();
+});
+</script>
+</body>
+</html>

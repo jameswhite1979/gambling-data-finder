@@ -15,9 +15,10 @@ Fixes:
   - Adds Dataset_ID to facets.json datasets array if missing
   - Recounts and rewrites summary.json from actual data
   - Sets summary.json last_updated to today
+  - Regenerates study_stats.json (per-study counts + named measures)
 """
 
-import json, sys, os
+import json, sys, os, re
 from datetime import date
 from collections import Counter
 
@@ -178,6 +179,43 @@ def main():
             print(f"        {k}: {old} -> {new}")
     else:
         print(f"\n  OK    summary.json (counts correct)")
+
+    # ---- study_stats.json: per-study counts + named measures ----
+    # Lets study.html / compare.html show counts and measure chips without
+    # fetching the multi-megabyte variables.json / gambling_measures.json.
+    stats = {}
+    for d in datasets:
+        ds_id = d.get("Dataset_ID")
+        if not ds_id:
+            continue
+        ds_vars = [v for v in variables if v.get("dataset_id") == ds_id]
+        ds_measures = [m for m in gambling_measures if m.get("Dataset_ID") == ds_id]
+        named = []
+        for m in ds_measures:
+            nm = (m.get("Named measure") or "").strip()
+            if not nm or nm.lower() == "none":
+                continue
+            for part in re.split(r"\s*[;,]\s*", nm):
+                if part and part.lower() != "none" and part not in named:
+                    named.append(part)
+        stats[ds_id] = {
+            "variables": len(ds_vars),
+            "gambling": sum(1 for v in ds_vars if v.get("role") == "Gambling measure"),
+            "risk": sum(1 for v in ds_vars if v.get("role") == "Risk/protective factor"),
+            "questionnaires": sum(1 for q in questionnaires if q.get("Dataset_ID") == ds_id),
+            "sources": sum(1 for s in sources if s.get("Dataset_ID") == ds_id),
+            "measures": len(ds_measures),
+            "named_measures": named,
+        }
+    try:
+        old_stats = load(data_dir, "study_stats.json")
+    except Exception:
+        old_stats = None
+    if stats != old_stats:
+        save(data_dir, "study_stats.json", stats, indent=1)
+        print(f"  FIXED study_stats.json ({len(stats)} studies)")
+    else:
+        print(f"  OK    study_stats.json")
 
     print()
     if errors:

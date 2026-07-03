@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dataset — Gambling Data Finder</title>
 <link rel="stylesheet" href="style.css">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="Study profile: population, gambling measures, years covered, variables, questionnaires and data access routes.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gambling Data Finder">
+<meta property="og:title" content="Dataset — Gambling Data Finder">
+<meta property="og:description" content="Study profile: population, gambling measures, years covered, variables, questionnaires and data access routes.">
+<meta property="og:url" content="https://jameswhite1979.github.io/gambling-data-finder/study.html">
+<meta property="og:image" content="https://jameswhite1979.github.io/gambling-data-finder/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 
@@ -24,6 +34,25 @@
     <div class="detail-section" id="overview-section" style="display:none">
       <h2>Overview</h2>
       <dl class="info-grid" id="overview-grid"></dl>
+    </div>
+
+    <div class="detail-section" id="measures-section" style="display:none">
+      <div class="section-header-row">
+        <h2>Gambling measures <span class="count-pill" id="measures-count"></span></h2>
+        <button class="show-more" id="measures-toggle" aria-expanded="false">Show measures &#9662;</button>
+      </div>
+      <div id="measures-body" style="display:none">
+        <div class="filter-row">
+          <select id="measures-year" aria-label="Filter by year"><option value="">All years</option></select>
+          <select id="measures-construct" aria-label="Filter by construct"><option value="">All constructs</option></select>
+          <input type="text" id="measures-text" placeholder="Filter question wording..." aria-label="Filter question wording">
+        </div>
+        <table class="detail-table" id="measures-table">
+          <thead><tr><th>Wave / year</th><th>Item</th><th>Question / label</th><th>Construct</th><th>Measure</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <button class="show-more" id="measures-more" style="display:none"></button>
+      </div>
     </div>
 
     <div class="detail-section" id="access-section" style="display:none">
@@ -64,6 +93,7 @@
     <div class="glance-head">At a glance</div>
     <div id="glance-body"></div>
     <a class="glance-cta" id="glance-cta" href="#" target="_blank" style="display:none">Request access &rarr;</a>
+    <a class="glance-compare" id="glance-compare" href="#">Compare this study &rarr;</a>
   </aside>
 </div>
 
@@ -84,15 +114,15 @@ document.addEventListener('DOMContentLoaded', async function() {
     return;
   }
 
-  // Load all data files in parallel
-  const [datasets, sources, questionnaires, access, publications, variables, measures] = await Promise.all([
+  // Load data files in parallel (per-study counts come from the small
+  // study_stats.json instead of the multi-MB variables/measures files)
+  const [datasets, sources, questionnaires, access, publications, studyStats] = await Promise.all([
     fetchJSON('data/datasets.json'),
     fetchJSON('data/sources.json'),
     fetchJSON('data/questionnaires.json'),
     fetchJSON('data/access.json'),
     fetchJSON('data/publications.json'),
-    fetchJSON('data/variables.json'),
-    fetchJSON('data/gambling_measures.json'),
+    fetchJSON('data/study_stats.json'),
   ]);
 
   // Find dataset
@@ -123,19 +153,17 @@ document.addEventListener('DOMContentLoaded', async function() {
     badgesEl.innerHTML += '<span class="badge badge-meta">' + escapeHTML(ds['Country']) + '</span>';
   }
 
-  // Count variables for this study
-  const studyVars = variables ? variables.filter(v => v.dataset_id === studyId) : [];
-  const gamblingVars = studyVars.filter(v => v.role === 'Gambling measure');
-  const riskVars = studyVars.filter(v => v.role === 'Risk/protective factor');
+  // Per-study counts from precomputed stats
+  const stats = (studyStats && studyStats[studyId]) || { variables: 0, gambling: 0, risk: 0, questionnaires: 0, sources: 0, measures: 0, named_measures: [] };
   const studyQs = questionnaires ? questionnaires.filter(q => q['Dataset_ID'] === studyId) : [];
   const studySources = sources ? sources.filter(s => s['Dataset_ID'] === studyId) : [];
 
   // Stats bar
   const statsEl = document.getElementById('study-stats');
   var statItems = [
-    { num: studyVars.length, label: 'Variables' },
-    { num: gamblingVars.length, label: 'Gambling measures' },
-    { num: riskVars.length, label: 'Risk / protective' },
+    { num: stats.variables, label: 'Variables' },
+    { num: stats.gambling, label: 'Gambling measures' },
+    { num: stats.risk, label: 'Risk / protective' },
     { num: studyQs.length, label: 'Questionnaires' },
     { num: studySources.length, label: 'Sources' },
   ];
@@ -147,7 +175,7 @@ document.addEventListener('DOMContentLoaded', async function() {
   });
 
   // Warning tag if no variables extracted yet
-  if (studyVars.length === 0) {
+  if (stats.variables === 0) {
     var warn = document.createElement('span');
     warn.className = 'tag tag-warning';
     warn.style.alignSelf = 'center';
@@ -177,16 +205,8 @@ document.addEventListener('DOMContentLoaded', async function() {
       '</div></div>';
   }
 
-  // Named gambling measures -> chips
-  var studyMeasures = measures ? measures.filter(function(m) { return m['Dataset_ID'] === studyId; }) : [];
-  var named = [];
-  studyMeasures.forEach(function(m) {
-    var nm = (m['Named measure'] || '').trim();
-    if (!nm || /^none$/i.test(nm)) return;
-    nm.split(/\s*[;,]\s*/).forEach(function(part) {
-      if (part && !/^none$/i.test(part) && named.indexOf(part) === -1) named.push(part);
-    });
-  });
+  // Named gambling measures -> chips (precomputed in study_stats.json)
+  var named = stats.named_measures || [];
   var chipsHTML;
   if (named.length > 0) {
     chipsHTML = named.slice(0, 6).map(function(n) {
@@ -253,6 +273,95 @@ document.addEventListener('DOMContentLoaded', async function() {
     hasOverview = true;
   }
   if (hasOverview) document.getElementById('overview-section').style.display = '';
+
+  // ---- Compare link ----
+  document.getElementById('glance-compare').href = 'compare.html?ids=' + encodeURIComponent(studyId);
+
+  // ---- Gambling measures section (data loaded only when expanded) ----
+  if (stats.measures > 0) {
+    document.getElementById('measures-count').textContent = stats.measures.toLocaleString();
+    document.getElementById('measures-section').style.display = '';
+
+    var measuresLoaded = false;
+    var showAllMeasures = false;
+    var allMeasureRows = [];
+    var MEASURES_PAGE = 25;
+    var measuresToggle = document.getElementById('measures-toggle');
+    var measuresBody = document.getElementById('measures-body');
+    var measuresTbody = document.getElementById('measures-table').querySelector('tbody');
+
+    function renderMeasures() {
+      var yr = document.getElementById('measures-year').value;
+      var ct = document.getElementById('measures-construct').value;
+      var tx = document.getElementById('measures-text').value.trim().toLowerCase();
+      var rows = allMeasureRows.filter(function(m) {
+        if (yr && (m['Wave / year'] || '') !== yr) return false;
+        if (ct && (m['Construct category'] || '') !== ct) return false;
+        if (tx && (m['Variable label or exact question'] || '').toLowerCase().indexOf(tx) === -1) return false;
+        return true;
+      });
+      measuresTbody.innerHTML = '';
+      var limit = showAllMeasures ? rows.length : Math.min(rows.length, MEASURES_PAGE);
+      rows.slice(0, limit).forEach(function(m) {
+        var nm = (m['Named measure'] || '').trim();
+        var tr = document.createElement('tr');
+        tr.innerHTML =
+          '<td>' + escapeHTML(m['Wave / year'] || '') + '</td>' +
+          '<td>' + escapeHTML(m['Variable/item ID'] || '') + '</td>' +
+          '<td>' + escapeHTML(m['Variable label or exact question'] || '') + '</td>' +
+          '<td>' + (m['Construct category'] ? '<span class="cat-tag">' + escapeHTML(m['Construct category']) + '</span>' : '') + '</td>' +
+          '<td>' + (nm && !/^none$/i.test(nm) ? '<span class="measure-chip">' + escapeHTML(nm) + '</span>' : '') + '</td>';
+        measuresTbody.appendChild(tr);
+      });
+      if (rows.length === 0) {
+        measuresTbody.innerHTML = '<tr><td colspan="5">No measures match the current filters.</td></tr>';
+      }
+      var more = document.getElementById('measures-more');
+      if (!showAllMeasures && rows.length > MEASURES_PAGE) {
+        more.style.display = '';
+        more.textContent = 'Show all ' + rows.length.toLocaleString() + ' measures ▾';
+      } else {
+        more.style.display = 'none';
+      }
+    }
+
+    measuresToggle.addEventListener('click', async function() {
+      var isOpen = measuresBody.style.display !== 'none';
+      if (isOpen) {
+        measuresBody.style.display = 'none';
+        measuresToggle.innerHTML = 'Show measures &#9662;';
+        measuresToggle.setAttribute('aria-expanded', 'false');
+        return;
+      }
+      measuresBody.style.display = '';
+      measuresToggle.innerHTML = 'Hide measures &#9652;';
+      measuresToggle.setAttribute('aria-expanded', 'true');
+      if (!measuresLoaded) {
+        measuresTbody.innerHTML = '<tr><td colspan="5">Loading measures...</td></tr>';
+        var all = await fetchJSON('data/gambling_measures.json');
+        allMeasureRows = (all || []).filter(function(m) { return m['Dataset_ID'] === studyId; });
+        var years = [], constructs = [];
+        allMeasureRows.forEach(function(m) {
+          var y = m['Wave / year'] || '';
+          if (y && years.indexOf(y) === -1) years.push(y);
+          var c = m['Construct category'] || '';
+          if (c && constructs.indexOf(c) === -1) constructs.push(c);
+        });
+        years.sort();
+        constructs.sort();
+        var ySel = document.getElementById('measures-year');
+        years.forEach(function(y) { var o = document.createElement('option'); o.value = y; o.textContent = y; ySel.appendChild(o); });
+        var cSel = document.getElementById('measures-construct');
+        constructs.forEach(function(c) { var o = document.createElement('option'); o.value = c; o.textContent = c; cSel.appendChild(o); });
+        measuresLoaded = true;
+        renderMeasures();
+      }
+    });
+    document.getElementById('measures-year').addEventListener('change', renderMeasures);
+    document.getElementById('measures-construct').addEventListener('change', renderMeasures);
+    document.getElementById('measures-text').addEventListener('input', renderMeasures);
+    document.getElementById('measures-more').addEventListener('click', function() { showAllMeasures = true; renderMeasures(); });
+  }
 
   // ---- Data access section ----
   if (studyAccess) {

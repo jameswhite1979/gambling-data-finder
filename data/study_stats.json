@@ -1,0 +1,300 @@
+{
+ "ALSPAC": {
+  "variables": 806,
+  "gambling": 283,
+  "risk": 515,
+  "questionnaires": 21,
+  "sources": 20,
+  "measures": 305,
+  "named_measures": [
+   "CPGI",
+   "PGSI"
+  ]
+ },
+ "BIB_AOW": {
+  "variables": 2722,
+  "gambling": 42,
+  "risk": 2680,
+  "questionnaires": 5,
+  "sources": 15,
+  "measures": 1011,
+  "named_measures": [
+   "SDQ",
+   "GHQ"
+  ]
+ },
+ "MCS": {
+  "variables": 306,
+  "gambling": 5,
+  "risk": 301,
+  "questionnaires": 4,
+  "sources": 14,
+  "measures": 5,
+  "named_measures": [
+   "Cambridge Gambling Task"
+  ]
+ },
+ "USOC": {
+  "variables": 5,
+  "gambling": 4,
+  "risk": 0,
+  "questionnaires": 3,
+  "sources": 16,
+  "measures": 5,
+  "named_measures": []
+ },
+ "SHRN": {
+  "variables": 26,
+  "gambling": 5,
+  "risk": 21,
+  "questionnaires": 6,
+  "sources": 16,
+  "measures": 5,
+  "named_measures": []
+ },
+ "EAGS": {
+  "variables": 404,
+  "gambling": 212,
+  "risk": 58,
+  "questionnaires": 3,
+  "sources": 14,
+  "measures": 212,
+  "named_measures": [
+   "PGSI",
+   "SGHS"
+  ]
+ },
+ "YPGS": {
+  "variables": 1343,
+  "gambling": 1224,
+  "risk": 61,
+  "questionnaires": 6,
+  "sources": 20,
+  "measures": 1235,
+  "named_measures": [
+   "DSM-IV-MR-J"
+  ]
+ },
+ "GSGB": {
+  "variables": 791,
+  "gambling": 655,
+  "risk": 120,
+  "questionnaires": 5,
+  "sources": 16,
+  "measures": 655,
+  "named_measures": [
+   "PGSI"
+  ]
+ },
+ "APMS": {
+  "variables": 17,
+  "gambling": 16,
+  "risk": 1,
+  "questionnaires": 2,
+  "sources": 10,
+  "measures": 16,
+  "named_measures": [
+   "PGSI"
+  ]
+ },
+ "ADDHEALTH": {
+  "variables": 7,
+  "gambling": 3,
+  "risk": 4,
+  "questionnaires": 2,
+  "sources": 14,
+  "measures": 3,
+  "named_measures": [
+   "PGSI"
+  ]
+ },
+ "ESPAD": {
+  "variables": 50,
+  "gambling": 26,
+  "risk": 24,
+  "questionnaires": 3,
+  "sources": 12,
+  "measures": 28,
+  "named_measures": [
+   "Brief PG indicator"
+  ]
+ },
+ "HBSC": {
+  "variables": 9,
+  "gambling": 3,
+  "risk": 6,
+  "questionnaires": 1,
+  "sources": 9,
+  "measures": 3,
+  "named_measures": [
+   "SOGS-RA"
+  ]
+ },
+ "OSDUHS": {
+  "variables": 8,
+  "gambling": 4,
+  "risk": 4,
+  "questionnaires": 2,
+  "sources": 12,
+  "measures": 4,
+  "named_measures": []
+ },
+ "MANITOBA_YA": {
+  "variables": 159,
+  "gambling": 45,
+  "risk": 114,
+  "questionnaires": 1,
+  "sources": 0,
+  "measures": 45,
+  "named_measures": [
+   "PGSI",
+   "Drake Beliefs About Chance Inventory",
+   "GMQ"
+  ]
+ },
+ "BGPS": {
+  "variables": 811,
+  "gambling": 574,
+  "risk": 237,
+  "questionnaires": 2,
+  "sources": 7,
+  "measures": 574,
+  "named_measures": [
+   "PGSI",
+   "DSM-IV-PG",
+   "ATGS"
+  ]
+ },
+ "HSE": {
+  "variables": 396,
+  "gambling": 91,
+  "risk": 305,
+  "questionnaires": 4,
+  "sources": 10,
+  "measures": 91,
+  "named_measures": [
+   "PGSI"
+  ]
+ },
+ "HSE_SHES_2016": {
+  "variables": 267,
+  "gambling": 81,
+  "risk": 176,
+  "questionnaires": 2,
+  "sources": 6,
+  "measures": 81,
+  "named_measures": [
+   "DSM-IV-PG",
+   "PGSI"
+  ]
+ },
+ "NSW": {
+  "variables": 30,
+  "gambling": 29,
+  "risk": 1,
+  "questionnaires": 2,
+  "sources": 7,
+  "measures": 29,
+  "named_measures": [
+   "PGSI"
+  ]
+ },
+ "GUI98": {
+  "variables": 3,
+  "gambling": 3,
+  "risk": 0,
+  "questionnaires": 2,
+  "sources": 10,
+  "measures": 3,
+  "named_measures": []
+ },
+ "GIBS": {
+  "variables": 509,
+  "gambling": 341,
+  "risk": 164,
+  "questionnaires": 2,
+  "sources": 8,
+  "measures": 341,
+  "named_measures": [
+   "NODS"
+  ]
+ },
+ "SHES_2017_2018_2019_2021": {
+  "variables": 427,
+  "gambling": 28,
+  "risk": 399,
+  "questionnaires": 8,
+  "sources": 9,
+  "measures": 28,
+  "named_measures": [
+   "PGSI"
+  ]
+ },
+ "AHAH": {
+  "variables": 0,
+  "gambling": 0,
+  "risk": 0,
+  "questionnaires": 1,
+  "sources": 3,
+  "measures": 1,
+  "named_measures": []
+ },
+ "NCDS": {
+  "variables": 64,
+  "gambling": 1,
+  "risk": 63,
+  "questionnaires": 1,
+  "sources": 4,
+  "measures": 1,
+  "named_measures": []
+ },
+ "BCS70": {
+  "variables": 65,
+  "gambling": 2,
+  "risk": 63,
+  "questionnaires": 2,
+  "sources": 5,
+  "measures": 2,
+  "named_measures": []
+ },
+ "GA_TSS": {
+  "variables": 8,
+  "gambling": 5,
+  "risk": 2,
+  "questionnaires": 3,
+  "sources": 9,
+  "measures": 6,
+  "named_measures": [
+   "PGSI"
+  ]
+ },
+ "ASSAD": {
+  "variables": 5,
+  "gambling": 3,
+  "risk": 2,
+  "questionnaires": 1,
+  "sources": 1,
+  "measures": 1,
+  "named_measures": [
+   "DSM-IV-MR-J"
+  ]
+ },
+ "YOUTH07_NZ": {
+  "variables": 4,
+  "gambling": 2,
+  "risk": 2,
+  "questionnaires": 1,
+  "sources": 1,
+  "measures": 1,
+  "named_measures": []
+ },
+ "FINLAND_SHP": {
+  "variables": 3,
+  "gambling": 1,
+  "risk": 2,
+  "questionnaires": 1,
+  "sources": 1,
+  "measures": 1,
+  "named_measures": []
+ }
+}
