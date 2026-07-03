@@ -505,13 +505,13 @@ nav a.active{color:var(--amber-light);background:rgba(217,119,6,.15)}
 .pagination button:hover:not(.active){background:var(--border-light);border-color:var(--slate-muted)}
 
 /* ===== STUDY DETAIL ===== */
-.study-hero{background:var(--navy);color:#fff;padding:2.5rem 1.5rem 2rem;position:relative;overflow:hidden}
+.study-hero{background:var(--navy);color:#fff;padding:2.5rem 0 2rem;position:relative;overflow:hidden}
 .study-hero::before{
   content:'';position:absolute;inset:0;
   background:radial-gradient(ellipse at 70% 0%,rgba(217,119,6,.1) 0%,transparent 50%);
   pointer-events:none;
 }
-.study-hero-inner{max-width:var(--max-w);margin:0 auto;position:relative}
+.study-hero-inner{max-width:var(--max-w);margin:0 auto;padding:0 1.25rem;position:relative}
 .study-hero-id{font-size:.75rem;color:var(--amber-light);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.3rem}
 .study-hero h1{font-size:1.6rem;font-weight:700;letter-spacing:-.01em}
 .study-hero-badges{display:flex;gap:.5rem;margin-top:.6rem;flex-wrap:wrap}
