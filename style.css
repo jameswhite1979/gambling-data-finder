@@ -759,11 +759,13 @@ nav a.active{color:var(--amber-light);background:rgba(217,119,6,.15)}
 
 /* ===== STUDY PAGE: AT-A-GLANCE SIDEBAR ===== */
 .study-layout{
-  max-width:var(--max-w);margin:1.5rem auto;padding:0 1.5rem;
+  max-width:var(--max-w);margin:1.5rem auto;padding:0 1.25rem;
   display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:1.4rem;align-items:start;
 }
 .study-main{min-width:0}
 .study-main .detail-section:first-child{margin-top:0}
+.study-main .info-grid{font-size:.95rem}
+.study-main .detail-table{font-size:.9rem}
 .glance{
   position:sticky;top:1rem;
   background:var(--card);border:1px solid var(--border-light);
