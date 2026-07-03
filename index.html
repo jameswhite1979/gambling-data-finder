@@ -36,6 +36,10 @@
 <div class="metrics">
   <div class="metrics-grid">
     <div class="metric-card">
+      <div class="metric-num" id="metric-studies">&mdash;</div>
+      <div class="metric-label">Studies</div>
+    </div>
+    <div class="metric-card">
       <div class="metric-num" id="metric-datasets">&mdash;</div>
       <div class="metric-label">Datasets</div>
     </div>
@@ -80,6 +84,7 @@ document.addEventListener('DOMContentLoaded', async function() {
   /* ---- Metric cards from summary.json ---- */
   const summary = await fetchJSON('data/summary.json');
   if (summary) {
+    document.getElementById('metric-studies').textContent = (summary.studies || 28).toLocaleString();
     document.getElementById('metric-datasets').textContent = summary.datasets.toLocaleString();
     document.getElementById('metric-questionnaires').textContent = summary.questionnaires.toLocaleString();
     document.getElementById('metric-variables').textContent = summary.variables.toLocaleString();

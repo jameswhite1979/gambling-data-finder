@@ -158,7 +158,8 @@ def main():
 
     role_counts = Counter(v.get("role", "") for v in variables)
     new_summary = {
-        "datasets": len(datasets),
+        "studies": len(datasets),
+        "datasets": sum(d.get("Number of datasets", 1) for d in datasets),
         "variables": len(variables),
         "questionnaires": len(questionnaires),
         "gambling_measures": len(gambling_measures),
