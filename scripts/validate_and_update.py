@@ -222,6 +222,47 @@ def main():
     else:
         print(f"  OK    study_stats.json")
 
+    # ---- facets.named_measures: regenerate from variables so it can't go stale ----
+    all_named = sorted({(v.get("named_measure") or "").strip() for v in variables
+                        if (v.get("named_measure") or "").strip()
+                        and (v.get("named_measure") or "").strip().lower() != "none"})
+    if facets.get("named_measures") != all_named:
+        facets["named_measures"] = all_named
+        save(data_dir, "facets.json", facets, indent=1)
+        print(f"  FIXED facets.json named_measures ({len(all_named)} measures)")
+    else:
+        print(f"  OK    facets.json named_measures")
+
+    # ---- measure_stats.json: per named gambling measure summary for measures.html ----
+    measure_stats = []
+    gamb_named = sorted({(v.get("named_measure") or "").strip() for v in variables
+                         if v.get("role") == "Gambling measure" and (v.get("named_measure") or "").strip()
+                         and (v.get("named_measure") or "").strip().lower() != "none"})
+    for name in gamb_named:
+        mvars = [v for v in variables if v.get("role") == "Gambling measure"
+                 and (v.get("named_measure") or "").strip() == name]
+        note = ""
+        for m in gambling_measures:
+            if (m.get("Named measure") or "").strip() == name and m.get("Meta-analysis compatibility note"):
+                note = m["Meta-analysis compatibility note"]
+                break
+        measure_stats.append({
+            "name": name,
+            "variables": len(mvars),
+            "datasets": sorted({v.get("dataset_id") for v in mvars if v.get("dataset_id")}),
+            "constructs": sorted({v.get("construct_category") for v in mvars if v.get("construct_category")}),
+            "note": note,
+        })
+    try:
+        old_ms = load(data_dir, "measure_stats.json")
+    except Exception:
+        old_ms = None
+    if measure_stats != old_ms:
+        save(data_dir, "measure_stats.json", measure_stats, indent=1)
+        print(f"  FIXED measure_stats.json ({len(measure_stats)} measures)")
+    else:
+        print(f"  OK    measure_stats.json")
+
     print()
     if errors:
         print(f"ERRORS ({len(errors)}):")

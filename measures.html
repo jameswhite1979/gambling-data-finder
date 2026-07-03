@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="Standardised gambling measures (PGSI, DSM-IV, CPGI and more) and where they are used across studies.">
@@ -30,40 +30,26 @@
 </div>
 
 <div id="footer"></div>
-<script src="app.js?v=4"></script>
+<script src="app.js?v=5"></script>
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('header').innerHTML = renderNav('measures');
   document.getElementById('footer').innerHTML = renderFooter();
   updateBasketCount();
 
-  const [variables, facets, gamblingMeasures] = await Promise.all([
-    loadVariables(),
-    fetchJSON('data/facets.json'),
-    fetchJSON('data/gambling_measures.json'),
-  ]);
+  // Precomputed by scripts/validate_and_update.py — avoids fetching the
+  // multi-MB variables/gambling_measures files just to build this table
+  const measureStats = await fetchJSON('data/measure_stats.json');
 
   const container = document.getElementById('measures-content');
-  if (!facets || !facets.named_measures || !variables) {
+  if (!measureStats) {
     container.innerHTML = '<p>Unable to load measures data.</p>';
     return;
   }
 
-  const gamblingMeasureNames = new Set(
-    variables
-      .filter(v => v.role === 'Gambling measure' && v.named_measure)
-      .map(v => v.named_measure)
-  );
-  const measures = facets.named_measures
-    .filter(m => m && gamblingMeasureNames.has(m))
-    .sort((a, b) => a.localeCompare(b));
-  const rows = measures.map(m => {
-    const vars = variables.filter(v => v.role === 'Gambling measure' && v.named_measure === m);
-    const datasets = [...new Set(vars.map(v => v.dataset_id))];
-    const constructs = [...new Set(vars.map(v => v.construct_category).filter(Boolean))];
-    const gmEntry = gamblingMeasures ? gamblingMeasures.find(g => g['Named measure'] === m || g['Variable/item ID'] === m) : null;
-    return { name: m, varCount: vars.length, datasets, constructs, gmEntry };
-  });
+  const rows = measureStats.map(m => ({
+    name: m.name, varCount: m.variables, datasets: m.datasets, constructs: m.constructs, note: m.note
+  }));
 
   let html = `<table class="measures-table">
     <thead><tr>
@@ -75,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     </tr></thead><tbody>`;
 
   rows.forEach(r => {
-    const note = r.gmEntry ? (r.gmEntry['Meta-analysis compatibility note'] || '') : '';
+    const note = r.note || '';
     html += `<tr>
       <td><a href="search.html?named_measure=${encodeURIComponent(r.name)}" style="font-weight:600;">${escapeHTML(r.name)}</a></td>
       <td>${escapeHTML(r.constructs.join(', '))}</td>

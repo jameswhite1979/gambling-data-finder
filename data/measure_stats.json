@@ -1,0 +1,161 @@
+[
+ {
+  "name": "ATGS",
+  "variables": 7,
+  "datasets": [
+   "BGPS"
+  ],
+  "constructs": [
+   "Gambling attitudes"
+  ],
+  "note": "Useful for harmonisation; verify full routing/value labels before meta-analysis."
+ },
+ {
+  "name": "Brief PG indicator",
+  "variables": 2,
+  "datasets": [
+   "ESPAD"
+  ],
+  "constructs": [
+   "Problem gambling / harm"
+  ],
+  "note": "Questionnaire item extracted; full country-level codebook/variable names still needed for data analysis."
+ },
+ {
+  "name": "CPGI",
+  "variables": 4,
+  "datasets": [
+   "ALSPAC"
+  ],
+  "constructs": [
+   "Derived gambling measure"
+  ],
+  "note": "Derived score; good candidate for harmonisation with PGSI/CPGI datasets if scoring comparable."
+ },
+ {
+  "name": "Cambridge Gambling Task",
+  "variables": 1,
+  "datasets": [
+   "MCS"
+  ],
+  "constructs": [
+   "Gambling participation"
+  ],
+  "note": "Not a gambling behaviour measure; do not harmonise with gambling participation/harm outcomes."
+ },
+ {
+  "name": "DSM-IV-MR-J",
+  "variables": 16,
+  "datasets": [
+   "ASSAD",
+   "YPGS"
+  ],
+  "constructs": [
+   "Gambling spend",
+   "Problem gambling / harm"
+  ],
+  "note": "Directly comparable with other YPGS waves using DSM-IV-MR-J; not directly identical to PGSI"
+ },
+ {
+  "name": "DSM-IV-PG",
+  "variables": 58,
+  "datasets": [
+   "BGPS",
+   "HSE_SHES_2016"
+  ],
+  "constructs": [
+   "Problem gambling / harm"
+  ],
+  "note": "Useful for harmonisation; verify full routing/value labels before meta-analysis."
+ },
+ {
+  "name": "Drake Beliefs About Chance Inventory",
+  "variables": 6,
+  "datasets": [
+   "MANITOBA_YA"
+  ],
+  "constructs": [
+   "Perceived skill/control/risk"
+  ],
+  "note": ""
+ },
+ {
+  "name": "GMQ",
+  "variables": 3,
+  "datasets": [
+   "MANITOBA_YA"
+  ],
+  "constructs": [
+   "Reasons / motivations for gambling"
+  ],
+  "note": "GMQ - comparable where other datasets use gambling motives"
+ },
+ {
+  "name": "GRCS",
+  "variables": 5,
+  "datasets": [
+   "ALSPAC"
+  ],
+  "constructs": [
+   "Problem gambling / harm"
+  ],
+  "note": ""
+ },
+ {
+  "name": "NODS",
+  "variables": 38,
+  "datasets": [
+   "GIBS"
+  ],
+  "constructs": [
+   "Derived gambling measure",
+   "Problem gambling / harm"
+  ],
+  "note": "NODS (NORC DSM-IV Screen for Gambling Problems) - DSM-IV-based; comparable with other datasets using DSM-IV problem-gambling criteria."
+ },
+ {
+  "name": "PGSI",
+  "variables": 181,
+  "datasets": [
+   "ADDHEALTH",
+   "ALSPAC",
+   "APMS",
+   "BGPS",
+   "EAGS",
+   "GA_TSS",
+   "GSGB",
+   "HSE",
+   "HSE_SHES_2016",
+   "MANITOBA_YA",
+   "NSW",
+   "SHES_2017_2018_2019_2021"
+  ],
+  "constructs": [
+   "Derived gambling measure",
+   "Problem gambling / harm"
+  ],
+  "note": "Candidate CPGI/PGSI-style harm item."
+ },
+ {
+  "name": "SGHS",
+  "variables": 1,
+  "datasets": [
+   "EAGS"
+  ],
+  "constructs": [
+   "Problem gambling / harm"
+  ],
+  "note": "Useful harm outcome; fewer direct comparators"
+ },
+ {
+  "name": "SOGS-RA",
+  "variables": 1,
+  "datasets": [
+   "HBSC"
+  ],
+  "constructs": [
+   "Problem gambling / harm"
+  ],
+  "note": "Named adolescent problem-gambling measure; harmonisable with SOGS-RA studies."
+ }
+]

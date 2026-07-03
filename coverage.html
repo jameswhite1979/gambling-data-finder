@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="Metadata coverage and documentation status for each study in the Gambling Data Finder.">
@@ -32,27 +32,29 @@
 </div>
 
 <div id="footer"></div>
-<script src="app.js?v=4"></script>
+<script src="app.js?v=5"></script>
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('header').innerHTML = renderNav('coverage');
   document.getElementById('footer').innerHTML = renderFooter();
   updateBasketCount();
 
-  const [datasets, variables, questionnaires, sources, metaCheck] = await Promise.all([
+  // Counts come from the small precomputed study_stats.json
+  const [datasets, stats, metaCheck] = await Promise.all([
     fetchJSON('data/datasets.json'),
-    loadVariables(),
-    fetchJSON('data/questionnaires.json'),
-    fetchJSON('data/sources.json'),
+    fetchJSON('data/study_stats.json'),
     fetchJSON('data/metadata_check.json'),
   ]);
 
   if (!datasets) { document.getElementById('coverage-content').innerHTML = '<p>Unable to load data.</p>'; return; }
 
   const varCounts = {}, gambCounts = {}, qCounts = {}, srcCounts = {};
-  (variables||[]).forEach(v => { varCounts[v.dataset_id] = (varCounts[v.dataset_id]||0) + 1; if (v.role === 'Gambling measure') gambCounts[v.dataset_id] = (gambCounts[v.dataset_id]||0) + 1; });
-  (questionnaires||[]).forEach(q => { qCounts[q['Dataset_ID']] = (qCounts[q['Dataset_ID']]||0) + 1; });
-  (sources||[]).forEach(s => { srcCounts[s['Dataset_ID']] = (srcCounts[s['Dataset_ID']]||0) + 1; });
+  Object.keys(stats || {}).forEach(id => {
+    varCounts[id] = stats[id].variables || 0;
+    gambCounts[id] = stats[id].gambling || 0;
+    qCounts[id] = stats[id].questionnaires || 0;
+    srcCounts[id] = stats[id].sources || 0;
+  });
 
   const metaMap = {};
   (metaCheck||[]).forEach(m => { metaMap[m['Dataset_ID']] = m; });
@@ -101,7 +103,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       <td class="cov-num">${ns || '<span class="cov-no">0</span>'}</td>
       <td>${tick(mc['Variable names public?'])}</td>
       <td>${tick(mc['Question wording public?'])}</td>
-      <td style="font-size:.72rem;">${escapeHTML(d['Access type']||d['Access difficulty']||'')}</td>
+      <td style="font-size:.72rem;">${escapeHTML(d['Access difficulty']||d['Access type']||'')}</td>
     </tr>`;
   });
 

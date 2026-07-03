@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <style>
 .ideas-intro{color:var(--text-muted);font-size:.9rem;line-height:1.6;margin-bottom:1.4rem;max-width:none}
 .ideas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin:1rem 0 1.6rem}
@@ -106,7 +106,7 @@
 </div>
 
 <div id="footer"></div>
-<script src="app.js?v=4"></script>
+<script src="app.js?v=5"></script>
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('header').innerHTML = renderNav('analysis-ideas');
@@ -306,7 +306,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
         ev += '</ul></details>';
       }
-      html += `<tr><td>${escapeHTML(q.question)}</td><td>${datasetLinks(candidates.slice(0, 8))}</td><td>${escapeHTML(measureRoutes.slice(0, 5).join(', ') || 'Construct-level comparison')}</td><td>${ev}</td><td><span class="ideas-pill ${pillClass}">${feasibility}</span></td></tr>`;
+      const topIds = candidates.slice().sort((a, b) => b.ideaScore - a.ideaScore).slice(0, 3).map(s => s.id);
+      const compareLink = topIds.length >= 2
+        ? `<div style="margin-top:.3rem"><a href="compare.html?ids=${encodeURIComponent(topIds.join(','))}" style="font-size:.72rem;font-weight:700;">Compare top ${topIds.length} &rarr;</a></div>`
+        : '';
+      html += `<tr><td>${escapeHTML(q.question)}</td><td>${datasetLinks(candidates.slice(0, 8))}${compareLink}</td><td>${escapeHTML(measureRoutes.slice(0, 5).join(', ') || 'Construct-level comparison')}</td><td>${ev}</td><td><span class="ideas-pill ${pillClass}">${feasibility}</span></td></tr>`;
     });
     html += '</tbody></table></div>';
     document.getElementById('question-content').innerHTML = html;

@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <style>
 .readiness-table{width:100%;border-collapse:collapse;font-size:.8rem}
 .readiness-table th,.readiness-table td{padding:.5rem .6rem;border:1px solid var(--border);text-align:left;vertical-align:top}
@@ -87,7 +87,7 @@
 
 <div id="main-content" class="page-content">
   <h1 style="font-size:1.4rem;color:var(--navy);margin-bottom:.3rem;">Analysis: readiness and synthesis potential</h1>
-  <p class="section-intro">This page assesses each dataset's readiness for secondary analysis and identifies where cross-dataset synthesis or meta-analysis may be feasible. Readiness scores reflect data quality, measurement detail, access routes and risk/protective factor coverage. Compatibility flags indicate potential for harmonisation across datasets.</p>
+  <p class="section-intro">This page assesses each dataset's readiness for secondary analysis and identifies where cross-dataset synthesis or meta-analysis may be feasible. Readiness scores reflect data quality, measurement detail, access routes and risk/protective factor coverage. Compatibility flags indicate potential for harmonisation across datasets. AHAH (an area-level index rather than a survey) is not scored.</p>
 
   <div class="method-grid">
     <section class="method-panel">
@@ -157,7 +157,7 @@
 </div>
 
 <div id="footer"></div>
-<script src="app.js?v=4"></script>
+<script src="app.js?v=5"></script>
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('header').innerHTML = renderNav('new-analysis');
@@ -179,9 +179,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
-  const scorableDatasets = datasets.filter(d =>
-    d.Dataset_ID !== 'GREO_REPO' && d.Dataset_ID !== 'UKLLC' && d.Dataset_ID !== 'AHAH'
-  );
+  // AHAH is excluded: it is an area-level index, not a survey, so readiness
+  // components (samples, measures, questionnaires) do not apply to it.
+  const scorableDatasets = datasets.filter(d => d.Dataset_ID !== 'AHAH');
 
   function computeReadiness(ds) {
     const id = ds.Dataset_ID;
@@ -196,7 +196,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const age = (ds['Age focus / population'] || '').toLowerCase();
     const design = (ds['Study design'] || '').toLowerCase();
     const accessURL = ds['Access request URL'] || '';
-    const accessType = (ds['Access type'] || '').toLowerCase();
 
     const components = {};
 
@@ -246,8 +245,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (riskDomains.match(/inequalit|ethnic|deprivat|disabilit|gender|sexuality|migration/)) components.inequality = 1;
     else components.inequality = 0;
 
-    // 9. Clear access route (0-2)
-    if (accessURL && (accessType.includes('open') || accessType.includes('public') || accessType.includes('registered'))) components.access = 2;
+    // 9. Clear access route (0-2), from the normalised Access difficulty field
+    const accessDiff = (ds['Access difficulty'] || '').toLowerCase();
+    if (accessURL && (accessDiff.startsWith('open') || accessDiff.includes('registration') || accessDiff.includes('safeguarded'))) components.access = 2;
     else if (accessURL) components.access = 1;
     else components.access = 0;
 

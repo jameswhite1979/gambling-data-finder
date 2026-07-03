@@ -61,7 +61,7 @@
  },
  {
   "Dataset_ID": "MCS",
-  "Dataset name": "Millennium Cohort Study - Age 14 sweep",
+  "Dataset name": "Millennium Cohort Study",
   "Country": "UK",
   "Owner / data controller": "Centre for Longitudinal Studies / UCL",
   "Study design": "Birth cohort",
@@ -122,7 +122,7 @@
  {
   "Dataset_ID": "SHRN",
   "Dataset name": "School Health Research Network Student Health and Wellbeing Survey",
-  "Country": "UK - Wales",
+  "Country": "Wales",
   "Owner / data controller": "Cardiff University / SHRN",
   "Study design": "Repeated cross-sectional school survey",
   "Age focus / population": "Secondary school pupils; years 7-11",
@@ -302,7 +302,7 @@
  {
   "Dataset_ID": "ESPAD",
   "Dataset name": "European School Survey Project on Alcohol and Other Drugs",
-  "Country": "International / Europe",
+  "Country": "Europe",
   "Owner / data controller": "ESPAD network",
   "Study design": "Repeated cross-national school survey",
   "Age focus / population": "Age 15-16",
@@ -602,7 +602,7 @@
  {
   "Dataset_ID": "SHES_2017_2018_2019_2021",
   "Dataset name": "Scottish Health Survey 2012-2017 and 2021 (gambling module years)",
-  "Country": "UK - Scotland",
+  "Country": "Scotland",
   "Owner / data controller": "Scottish Government / ScotCen / UK Data Service",
   "Study design": "Repeated cross-sectional health survey",
   "Age focus / population": "Age 16+ adults; includes 16-24 young adults",
@@ -632,7 +632,7 @@
  {
   "Dataset_ID": "AHAH",
   "Dataset name": "Access to Healthy Assets and Hazards",
-  "Country": "UK - Great Britain (small-area contextual data)",
+  "Country": "Great Britain",
   "Owner / data controller": "Consumer Data Research Centre / Geographic Data Service",
   "Study design": "Contextual/geospatial environmental dataset",
   "Age focus / population": "Not individual participant data; area-level contextual linkage to cohorts/areas",
@@ -724,7 +724,7 @@
  {
   "Dataset_ID": "GA_TSS",
   "Dataset name": "GambleAware Annual GB Treatment and Support Survey",
-  "Country": "UK - Great Britain",
+  "Country": "Great Britain",
   "Owner / data controller": "GambleAware",
   "Study design": "Repeated cross-sectional survey",
   "Age focus / population": "Adults aged 18+; last two waves (2023, 2024) include retrospective questions about gambling before age 18",
