@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Data Visualisations - Gambling Data Finder</title>
-<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css?v=4">
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="Visual overview of gambling data coverage across studies and countries.">
@@ -19,7 +22,7 @@
 <body>
 <div id="header"></div>
 
-<div class="page-content">
+<div id="main-content" class="page-content">
   <h1 style="font-size:1.4rem;color:var(--navy);margin-bottom:.3rem;">Data visualisations</h1>
   <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:1.5rem;">Explore the shape of the CYP-GHRIP data landscape: study coverage, variable depth, gambling measures, access routes, geography, age groups and filtered search summaries.</p>
 
@@ -82,7 +85,7 @@
 </div>
 
 <div id="footer"></div>
-<script src="app.js"></script>
+<script src="app.js?v=4"></script>
 <script>
 const CHART_COLORS = ['#0d9488','#d97706','#334155','#e11d48','#059669','#7c3aed','#0284c7','#ca8a04','#be123c','#475569'];
 let datasets = [];
@@ -224,7 +227,7 @@ function renderCoverageMatrix() {
 
   let html = `<div class="heatmap-scroll"><table class="heatmap-table coverage-mini-table">
     <thead><tr>
-      <th>Dataset</th><th>Variables</th><th>Gambling measures</th><th>Questionnaires</th><th>Sources</th><th>Variable names</th><th>Documentation</th><th>Access</th>
+      <th scope="col">Dataset</th><th scope="col">Variables</th><th scope="col">Gambling measures</th><th scope="col">Questionnaires</th><th scope="col">Sources</th><th scope="col">Variable names</th><th scope="col">Documentation</th><th scope="col">Access</th>
     </tr></thead><tbody>`;
   rows.forEach(d => {
     const id = d['Dataset_ID'];

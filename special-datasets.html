@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Special Datasets — Gambling Data Finder</title>
-<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css?v=4">
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="Linked, geospatial, administrative and transactional datasets that complement gambling surveys.">
@@ -19,7 +22,7 @@
 <body>
 <div id="header"></div>
 
-<div class="page-content">
+<div id="main-content" class="page-content">
   <h1 style="font-size:1.4rem;color:var(--navy);margin-bottom:.3rem;">Special datasets</h1>
   <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:2rem;">Datasets that complement individual-level surveys for children and young people's gambling harm research, including linked, geospatial, administrative and transactional data.</p>
 
@@ -29,12 +32,12 @@
     <div class="coverage-wrapper">
       <table class="detail-table" id="geo-table">
         <thead><tr>
-          <th>Dataset</th>
-          <th>Coverage</th>
-          <th>Spatial resolution</th>
-          <th>Key variables</th>
-          <th>Access</th>
-          <th>Link</th>
+          <th scope="col">Dataset</th>
+          <th scope="col">Coverage</th>
+          <th scope="col">Spatial resolution</th>
+          <th scope="col">Key variables</th>
+          <th scope="col">Access</th>
+          <th scope="col">Link</th>
         </tr></thead>
         <tbody></tbody>
       </table>
@@ -47,12 +50,12 @@
     <div class="coverage-wrapper">
       <table class="detail-table" id="admin-table">
         <thead><tr>
-          <th>Dataset</th>
-          <th>Population</th>
-          <th>Data type</th>
-          <th>Time period</th>
-          <th>Access</th>
-          <th>Link</th>
+          <th scope="col">Dataset</th>
+          <th scope="col">Population</th>
+          <th scope="col">Data type</th>
+          <th scope="col">Time period</th>
+          <th scope="col">Access</th>
+          <th scope="col">Link</th>
         </tr></thead>
         <tbody></tbody>
       </table>
@@ -65,12 +68,12 @@
     <div class="coverage-wrapper">
       <table class="detail-table" id="replication-table">
         <thead><tr>
-          <th>Dataset</th>
-          <th>Population</th>
-          <th>Design</th>
-          <th>Sample</th>
-          <th>Access</th>
-          <th>Link</th>
+          <th scope="col">Dataset</th>
+          <th scope="col">Population</th>
+          <th scope="col">Design</th>
+          <th scope="col">Sample</th>
+          <th scope="col">Access</th>
+          <th scope="col">Link</th>
         </tr></thead>
         <tbody></tbody>
       </table>
@@ -79,7 +82,7 @@
 </div>
 
 <div id="footer"></div>
-<script src="app.js"></script>
+<script src="app.js?v=4"></script>
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('header').innerHTML = renderNav('');

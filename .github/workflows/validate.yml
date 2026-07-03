@@ -1,0 +1,36 @@
+name: Validate data
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate JSON data and cross-references
+        run: python scripts/validate_and_update.py HSE --data-dir data
+
+      - name: Check for mojibake in data files
+        run: |
+          if grep -rlP '\xc3\xa2\xe2\x82\xac|\xc3\x83\xc2' data/*.json; then
+            echo "::error::Mojibake byte sequences found in data files (see list above)"
+            exit 1
+          fi
+          echo "No mojibake found"
+
+      - name: Fail if validation changed derived files
+        run: |
+          if ! git diff --quiet -- data/summary.json data/study_stats.json data/facets.json; then
+            echo "::error::Derived data files are stale. Run: py scripts/validate_and_update.py <ID> --data-dir data and commit the result."
+            git diff --stat -- data/summary.json data/study_stats.json data/facets.json
+            exit 1
+          fi
+          echo "Derived files up to date"

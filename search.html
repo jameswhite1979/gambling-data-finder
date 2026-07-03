@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Search — Gambling Data Finder</title>
-<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css?v=4">
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="Search 9,000+ variables, gambling measures, questions and questionnaires across 28 studies.">
@@ -20,7 +23,9 @@
 
 <div id="header"></div>
 
-<div class="search-layout">
+<h1 class="visually-hidden">Search variables, measures and questionnaires</h1>
+
+<div id="main-content" class="search-layout">
 
   <!-- LEFT: Filter sidebar -->
   <aside class="filter-sidebar">
@@ -71,7 +76,7 @@
   <div class="results-panel">
 
     <form class="search-bar" id="search-form">
-      <input type="text" id="search-input" placeholder="Search gambling harm, participation, risk factors, measures..." autocomplete="off">
+      <input type="text" id="search-input" aria-label="Search variables, measures and studies" placeholder="Search gambling harm, participation, risk factors, measures..." autocomplete="off">
       <button type="submit">Search</button>
     </form>
 
@@ -80,7 +85,7 @@
       <span class="results-timing" id="results-timing"></span>
     </div>
 
-    <div id="results-container">
+    <div id="results-container" aria-live="polite">
       <div class="loading" id="loading">Loading variables...</div>
     </div>
 
@@ -92,7 +97,7 @@
 
 <div id="footer"></div>
 
-<script src="app.js?v=search-questions-2"></script>
+<script src="app.js?v=4"></script>
 <script>
 (function () {
   'use strict';

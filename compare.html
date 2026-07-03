@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Compare studies — Gambling Data Finder</title>
 <meta name="description" content="Compare gambling datasets side by side: population size, ages, years covered, gambling measures and data access.">
-<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css?v=4">
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:type" content="website">
@@ -28,7 +31,7 @@
   </div>
 </div>
 
-<div class="page-content">
+<div id="main-content" class="page-content">
   <div class="compare-bar" id="compare-bar">
     <select id="cmp-0" aria-label="First study"></select>
     <span class="compare-vs">vs</span>
@@ -48,7 +51,7 @@
 
 <div id="site-footer"></div>
 
-<script src="app.js"></script>
+<script src="app.js?v=4"></script>
 <script>
 document.addEventListener('DOMContentLoaded', async function() {
   document.getElementById('site-header').innerHTML = renderNav('');

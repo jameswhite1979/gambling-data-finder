@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All Datasets — Gambling Data Finder</title>
-<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css?v=4">
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="Browse all studies and datasets holding gambling data on children and young people.">
@@ -19,20 +22,20 @@
 <body>
 <div id="header"></div>
 
-<div class="page-content">
+<div id="main-content" class="page-content">
   <div class="section-header-row" style="margin-bottom:.3rem">
     <h1 style="font-size:1.4rem;color:var(--navy);">All studies and datasets</h1>
     <a href="compare.html" class="show-more">Compare studies &rarr;</a>
   </div>
   <p style="color:var(--text-muted);margin-bottom:1.5rem;font-size:.9rem;" id="studies-summary"></p>
 
-  <div class="studies-grid" id="studies-grid">
+  <div class="studies-grid" id="studies-grid" aria-live="polite">
     <div class="loading">Loading datasets...</div>
   </div>
 </div>
 
 <div id="footer"></div>
-<script src="app.js"></script>
+<script src="app.js?v=4"></script>
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('header').innerHTML = renderNav('');

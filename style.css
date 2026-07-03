@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+/* Fonts are loaded via <link> tags in each page head (non-blocking) */
 
 *{margin:0;padding:0;box-sizing:border-box}
 
@@ -870,3 +870,19 @@ nav a.active{color:var(--amber-light);background:rgba(217,119,6,.15)}
 .btn-err-amber:hover{background:#1d4ed8;color:#fff;text-decoration:none}
 .btn-err-ghost{background:rgba(255,255,255,.12);color:#fff}
 .btn-err-ghost:hover{background:rgba(255,255,255,.22);color:#fff;text-decoration:none}
+
+/* ===== ACCESSIBILITY ===== */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{
+  outline:2px solid var(--amber);outline-offset:2px;border-radius:4px;
+}
+.site-header a:focus-visible,.site-header button:focus-visible{outline-color:var(--amber-light)}
+.skip-link{
+  position:absolute;left:-9999px;top:0;z-index:300;
+  background:var(--amber);color:#fff;padding:.6rem 1.2rem;
+  font-family:var(--font-display);font-weight:600;border-radius:0 0 var(--radius) 0;
+}
+.skip-link:focus{left:0;color:#fff}
+.visually-hidden{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+}

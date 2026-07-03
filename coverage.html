@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dataset Coverage — Gambling Data Finder</title>
-<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css?v=4">
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="Metadata coverage and documentation status for each study in the Gambling Data Finder.">
@@ -29,7 +32,7 @@
 </div>
 
 <div id="footer"></div>
-<script src="app.js"></script>
+<script src="app.js?v=4"></script>
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('header').innerHTML = renderNav('coverage');
@@ -58,17 +61,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   let html = `<table class="coverage-table">
     <thead><tr>
-      <th>Dataset</th>
-      <th>Country</th>
-      <th>Design</th>
-      <th>Age group</th>
-      <th>Variables</th>
-      <th>Gambling measures</th>
-      <th>Questionnaires</th>
-      <th>Sources</th>
-      <th>Variable names</th>
-      <th>Documentation</th>
-      <th>Access</th>
+      <th scope="col">Dataset</th>
+      <th scope="col">Country</th>
+      <th scope="col">Design</th>
+      <th scope="col">Age group</th>
+      <th scope="col">Variables</th>
+      <th scope="col">Gambling measures</th>
+      <th scope="col">Questionnaires</th>
+      <th scope="col">Sources</th>
+      <th scope="col">Variable names</th>
+      <th scope="col">Documentation</th>
+      <th scope="col">Access</th>
     </tr></thead><tbody>`;
 
   sorted.forEach(d => {

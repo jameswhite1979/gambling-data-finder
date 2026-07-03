@@ -26,6 +26,20 @@ function makeURL(u) {
   return u;
 }
 
+// Data files use inconsistent key styles for the dataset identifier
+// (dataset_id, Dataset_ID, "Dataset ID"); always read it through this.
+function getDatasetId(rec) {
+  if (!rec) return '';
+  return rec.dataset_id || rec['Dataset_ID'] || rec['Dataset ID'] || '';
+}
+
+// Standard external-link table cell used across detail tables.
+function linkCell(url, maxLen) {
+  const u = makeURL(url);
+  if (!u) return '<td></td>';
+  return '<td><a href="' + escapeHTML(u) + '" target="_blank">' + escapeHTML(truncate(u, maxLen || 50)) + '</a></td>';
+}
+
 function roleBadgeClass(role) {
   if (!role) return 'badge badge-other';
   const r = role.toLowerCase();
@@ -64,7 +78,8 @@ function renderNav(activePage) {
     `<a href="${p.href}"${p.id === activePage ? ' class="active"' : ''}>${p.label}</a>`
   ).join('');
 
-  return `<header class="site-header">
+  return `<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
   <div class="header-inner">
     <a href="index.html" class="logo"><span class="logo-text">Gambling Data Finder</span></a>
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('nav-open');this.setAttribute('aria-expanded',this.classList.contains('open'))">

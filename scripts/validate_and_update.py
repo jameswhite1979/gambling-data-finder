@@ -171,7 +171,12 @@ def main():
         "publications": len(publications),
     }
 
-    changed = {k: (summary.get(k), new_summary[k]) for k in new_summary if summary.get(k) != new_summary[k]}
+    # last_updated only moves when a real count changes, so re-running the
+    # script on unchanged data is a no-op (keeps CI staleness checks honest)
+    changed = {k: (summary.get(k), new_summary[k]) for k in new_summary
+               if k != "last_updated" and summary.get(k) != new_summary[k]}
+    if not changed:
+        new_summary["last_updated"] = summary.get("last_updated", new_summary["last_updated"])
     if changed:
         save(data_dir, "summary.json", new_summary, indent=1)
         print(f"\n  FIXED summary.json:")

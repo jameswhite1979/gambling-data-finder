@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ideas - Gambling Data Finder</title>
-<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css?v=4">
 <style>
 .ideas-intro{color:var(--text-muted);font-size:.9rem;line-height:1.6;margin-bottom:1.4rem;max-width:none}
 .ideas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin:1rem 0 1.6rem}
@@ -65,7 +68,7 @@
 <body>
 <div id="header"></div>
 
-<div class="page-content">
+<div id="main-content" class="page-content">
   <h1 style="font-size:1.4rem;color:var(--navy);margin-bottom:.3rem;">Ideas</h1>
   <p class="ideas-intro">This page turns the catalogue into candidate secondary-analysis ideas. It is built around two core features: a Risk/Protective Factor Gap Matrix and a Research Question Generator. Together they identify datasets that combine gambling measures with risk or protective factors, highlight under-studied domains, and suggest cross-dataset research questions that may be worth developing.</p>
 
@@ -103,7 +106,7 @@
 </div>
 
 <div id="footer"></div>
-<script src="app.js"></script>
+<script src="app.js?v=4"></script>
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('header').innerHTML = renderNav('analysis-ideas');
@@ -226,8 +229,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   function renderGapMatrix(rows) {
     const sorted = rows.slice().sort((a, b) => b.domainCount - a.domainCount || b.gamb.length - a.gamb.length);
-    let html = '<div class="matrix-scroll"><table class="gap-matrix"><thead><tr><th>Dataset</th>';
-    domainDefs.forEach(d => { html += `<th>${escapeHTML(d.label)}</th>`; });
+    let html = '<div class="matrix-scroll"><table class="gap-matrix"><thead><tr><th scope="col">Dataset</th>';
+    domainDefs.forEach(d => { html += `<th scope="col">${escapeHTML(d.label)}</th>`; });
     html += '</tr></thead><tbody>';
     sorted.forEach(s => {
       html += `<tr><td><a href="study.html?id=${encodeURIComponent(s.id)}">${escapeHTML(s.id)}</a></td>`;
@@ -245,7 +248,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     return rows.map(s => `<a href="study.html?id=${encodeURIComponent(s.id)}">${escapeHTML(s.id)}</a>`).join(', ');
   }
   function renderRankingTable(title, rows, reasonFn) {
-    let html = `<h3>${escapeHTML(title)}</h3><div class="ideas-table-wrap"><table class="ideas-table"><thead><tr><th>Dataset</th><th>Why it is useful</th><th>Signals</th></tr></thead><tbody>`;
+    let html = `<h3>${escapeHTML(title)}</h3><div class="ideas-table-wrap"><table class="ideas-table"><thead><tr><th scope="col">Dataset</th><th scope="col">Why it is useful</th><th scope="col">Signals</th></tr></thead><tbody>`;
     rows.forEach(s => {
       html += `<tr><td><a href="study.html?id=${encodeURIComponent(s.id)}">${escapeHTML(s.name)}</a></td><td>${escapeHTML(reasonFn(s))}</td><td><span class="ideas-pill">${s.gamb.length} gambling vars</span> <span class="ideas-pill ideas-pill-high">${s.domainCount} domains</span>${s.longitudinal ? ' <span class="ideas-pill ideas-pill-med">Longitudinal</span>' : ''}</td></tr>`;
     });
@@ -281,7 +284,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       { domain:'protective', question:'Which protective assets appear to buffer young people against gambling harms?' },
       { domain:'ineq', question:'Which inequalities shape exposure to gambling, gambling harms or recovery/help-seeking?' },
     ];
-    let html = '<div class="ideas-table-wrap"><table class="ideas-table"><thead><tr><th>Candidate question</th><th>Candidate datasets</th><th>Shared measure route</th><th>Existing evidence</th><th>Feasibility</th></tr></thead><tbody>';
+    let html = '<div class="ideas-table-wrap"><table class="ideas-table"><thead><tr><th scope="col">Candidate question</th><th scope="col">Candidate datasets</th><th scope="col">Shared measure route</th><th scope="col">Existing evidence</th><th scope="col">Feasibility</th></tr></thead><tbody>';
     questionDefs.forEach(q => {
       const candidates = stats.filter(s => s.gamb.length && s.domains[q.domain] > 0);
       if (!candidates.length) return;
@@ -345,7 +348,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       ['Inequalities and subgroup power', 'Larger samples and consistent measures for ethnicity, disability, deprivation, care experience, migration and LGBTQ+ status.'],
       ['Harmonised gambling modules', 'A compact youth gambling and harm module repeated across surveys to support stronger synthesis.'],
     ];
-    let html = '<div class="ideas-table-wrap"><table class="ideas-table"><thead><tr><th>Gap</th><th>Why it matters for new data collection</th></tr></thead><tbody>';
+    let html = '<div class="ideas-table-wrap"><table class="ideas-table"><thead><tr><th scope="col">Gap</th><th scope="col">Why it matters for new data collection</th></tr></thead><tbody>';
     gaps.forEach(g => { html += `<tr><td>${escapeHTML(g[0])}</td><td>${escapeHTML(g[1])}</td></tr>`; });
     html += '</tbody></table></div>';
     document.getElementById('primary-gap-content').innerHTML = html;

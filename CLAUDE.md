@@ -28,13 +28,23 @@ Each variable record in `variables.json` has: `variable_row_id`, `dataset_id`, `
 
 ## Derived files
 
-`facets.json` and `summary.json` are derived from the other data files. After editing any data file, rebuild them:
+`facets.json`, `summary.json` and `study_stats.json` are derived from the other data files. After editing any data file, rebuild them:
 
 ```
-python scripts/validate_and_update.py <DATASET_ID> --data-dir data
+py scripts/validate_and_update.py <DATASET_ID> --data-dir data
 ```
 
-This validates all 9 JSON files, checks cross-references, fixes facets.json, and recounts summary.json.
+This validates all JSON files, checks cross-references, fixes facets.json, recounts summary.json, and regenerates study_stats.json (per-study counts + named measures — study.html, studies.html and compare.html read this instead of the big files).
+
+A GitHub Action (`.github/workflows/validate.yml`) runs the same validation on every push and fails if JSON is broken, mojibake bytes are present, or derived files are stale — always run the script locally and commit its output before pushing data changes.
+
+## Conventions
+
+- `access.json` is the source of truth for access information; the access fields duplicated in `datasets.json` (Access type/difficulty/request URL) must be kept in sync with it.
+- `variables.json` and `gambling_measures.json` are stored **minified** (single line). Edit them via scripts, never by hand.
+- `style.css` and `app.js` are included with a version query (`?v=N`). Bump N in **all** HTML pages whenever either file changes (GitHub Pages caches for 10 minutes).
+- Fonts are loaded via `<link>` tags in each page head — do not re-add an `@import` to style.css.
+- Read dataset IDs from records via `getDatasetId()` in app.js (files use `dataset_id`, `Dataset_ID` and `Dataset ID` inconsistently).
 
 ## Skills and scripts
 

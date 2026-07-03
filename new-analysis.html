@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Analysis - Gambling Data Finder</title>
-<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css?v=4">
 <style>
 .readiness-table{width:100%;border-collapse:collapse;font-size:.8rem}
 .readiness-table th,.readiness-table td{padding:.5rem .6rem;border:1px solid var(--border);text-align:left;vertical-align:top}
@@ -82,7 +85,7 @@
 <body>
 <div id="header"></div>
 
-<div class="page-content">
+<div id="main-content" class="page-content">
   <h1 style="font-size:1.4rem;color:var(--navy);margin-bottom:.3rem;">Analysis: readiness and synthesis potential</h1>
   <p class="section-intro">This page assesses each dataset's readiness for secondary analysis and identifies where cross-dataset synthesis or meta-analysis may be feasible. Readiness scores reflect data quality, measurement detail, access routes and risk/protective factor coverage. Compatibility flags indicate potential for harmonisation across datasets.</p>
 
@@ -154,7 +157,7 @@
 </div>
 
 <div id="footer"></div>
-<script src="app.js"></script>
+<script src="app.js?v=4"></script>
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('header').innerHTML = renderNav('new-analysis');
@@ -295,7 +298,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Readiness table
   let html = `<div style="overflow-x:auto;"><table class="readiness-table">
     <thead><tr>
-      <th>Dataset</th><th>Score</th><th>Band</th><th>Compat.</th>
+      <th scope="col">Dataset</th><th scope="col">Score</th><th scope="col">Band</th><th scope="col">Compat.</th>
       <th title="Under-25 data (0-2)">U25</th>
       <th title="Clear gambling measure (0-2)">Gamb</th>
       <th title="Named/validated measure (0-2)">Named</th>
@@ -307,8 +310,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       <th title="Access route (0-2)">Acc</th>
       <th title="Published research (0-1)">Pub</th>
       <th title="Compatible with others (0-1)">Comp</th>
-      <th>Design</th>
-      <th>Country</th>
+      <th scope="col">Design</th>
+      <th scope="col">Country</th>
     </tr></thead><tbody>`;
 
   scored.forEach(s => {
@@ -357,7 +360,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     ? facetMeasureNames
     : [...new Set(datasetsWithMeasures.flatMap(s => s.namedMeasures))].sort((a, b) => a.localeCompare(b));
 
-  let oHtml = '<div class="overlap-matrix-scroll"><table class="overlap-matrix"><thead><tr><th>Dataset</th>';
+  let oHtml = '<div class="overlap-matrix-scroll"><table class="overlap-matrix"><thead><tr><th scope="col">Dataset</th>';
   measureNames.forEach(measure => { oHtml += `<th title="${escapeHTML(measure)}">${escapeHTML(measure)}</th>`; });
   oHtml += '</tr></thead><tbody>';
 
@@ -438,7 +441,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const connectedPairs = edges.filter(e => e.weight >= 1).sort((a, b) => b.weight - a.weight);
 
   if (connectedPairs.length > 0) {
-    let rHtml = '<div style="overflow-x:auto;"><table class="readiness-table"><thead><tr><th>Dataset pair</th><th>Shared measures</th>';
+    let rHtml = '<div style="overflow-x:auto;"><table class="readiness-table"><thead><tr><th scope="col">Dataset pair</th><th scope="col">Shared measures</th>';
     domainLabels.forEach(d => { rHtml += `<th style="font-size:.6rem;">${d}</th>`; });
     rHtml += '</tr></thead><tbody>';
 
