@@ -49,7 +49,7 @@
   "risk": 373,
   "questionnaires": 6,
   "sources": 16,
-  "measures": 5,
+  "measures": 10,
   "named_measures": []
  },
  "EAGS": {
@@ -92,7 +92,7 @@
   "risk": 1940,
   "questionnaires": 2,
   "sources": 12,
-  "measures": 16,
+  "measures": 72,
   "named_measures": [
    "PGSI"
   ]
@@ -114,9 +114,10 @@
   "risk": 24,
   "questionnaires": 3,
   "sources": 13,
-  "measures": 28,
+  "measures": 47,
   "named_measures": [
-   "Brief PG indicator"
+   "Brief PG indicator",
+   "SOGS-RA"
   ]
  },
  "HBSC": {
@@ -136,7 +137,7 @@
   "risk": 4,
   "questionnaires": 2,
   "sources": 13,
-  "measures": 4,
+  "measures": 8,
   "named_measures": []
  },
  "MANITOBA_YA": {
@@ -171,9 +172,10 @@
   "risk": 419,
   "questionnaires": 4,
   "sources": 10,
-  "measures": 91,
+  "measures": 142,
   "named_measures": [
-   "PGSI"
+   "PGSI",
+   "DSM-IV"
   ]
  },
  "HSE_SHES_2016": {
@@ -194,7 +196,7 @@
   "risk": 1,
   "questionnaires": 2,
   "sources": 8,
-  "measures": 29,
+  "measures": 30,
   "named_measures": [
    "PGSI"
   ]
@@ -225,9 +227,10 @@
   "risk": 539,
   "questionnaires": 8,
   "sources": 9,
-  "measures": 28,
+  "measures": 84,
   "named_measures": [
-   "PGSI"
+   "PGSI",
+   "DSM-IV"
   ]
  },
  "AHAH": {
@@ -236,7 +239,7 @@
   "risk": 19,
   "questionnaires": 1,
   "sources": 3,
-  "measures": 1,
+  "measures": 2,
   "named_measures": []
  },
  "NCDS": {
