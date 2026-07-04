@@ -334,6 +334,14 @@ document.addEventListener('DOMContentLoaded', async () => {
       { title:'Help-seeking, service use and recovery', terms:['help-seeking','help seeking','service','treatment','support','advice'], why:'Needed to understand whether harms are recognised and what support pathways exist.' },
       { title:'Stigma, shame and secrecy', terms:['stigma','shame','secret','hidden','guilt'], why:'Could explain under-reporting, delayed help-seeking and hidden family impacts.' },
       { title:'School attendance, attainment and exclusion', terms:['attendance','attainment','exclusion','school absence','truancy'], why:'Needed to study the educational consequences of gambling harm.' },
+      { title:'Suicidality and self-harm', terms:['suicid','self-harm','self harm'], why:'Gambling harm is associated with suicidality in adults; whether the same link exists for young people is a critical safeguarding question.' },
+      { title:'Sleep and late-night device use', terms:['sleep','insomnia','bedtime','tired in the morning'], why:'Late-night phone gambling and gaming may disrupt sleep, a plausible mechanism linking digital gambling to wellbeing harms.' },
+      { title:'Neurodiversity (ADHD, autism)', terms:['adhd','autism','hyperactiv','attention deficit','neurodiv'], why:'Impulsivity-related conditions are plausibly linked to gambling risk, but neurodivergent young people are rarely identifiable in gambling datasets.' },
+      { title:'Care experience and vulnerable groups', terms:['looked after','care experience','foster','young carer','social worker'], why:'Care-experienced young people face elevated risk across most harms, yet are almost never identifiable in gambling data.' },
+      { title:'Age of first gambling / early initiation', terms:['first gambl','age when','age started','how old were you'], why:'Early initiation is one of the strongest predictors of later harm, but few surveys capture when gambling first happened.' },
+      { title:'Peer norms and perceived prevalence', terms:['friends gamble','peers gamble','people my age','perceived norm'], why:'Perceived peer gambling shapes normalisation, distinct from actual peer behaviour; rarely measured directly.' },
+      { title:'Local gambling availability and environment', terms:['outlet','premises','bookmaker','distance to','neighbourhood'], why:'Physical availability of gambling near homes and schools can be studied by linking area-level data (e.g. AHAH) to surveys, but few surveys carry the geographic identifiers needed.' },
+      { title:'COVID-19 era shifts in gambling', terms:['covid','lockdown','pandemic'], why:'The pandemic accelerated online gambling; cohorts with pre/post measures can identify lasting changes in youth exposure.' },
     ];
     const html = '<div class="missing-grid">' + missing.map(m => {
       const ids = countKeywordDatasets(usableVars, m.terms);
@@ -351,6 +359,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       ['Protective mechanisms', 'Better coverage of social support, parental monitoring, school connectedness, digital literacy and help-seeking.'],
       ['Inequalities and subgroup power', 'Larger samples and consistent measures for ethnicity, disability, deprivation, care experience, migration and LGBTQ+ status.'],
       ['Harmonised gambling modules', 'A compact youth gambling and harm module repeated across surveys to support stronger synthesis.'],
+      ['Consent for record linkage', 'Gambling surveys rarely collect consent to link education, health or benefits records; building linkage consent into new collections would transform what harms can be observed.'],
+      ['Under-11s and primary-age exposure', 'Youth gambling surveys start at 11; exposure through family gambling, advertising and gambling-like games begins earlier and is essentially unmeasured.'],
+      ['Behavioural and account data', 'Pairing self-report with operator account or transaction data (as GambleAware and the Gambling Commission have piloted for adults) has not been done for young people.'],
+      ['Repeated gambling modules within cohorts', 'Most cohorts ask about gambling at a single sweep; repeating a short module at 2-3 ages would enable genuine trajectory analysis of initiation, escalation and desistance.'],
+      ['Prevalence of affected others among children', 'How many children live with an adult whose gambling causes harm is unknown; only SHRN 2025 currently asks young people directly.'],
+      ['Youth-validated screening instruments', 'DSM-IV-MR-J and adapted PGSI items predate online gambling and gambling-like gaming; validation work for contemporary youth gambling is needed before scores can be compared across surveys.'],
     ];
     let html = '<div class="ideas-table-wrap"><table class="ideas-table"><thead><tr><th scope="col">Gap</th><th scope="col">Why it matters for new data collection</th></tr></thead><tbody>';
     gaps.forEach(g => { html += `<tr><td>${escapeHTML(g[0])}</td><td>${escapeHTML(g[1])}</td></tr>`; });
