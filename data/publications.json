@@ -547,5 +547,125 @@
   "URL / DOI": "https://doi.org/10.1007/s10899-024-10321-7",
   "Notes": "238,939 students aged 14-16. Three waves: 2017, 2019, 2021. Focus on youth origin/migration as risk factor.",
   "Search source": "User-provided link, 2026-05-15"
+ },
+ {
+  "Dataset ID": "MCS",
+  "Paper / documentation title": "CLOSER, the home of longitudinal research - Written evidence (GAM0060)",
+  "Authors / year": "Davies / 2019",
+  "Source type": "Report",
+  "Gambling measure used": "",
+  "Risk/protective factors analysed": "",
+  "URL / DOI": "https://committees.parliament.uk/writtenevidence/104870/html/",
+  "Notes": "MCS age-14 own-money gambling in past 4 weeks; product types include fruit machines, private bets, betting shop and other/online gambling."
+ },
+ {
+  "Dataset ID": "YPGS",
+  "Paper / documentation title": "Young People and Gambling 2025: Official statistics",
+  "Authors / year": "Stevens, Hooper and Davey / 2025",
+  "Source type": "Report",
+  "Gambling measure used": "DSM-IV-MR-J",
+  "Risk/protective factors analysed": "",
+  "URL / DOI": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/young-people-and-gambling-2025-official-statistics",
+  "Notes": "Own-money gambling in past 12 months; DSM-IV-MR-J youth problem-gambling screen."
+ },
+ {
+  "Dataset ID": "YPGS",
+  "Paper / documentation title": "Young People and Gambling 2024: Official statistics",
+  "Authors / year": "Ipsos / 2024",
+  "Source type": "Report",
+  "Gambling measure used": "DSM-IV-MR-J",
+  "Risk/protective factors analysed": "",
+  "URL / DOI": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/young-people-and-gambling-2024-official-statistics",
+  "Notes": "Own-money gambling in past 12 months; DSM-IV-MR-J youth problem-gambling screen."
+ },
+ {
+  "Dataset ID": "YPGS",
+  "Paper / documentation title": "Young People and Gambling 2023: Official statistics",
+  "Authors / year": "Ipsos / 2023",
+  "Source type": "Report",
+  "Gambling measure used": "DSM-IV-MR-J",
+  "Risk/protective factors analysed": "",
+  "URL / DOI": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/young-people-and-gambling-2023",
+  "Notes": "Own-money gambling in past 12 months; DSM-IV-MR-J screen; includes pupils aged 11 to 17."
+ },
+ {
+  "Dataset ID": "YPGS",
+  "Paper / documentation title": "Young People and Gambling 2022: Official statistics",
+  "Authors / year": "Ipsos / 2022",
+  "Source type": "Report",
+  "Gambling measure used": "DSM-IV-MR-J",
+  "Risk/protective factors analysed": "",
+  "URL / DOI": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/young-people-and-gambling-2022",
+  "Notes": "Own-money gambling in past 12 months; DSM-IV-MR-J screen."
+ },
+ {
+  "Dataset ID": "YPGS",
+  "Paper / documentation title": "Young People and Gambling 2019: Official statistics",
+  "Authors / year": "Ipsos MORI / 2019",
+  "Source type": "Report",
+  "Gambling measure used": "DSM-IV-MR-J",
+  "Risk/protective factors analysed": "",
+  "URL / DOI": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/young-people-and-gambling-2019",
+  "Notes": "Past-7-day and past-12-month gambling participation; online gambling-style games, loot boxes/skins betting; DSM-IV-MR-J screen."
+ },
+ {
+  "Dataset ID": "GSGB",
+  "Paper / documentation title": "Statistics on gambling participation - Year 2 (2024), wave 4: Official statistics",
+  "Authors / year": "Gambling Commission / NatCen, 2025",
+  "Source type": "Report",
+  "Gambling measure used": "",
+  "Risk/protective factors analysed": "",
+  "URL / DOI": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/statistics-on-gambling-participation-year-2-2024-wave-4-official-statistics",
+  "Notes": "Past-4-week gambling participation; activity types; online/in-person gambling; reasons for gambling."
+ },
+ {
+  "Dataset ID": "GSGB",
+  "Paper / documentation title": "Exploring the relationship between gambling activities and Problem Gambling Severity Index (PGSI) scores",
+  "Authors / year": "Gambling Commission / 2025",
+  "Source type": "Report",
+  "Gambling measure used": "PGSI",
+  "Risk/protective factors analysed": "",
+  "URL / DOI": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/exploring-the-relationship-between-gambling-activities-and-problem-gambling",
+  "Notes": "Past-12-month gambling activity types analysed against PGSI scores, including PGSI 8+."
+ },
+ {
+  "Dataset ID": "GSGB",
+  "Paper / documentation title": "Investigating the relationship between reasons for gambling and different gambling activities",
+  "Authors / year": "Gambling Commission / 2025",
+  "Source type": "Report",
+  "Gambling measure used": "",
+  "Risk/protective factors analysed": "",
+  "URL / DOI": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/investigating-the-relationship-between-reasons-for-gambling-and-different",
+  "Notes": "Reasons for gambling grouped into monetary, social, enhancement, coping/escapism and challenge themes; linked to activity types."
+ },
+ {
+  "Dataset ID": "GSGB",
+  "Paper / documentation title": "Measuring the adverse consequences from gambling",
+  "Authors / year": "Gambling Commission / 2024",
+  "Source type": "Report",
+  "Gambling measure used": "PGSI",
+  "Risk/protective factors analysed": "",
+  "URL / DOI": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/measuring-the-adverse-consequences-from-gambling",
+  "Notes": "Development and validation of GSGB adverse-consequence questions; resources, relationships and health; complements PGSI."
+ },
+ {
+  "Dataset ID": "GSGB",
+  "Paper / documentation title": "Statistics on gambling participation - Annual report Year 1 (2023): Official statistics",
+  "Authors / year": "Gambling Commission / NatCen and University of Glasgow, 2024",
+  "Source type": "Report",
+  "Gambling measure used": "",
+  "Risk/protective factors analysed": "",
+  "URL / DOI": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/statistics-on-gambling-participation-annual-report-year-1-2023-official",
+  "Notes": "GSGB Year 1; past-4-week participation, activity types, experiences/reasons for gambling and consequences."
+ },
+ {
+  "Dataset ID": "NSW",
+  "Paper / documentation title": "Gambling (National Survey for Wales): April 2022 to March 2023",
+  "Authors / year": "Welsh Government / 2024",
+  "Source type": "Report",
+  "Gambling measure used": "PGSI",
+  "Risk/protective factors analysed": "",
+  "URL / DOI": "https://www.gov.wales/gambling-national-survey-wales-april-2022-march-2023",
+  "Notes": "Past-12-month gambling activities and behaviours; PGSI at-risk classification."
  }
 ]
