@@ -44,6 +44,18 @@
   "note": "Not a gambling behaviour measure; do not harmonise with gambling participation/harm outcomes."
  },
  {
+  "name": "DSM-IV",
+  "variables": 46,
+  "datasets": [
+   "HSE",
+   "SHES_2017_2018_2019_2021"
+  ],
+  "constructs": [
+   "Problem gambling / harm"
+  ],
+  "note": ""
+ },
+ {
   "name": "DSM-IV-MR-J",
   "variables": 16,
   "datasets": [
@@ -115,7 +127,7 @@
  },
  {
   "name": "PGSI",
-  "variables": 181,
+  "variables": 221,
   "datasets": [
    "ADDHEALTH",
    "ALSPAC",
@@ -149,8 +161,9 @@
  },
  {
   "name": "SOGS-RA",
-  "variables": 1,
+  "variables": 2,
   "datasets": [
+   "ESPAD",
    "HBSC"
   ],
   "constructs": [

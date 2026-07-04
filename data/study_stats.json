@@ -44,9 +44,9 @@
   "named_measures": []
  },
  "SHRN": {
-  "variables": 26,
+  "variables": 378,
   "gambling": 5,
-  "risk": 21,
+  "risk": 373,
   "questionnaires": 6,
   "sources": 16,
   "measures": 5,
@@ -87,11 +87,11 @@
   ]
  },
  "APMS": {
-  "variables": 17,
-  "gambling": 16,
-  "risk": 1,
+  "variables": 2012,
+  "gambling": 72,
+  "risk": 1940,
   "questionnaires": 2,
-  "sources": 10,
+  "sources": 12,
   "measures": 16,
   "named_measures": [
    "PGSI"
@@ -109,11 +109,11 @@
   ]
  },
  "ESPAD": {
-  "variables": 50,
-  "gambling": 26,
+  "variables": 69,
+  "gambling": 45,
   "risk": 24,
   "questionnaires": 3,
-  "sources": 12,
+  "sources": 13,
   "measures": 28,
   "named_measures": [
    "Brief PG indicator"
@@ -131,11 +131,11 @@
   ]
  },
  "OSDUHS": {
-  "variables": 8,
-  "gambling": 4,
+  "variables": 12,
+  "gambling": 8,
   "risk": 4,
   "questionnaires": 2,
-  "sources": 12,
+  "sources": 13,
   "measures": 4,
   "named_measures": []
  },
@@ -157,7 +157,7 @@
   "gambling": 574,
   "risk": 237,
   "questionnaires": 2,
-  "sources": 7,
+  "sources": 8,
   "measures": 574,
   "named_measures": [
    "PGSI",
@@ -166,9 +166,9 @@
   ]
  },
  "HSE": {
-  "variables": 396,
-  "gambling": 91,
-  "risk": 305,
+  "variables": 589,
+  "gambling": 170,
+  "risk": 419,
   "questionnaires": 4,
   "sources": 10,
   "measures": 91,
@@ -189,11 +189,11 @@
   ]
  },
  "NSW": {
-  "variables": 30,
-  "gambling": 29,
+  "variables": 31,
+  "gambling": 30,
   "risk": 1,
   "questionnaires": 2,
-  "sources": 7,
+  "sources": 8,
   "measures": 29,
   "named_measures": [
    "PGSI"
@@ -220,9 +220,9 @@
   ]
  },
  "SHES_2017_2018_2019_2021": {
-  "variables": 427,
-  "gambling": 28,
-  "risk": 399,
+  "variables": 648,
+  "gambling": 109,
+  "risk": 539,
   "questionnaires": 8,
   "sources": 9,
   "measures": 28,
@@ -231,9 +231,9 @@
   ]
  },
  "AHAH": {
-  "variables": 0,
-  "gambling": 0,
-  "risk": 0,
+  "variables": 20,
+  "gambling": 1,
+  "risk": 19,
   "questionnaires": 1,
   "sources": 3,
   "measures": 1,
