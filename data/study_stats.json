@@ -58,10 +58,11 @@
   "risk": 58,
   "questionnaires": 3,
   "sources": 14,
-  "measures": 212,
+  "measures": 213,
   "named_measures": [
    "PGSI",
-   "SGHS"
+   "SGHS",
+   "ATGS"
   ]
  },
  "YPGS": {
@@ -76,14 +77,15 @@
   ]
  },
  "GSGB": {
-  "variables": 791,
-  "gambling": 655,
-  "risk": 120,
+  "variables": 480,
+  "gambling": 375,
+  "risk": 89,
   "questionnaires": 5,
   "sources": 16,
-  "measures": 655,
+  "measures": 656,
   "named_measures": [
-   "PGSI"
+   "PGSI",
+   "ATGS"
   ]
  },
  "APMS": {
@@ -167,8 +169,8 @@
   ]
  },
  "HSE": {
-  "variables": 589,
-  "gambling": 170,
+  "variables": 731,
+  "gambling": 312,
   "risk": 419,
   "questionnaires": 4,
   "sources": 10,
@@ -222,8 +224,8 @@
   ]
  },
  "SHES_2017_2018_2019_2021": {
-  "variables": 648,
-  "gambling": 109,
+  "variables": 659,
+  "gambling": 120,
   "risk": 539,
   "questionnaires": 8,
   "sources": 9,

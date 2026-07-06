@@ -1,9 +1,11 @@
 [
  {
   "name": "ATGS",
-  "variables": 7,
+  "variables": 29,
   "datasets": [
-   "BGPS"
+   "BGPS",
+   "EAGS",
+   "GSGB"
   ],
   "constructs": [
    "Gambling attitudes"
@@ -45,7 +47,7 @@
  },
  {
   "name": "DSM-IV",
-  "variables": 46,
+  "variables": 115,
   "datasets": [
    "HSE",
    "SHES_2017_2018_2019_2021"
@@ -53,7 +55,7 @@
   "constructs": [
    "Problem gambling / harm"
   ],
-  "note": "From the 2015 gambling module year. Confirm wording and routing against 2015 survey documentation before analysis."
+  "note": "Included in the HSE and Scottish Health Survey gambling modules across waves (2012-2021). Confirm wording and routing against UKDS survey documentation before analysis."
  },
  {
   "name": "DSM-IV-MR-J",
@@ -127,7 +129,7 @@
  },
  {
   "name": "PGSI",
-  "variables": 221,
+  "variables": 202,
   "datasets": [
    "ADDHEALTH",
    "ALSPAC",
