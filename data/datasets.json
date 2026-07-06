@@ -27,7 +27,9 @@
   "Population size note": "G1 cohort plus G0 parents",
   "Age gambling measured": "17–30 (+ parents)",
   "Years covered": "2008–2022",
-  "Linkage": "Education (NPD), health records, genetics, neighbourhood — via ALSPAC proposal"
+  "Linkage": "Education (NPD), health records, genetics, neighbourhood — via ALSPAC proposal",
+  "Sampling design": "Geographically defined birth cohort (Avon; not a random probability sample)",
+  "Data collection mode": "Self-completion questionnaires (postal and online) plus clinic assessments"
  },
  {
   "Dataset_ID": "BIB_AOW",
@@ -57,7 +59,9 @@
   "Population size note": "Bradford secondary schools",
   "Age gambling measured": "12–18",
   "Years covered": "2024/25–2025/26",
-  "Linkage": "Routine health and education records via Connected Bradford"
+  "Linkage": "Routine health and education records via Connected Bradford",
+  "Sampling design": "Whole-population school cohort (Bradford; not a random probability sample)",
+  "Data collection mode": "Self-completion questionnaires in schools (online/tablet)"
  },
  {
   "Dataset_ID": "MCS",
@@ -87,7 +91,9 @@
   "Population size note": "Children born 2000–02",
   "Age gambling measured": "11, 14 (17, 23 documented)",
   "Years covered": "2012–2023",
-  "Linkage": "Education, health and geographic data via UKDS/CLS"
+  "Linkage": "Education, health and geographic data via UKDS/CLS",
+  "Sampling design": "Stratified clustered random probability sample (disadvantaged and ethnic minority areas oversampled)",
+  "Data collection mode": "Face-to-face interview (CAPI) plus self-completion (CASI) for the age 14 gambling items"
  },
  {
   "Dataset_ID": "USOC",
@@ -117,7 +123,9 @@
   "Population size note": "At wave 1; adults interviewed each wave",
   "Age gambling measured": "16+",
   "Years covered": "2016–18 (wave 8), 2021–23 (wave 13)",
-  "Linkage": "Admin data and fine geography via Special Licence / Secure Lab"
+  "Linkage": "Admin data and fine geography via Special Licence / Secure Lab",
+  "Sampling design": "Stratified clustered random probability sample (with ethnic minority boost)",
+  "Data collection mode": "Mixed mode: online and face-to-face interview, gambling module by self-completion"
  },
  {
   "Dataset_ID": "SHRN",
@@ -147,7 +155,9 @@
   "Population size note": "Wales secondary schools",
   "Age gambling measured": "11–16",
   "Years covered": "2019–2025 (biennial)",
-  "Linkage": "School-level linkage via SAIL Databank"
+  "Linkage": "School-level linkage via SAIL Databank",
+  "Sampling design": "Whole-population school survey (all maintained secondary schools in Wales invited; not a random probability sample)",
+  "Data collection mode": "Online self-completion questionnaire in class"
  },
  {
   "Dataset_ID": "EAGS",
@@ -177,7 +187,9 @@
   "Population size note": "Aged 16–24 at wave 1",
   "Age gambling measured": "16–24",
   "Years covered": "2019–2021 (3 waves)",
-  "Linkage": "None"
+  "Linkage": "None",
+  "Sampling design": "Survey of 16-24 year olds recruited via online panel (non-probability quota sample)",
+  "Data collection mode": "Online self-completion questionnaire"
  },
  {
   "Dataset_ID": "YPGS",
@@ -207,7 +219,9 @@
   "Population size note": "School-based sample",
   "Age gambling measured": "11–17",
   "Years covered": "2011–2019, 2022–2025",
-  "Linkage": "None"
+  "Linkage": "None",
+  "Sampling design": "Random sample of schools, pupils surveyed within selected classes",
+  "Data collection mode": "Online self-completion questionnaire in schools"
  },
  {
   "Dataset_ID": "GSGB",
@@ -237,7 +251,9 @@
   "Population size note": "10k in 2023; ≈20k from 2024",
   "Age gambling measured": "18+",
   "Years covered": "2023–ongoing",
-  "Linkage": "None"
+  "Linkage": "None",
+  "Sampling design": "Address-based random probability sample (push-to-web design)",
+  "Data collection mode": "Self-completion online or by paper questionnaire"
  },
  {
   "Dataset_ID": "APMS",
@@ -267,7 +283,9 @@
   "Population size note": "Household residents, England",
   "Age gambling measured": "16+",
   "Years covered": "2007, 2014, 2023/24",
-  "Linkage": "None routine"
+  "Linkage": "None routine",
+  "Sampling design": "Stratified multistage random probability sample of private households",
+  "Data collection mode": "Face-to-face interview (CAPI) plus self-completion (CASI) for sensitive topics"
  },
  {
   "Dataset_ID": "ADDHEALTH",
@@ -297,7 +315,9 @@
   "Population size note": "Adolescents at wave I (1994–95)",
   "Age gambling measured": "18–26 (wave III), 24–32 (wave IV)",
   "Years covered": "2001–02, 2008",
-  "Linkage": "Contextual/admin data in restricted-use files"
+  "Linkage": "Contextual/admin data in restricted-use files",
+  "Sampling design": "Stratified random probability sample of US high schools with nationally representative design",
+  "Data collection mode": "In-school questionnaires plus in-home interviews (CAPI and audio-CASI)"
  },
  {
   "Dataset_ID": "ESPAD",
@@ -327,7 +347,9 @@
   "Population size note": "≈35 European countries",
   "Age gambling measured": "15–16",
   "Years covered": "2015, 2019, 2024",
-  "Linkage": "None"
+  "Linkage": "None",
+  "Sampling design": "Nationally representative random sample of school classes (15-16 year olds)",
+  "Data collection mode": "Self-completion questionnaire in class (paper or online)"
  },
  {
   "Dataset_ID": "HBSC",
@@ -357,7 +379,9 @@
   "Population size note": "44 countries; ≈4,500 per country",
   "Age gambling measured": "11–15",
   "Years covered": "2013/14, 2021/22 (country-specific)",
-  "Linkage": "None"
+  "Linkage": "None",
+  "Sampling design": "Nationally representative random cluster sample of school classes (ages 11, 13, 15)",
+  "Data collection mode": "Self-completion questionnaire in class (paper or online)"
  },
  {
   "Dataset_ID": "OSDUHS",
@@ -387,7 +411,9 @@
   "Population size note": "Ontario, grades 7–12",
   "Age gambling measured": "12–18",
   "Years covered": "2009–2025 (selected cycles)",
-  "Linkage": "None"
+  "Linkage": "None",
+  "Sampling design": "Stratified random sample of classes in Ontario schools",
+  "Data collection mode": "Anonymous self-completion questionnaire in class (paper)"
  },
  {
   "Dataset_ID": "MANITOBA_YA",
@@ -417,7 +443,9 @@
   "Population size note": "Young adults, Manitoba",
   "Age gambling measured": "18–24",
   "Years covered": "2007–2011 (4 waves)",
-  "Linkage": "None"
+  "Linkage": "None",
+  "Sampling design": "Longitudinal community sample of young adults in Manitoba",
+  "Data collection mode": "Interviewer-administered and self-completion questionnaires"
  },
  {
   "Dataset_ID": "BGPS",
@@ -447,7 +475,9 @@
   "Population size note": "Adults 16+, Great Britain",
   "Age gambling measured": "16+",
   "Years covered": "1999, 2007, 2010",
-  "Linkage": "None"
+  "Linkage": "None",
+  "Sampling design": "Stratified random probability sample of adults in private households",
+  "Data collection mode": "Face-to-face interview plus self-completion for the gambling questions"
  },
  {
   "Dataset_ID": "HSE",
@@ -477,7 +507,9 @@
   "Population size note": "+ ≈2,000 children per annual sample",
   "Age gambling measured": "16+",
   "Years covered": "2012–2021 (5 module years)",
-  "Linkage": "HES and mortality records via NHS England (approval needed)"
+  "Linkage": "HES and mortality records via NHS England (approval needed)",
+  "Sampling design": "Stratified multistage random probability sample of addresses",
+  "Data collection mode": "Face-to-face interview (CAPI) plus self-completion for the gambling module"
  },
  {
   "Dataset_ID": "HSE_SHES_2016",
@@ -507,7 +539,9 @@
   "Population size note": "HSE 2016 + SHeS 2016 combined",
   "Age gambling measured": "16+",
   "Years covered": "2016",
-  "Linkage": "None (standalone deposit)"
+  "Linkage": "None (standalone deposit)",
+  "Sampling design": "Random probability household samples (HSE and SHeS gambling data combined)",
+  "Data collection mode": "Face-to-face interview plus self-completion for the gambling module"
  },
  {
   "Dataset_ID": "NSW",
@@ -537,7 +571,9 @@
   "Population size note": "Household survey, Wales",
   "Age gambling measured": "16+",
   "Years covered": "2022–23",
-  "Linkage": "Available in SAIL Databank"
+  "Linkage": "Available in SAIL Databank",
+  "Sampling design": "Address-based random probability sample of adults in Wales",
+  "Data collection mode": "Interview (face-to-face and telephone) with a random subsample given the gambling module"
  },
  {
   "Dataset_ID": "GUI98",
@@ -567,7 +603,9 @@
   "Population size note": "Children aged 9 at wave 1",
   "Age gambling measured": "17/18, 20",
   "Years covered": "2015/16, 2018/19",
-  "Linkage": "None routine (ISSDA/CSO research files)"
+  "Linkage": "None routine (ISSDA/CSO research files)",
+  "Sampling design": "Nationally representative sample recruited through the primary school system",
+  "Data collection mode": "Face-to-face interview (CAPI) plus self-completion for sensitive items"
  },
  {
   "Dataset_ID": "GIBS",
@@ -597,7 +635,9 @@
   "Population size note": "US national sample",
   "Age gambling measured": "16+ (youth 16–17)",
   "Years covered": "1998–1999",
-  "Linkage": "None"
+  "Linkage": "None",
+  "Sampling design": "Random digit dialling telephone sample plus a gambling-venue patron survey",
+  "Data collection mode": "Telephone interview plus in-person patron survey"
  },
  {
   "Dataset_ID": "SHES_2017_2018_2019_2021",
@@ -627,7 +667,9 @@
   "Population size note": "Scottish households",
   "Age gambling measured": "16+",
   "Years covered": "2012–2017, 2021",
-  "Linkage": "Hospital records (SMR) and mortality via eDRIS"
+  "Linkage": "Hospital records (SMR) and mortality via eDRIS",
+  "Sampling design": "Stratified random probability sample of addresses in Scotland",
+  "Data collection mode": "Face-to-face interview (CAPI) plus self-completion for the gambling module"
  },
  {
   "Dataset_ID": "AHAH",
@@ -657,7 +699,9 @@
   "Population size note": "GB LSOAs / data zones",
   "Age gambling measured": "n/a (area-level index)",
   "Years covered": "v5: 2021–22",
-  "Linkage": "Joins to any dataset with LSOA codes"
+  "Linkage": "Joins to any dataset with LSOA codes",
+  "Sampling design": "Not applicable: area-level geospatial index rather than a survey sample",
+  "Data collection mode": "Not applicable: compiled from administrative and spatial data sources"
  },
  {
   "Dataset_ID": "NCDS",
@@ -688,7 +732,9 @@
   "Population size note": "Births in one week, March 1958",
   "Age gambling measured": "23",
   "Years covered": "1981",
-  "Linkage": "Education and health records via UKDS/CLS"
+  "Linkage": "Education and health records via UKDS/CLS",
+  "Sampling design": "Whole-population birth cohort (all births in one week of 1958; not a random probability sample)",
+  "Data collection mode": "Face-to-face interview plus self-completion questionnaires"
  },
  {
   "Dataset_ID": "BCS70",
@@ -719,7 +765,9 @@
   "Population size note": "All GB births, one week of April 1970",
   "Age gambling measured": "15/16",
   "Years covered": "1986",
-  "Linkage": "Education records via UKDS/CLS"
+  "Linkage": "Education records via UKDS/CLS",
+  "Sampling design": "Whole-population birth cohort (all births in one week of 1970; not a random probability sample)",
+  "Data collection mode": "Face-to-face interview plus self-completion questionnaires"
  },
  {
   "Dataset_ID": "GA_TSS",
@@ -750,7 +798,9 @@
   "Population size note": "YouGov online panel, GB",
   "Age gambling measured": "18+",
   "Years covered": "2019–2024 (annual)",
-  "Linkage": "None (LSOA geography in some waves)"
+  "Linkage": "None (LSOA geography in some waves)",
+  "Sampling design": "Online panel survey of GB adults (non-probability quota sample, weighted)",
+  "Data collection mode": "Online self-completion questionnaire"
  },
  {
   "Dataset_ID": "ASSAD",
@@ -779,7 +829,9 @@
   "Population size note": "93 schools in Victoria and Queensland",
   "Age gambling measured": "12–17",
   "Years covered": "2017",
-  "Linkage": "None"
+  "Linkage": "None",
+  "Sampling design": "Random sample of schools stratified by education sector and state",
+  "Data collection mode": "Self-completion questionnaire in class"
  },
  {
   "Dataset_ID": "YOUTH07_NZ",
@@ -808,7 +860,9 @@
   "Population size note": "NZ secondary school students",
   "Age gambling measured": "13–17",
   "Years covered": "2007",
-  "Linkage": "None"
+  "Linkage": "None",
+  "Sampling design": "Nationally representative random sample of secondary schools and students",
+  "Data collection mode": "Self-completion questionnaire on handheld multimedia devices"
  },
  {
   "Dataset_ID": "FINLAND_SHP",
@@ -837,6 +891,8 @@
   "Population size note": "Nationwide school census survey",
   "Age gambling measured": "14–20",
   "Years covered": "2017, 2019, 2021",
-  "Linkage": "None routine"
+  "Linkage": "None routine",
+  "Sampling design": "Whole-population school survey (students in relevant grades across Finland; not a random probability sample)",
+  "Data collection mode": "Online self-completion questionnaire in class"
  }
 ]
