@@ -92,7 +92,7 @@
   <div class="method-grid">
     <section class="method-panel">
       <h2>How readiness is scored</h2>
-      <p>Readiness is a 0-20 score based on eleven documented features: under-25 coverage, gambling measure coverage, named or validated gambling measures, public variable/question wording metadata, risk/protective factor breadth, validated risk/protective measures, longitudinal design, inequality variables, access route clarity, published research use and compatibility with other datasets.</p>
+      <p>Readiness is a 0-20 score based on eleven documented features: under-25 coverage, gambling measure coverage, named or validated gambling measures, public variable/question wording metadata, risk/protective factor breadth, validated risk/protective measures, longitudinal design, inequality variables, access route clarity, published research use and compatibility with other datasets. Risk/protective breadth and inequality coverage are read from the variables actually extracted for each dataset (for example area deprivation, income, ethnicity and disability), so compatible modules such as the Health Survey for England and the Scottish Health Survey score consistently.</p>
     </section>
     <section class="method-panel">
       <h2>What synthesis-ready means</h2>
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const components = {};
 
     // 1. Under-25 (0-2)
-    if (age.match(/adolescen|child|youth|young|11-17|11-16|16-24|under 25|school|grades 7-12|15-16|11,|age 14|age 11|years 7/i))
+    if (age.match(/adolescen|child|youth|young|11-17|11-16|16-24|18-24|18-25|under 25|school|grades 7-12|15-16|11,|age 14|age 11|years 7/i))
       components.under25 = 2;
     else if (age.match(/16\+|18\+|adult|emerging/i))
       components.under25 = 1;
@@ -224,8 +224,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     else components.metadata = 0;
 
     // 5. Risk/protective factors (0-3)
+    // Assess breadth from the risk/protective variables actually extracted for
+    // the dataset (consistent across compatible modules such as HSE and SHeS),
+    // falling back to the free-text domain summary, whichever is greater.
     const domainKeywords = ['mental health','substance','socioeconomic','family','peer','school','digital','adversity','protective','inequalit'];
-    const domainCount = domainKeywords.filter(d => riskDomains.includes(d)).length;
+    const textDomainCount = domainKeywords.filter(d => riskDomains.includes(d)).length;
+    const varDomains = new Set(riskVars.map(v => v.risk_domain).filter(d => d && d !== 'Other' && d !== 'Gambling exposure'));
+    const domainCount = Math.max(textDomainCount, varDomains.size);
     if (domainCount >= 5 && riskVars.length > 10) components.riskFactors = 3;
     else if (domainCount >= 3) components.riskFactors = 2;
     else if (domainCount >= 1) components.riskFactors = 1;
@@ -241,8 +246,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     else if (design.includes('repeated')) components.longitudinal = 1;
     else components.longitudinal = 0;
 
-    // 8. Inequality variables (0-1)
-    if (riskDomains.match(/inequalit|ethnic|deprivat|disabilit|gender|sexuality|migration/)) components.inequality = 1;
+    // 8. Inequality variables (0-1) - from the free-text summary or, more
+    // reliably, from inequality-related variables actually in the dataset
+    // (deprivation/IMD, income, ethnicity, disability, sexual orientation).
+    const ineqRE = /imd|depriv|ethnic|income|equivalis|ns-?sec|nssec|socio-?economic|disab|migrant|sexual orient|gender ident|social grade|social class/i;
+    const hasIneqVars = dsVars.some(v => ineqRE.test(v.variable_label || '') || ineqRE.test(v.variable_name || ''));
+    if (riskDomains.match(/inequalit|ethnic|deprivat|disabilit|gender|sexuality|migration/) || hasIneqVars) components.inequality = 1;
     else components.inequality = 0;
 
     // 9. Clear access route (0-2), from the normalised Access difficulty field

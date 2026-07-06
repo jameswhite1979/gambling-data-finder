@@ -266,7 +266,7 @@
   "CLOSER result": "Not applicable",
   "Study-specific public metadata route": "UK Data Service catalogue/dictionary; uploaded file parsed",
   "Variable names public?": "Yes in uploaded dictionary",
-  "Question wording public?": "Partial - variable labels/value labels; full questionnaire wording still needed",
+  "Question wording public?": "Yes - questionnaire/interviewer documentation available via UKDS (gambling module identical to HSE)",
   "Raw data access status": "Safeguarded/EUL via UK Data Service or equivalent",
   "Metadata access needed?": "Yes - full questionnaire/codebook routing for exact question wording",
   "Next extraction action": "Locate questionnaire/source questionnaire and verify exact wording/routing for gambling variables",
