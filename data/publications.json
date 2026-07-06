@@ -667,5 +667,135 @@
   "Risk/protective factors analysed": "",
   "URL / DOI": "https://www.gov.wales/gambling-national-survey-wales-april-2022-march-2023",
   "Notes": "Past-12-month gambling activities and behaviours; PGSI at-risk classification."
+ },
+ {
+  "Dataset ID": "BIB_AOW",
+  "Paper / documentation title": "Born in Bradford Age of Wonder 2024-25 questionnaire",
+  "Authors / year": "Born in Bradford, 2024",
+  "Source type": "Data documentation",
+  "Gambling measure used": "Own-money gambling activity items; family gambling; in-game items and loot boxes",
+  "Risk/protective factors analysed": "Questionnaire includes mental health, wellbeing, substance use, socioeconomic, family, school and digital environment measures",
+  "URL / DOI": "https://borninbradford.nhs.uk/wp-content/uploads/2024/11/Age-of-Wonder-24-25-Questionnaire.pdf",
+  "Notes": "No DOI - official questionnaire documentation; gambling analysis publication not located."
+ },
+ {
+  "Dataset ID": "BIB_AOW",
+  "Paper / documentation title": "Born in Bradford Age of Wonder Post-16 2025-26 questionnaire",
+  "Authors / year": "Born in Bradford, 2025",
+  "Source type": "Data documentation",
+  "Gambling measure used": "Own-money gambling activity items; family gambling; digital gambling exposure",
+  "Risk/protective factors analysed": "Questionnaire includes mental health, wellbeing, substance use, socioeconomic, family, education and digital environment measures",
+  "URL / DOI": "https://borninbradford.nhs.uk/wp-content/uploads/2025/09/Age-of-Wonder-Post-16-25-26-Questionnaire.pdf",
+  "Notes": "No DOI - official questionnaire documentation; gambling analysis publication not located."
+ },
+ {
+  "Dataset ID": "USOC",
+  "Paper / documentation title": "UK Household Longitudinal Study Mainstage Questionnaire: Wave 13",
+  "Authors / year": "Understanding Society, 2023",
+  "Source type": "Data documentation",
+  "Gambling measure used": "Past-week gambling activity items",
+  "Risk/protective factors analysed": "Questionnaire includes health, mental wellbeing, finances, employment, relationships and demographic variables",
+  "URL / DOI": "https://www.understandingsociety.ac.uk/wp-content/uploads/documentation/main-survey/questionnaires/6614-main-survey-questionnaire-w13.pdf",
+  "Notes": "No DOI - official questionnaire documentation; gambling analysis publication not located."
+ },
+ {
+  "Dataset ID": "NCDS",
+  "Paper / documentation title": "National Child Development Study: Age 23, Sweep 4, 1981, and Public Examination Results, 1978",
+  "Authors / year": "CLS / UK Data Service",
+  "Source type": "Data documentation",
+  "Gambling measure used": "Past-4-week gambling including bingo",
+  "Risk/protective factors analysed": "Cohort documentation supports analysis with mental health, substance use, family, socioeconomic and education variables",
+  "URL / DOI": "https://datacatalogue.ukdataservice.ac.uk/studies/study/5566",
+  "Notes": "No DOI - official UKDS catalogue/documentation; gambling analysis publication not located."
+ },
+ {
+  "Dataset ID": "MCS",
+  "Paper / documentation title": "MCS6 Young Person Questionnaire",
+  "Authors / year": "Centre for Longitudinal Studies, 2015",
+  "Source type": "Data documentation",
+  "Gambling measure used": "Past-4-week own-money gambling grid",
+  "Risk/protective factors analysed": "Questionnaire includes activities, attitudes, family, friends, victimisation, risky behaviours, health and wellbeing",
+  "URL / DOI": "https://cls.ucl.ac.uk/wp-content/uploads/2017/12/MCS6-Young-Person-Questionnaire.pdf",
+  "Notes": "No DOI - official questionnaire documentation."
+ },
+ {
+  "Dataset ID": "HSE_SHES_2016",
+  "Paper / documentation title": "User guide for the HSE and SHeS 2016 combined gambling dataset",
+  "Authors / year": "NatCen Social Research, 2018",
+  "Source type": "Data documentation",
+  "Gambling measure used": "PGSI; DSM-IV; gambling participation weights",
+  "Risk/protective factors analysed": "Data guide documents combined HSE and SHeS variables and weights for gambling analyses",
+  "URL / DOI": "https://doc.ukdataservice.ac.uk/doc/8416/mrdoc/pdf/8416_2016_hse_and_shes_combined_user_guide.pdf",
+  "Notes": "No DOI - UKDS official user guide for the archived combined gambling dataset."
+ },
+ {
+  "Dataset ID": "NSW",
+  "Paper / documentation title": "National Survey for Wales: results viewer",
+  "Authors / year": "Welsh Government, 2025",
+  "Source type": "Official data tool",
+  "Gambling measure used": "PGSI; gambling activities",
+  "Risk/protective factors analysed": "Interactive official statistics viewer for National Survey for Wales releases, including the gambling release",
+  "URL / DOI": "https://www.gov.wales/national-survey-wales-results-viewer",
+  "Notes": "No DOI - official Welsh Government results viewer."
+ },
+ {
+  "Dataset ID": "GUI98",
+  "Paper / documentation title": "Growing Up in Ireland Cohort 98 questionnaires",
+  "Authors / year": "Growing Up in Ireland",
+  "Source type": "Data documentation",
+  "Gambling measure used": "Online gambling and gambling-related questionnaire items",
+  "Risk/protective factors analysed": "Questionnaires document demographic, socioeconomic, education, health and family measures for Cohort 98 waves",
+  "URL / DOI": "https://www.growingup.gov.ie/questionnaires/",
+  "Notes": "No DOI - official questionnaire documentation; additional gambling analysis publication not located."
+ },
+ {
+  "Dataset ID": "GIBS",
+  "Paper / documentation title": "Gambling Impact and Behavior Study: Report to the National Gambling Impact Study Commission",
+  "Authors / year": "Gerstein et al., 1999",
+  "Source type": "Official report",
+  "Gambling measure used": "NODS / DSM-IV gambling screen; gambling participation",
+  "Risk/protective factors analysed": "Health, mental health, substance abuse, employment, bankruptcy, debt, crime, divorce and youth gambling",
+  "URL / DOI": "https://govinfo.library.unt.edu/ngisc/reports/gibstdy.pdf",
+  "Notes": "No DOI - National Gambling Impact Study Commission report using GIBS data."
+ },
+ {
+  "Dataset ID": "SHES_2017_2018_2019_2021",
+  "Paper / documentation title": "Scottish Health Survey 2017: Gambling Behaviour chapter",
+  "Authors / year": "Scottish Government, 2018",
+  "Source type": "Official report",
+  "Gambling measure used": "PGSI; DSM-IV; gambling participation",
+  "Risk/protective factors analysed": "Sex, age, area deprivation, alcohol, smoking, health and wellbeing measures",
+  "URL / DOI": "https://www.gov.scot/publications/scottish-health-survey-2017-volume-1-main-report/pages/104/",
+  "Notes": "No DOI - official Scottish Health Survey gambling chapter."
+ },
+ {
+  "Dataset ID": "BCS70",
+  "Paper / documentation title": "1970 British Cohort Study: Age 16, Sweep 4, 1986",
+  "Authors / year": "CLS / UK Data Service",
+  "Source type": "Data documentation",
+  "Gambling measure used": "Age-16 betting shop and betting/gambling spending items",
+  "Risk/protective factors analysed": "Cohort documentation supports analysis with school, family, mental health, substance use, socioeconomic and education variables",
+  "URL / DOI": "https://datacatalogue.ukdataservice.ac.uk/studies/study/3535",
+  "Notes": "No DOI - official UKDS catalogue/documentation; additional gambling analysis publication not located."
+ },
+ {
+  "Dataset ID": "YOUTH07_NZ",
+  "Paper / documentation title": "Youth2000 data access and data dictionary documentation",
+  "Authors / year": "University of Auckland AHRG",
+  "Source type": "Data documentation",
+  "Gambling measure used": "Custom Youth07 gambling behaviour items",
+  "Risk/protective factors analysed": "Youth2000 documentation supports analysis with wellbeing, depression, social connectedness, alcohol, income, demographic and deprivation variables",
+  "URL / DOI": "https://www.fmhs.auckland.ac.nz/en/faculty/adolescent-health-research-group/collaborations-and-access-to-datasets.html",
+  "Notes": "No DOI - official AHRG data access and data dictionary documentation."
+ },
+ {
+  "Dataset ID": "FINLAND_SHP",
+  "Paper / documentation title": "FSD3551 School Health Promotion Study 2019 catalogue record",
+  "Authors / year": "Finnish Social Science Data Archive / THL",
+  "Source type": "Data documentation",
+  "Gambling measure used": "Gambling frequency item",
+  "Risk/protective factors analysed": "Catalogue and questionnaires document wellbeing, health, school, substance use, family and leisure-time measures",
+  "URL / DOI": "https://services.fsd.tuni.fi/catalogue/FSD3551?study_language=en",
+  "Notes": "No DOI - FSD catalogue record and questionnaire documentation."
  }
 ]
