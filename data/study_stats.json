@@ -224,9 +224,9 @@
   ]
  },
  "SHES_2017_2018_2019_2021": {
-  "variables": 659,
+  "variables": 650,
   "gambling": 120,
-  "risk": 539,
+  "risk": 530,
   "questionnaires": 8,
   "sources": 9,
   "measures": 84,
@@ -245,18 +245,18 @@
   "named_measures": []
  },
  "NCDS": {
-  "variables": 64,
+  "variables": 43,
   "gambling": 1,
-  "risk": 63,
+  "risk": 42,
   "questionnaires": 1,
   "sources": 4,
   "measures": 1,
   "named_measures": []
  },
  "BCS70": {
-  "variables": 65,
+  "variables": 54,
   "gambling": 2,
-  "risk": 63,
+  "risk": 52,
   "questionnaires": 2,
   "sources": 5,
   "measures": 2,
