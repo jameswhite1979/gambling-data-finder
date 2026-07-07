@@ -81,7 +81,7 @@
 </head>
 <body>
 
-<script src="app.js?v=5"></script>
+<script src="app.js?v=6"></script>
 <script>document.body.insertAdjacentHTML('afterbegin', renderNav('basket'));</script>
 
 <div class="basket-banner">
@@ -358,7 +358,7 @@ function doDownloadCSV(type) {
 function doDownloadExcel(type) {
   var items = getCheckedItems(type);
   if (!items.length) return;
-  downloadExcel(items.map(function (item) { return normaliseExportRow(item, type); }), 'ghripps_' + type + 's.xml');
+  downloadExcel(items.map(function (item) { return normaliseExportRow(item, type); }), 'ghripps_' + type + 's.xlsx');
 }
 
 function normaliseExportRow(item, type) {

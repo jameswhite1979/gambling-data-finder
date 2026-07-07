@@ -198,12 +198,42 @@ function downloadCSV(items, filename) {
   downloadBlob(basketToCSV(items), filename, 'text/csv;charset=utf-8;');
 }
 
+// Lazily load SheetJS so the "Excel" export is a genuine .xlsx workbook.
+let _sheetJSPromise = null;
+function ensureSheetJS() {
+  if (window.XLSX) return Promise.resolve(window.XLSX);
+  if (_sheetJSPromise) return _sheetJSPromise;
+  _sheetJSPromise = new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js';
+    s.onload = () => { window.XLSX ? resolve(window.XLSX) : reject(new Error('SheetJS loaded but XLSX not found')); };
+    s.onerror = () => reject(new Error('Failed to load SheetJS'));
+    document.head.appendChild(s);
+  });
+  return _sheetJSPromise;
+}
+
 function downloadExcel(items, filename) {
   if (!items || !items.length) return;
+  const base = filename.replace(/\.(xlsx|xls|xml)$/i, '');
+  ensureSheetJS().then(XLSX => {
+    const ws = XLSX.utils.json_to_sheet(items);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Metadata');
+    XLSX.writeFile(wb, base + '.xlsx');
+  }).catch(err => {
+    console.warn('xlsx export unavailable (offline?), using SpreadsheetML fallback', err);
+    downloadExcelXMLFallback(items, base + '.xls');
+  });
+}
+
+// Fallback only: Excel 2003 SpreadsheetML. Named .xls so Excel opens it
+// (with a one-time compatibility prompt) rather than a browser XML view.
+function downloadExcelXMLFallback(items, filename) {
   const headers = Object.keys(items[0]);
   let xml = '<?xml version="1.0"?><?mso-application progid="Excel.Sheet"?>';
   xml += '<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">';
-  xml += '<Worksheet ss:Name="Sheet1"><Table>';
+  xml += '<Worksheet ss:Name="Metadata"><Table>';
   xml += '<Row>' + headers.map(h => `<Cell><Data ss:Type="String">${escapeHTML(h)}</Data></Cell>`).join('') + '</Row>';
   items.forEach(item => {
     xml += '<Row>' + headers.map(h => `<Cell><Data ss:Type="String">${escapeHTML(String(item[h]||''))}</Data></Cell>`).join('') + '</Row>';
