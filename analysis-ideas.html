@@ -70,25 +70,25 @@
 
 <div id="main-content" class="page-content">
   <h1 style="font-size:1.4rem;color:var(--navy);margin-bottom:.3rem;">Ideas</h1>
-  <p class="ideas-intro">This page turns the catalogue into candidate secondary-analysis ideas. It is built around two core features: a Risk/Protective Factor Gap Matrix and a Research Question Generator. Together they identify datasets that combine gambling measures with risk or protective factors, highlight under-studied domains, and suggest cross-dataset research questions that may be worth developing.</p>
+  <p class="ideas-intro">This page turns the catalogue into candidate secondary-analysis ideas. It is built around two core features: a Risk/Protective Factor Gap Matrix and a Research Question Generator. Together they identify studies that combine gambling measures with risk or protective factors, highlight under-studied domains, and suggest cross-study research questions that may be worth developing.</p>
 
   <div id="idea-summary"><div class="loading">Loading analysis ideas...</div></div>
 
   <div class="ideas-section">
     <h2>Risk/protective factor gap matrix</h2>
-    <p>Rows are datasets and columns are risk/protective factor domains. A filled cell means the dataset has gambling variables and at least one variable in that domain, making it a candidate for questions about risk, protection or gambling harm pathways.</p>
+    <p>Rows are studies and columns are risk/protective factor domains. A filled cell means the study has gambling variables and at least one variable in that domain, making it a candidate for questions about risk, protection or gambling harm pathways.</p>
     <div id="gap-matrix-content"><div class="loading">Loading matrix...</div></div>
   </div>
 
   <div class="ideas-section">
-    <h2>Best datasets for new analysis</h2>
-    <p>These rankings prioritise datasets with gambling measures plus the relevant risk, protective, harm or longitudinal structure.</p>
+    <h2>Best studies for new analysis</h2>
+    <p>These rankings prioritise studies with gambling measures plus the relevant risk, protective, harm or longitudinal structure.</p>
     <div id="dataset-rankings"><div class="loading">Loading rankings...</div></div>
   </div>
 
   <div class="ideas-section">
     <h2>Research Question Generator</h2>
-    <p>Questions are generated where multiple datasets share a named gambling measure or a gambling harm construct and also contain a relevant risk/protective domain. The <strong>Existing evidence</strong> column cross-references publications in our catalogue that already address each question, helping to identify genuine research gaps.</p>
+    <p>Questions are generated where multiple studies share a named gambling measure or a gambling harm construct and also contain a relevant risk/protective domain. The <strong>Existing evidence</strong> column cross-references publications in our catalogue that already address each question, helping to identify genuine research gaps.</p>
     <div id="question-content"><div class="loading">Loading questions...</div></div>
   </div>
 
@@ -100,7 +100,7 @@
 
   <div class="ideas-section">
     <h2>High-value primary data collection gaps</h2>
-    <p>These gaps point to new data collection or enhancement opportunities where existing secondary datasets may not be enough.</p>
+    <p>These gaps point to new data collection or enhancement opportunities where existing secondary studies may not be enough.</p>
     <div id="primary-gap-content"><div class="loading">Loading primary gaps...</div></div>
   </div>
 </div>
@@ -210,12 +210,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   function renderSummary() {
     document.getElementById('idea-summary').innerHTML = `<div class="ideas-grid">
-      <div class="idea-card"><div class="idea-card-num">${withRiskAndGambling.length}</div><div class="idea-card-label">Datasets with gambling plus risk/protective factors</div></div>
-      <div class="idea-card"><div class="idea-card-num">${withProtection.length}</div><div class="idea-card-label">Datasets with protective factors</div></div>
-      <div class="idea-card"><div class="idea-card-num">${withHarm.length}</div><div class="idea-card-label">Datasets with gambling harm outcomes</div></div>
+      <div class="idea-card"><div class="idea-card-num">${withRiskAndGambling.length}</div><div class="idea-card-label">Studies with gambling plus risk/protective factors</div></div>
+      <div class="idea-card"><div class="idea-card-num">${withProtection.length}</div><div class="idea-card-label">Studies with protective factors</div></div>
+      <div class="idea-card"><div class="idea-card-num">${withHarm.length}</div><div class="idea-card-label">Studies with gambling harm outcomes</div></div>
       <div class="idea-card"><div class="idea-card-num">${longitudinal.length}</div><div class="idea-card-label">Longitudinal opportunities</div></div>
     </div>
-    <div class="ideas-note">Use these outputs as a first-pass prioritisation. Candidate datasets still need detailed checks of item wording, timing, age bands, sample size and access conditions before analysis or meta-analysis.</div>`;
+    <div class="ideas-note">Use these outputs as a first-pass prioritisation. Candidate studies still need detailed checks of item wording, timing, age bands, sample size and access conditions before analysis or meta-analysis.</div>`;
   }
 
   function matrixCell(s, d) {
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   function renderGapMatrix(rows) {
     const sorted = rows.slice().sort((a, b) => b.domainCount - a.domainCount || b.gamb.length - a.gamb.length);
-    let html = '<div class="matrix-scroll"><table class="gap-matrix"><thead><tr><th scope="col">Dataset</th>';
+    let html = '<div class="matrix-scroll"><table class="gap-matrix"><thead><tr><th scope="col">Study</th>';
     domainDefs.forEach(d => { html += `<th scope="col">${escapeHTML(d.label)}</th>`; });
     html += '</tr></thead><tbody>';
     sorted.forEach(s => {
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     return rows.map(s => `<a href="study.html?id=${encodeURIComponent(s.id)}">${escapeHTML(s.id)}</a>`).join(', ');
   }
   function renderRankingTable(title, rows, reasonFn) {
-    let html = `<h3>${escapeHTML(title)}</h3><div class="ideas-table-wrap"><table class="ideas-table"><thead><tr><th scope="col">Dataset</th><th scope="col">Why it is useful</th><th scope="col">Signals</th></tr></thead><tbody>`;
+    let html = `<h3>${escapeHTML(title)}</h3><div class="ideas-table-wrap"><table class="ideas-table"><thead><tr><th scope="col">Study</th><th scope="col">Why it is useful</th><th scope="col">Signals</th></tr></thead><tbody>`;
     rows.forEach(s => {
       html += `<tr><td><a href="study.html?id=${encodeURIComponent(s.id)}">${escapeHTML(s.name)}</a></td><td>${escapeHTML(reasonFn(s))}</td><td><span class="ideas-pill">${s.gamb.length} gambling vars</span> <span class="ideas-pill ideas-pill-high">${s.domainCount} domains</span>${s.longitudinal ? ' <span class="ideas-pill ideas-pill-med">Longitudinal</span>' : ''}</td></tr>`;
     });
@@ -261,9 +261,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const harmRows = topRows(stats.filter(s => s.harm.length), s => s.harm.length + s.domainCount + (s.longitudinal ? 3 : 0), 6);
     const longRows = topRows(stats.filter(s => s.gamb.length && s.longitudinal), s => s.domainCount + s.harm.length + s.gamb.length / 20, 6);
     document.getElementById('dataset-rankings').innerHTML =
-      renderRankingTable('Best datasets for risk factor analysis', riskRows, s => `Combines gambling variables with ${s.domainCount} risk/protective domains.`) +
-      renderRankingTable('Best datasets for protective factor analysis', protectiveRows, s => `Includes gambling variables and ${s.protective.length} protective-factor records or support/resilience indicators.`) +
-      renderRankingTable('Best datasets for gambling harm outcomes', harmRows, s => `Includes ${s.harm.length} gambling harm, severity, consequence or problem-gambling records.`) +
+      renderRankingTable('Best studies for risk factor analysis', riskRows, s => `Combines gambling variables with ${s.domainCount} risk/protective domains.`) +
+      renderRankingTable('Best studies for protective factor analysis', protectiveRows, s => `Includes gambling variables and ${s.protective.length} protective-factor records or support/resilience indicators.`) +
+      renderRankingTable('Best studies for gambling harm outcomes', harmRows, s => `Includes ${s.harm.length} gambling harm, severity, consequence or problem-gambling records.`) +
       renderRankingTable('Best longitudinal opportunities', longRows, s => `Longitudinal or repeated design with gambling variables and ${s.domainCount} risk/protective domains.`);
   }
 
@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       { domain:'protective', question:'Which protective assets appear to buffer young people against gambling harms?' },
       { domain:'ineq', question:'Which inequalities shape exposure to gambling, gambling harms or recovery/help-seeking?' },
     ];
-    let html = '<div class="ideas-table-wrap"><table class="ideas-table"><thead><tr><th scope="col">Candidate question</th><th scope="col">Candidate datasets</th><th scope="col">Shared measure route</th><th scope="col">Existing evidence</th><th scope="col">Feasibility</th></tr></thead><tbody>';
+    let html = '<div class="ideas-table-wrap"><table class="ideas-table"><thead><tr><th scope="col">Candidate question</th><th scope="col">Candidate studies</th><th scope="col">Shared measure route</th><th scope="col">Existing evidence</th><th scope="col">Feasibility</th></tr></thead><tbody>';
     questionDefs.forEach(q => {
       const candidates = stats.filter(s => s.gamb.length && s.domains[q.domain] > 0);
       if (!candidates.length) return;
@@ -346,7 +346,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const html = '<div class="missing-grid">' + missing.map(m => {
       const ids = countKeywordDatasets(usableVars, m.terms);
       const cls = ids.size <= 1 ? 'ideas-pill-low' : ids.size <= 3 ? 'ideas-pill-med' : 'ideas-pill-high';
-      return `<div class="missing-item"><h3>${escapeHTML(m.title)} <span class="ideas-pill ${cls}">${ids.size} datasets flagged</span></h3><p>${escapeHTML(m.why)}</p></div>`;
+      return `<div class="missing-item"><h3>${escapeHTML(m.title)} <span class="ideas-pill ${cls}">${ids.size} studies flagged</span></h3><p>${escapeHTML(m.why)}</p></div>`;
     }).join('') + '</div>';
     document.getElementById('missing-content').innerHTML = html;
   }
