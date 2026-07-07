@@ -391,10 +391,153 @@ function normaliseExportRow(item, type) {
   };
 }
 
+/* Lazily load the jsPDF UMD bundle so the codebook downloads as a real .pdf.
+   Resolves with the jsPDF constructor; rejects if the CDN is unreachable. */
+var _jsPDFPromise = null;
+function ensureJsPDF() {
+  if (window.jspdf && window.jspdf.jsPDF) return Promise.resolve(window.jspdf.jsPDF);
+  if (_jsPDFPromise) return _jsPDFPromise;
+  _jsPDFPromise = new Promise(function (resolve, reject) {
+    var s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js';
+    s.onload = function () {
+      if (window.jspdf && window.jspdf.jsPDF) resolve(window.jspdf.jsPDF);
+      else reject(new Error('jsPDF loaded but constructor not found'));
+    };
+    s.onerror = function () { reject(new Error('Failed to load jsPDF')); };
+    document.head.appendChild(s);
+  });
+  return _jsPDFPromise;
+}
+
+function accessRouteText(item) {
+  var access = getAccessRecord(item);
+  var ds = getDatasetRecord(item);
+  return access['Access route'] || access['Access status'] || item.access_type || ds['Access type'] || '';
+}
+
+function accessNotesText(item) {
+  var access = getAccessRecord(item);
+  var ds = getDatasetRecord(item);
+  return access['Data format / notes'] || access.Notes || ds['Notes / uncertainties'] || '';
+}
+
+function pdfTitleForItem(item, type) {
+  if (type === 'variable') return item.variable_label || item.variable_name || '(no label)';
+  if (type === 'question') return item.question_text || item.variable_label || item.title || '(no question text)';
+  return item.title || item.questionnaire_name || item.named_measure || '(untitled)';
+}
+
+/* Ordered [label, value] pairs shown per item; empties are dropped. */
+function pdfFieldsForItem(item, type) {
+  var fields = [];
+  function add(label, val) {
+    val = (val === undefined || val === null) ? '' : String(val).trim();
+    if (val) fields.push([label, val]);
+  }
+  if (type === 'variable' || type === 'question') {
+    add('Variable', item.variable_name || item['Variable/item ID']);
+    add('Study', item.dataset_name || item.dataset_id);
+    add('Wave / age', [item.wave_year, item.age_group].filter(Boolean).join(' / '));
+    if (type === 'question') add('Question', item.question_text || item.variable_label);
+    add('Role', item.role);
+    add('Named measure', item.named_measure);
+    add('Category', item.construct_category);
+    add('Response categories', item.response_options || item.value_labels || item.response_categories);
+  } else {
+    add('Study', item.dataset_name || item.dataset_id);
+    add('Wave', item.wave_year);
+    add('Named measure', item.named_measure);
+  }
+  /* How to get the data — the point of this export. */
+  add('How to access the data', accessRouteText(item));
+  add('Data access URL', getAccessUrl(item));
+  add('Access notes', accessNotesText(item));
+  add('Variable metadata URL', item.variable_url);
+  add('Questionnaire / codebook', getQuestionnaireTitle(item));
+  return fields;
+}
+
 function doDownloadPDF(type) {
   var items = getCheckedItems(type);
   if (!items.length) return;
+  var label = type.charAt(0).toUpperCase() + type.slice(1) + 's';
 
+  ensureJsPDF().then(function (JsPDF) {
+    var doc = new JsPDF({ unit: 'pt', format: 'a4' });
+    var pageW = doc.internal.pageSize.getWidth();
+    var pageH = doc.internal.pageSize.getHeight();
+    var margin = 40;
+    var maxW = pageW - margin * 2;
+    var y = margin;
+
+    function ensureSpace(h) {
+      if (y + h > pageH - margin) { doc.addPage(); y = margin; }
+    }
+    function writeWrapped(text, size, style, color) {
+      doc.setFont('helvetica', style || 'normal');
+      doc.setFontSize(size);
+      doc.setTextColor(color === undefined ? 0 : color);
+      var lines = doc.splitTextToSize(String(text), maxW);
+      var lh = size * 1.3;
+      for (var i = 0; i < lines.length; i++) {
+        ensureSpace(lh);
+        doc.text(lines[i], margin, y);
+        y += lh;
+      }
+    }
+    /* Bold "Label: " lead-in with a normal, wrapped value. */
+    function writeField(labelText, valueText) {
+      var size = 9.5, lh = size * 1.3, indent = 8, x0 = margin + indent;
+      doc.setFontSize(size);
+      var prefix = labelText + ': ';
+      doc.setFont('helvetica', 'bold');
+      var prefixW = doc.getTextWidth(prefix);
+      var lines = doc.splitTextToSize(String(valueText), maxW - indent - prefixW);
+      if (!lines.length) lines = [''];
+      for (var i = 0; i < lines.length; i++) {
+        ensureSpace(lh);
+        if (i === 0) {
+          doc.setFont('helvetica', 'bold'); doc.setTextColor(70);
+          doc.text(prefix, x0, y);
+          doc.setFont('helvetica', 'normal'); doc.setTextColor(30);
+          doc.text(lines[0], x0 + prefixW, y);
+        } else {
+          doc.setFont('helvetica', 'normal'); doc.setTextColor(30);
+          doc.text(lines[i], x0, y);
+        }
+        y += lh;
+      }
+    }
+
+    writeWrapped(label + ' Codebook', 18, 'bold', 20);
+    y += 4;
+    writeWrapped(items.length + ' item(s) exported from the Gambling Data Finder', 10, 'normal', 110);
+    y += 12;
+
+    items.forEach(function (item) {
+      ensureSpace(48);
+      writeWrapped(pdfTitleForItem(item, type), 12, 'bold', 15);
+      y += 2;
+      pdfFieldsForItem(item, type).forEach(function (pair) {
+        writeField(pair[0], pair[1]);
+      });
+      y += 10;
+      ensureSpace(12);
+      doc.setDrawColor(220);
+      doc.line(margin, y, pageW - margin, y);
+      y += 12;
+    });
+
+    doc.save('ghripps_' + type + 's_codebook.pdf');
+  }).catch(function (err) {
+    console.warn('PDF download unavailable (offline?), opening printable view instead', err);
+    printCodebookFallback(type, items);
+  });
+}
+
+/* Fallback used only if jsPDF cannot load: opens a printable tab. */
+function printCodebookFallback(type, items) {
   var label = type.charAt(0).toUpperCase() + type.slice(1) + 's';
   var html = '<!DOCTYPE html><html><head><meta charset="UTF-8">';
   html += '<title>' + escapeHTML(label) + ' Codebook — Gambling Data Finder</title>';
@@ -404,41 +547,20 @@ function doDownloadPDF(type) {
   html += '.item{margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid #e2e8f0}';
   html += '.item-title{font-weight:700;font-size:1rem;color:#0f172a}';
   html += '.item-meta{font-size:.85rem;color:#64748b;margin-top:.25rem}';
-  html += '.item-meta span{margin-right:1rem}';
+  html += '.item-meta div{margin-top:.15rem}';
   html += '@media print{body{margin:0;padding:1cm} .no-print{display:none}}';
   html += '</style></head><body>';
   html += '<h1>' + escapeHTML(label) + ' Codebook</h1>';
-  html += '<p style="font-size:.85rem;color:#64748b;margin-bottom:1.5rem">' + items.length + ' item(s) exported from the CYP-GHRIP Gambling Data Finder</p>';
+  html += '<p style="font-size:.85rem;color:#64748b;margin-bottom:1.5rem">' + items.length + ' item(s) exported from the Gambling Data Finder</p>';
 
-  items.forEach(function (item, i) {
+  items.forEach(function (item) {
     html += '<div class="item">';
-    if (type === 'variable') {
-      html += '<div class="item-title">' + escapeHTML(item.variable_label || item.variable_name || '(no label)') + '</div>';
-      html += '<div class="item-meta">';
-      if (item.variable_name) html += '<span><strong>Variable:</strong> ' + escapeHTML(item.variable_name) + '</span>';
-      if (item.dataset_name || item.dataset_id) html += '<span><strong>Study:</strong> ' + escapeHTML(item.dataset_name || item.dataset_id) + '</span>';
-      if (item.wave_year) html += '<span><strong>Wave:</strong> ' + escapeHTML(item.wave_year) + '</span>';
-      if (item.role) html += '<span><strong>Role:</strong> ' + escapeHTML(item.role) + '</span>';
-      if (item.named_measure) html += '<span><strong>Measure:</strong> ' + escapeHTML(item.named_measure) + '</span>';
-      if (item.construct_category) html += '<span><strong>Category:</strong> ' + escapeHTML(item.construct_category) + '</span>';
-      if (item.age_group) html += '<span><strong>Age group:</strong> ' + escapeHTML(item.age_group) + '</span>';
-      html += '</div>';
-    } else if (type === 'question') {
-      html += '<div class="item-title">' + escapeHTML(item.question_text || item.variable_label || item.title || '(no text)') + '</div>';
-      html += '<div class="item-meta">';
-      if (item.variable_name) html += '<span><strong>Variable:</strong> ' + escapeHTML(item.variable_name) + '</span>';
-      if (item.dataset_name || item.dataset_id) html += '<span><strong>Study:</strong> ' + escapeHTML(item.dataset_name || item.dataset_id) + '</span>';
-      if (item.wave_year) html += '<span><strong>Wave:</strong> ' + escapeHTML(item.wave_year) + '</span>';
-      if (item.named_measure) html += '<span><strong>Measure:</strong> ' + escapeHTML(item.named_measure) + '</span>';
-      html += '</div>';
-    } else {
-      html += '<div class="item-title">' + escapeHTML(item.title || item.questionnaire_name || item.named_measure || '(untitled)') + '</div>';
-      html += '<div class="item-meta">';
-      if (item.dataset_name || item.dataset_id) html += '<span><strong>Study:</strong> ' + escapeHTML(item.dataset_name || item.dataset_id) + '</span>';
-      if (item.wave_year) html += '<span><strong>Wave:</strong> ' + escapeHTML(item.wave_year) + '</span>';
-      html += '</div>';
-    }
-    html += '</div>';
+    html += '<div class="item-title">' + escapeHTML(pdfTitleForItem(item, type)) + '</div>';
+    html += '<div class="item-meta">';
+    pdfFieldsForItem(item, type).forEach(function (pair) {
+      html += '<div><strong>' + escapeHTML(pair[0]) + ':</strong> ' + escapeHTML(pair[1]) + '</div>';
+    });
+    html += '</div></div>';
   });
 
   html += '<p class="no-print" style="margin-top:2rem;text-align:center"><button onclick="window.print()" style="padding:.5rem 1.5rem;font-size:.9rem;cursor:pointer">Print / Save as PDF</button></p>';
