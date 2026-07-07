@@ -47,7 +47,7 @@
 
     <div class="viz-card">
       <h3>Country and geography coverage</h3>
-      <p>Number of studies or datasets by country or geographic scope.</p>
+      <p>Number of studies by country (UK nations grouped as United Kingdom); ESPAD and HBSC are cross-national surveys spanning many countries.</p>
       <div id="country-coverage"><div class="loading">Loading chart...</div></div>
     </div>
 
@@ -286,7 +286,7 @@ function renderAccessOverview() {
 }
 
 function renderCountryCoverage() {
-  const rows = topCounts(countBy(datasets, d => d['Country']), 12);
+  const rows = topCounts(countBy(datasets, d => d['Country group'] || d['Country']), 12);
   renderBar('country-coverage', rows, { color: '#334155', labelClass: 'bar-label-country' });
 }
 
