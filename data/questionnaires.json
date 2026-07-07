@@ -1342,5 +1342,61 @@
   "Variable names visible?": "Questionnaire item numbers (B41-B43); AMF data file excludes gambling - data variable names in gated RMF",
   "Question wording visible?": "Yes",
   "Notes": "Gambling asked only at age 20 (3-item module); NOT at 17/18. Gambling items excluded from public AMF data."
+ },
+ {
+  "Questionnaire_ID": "Q_LSAC_01",
+  "Dataset_ID": "LSAC",
+  "Dataset name": "Growing Up in Australia: Longitudinal Study of Australian Children",
+  "Wave / year": "Waves 7-10 (2016-2024)",
+  "Age group": "16-24",
+  "Questionnaire / metadata title": "LSAC young-person gambling module (PGSI + participation) - Data User Guide and questionnaires",
+  "File type": "PDF / HTML documentation",
+  "URL": "https://growingupinaustralia.gov.au/data-and-documentation/data-user-guide",
+  "Public or gated": "Public documentation; data gated",
+  "Variable names visible?": "Yes",
+  "Question wording visible?": "Yes",
+  "Notes": "K cohort Waves 7-10; B cohort Waves 9C2-10. Single COVID gambling item at Wave 9C1."
+ },
+ {
+  "Questionnaire_ID": "Q_LSAC_02",
+  "Dataset_ID": "LSAC",
+  "Dataset name": "Growing Up in Australia: Longitudinal Study of Australian Children",
+  "Wave / year": "Waves 5-9 (2012-2021)",
+  "Age group": "Parent 1 (adult)",
+  "Questionnaire / metadata title": "LSAC Parent 1 gambling module and problem-gambling support-service items",
+  "File type": "PDF / HTML documentation",
+  "URL": "https://growingupinaustralia.gov.au/data-and-documentation",
+  "Public or gated": "Public documentation; data gated",
+  "Variable names visible?": "Yes",
+  "Question wording visible?": "Yes",
+  "Notes": "Full parent gambling module at Waves 7 and 9C1; support-service question Waves 5-9C2."
+ },
+ {
+  "Questionnaire_ID": "Q_YPBAS_01",
+  "Dataset_ID": "YPBAS",
+  "Dataset name": "Young Persons' Behaviour and Attitudes Survey",
+  "Wave / year": "2022",
+  "Age group": "11-16",
+  "Questionnaire / metadata title": "YPBAS 2022 gambling module (Version B questionnaire)",
+  "File type": "Official report / data tables",
+  "URL": "https://www.health-ni.gov.uk/publications/young-persons-behaviour-and-attitudes-survey-2022-gambling-data-tables",
+  "Public or gated": "Public",
+  "Variable names visible?": "Partial",
+  "Question wording visible?": "Partial",
+  "Notes": "Gambling module administered to the Version B subsample (n=3,772). No validated harm screen."
+ },
+ {
+  "Questionnaire_ID": "Q_OXWELL_01",
+  "Dataset_ID": "OXWELL",
+  "Dataset name": "OxWell Student Survey",
+  "Wave / year": "2019, 2020, 2021",
+  "Age group": "Older pupils (Years 8-13)",
+  "Questionnaire / metadata title": "OxWell variable guides - gambling items (2019-2021)",
+  "File type": "Online variable guides (OSF)",
+  "URL": "https://osf.io/sekhr/",
+  "Public or gated": "Public",
+  "Variable names visible?": "Yes",
+  "Question wording visible?": "Yes",
+  "Notes": "2019 Year 12 only; 2020 Years 12-13; 2021 Years 8-13. Gambling dropped from 2023."
  }
 ]

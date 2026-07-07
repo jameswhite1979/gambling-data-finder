@@ -301,5 +301,34 @@
   "sources": 1,
   "measures": 1,
   "named_measures": []
+ },
+ "LSAC": {
+  "variables": 13,
+  "gambling": 7,
+  "risk": 6,
+  "questionnaires": 2,
+  "sources": 4,
+  "measures": 7,
+  "named_measures": [
+   "PGSI"
+  ]
+ },
+ "YPBAS": {
+  "variables": 8,
+  "gambling": 5,
+  "risk": 3,
+  "questionnaires": 1,
+  "sources": 4,
+  "measures": 5,
+  "named_measures": []
+ },
+ "OXWELL": {
+  "variables": 7,
+  "gambling": 4,
+  "risk": 3,
+  "questionnaires": 1,
+  "sources": 3,
+  "measures": 4,
+  "named_measures": []
  }
 }

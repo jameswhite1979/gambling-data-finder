@@ -797,5 +797,65 @@
   "Risk/protective factors analysed": "Catalogue and questionnaires document wellbeing, health, school, substance use, family and leisure-time measures",
   "URL / DOI": "https://services.fsd.tuni.fi/catalogue/FSD3551?study_language=en",
   "Notes": "No DOI - FSD catalogue record and questionnaire documentation."
+ },
+ {
+  "Dataset ID": "LSAC",
+  "Paper / documentation title": "Growing Up in Australia (LSAC) Data User Guide",
+  "Authors / year": "Australian Institute of Family Studies, 2024",
+  "Source type": "Data documentation",
+  "Gambling measure used": "PGSI; gambling participation items",
+  "Risk/protective factors analysed": "Mental health, substance use, family, peers, school, socioeconomic position",
+  "URL / DOI": "https://growingupinaustralia.gov.au/data-and-documentation/data-user-guide",
+  "Notes": "Documents the young-person gambling module (Waves 7-10) and Parent 1 gambling module (Waves 5-9)."
+ },
+ {
+  "Dataset ID": "LSAC",
+  "Paper / documentation title": "Longitudinal Study of Australian Children (LSAC) Release 10 - ADA Dataverse catalogue record",
+  "Authors / year": "Australian Data Archive / DSS, 2025",
+  "Source type": "Metadata records",
+  "Gambling measure used": "PGSI; gambling participation items",
+  "Risk/protective factors analysed": "Wide-ranging cohort measures across health, family, school and socioeconomic domains",
+  "URL / DOI": "https://dataverse.ada.edu.au/dataset.xhtml?persistentId=doi:10.26193/XMLCQP",
+  "Notes": "Wave 10 data released October 2025. No DOI shown here beyond the ADA persistent identifier."
+ },
+ {
+  "Dataset ID": "YPBAS",
+  "Paper / documentation title": "Experience of gambling by young people in Northern Ireland 2022",
+  "Authors / year": "NISRA, 2023",
+  "Source type": "Official report",
+  "Gambling measure used": "Gambling participation (8 activities); loot box/skins spending; reasons for gambling",
+  "Risk/protective factors analysed": "Family/peer gambling, digital/technology use, school year, gender",
+  "URL / DOI": "https://datavis.nisra.gov.uk/communities/experience-of-gambling-by-young-people-in-northern-ireland-2022.html",
+  "Notes": "Primary published output for the 2022 gambling module (Version B)."
+ },
+ {
+  "Dataset ID": "YPBAS",
+  "Paper / documentation title": "Young Persons' Behaviour and Attitudes Survey 2022 - gambling data tables",
+  "Authors / year": "Department of Health (Northern Ireland), 2023",
+  "Source type": "Official report",
+  "Gambling measure used": "Gambling participation and related items",
+  "Risk/protective factors analysed": "Demographics (school year, gender)",
+  "URL / DOI": "https://www.health-ni.gov.uk/publications/young-persons-behaviour-and-attitudes-survey-2022-gambling-data-tables",
+  "Notes": "Detailed data tables for the 2022 gambling module."
+ },
+ {
+  "Dataset ID": "OXWELL",
+  "Paper / documentation title": "Study protocol: the OxWell school survey investigating social, emotional and behavioural factors associated with mental health and well-being",
+  "Authors / year": "Mansfield et al., 2022",
+  "Source type": "Protocol",
+  "Gambling measure used": "Custom gambling participation / online gambling items (2019-2021)",
+  "Risk/protective factors analysed": "Mental health and wellbeing, digital use, demographics, family",
+  "URL / DOI": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9066348/",
+  "Notes": "Protocol paper; gambling items appear in 2019-2021 waves for older pupils only."
+ },
+ {
+  "Dataset ID": "OXWELL",
+  "Paper / documentation title": "OxWell Student Survey variable guides (OSF)",
+  "Authors / year": "University of Oxford, 2019-2025",
+  "Source type": "Data documentation",
+  "Gambling measure used": "Custom gambling participation / online gambling items (2019-2021)",
+  "Risk/protective factors analysed": "Mental health and wellbeing, digital use, socioeconomic and demographic factors",
+  "URL / DOI": "https://osf.io/sekhr/",
+  "Notes": "Per-wave variable guides including the 2019-2021 gambling items."
  }
 ]
