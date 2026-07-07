@@ -160,6 +160,7 @@ function buildSection(type, label, items) {
     html += '<button class="dropdown-item" onclick="doDownloadCSV(\'' + type + '\')">CSV</button>';
     html += '<button class="dropdown-item" onclick="doDownloadExcel(\'' + type + '\')">Excel</button>';
     html += '<button class="dropdown-item" onclick="doDownloadPDF(\'' + type + '\')">PDF Codebook</button>';
+    html += '<button class="dropdown-item" onclick="doDownloadDDI(\'' + type + '\')">DDI Codebook (XML)</button>';
     html += '</div></div>';
   }
   html += '</div>';
@@ -359,6 +360,117 @@ function doDownloadExcel(type) {
   var items = getCheckedItems(type);
   if (!items.length) return;
   downloadExcel(items.map(function (item) { return normaliseExportRow(item, type); }), 'ghripps_' + type + 's.xlsx');
+}
+
+/* ---- DDI-Codebook 2.5 export ---- */
+
+function xmlEscape(s) {
+  return String(s === undefined || s === null ? '' : s)
+    .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, ' ')   // strip chars illegal in XML 1.0
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
+/* Best-effort split of a free-text response list into DDI <catgry> pairs.
+   Handles "1=Yes; 2=No", "1. Yes", "1) No", "1 - Maybe" and plain comma lists. */
+function parseCategories(text) {
+  text = String(text || '').trim();
+  if (!text) return [];
+  var parts = text.split(/\s*;\s*|\r?\n/).map(function (p) { return p.trim(); }).filter(Boolean);
+  if (parts.length <= 1) {
+    var byComma = text.split(/\s*,\s*/).map(function (p) { return p.trim(); }).filter(Boolean);
+    if (byComma.length > 1) parts = byComma;
+  }
+  return parts.map(function (p) {
+    var m = p.match(/^\s*(-?\d+)\s*(?:=|\.|\)|:|\s-\s)\s*(.+)$/);
+    if (m) return { value: m[1], label: m[2].trim() };
+    return { value: null, label: p };
+  });
+}
+
+function ddiNotes(item) {
+  var notes = [];
+  function push(label, val) {
+    val = (val === undefined || val === null) ? '' : String(val).trim();
+    if (val) notes.push(label + ': ' + val);
+  }
+  push('Study', item.dataset_name || item.dataset_id);
+  push('Dataset ID', item.dataset_id);
+  push('Wave', item.wave_year);
+  push('Age group', item.age_group);
+  push('Role', item.role);
+  push('Named measure', item.named_measure);
+  push('Category', item.construct_category);
+  push('How to access the data', accessRouteText(item));
+  push('Data access URL', getAccessUrl(item));
+  push('Access notes', accessNotesText(item));
+  push('Variable metadata URL', item.variable_url);
+  push('Questionnaire / codebook', getQuestionnaireTitle(item));
+  return notes.join('; ');
+}
+
+function buildDDIXML(items, type) {
+  var dateStr = new Date().toISOString().slice(0, 10);
+  var label = type.charAt(0).toUpperCase() + type.slice(1) + 's';
+  var xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+  xml += '<codeBook xmlns="ddi:codebook:2_5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ' +
+         'xsi:schemaLocation="ddi:codebook:2_5 https://ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/codebook.xsd" version="2.5">\n';
+
+  xml += '  <docDscr>\n    <citation>\n';
+  xml += '      <titlStmt><titl>' + xmlEscape(label + ' metadata export') + '</titl></titlStmt>\n';
+  xml += '      <prodStmt><producer>Gambling Data Finder</producer>' +
+         '<prodDate date="' + dateStr + '">' + dateStr + '</prodDate></prodStmt>\n';
+  xml += '    </citation>\n  </docDscr>\n';
+
+  xml += '  <stdyDscr>\n    <citation>\n';
+  xml += '      <titlStmt><titl>' + xmlEscape('Selected ' + type + 's (' + items.length + ')') + '</titl></titlStmt>\n';
+  xml += '    </citation>\n';
+  xml += '    <stdyInfo><abstract>' +
+         xmlEscape('Variable- and question-level metadata exported from the Gambling Data Finder for evidence mapping and data access planning. Each item retains its source study, wave and data-access route.') +
+         '</abstract></stdyInfo>\n';
+  xml += '  </stdyDscr>\n';
+
+  if (type === 'questionnaire') {
+    items.forEach(function (item, i) {
+      var uri = item.questionnaire_url || getAccessUrl(item) || '';
+      xml += '  <otherMat type="questionnaire"' + (uri ? ' URI="' + xmlEscape(uri) + '"' : '') + '>\n';
+      xml += '    <labl>' + xmlEscape(pdfTitleForItem(item, type)) + '</labl>\n';
+      var n = ddiNotes(item);
+      if (n) xml += '    <notes>' + xmlEscape(n) + '</notes>\n';
+      xml += '  </otherMat>\n';
+    });
+  } else {
+    xml += '  <dataDscr>\n';
+    items.forEach(function (item, i) {
+      var name = item.variable_name || item['Variable/item ID'] || ('item' + (i + 1));
+      xml += '    <var ID="v' + (i + 1) + '" name="' + xmlEscape(name) + '">\n';
+      var labl = item.variable_label || item['Variable label or exact question'] || item.question_text || '';
+      if (labl) xml += '      <labl>' + xmlEscape(labl) + '</labl>\n';
+      var qtext = item.question_text || item.variable_label || '';
+      if (qtext) xml += '      <qstn><qstnLit>' + xmlEscape(qtext) + '</qstnLit></qstn>\n';
+      parseCategories(item.response_options || item.value_labels || item.response_categories).forEach(function (c) {
+        xml += '      <catgry>';
+        if (c.value !== null && c.value !== undefined) xml += '<catValu>' + xmlEscape(c.value) + '</catValu>';
+        xml += '<labl>' + xmlEscape(c.label) + '</labl></catgry>\n';
+      });
+      var n = ddiNotes(item);
+      if (n) xml += '      <notes>' + xmlEscape(n) + '</notes>\n';
+      xml += '    </var>\n';
+    });
+    xml += '  </dataDscr>\n';
+  }
+
+  xml += '</codeBook>\n';
+  return xml;
+}
+
+function doDownloadDDI(type) {
+  var items = getCheckedItems(type);
+  if (!items.length) return;
+  downloadBlob(buildDDIXML(items, type), 'ghripps_' + type + 's_ddi.xml', 'application/xml;charset=utf-8;');
 }
 
 function normaliseExportRow(item, type) {
