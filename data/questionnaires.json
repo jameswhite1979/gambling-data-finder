@@ -525,11 +525,11 @@
   "Age group": "16-24",
   "Questionnaire / metadata title": "Emerging Adults Gambling Survey, Wave 1 Questionnaire",
   "File type": "DOCX",
-  "URL": "",
+  "URL": "https://osf.io/nd8wt/",
   "Public or gated": "Uploaded",
   "Variable names visible?": "Question IDs visible",
   "Question wording visible?": "Yes",
-  "Notes": "Includes social media, gaming, loot boxes, gambling participation/spend and PGSI-style items."
+  "Notes": "Includes social media, gaming, loot boxes, gambling participation/spend and PGSI-style items. Link is the study OSF registration, which hosts the wave 1 documentation."
  },
  {
   "Questionnaire_ID": "Q_UP_EAGS_W2",
@@ -553,7 +553,7 @@
   "Age group": "18+; extract emerging adult subgroup",
   "Questionnaire / metadata title": "GSGB Year 2 Questionnaire and Participant Documents",
   "File type": "PDF",
-  "URL": "",
+  "URL": "https://doc.ukdataservice.ac.uk/doc/9507/mrdoc/pdf/9507_gsgb_year_2_questionnaire_and_participant_documents.pdf",
   "Public or gated": "Uploaded / UKDS documentation",
   "Variable names visible?": "Question IDs visible",
   "Question wording visible?": "Yes",
@@ -581,11 +581,11 @@
   "Age group": "11-17",
   "Questionnaire / metadata title": "Young People and Gambling Survey 2025 questionnaire",
   "File type": "PDF",
-  "URL": "",
+  "URL": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/young-people-and-gambling-2025-official-statistics",
   "Public or gated": "Uploaded / UKDS documentation",
   "Variable names visible?": "Question IDs visible",
   "Question wording visible?": "Yes",
-  "Notes": "Contains activity participation, timing, companions, gambling harms screen items and advertising/exposure items."
+  "Notes": "Contains activity participation, timing, companions, gambling harms screen items and advertising/exposure items. Link is the official publication page, which lists the questionnaire download."
  },
  {
   "Questionnaire_ID": "Q_UP_YPGS_DD",
@@ -609,11 +609,11 @@
   "Age group": "Secondary school students",
   "Questionnaire / metadata title": "SHRN Student Health and Wellbeing Survey 2019",
   "File type": "PDF",
-  "URL": "",
+  "URL": "https://www.shrn.org.uk/wp-content/uploads/2020/04/8-Survey-Questions-2019-1.pdf",
   "Public or gated": "Uploaded",
   "Variable names visible?": "No variable names",
   "Question wording visible?": "Yes",
-  "Notes": "Includes gambling question and multiple risk/protective domains."
+  "Notes": "Includes gambling question and multiple risk/protective domains. Gambling item is question 85."
  },
  {
   "Questionnaire_ID": "Q_UP_SHRN_2021",
@@ -665,11 +665,11 @@
   "Age group": "Adolescents / young people",
   "Questionnaire / metadata title": "Born in Bradford variable metadata export",
   "File type": "CSV",
-  "URL": "",
+  "URL": "https://borninbradford.github.io/datadict/",
   "Public or gated": "Uploaded",
   "Variable names visible?": "Yes",
   "Question wording visible?": "Variable labels/categories visible",
-  "Notes": "Contains 28,095 variables; 109 gambling-matched rows extracted separately."
+  "Notes": "Contains 28,095 variables; 109 gambling-matched rows extracted separately. Link is the public BiB data dictionary browser."
  },
  {
   "Questionnaire_ID": "Q_UP_BIB_DD",
@@ -679,11 +679,11 @@
   "Age group": "Adolescents / young people",
   "Questionnaire / metadata title": "Born in Bradford data dictionary",
   "File type": "CSV",
-  "URL": "",
+  "URL": "https://borninbradford.github.io/datadict/",
   "Public or gated": "Uploaded",
   "Variable names visible?": "Table-level metadata visible",
   "Question wording visible?": "No direct question wording",
-  "Notes": "Contains table-level metadata and counts."
+  "Notes": "Contains table-level metadata and counts. Link is the public BiB data dictionary browser."
  },
  {
   "Questionnaire_ID": "Q_ALSPAC_UPLOAD_001",
@@ -707,11 +707,11 @@
   "Age group": "Adult parent/partner; parent/carer gambling flag",
   "Questionnaire / metadata title": "Mothers lifestyle: uploaded ALSPAC variable-name sheet L (G0 mother questionnaire variable names.xlsx)",
   "File type": "Uploaded Excel variable-name sheet",
-  "URL": "",
+  "URL": "https://www.bristol.ac.uk/alspac/researchers/our-data/questionnaires/carer-questionnaires/",
   "Public or gated": "Uploaded to chat / not a public URL",
   "Variable names visible?": "Yes",
   "Question wording visible?": "No",
-  "Notes": "Variable labels visible; exact questionnaire wording and response coding still need questionnaire/codebook verification. 18 gambling keyword-matched variable rows in this sheet."
+  "Notes": "Variable labels visible; exact questionnaire wording and response coding still need questionnaire/codebook verification. 18 gambling keyword-matched variable rows in this sheet. Link is the ALSPAC carer questionnaire archive, which lists this wave."
  },
  {
   "Questionnaire_ID": "Q_ALSPAC_UPLOAD_003",
@@ -721,7 +721,7 @@
   "Age group": "Adult parent/partner; parent/carer gambling flag",
   "Questionnaire / metadata title": "You and your life: uploaded ALSPAC variable-name sheet T (G0 mother questionnaire variable names.xlsx)",
   "File type": "Uploaded Excel variable-name sheet",
-  "URL": "",
+  "URL": "https://www.bristol.ac.uk/media-library/sites/alspac/migrated/documents/ques-1118.pdf",
   "Public or gated": "Uploaded to chat / not a public URL",
   "Variable names visible?": "Yes",
   "Question wording visible?": "No",
@@ -749,11 +749,11 @@
   "Age group": "Adult parent/partner; parent/carer gambling flag",
   "Questionnaire / metadata title": "Focusing on You: uploaded ALSPAC variable-name sheet FPA  (G0 partner questionnaire variable names.xlsx)",
   "File type": "Uploaded Excel variable-name sheet",
-  "URL": "",
+  "URL": "https://www.bristol.ac.uk/alspac/researchers/our-data/questionnaires/partner-questionnaires/",
   "Public or gated": "Uploaded to chat / not a public URL",
   "Variable names visible?": "Yes",
   "Question wording visible?": "No",
-  "Notes": "Variable labels visible; exact questionnaire wording and response coding still need questionnaire/codebook verification. 10 gambling keyword-matched variable rows in this sheet."
+  "Notes": "Variable labels visible; exact questionnaire wording and response coding still need questionnaire/codebook verification. 10 gambling keyword-matched variable rows in this sheet. Link is the ALSPAC partner questionnaire archive, which lists this wave."
  },
  {
   "Questionnaire_ID": "Q_ALSPAC_UPLOAD_006",
@@ -805,7 +805,7 @@
   "Age group": "16+ years",
   "Questionnaire / metadata title": "Life of a 16+ Teenager: uploaded ALSPAC variable-name sheet CCS (G1 questionnaire variable names.xlsx)",
   "File type": "Uploaded Excel variable-name sheet",
-  "URL": "",
+  "URL": "https://www.bristol.ac.uk/media-library/sites/alspac/documents/questionnaires/CCS-life-of-a-16-plus-teenager.pdf",
   "Public or gated": "Uploaded to chat / not a public URL",
   "Variable names visible?": "Yes",
   "Question wording visible?": "No",
@@ -819,7 +819,7 @@
   "Age group": "Not stated in variable-name workbook",
   "Questionnaire / metadata title": "Your Changing Life: uploaded ALSPAC variable-name sheet CCT (G1 questionnaire variable names.xlsx)",
   "File type": "Uploaded Excel variable-name sheet",
-  "URL": "",
+  "URL": "https://www.bristol.ac.uk/media-library/sites/alspac/migrated/documents/ques-1423-cct.pdf",
   "Public or gated": "Uploaded to chat / not a public URL",
   "Variable names visible?": "Yes",
   "Question wording visible?": "No",
@@ -833,7 +833,7 @@
   "Age group": "20+ emerging adult",
   "Questionnaire / metadata title": "20+ / It's All About You 20+: uploaded ALSPAC variable-name sheet CCU (G1 questionnaire variable names.xlsx)",
   "File type": "Uploaded Excel variable-name sheet",
-  "URL": "",
+  "URL": "https://www.bristol.ac.uk/media-library/sites/alspac/migrated/documents/ques-yp20-all-about-you.pdf",
   "Public or gated": "Uploaded to chat / not a public URL",
   "Variable names visible?": "Yes",
   "Question wording visible?": "No",
@@ -847,7 +847,7 @@
   "Age group": "Approx. 17 years",
   "Questionnaire / metadata title": "F17 gambling: uploaded ALSPAC variable-name sheet CCXE (G1 questionnaire variable names.xlsx)",
   "File type": "Uploaded Excel variable-name sheet",
-  "URL": "",
+  "URL": "https://www.bristol.ac.uk/media-library/sites/alspac/documents/questionnaires/CCXE-gambling.pdf",
   "Public or gated": "Uploaded to chat / not a public URL",
   "Variable names visible?": "Yes",
   "Question wording visible?": "No",
@@ -889,7 +889,7 @@
   "Age group": "24+ emerging adult",
   "Questionnaire / metadata title": "Life at 24+: uploaded ALSPAC variable-name sheet YPD (G1 questionnaire variable names.xlsx)",
   "File type": "Uploaded Excel variable-name sheet",
-  "URL": "",
+  "URL": "https://www.bristol.ac.uk/media-library/sites/alspac/documents/questionnaires/Life%4024_quest.pdf",
   "Public or gated": "Uploaded to chat / not a public URL",
   "Variable names visible?": "Yes",
   "Question wording visible?": "No",
@@ -903,7 +903,7 @@
   "Age group": "Young person / G1",
   "Questionnaire / metadata title": "Life @30 Winter 2022: uploaded ALSPAC variable-name sheet YPL (G1 questionnaire variable names.xlsx)",
   "File type": "Uploaded Excel variable-name sheet",
-  "URL": "",
+  "URL": "https://www.bristol.ac.uk/media-library/sites/alspac/documents/questionnaires/Life%4030plus_Questionnaire.pdf",
   "Public or gated": "Uploaded to chat / not a public URL",
   "Variable names visible?": "Yes",
   "Question wording visible?": "No",
@@ -917,11 +917,11 @@
   "Age group": "Age 16+ adults; includes 16-24 young adults",
   "Questionnaire / metadata title": "Health Survey for England 2016 data dictionary",
   "File type": "RTF data dictionary",
-  "URL": "",
+  "URL": "https://doc.ukdataservice.ac.uk/doc/8334/mrdoc/pdf/8334_hse_2016_dataset_documentation_v3.pdf",
   "Public or gated": "Uploaded metadata; raw data gated",
   "Variable names visible?": "Yes",
   "Question wording visible?": "Variable labels; full question wording still requires questionnaire",
-  "Notes": "Added from uploaded data dictionary; exact questionnaire wording/routing may still be needed."
+  "Notes": "Added from uploaded data dictionary; exact questionnaire wording/routing may still be needed. Link is the UKDS dataset documentation, which carries the variable list and derived syntax."
  },
  {
   "Questionnaire_ID": "Q_HSE2018_2018",
@@ -931,11 +931,11 @@
   "Age group": "Age 16+ adults; includes 16-24 young adults",
   "Questionnaire / metadata title": "Health Survey for England 2018 data dictionary",
   "File type": "RTF data dictionary",
-  "URL": "",
+  "URL": "https://doc.ukdataservice.ac.uk/doc/8649/mrdoc/pdf/8649_hse_2018_dataset_documentation_v2.pdf",
   "Public or gated": "Uploaded metadata; raw data gated",
   "Variable names visible?": "Yes",
   "Question wording visible?": "Variable labels; full question wording still requires questionnaire",
-  "Notes": "Added from uploaded data dictionary; exact questionnaire wording/routing may still be needed."
+  "Notes": "Added from uploaded data dictionary; exact questionnaire wording/routing may still be needed. Link is the UKDS dataset documentation, which carries the variable list and derived syntax."
  },
  {
   "Questionnaire_ID": "Q_HSE2021_2021",
@@ -945,11 +945,11 @@
   "Age group": "Age 16+ adults; includes 16-24 young adults",
   "Questionnaire / metadata title": "Health Survey for England 2021 data dictionary",
   "File type": "RTF data dictionary",
-  "URL": "",
+  "URL": "https://files.digital.nhs.uk/A2/319EB2/Health%20Survey%20for%20England%2C%202021%20Survey%20Documentation.pdf",
   "Public or gated": "Uploaded metadata; raw data gated",
   "Variable names visible?": "Yes",
   "Question wording visible?": "Variable labels; full question wording still requires questionnaire",
-  "Notes": "Added from uploaded data dictionary; exact questionnaire wording/routing may still be needed."
+  "Notes": "Added from uploaded data dictionary; exact questionnaire wording/routing may still be needed. Link is the published survey documentation, substituted for the UKDS data dictionary."
  },
  {
   "Questionnaire_ID": "Q_SHES2021_2021",
@@ -959,11 +959,11 @@
   "Age group": "Age 16+ adults; includes 16-24 young adults",
   "Questionnaire / metadata title": "Scottish Health Survey 2017/2018/2019/2021 data dictionary",
   "File type": "RTF data dictionary",
-  "URL": "",
+  "URL": "https://www.gov.scot/binaries/content/documents/govscot/publications/statistics/2022/11/scottish-health-survey-2021-volume-2-technical-report/documents/booklet-adults-version/booklet-adults-version/govscot%3Adocument/booklet-adults-version.pdf",
   "Public or gated": "Uploaded metadata; raw data gated",
   "Variable names visible?": "Yes",
   "Question wording visible?": "Variable labels; full question wording still requires questionnaire",
-  "Notes": "Added from uploaded data dictionary; exact questionnaire wording/routing may still be needed."
+  "Notes": "Added from uploaded data dictionary; exact questionnaire wording/routing may still be needed. Link is the published 2021 adult questionnaire (gambling battery on p.8), substituted for the UKDS data dictionary."
  },
  {
   "Questionnaire_ID": "Q_SHES_2019_2021_2019_2021",
@@ -973,11 +973,11 @@
   "Age group": "Age 16+ adults; includes 16-24 young adults",
   "Questionnaire / metadata title": "Scottish Health Survey 2017/2018/2019/2021 individual file data dictionary",
   "File type": "RTF data dictionary",
-  "URL": "",
+  "URL": "https://www.gov.scot/binaries/content/documents/govscot/publications/statistics/2022/11/scottish-health-survey-2021-volume-2-technical-report/documents/booklet-adults-version/booklet-adults-version/govscot%3Adocument/booklet-adults-version.pdf",
   "Public or gated": "Uploaded metadata; raw data gated",
   "Variable names visible?": "Yes",
   "Question wording visible?": "Variable labels; full question wording still requires questionnaire",
-  "Notes": "Added from uploaded data dictionary; exact questionnaire wording/routing may still be needed."
+  "Notes": "Added from uploaded data dictionary; exact questionnaire wording/routing may still be needed. Link is the published 2021 adult questionnaire (gambling battery on p.8), substituted for the UKDS data dictionary."
  },
  {
   "Questionnaire_ID": "Q_SHES_2017_2018_2019_2021_2017_2018_2019_2021",
@@ -987,11 +987,11 @@
   "Age group": "Age 16+ adults; includes 16-24 young adults",
   "Questionnaire / metadata title": "Scottish Health Survey 2017/2018/2019/2021 data dictionary",
   "File type": "RTF data dictionary",
-  "URL": "",
+  "URL": "https://www.gov.scot/binaries/content/documents/govscot/publications/statistics/2022/11/scottish-health-survey-2021-volume-2-technical-report/documents/booklet-adults-version/booklet-adults-version/govscot%3Adocument/booklet-adults-version.pdf",
   "Public or gated": "Uploaded metadata; raw data gated",
   "Variable names visible?": "Yes",
   "Question wording visible?": "Variable labels; full question wording still requires questionnaire",
-  "Notes": "Added from uploaded data dictionary; exact questionnaire wording/routing may still be needed."
+  "Notes": "Added from uploaded data dictionary; exact questionnaire wording/routing may still be needed. Link is the published 2021 adult questionnaire (gambling battery on p.8), substituted for the UKDS data dictionary."
  },
  {
   "Questionnaire_ID": "Q_SHES2021_HH_2021",
@@ -1057,11 +1057,11 @@
   "Age group": "Under 25",
   "Questionnaire / metadata title": "MCS longitudinal data dictionary",
   "File type": "XLSX data dictionary",
-  "URL": "",
+  "URL": "https://cls.ucl.ac.uk/data-access-training/exploring-our-data/",
   "Public or gated": "Uploaded metadata; raw data gated",
   "Variable names visible?": "Yes",
   "Question wording visible?": "Question text where populated",
-  "Notes": "Use alongside questionnaire PDFs/CLOSER pages for exact wording/routing."
+  "Notes": "Use alongside questionnaire PDFs/CLOSER pages for exact wording/routing. Link is the CLS data pages, which list the longitudinal data dictionary."
  },
  {
   "Questionnaire_ID": "NSW_2022-23_v12",
@@ -1071,7 +1071,7 @@
   "Age group": "18+; includes 18-24 subgroup",
   "Questionnaire / metadata title": "National Survey for Wales gambling module 2022-23 gambling metadata/questionnaire",
   "File type": "PDF/RTF/online codebook",
-  "URL": "",
+  "URL": "https://doc.ukdataservice.ac.uk/doc/9144/mrdoc/pdf/9144_nsw_telephone_questionnaire_april_2022-march_2023.pdf",
   "Public or gated": "Uploaded metadata; public/gated status varies",
   "Variable names visible?": "Yes",
   "Question wording visible?": "Yes",
@@ -1085,11 +1085,11 @@
   "Age group": "16+; includes 16-24 subgroup",
   "Questionnaire / metadata title": "British Gambling Prevalence Survey 2010 gambling metadata/questionnaire",
   "File type": "PDF/RTF/online codebook",
-  "URL": "",
+  "URL": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/243515/9780108509636.pdf",
   "Public or gated": "Uploaded metadata; public/gated status varies",
   "Variable names visible?": "Yes",
   "Question wording visible?": "Partial",
-  "Notes": "Added during v12 extraction."
+  "Notes": "Added during v12 extraction. Questionnaire is reproduced in Appendix 3 of the linked report."
  },
  {
   "Questionnaire_ID": "GSGB_Year_2_2024_v12",
@@ -1099,11 +1099,11 @@
   "Age group": "18+; includes 18-24 subgroup",
   "Questionnaire / metadata title": "Gambling Survey for Great Britain Year 2, 2024 gambling metadata/questionnaire",
   "File type": "PDF/RTF/online codebook",
-  "URL": "",
+  "URL": "https://doc.ukdataservice.ac.uk/doc/9507/mrdoc/pdf/9507_gsgb_year_2_questionnaire_and_participant_documents.pdf",
   "Public or gated": "Uploaded metadata; public/gated status varies",
   "Variable names visible?": "Yes",
   "Question wording visible?": "Partial",
-  "Notes": "Added during v12 extraction."
+  "Notes": "Added during v12 extraction. Link is the Year 2 questionnaire, substituted for the UKDS data dictionary."
  },
  {
   "Questionnaire_ID": "APMS_2023_v12",
@@ -1113,11 +1113,11 @@
   "Age group": "16+; includes 16-24 subgroup",
   "Questionnaire / metadata title": "Adult Psychiatric Morbidity Survey 2023 gambling metadata/questionnaire",
   "File type": "PDF/RTF/online codebook",
-  "URL": "",
+  "URL": "https://digital.nhs.uk/binaries/content/assets/website-assets/publications/apms-2023-4/appendix-c---phase-one-questionnaire.pdf",
   "Public or gated": "Uploaded metadata; public/gated status varies",
   "Variable names visible?": "Yes",
   "Question wording visible?": "Partial",
-  "Notes": "Added during v12 extraction."
+  "Notes": "Added during v12 extraction. Link is the phase-one questionnaire (Appendix C), substituted for the special-licence UKDS dictionary."
  },
  {
   "Questionnaire_ID": "ADDHEALTH_Wave_IV_/_Wave_V_codebook_explorer_instruments_v12",
@@ -1141,11 +1141,11 @@
   "Age group": "Students aged around 15-16 / school-based adolescents",
   "Questionnaire / metadata title": "ESPAD 2024 Master Questionnaire uploaded in conversation",
   "File type": "PDF",
-  "URL": "",
+  "URL": "https://data.espad.org/wp-content/uploads/2025/10/ESPAD_EU_2024_StudentQuestionnaire.pdf",
   "Public or gated": "Public/uploaded",
   "Variable names visible?": "Item IDs visible",
   "Question wording visible?": "Yes",
-  "Notes": "Includes gambling module C43-C49 and O13a-O13l, parental gambling O19bi, and prevention exposure C58d."
+  "Notes": "Includes gambling module C43-C49 and O13a-O13l, parental gambling O19bi, and prevention exposure C58d. Official ESPAD download; the ESPAD site blocks automated checks, so the link was not machine-verified."
  },
  {
   "Questionnaire_ID": "Q_2028",
