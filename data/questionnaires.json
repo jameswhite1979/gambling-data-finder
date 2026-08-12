@@ -525,11 +525,11 @@
   "Age group": "16-24",
   "Questionnaire / metadata title": "Emerging Adults Gambling Survey, Wave 1 Questionnaire",
   "File type": "DOCX",
-  "URL": "https://osf.io/nd8wt/",
+  "URL": "https://osf.io/ez48b/",
   "Public or gated": "Uploaded",
   "Variable names visible?": "Question IDs visible",
   "Question wording visible?": "Yes",
-  "Notes": "Includes social media, gaming, loot boxes, gambling participation/spend and PGSI-style items. Link is the study OSF registration, which hosts the wave 1 documentation."
+  "Notes": "Includes social media, gaming, loot boxes, gambling participation/spend and PGSI-style items. Link is the wave 1 questionnaire on the study OSF project."
  },
  {
   "Questionnaire_ID": "Q_UP_EAGS_W2",
@@ -581,11 +581,11 @@
   "Age group": "11-17",
   "Questionnaire / metadata title": "Young People and Gambling Survey 2025 questionnaire",
   "File type": "PDF",
-  "URL": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/young-people-and-gambling-2025-official-statistics",
+  "URL": "https://assets.ctfassets.net/j16ev64qyf6l/1Nu70CjAHMVtrOJRmscB9T/f969d1ac4ccbe5feb3391ce3b1756230/Young_People_and_Gambling_Survey_Questionnaire_2025.docx",
   "Public or gated": "Uploaded / UKDS documentation",
   "Variable names visible?": "Question IDs visible",
   "Question wording visible?": "Yes",
-  "Notes": "Contains activity participation, timing, companions, gambling harms screen items and advertising/exposure items. Link is the official publication page, which lists the questionnaire download."
+  "Notes": "Contains activity participation, timing, companions, gambling harms screen items and advertising/exposure items. Link is the 2025 questionnaire document itself."
  },
  {
   "Questionnaire_ID": "Q_UP_YPGS_DD",
