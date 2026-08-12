@@ -1,0 +1,20 @@
+# Local research notes and working files — not part of the website.
+# These live in the working folder for convenience but must never be
+# published, since this repo is public (it serves GitHub Pages).
+
+adult_gambling_surveys_codebook_resolution_report.md
+adult_gambling_surveys_research_report.md
+gambling_questions_three_studies_report.md
+TODO_adult_gambling_expansion.md
+
+# Handoff files for sourcing questionnaire URLs
+CODEX_PROMPT_questionnaire_urls.md
+questionnaires_needing_urls.csv
+
+# Scratch ingest / staging area
+staging/
+
+# R session artifacts
+.Rhistory
+.RData
+.Rproj.user/
