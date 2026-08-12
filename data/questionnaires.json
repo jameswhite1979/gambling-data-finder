@@ -707,11 +707,11 @@
   "Age group": "Adult parent/partner; parent/carer gambling flag",
   "Questionnaire / metadata title": "Mothers lifestyle: uploaded ALSPAC variable-name sheet L (G0 mother questionnaire variable names.xlsx)",
   "File type": "Uploaded Excel variable-name sheet",
-  "URL": "https://www.bristol.ac.uk/alspac/researchers/our-data/questionnaires/carer-questionnaires/",
+  "URL": "https://www.bristol.ac.uk/media-library/sites/alspac/migrated/documents/ques-m11-mothers-lifestyle.pdf",
   "Public or gated": "Uploaded to chat / not a public URL",
   "Variable names visible?": "Yes",
   "Question wording visible?": "No",
-  "Notes": "Variable labels visible; exact questionnaire wording and response coding still need questionnaire/codebook verification. 18 gambling keyword-matched variable rows in this sheet. Link is the ALSPAC carer questionnaire archive, which lists this wave."
+  "Notes": "Variable labels visible; exact questionnaire wording and response coding still need questionnaire/codebook verification. 18 gambling keyword-matched variable rows in this sheet. Link is the Mother's Lifestyle (L) questionnaire; gambling battery is Section A 'Being a gambler', pp.3-5."
  },
  {
   "Questionnaire_ID": "Q_ALSPAC_UPLOAD_003",
@@ -1145,7 +1145,7 @@
   "Public or gated": "Public/uploaded",
   "Variable names visible?": "Item IDs visible",
   "Question wording visible?": "Yes",
-  "Notes": "Includes gambling module C43-C49 and O13a-O13l, parental gambling O19bi, and prevention exposure C58d. Official ESPAD download; the ESPAD site blocks automated checks, so the link was not machine-verified."
+  "Notes": "Includes gambling module C43-C49 and O13a-O13l, parental gambling O19bi, and prevention exposure C58d. Official ESPAD download; link confirmed working in a browser (the site blocks automated checks)."
  },
  {
   "Questionnaire_ID": "Q_2028",
