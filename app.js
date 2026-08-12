@@ -20,10 +20,20 @@ function truncate(s, n) {
   return s.substring(0, n) + '…';
 }
 
+// URL fields in the data sometimes hold a document title or a local filename
+// instead of a link ("NCDS Age 23 Annotated Questionnaire Documentation",
+// "uploaded file: SHRN 2021 questionnaire.pdf"). Those must never be turned
+// into an href — blindly prefixing "https://" produced dead links such as
+// https://ncds%20age%2023%20annotated%20questionnaire%20documentation/.
+// Returns '' when the value is not a usable link, so callers render nothing.
 function makeURL(u) {
   if (!u) return '';
-  if (!u.startsWith('http')) u = 'https://' + u;
-  return u;
+  u = String(u).trim();
+  // A few records list two URLs in one field ("<a> ; <b>"); link the first.
+  if (/\s/.test(u)) u = u.split(/[\s;]+/)[0];
+  if (/^https?:\/\//i.test(u)) return u;
+  if (/^www\.[^\s]+\.[a-z]{2,}/i.test(u)) return 'https://' + u;
+  return '';
 }
 
 // Data files use inconsistent key styles for the dataset identifier
@@ -34,10 +44,12 @@ function getDatasetId(rec) {
 }
 
 // Standard external-link table cell used across detail tables.
-function linkCell(url, maxLen) {
+// `fallback` is the text shown when the record has no usable link; without it
+// the cell is left empty.
+function linkCell(url, maxLen, fallback) {
   const u = makeURL(url);
-  if (!u) return '<td></td>';
-  return '<td><a href="' + escapeHTML(u) + '" target="_blank">' + escapeHTML(truncate(u, maxLen || 50)) + '</a></td>';
+  if (!u) return fallback ? '<td class="cell-none">' + escapeHTML(fallback) + '</td>' : '<td></td>';
+  return '<td><a href="' + escapeHTML(u) + '" target="_blank" rel="noopener">' + escapeHTML(truncate(u, maxLen || 50)) + '</a></td>';
 }
 
 function roleBadgeClass(role) {

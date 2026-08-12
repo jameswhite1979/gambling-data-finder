@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="Study profile: population, gambling measures, years covered, variables, questionnaires and data access routes.">
@@ -102,7 +102,7 @@
 
 <div id="site-footer"></div>
 
-<script src="app.js?v=6"></script>
+<script src="app.js?v=7"></script>
 <script>
 document.addEventListener('DOMContentLoaded', async function() {
   // Inject shared nav and footer
@@ -252,10 +252,10 @@ document.addEventListener('DOMContentLoaded', async function() {
   if (rows) {
     document.getElementById('glance-body').innerHTML = rows;
     document.getElementById('glance').style.display = '';
-    var ctaUrl = (studyAccess && studyAccess['Access request URL']) || ds['Access request URL'] || '';
-    if (ctaUrl && ctaUrl !== 'Not yet available') {
+    var ctaUrl = makeURL((studyAccess && studyAccess['Access request URL']) || ds['Access request URL'] || '');
+    if (ctaUrl) {
       var cta = document.getElementById('glance-cta');
-      cta.href = makeURL(ctaUrl);
+      cta.href = ctaUrl;
       cta.style.display = '';
     }
   }
@@ -280,9 +280,9 @@ document.addEventListener('DOMContentLoaded', async function() {
       hasOverview = true;
     }
   });
-  if (ds['Dataset/home URL']) {
-    var homeUrl = makeURL(ds['Dataset/home URL']);
-    grid.innerHTML += '<dt>Homepage</dt><dd><a href="' + escapeHTML(homeUrl) + '" target="_blank">' + escapeHTML(truncate(homeUrl, 60)) + '</a></dd>';
+  var homeUrl = makeURL(ds['Dataset/home URL']);
+  if (homeUrl) {
+    grid.innerHTML += '<dt>Homepage</dt><dd><a href="' + escapeHTML(homeUrl) + '" target="_blank" rel="noopener">' + escapeHTML(truncate(homeUrl, 60)) + '</a></dd>';
     hasOverview = true;
   }
   if (hasOverview) document.getElementById('overview-section').style.display = '';
@@ -396,9 +396,14 @@ document.addEventListener('DOMContentLoaded', async function() {
         hasAccess = true;
       }
     });
-    if (studyAccess['Access request URL'] && studyAccess['Access request URL'] !== 'Not yet available') {
-      var accessUrl = makeURL(studyAccess['Access request URL']);
-      ag.innerHTML += '<dt>Access request</dt><dd><a href="' + escapeHTML(accessUrl) + '" target="_blank">' + escapeHTML(truncate(accessUrl, 60)) + '</a></dd>';
+    var accessRaw = studyAccess['Access request URL'] || '';
+    var accessUrl = makeURL(accessRaw);
+    if (accessUrl) {
+      ag.innerHTML += '<dt>Access request</dt><dd><a href="' + escapeHTML(accessUrl) + '" target="_blank" rel="noopener">' + escapeHTML(truncate(accessUrl, 60)) + '</a></dd>';
+      hasAccess = true;
+    } else if (accessRaw && accessRaw !== 'Not yet available') {
+      // Some studies record an instruction ("Contact the X team") rather than a link.
+      ag.innerHTML += '<dt>Access request</dt><dd>' + escapeHTML(accessRaw) + '</dd>';
       hasAccess = true;
     }
     if (hasAccess) document.getElementById('access-section').style.display = '';
@@ -431,7 +436,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         '<td>' + escapeHTML(q['Age group'] || '') + '</td>' +
         '<td>' + escapeHTML(q['Questionnaire / metadata title'] || '') + '</td>' +
         '<td>' + escapeHTML(q['File type'] || '') + '</td>' +
-        linkCell(url);
+        linkCell(url, 50, 'No direct link');
       qTbody.appendChild(tr);
     });
     document.getElementById('questionnaires-section').style.display = '';

@@ -551,6 +551,7 @@ nav a.active{color:var(--amber-light);background:rgba(217,119,6,.15)}
 .detail-table th{background:var(--navy);color:#fff;font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
 .detail-table tr:nth-child(even){background:var(--border-light)}
 .detail-table a{color:var(--amber)}
+.detail-table .cell-none{color:var(--text-muted);font-style:italic}
 
 /* ===== BASKET PAGE ===== */
 .basket-banner{
