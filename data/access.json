@@ -56,7 +56,7 @@
   "Access status": "UKDS registered access",
   "Access route": "Registration / safeguarded",
   "Access request URL": "https://datacatalogue.ukdataservice.ac.uk/series/series/200004",
-  "Data access documentation URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/6899",
+  "Data access documentation URL": "https://datacatalogue.ukdataservice.ac.uk/series/series/200004#access-data",
   "Open/public items": "",
   "Gated items": "",
   "Cost/fee": "Usually not stated / may vary",
@@ -64,7 +64,7 @@
   "Named contact/form": "See access URL / study helpdesk",
   "TRE / secure environment": "No / not primary",
   "Data format / notes": "Formats and licence conditions to verify in data documentation",
-  "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/studies/study/6899",
+  "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/series/series/200004",
   "Notes": ""
  },
  {

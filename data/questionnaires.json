@@ -287,11 +287,11 @@
   "Age group": "Adults aged 16+; includes 16-24",
   "Questionnaire / metadata title": "Questionnaire URL from archive-search inventory",
   "File type": "URL",
-  "URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/6899",
+  "URL": "https://datacatalogue.ukdataservice.ac.uk/series/series/200004",
   "Public or gated": "Public",
   "Variable names visible?": "Unclear",
   "Question wording visible?": "Unclear",
-  "Notes": "Added from archive-search inventory during de-duplication cleanup"
+  "Notes": "Added from archive-search inventory during de-duplication cleanup. Corrected from an incorrect UK Data Service study number. The series page covers all three waves: SN 6639 (1999), SN 5836 (2007), SN 6843 (2010)."
  },
  {
   "Questionnaire_ID": "Q_0024",

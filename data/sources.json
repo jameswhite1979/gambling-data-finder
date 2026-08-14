@@ -1111,13 +1111,13 @@
   "Dataset name": "British Gambling Prevalence Survey",
   "Resource type": "Metadata / data profile",
   "Title / description": "Metadata / data profile URL",
-  "URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/6899",
+  "URL": "https://datacatalogue.ukdataservice.ac.uk/series/series/200004",
   "Public or gated": "Public",
   "Variable names visible?": "Unclear",
   "Question wording visible?": "Unclear",
   "Recommended website field": "metadata_url",
   "Priority": "High",
-  "Notes": "Added from archive-search inventory during de-duplication cleanup"
+  "Notes": "Added from archive-search inventory during de-duplication cleanup. Corrected from an incorrect UK Data Service study number. The series page covers all three waves: SN 6639 (1999), SN 5836 (2007), SN 6843 (2010)."
  },
  {
   "Source_ID": "SRC_0093",
@@ -1125,13 +1125,13 @@
   "Dataset name": "British Gambling Prevalence Survey",
   "Resource type": "Questionnaire",
   "Title / description": "Questionnaire URL",
-  "URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/6899",
+  "URL": "https://datacatalogue.ukdataservice.ac.uk/series/series/200004",
   "Public or gated": "Public",
   "Variable names visible?": "Unclear",
   "Question wording visible?": "Unclear",
   "Recommended website field": "questionnaire_url",
   "Priority": "High",
-  "Notes": "Added from archive-search inventory during de-duplication cleanup"
+  "Notes": "Added from archive-search inventory during de-duplication cleanup. Corrected from an incorrect UK Data Service study number. The series page covers all three waves: SN 6639 (1999), SN 5836 (2007), SN 6843 (2010)."
  },
  {
   "Source_ID": "SRC_0094",
@@ -1139,7 +1139,7 @@
   "Dataset name": "British Gambling Prevalence Survey",
   "Resource type": "Dataset/home page",
   "Title / description": "Dataset URL",
-  "URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/6899",
+  "URL": "https://datacatalogue.ukdataservice.ac.uk/series/series/200004",
   "Public or gated": "Public",
   "Variable names visible?": "Unclear",
   "Question wording visible?": "Unclear",
@@ -1167,7 +1167,7 @@
   "Dataset name": "British Gambling Prevalence Survey",
   "Resource type": "Source/reference",
   "Title / description": "Supporting source URL",
-  "URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/6899",
+  "URL": "https://datacatalogue.ukdataservice.ac.uk/series/series/200004",
   "Public or gated": "Public",
   "Variable names visible?": "Unclear",
   "Question wording visible?": "Unclear",
@@ -2189,13 +2189,13 @@
   "Dataset name": "British Gambling Prevalence Survey",
   "Resource type": "Gambling measure metadata/questionnaire",
   "Title / description": "Participation / frequency / problem gambling PGSI/DSM-IV screens to verify by year",
-  "URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/6899",
+  "URL": "https://datacatalogue.ukdataservice.ac.uk/series/series/200004",
   "Public or gated": "Public",
   "Variable names visible?": "Unclear",
   "Question wording visible?": "Yes",
   "Recommended website field": "gambling_measure_url",
   "Priority": "High",
-  "Notes": "Added from gambling-measures sheet"
+  "Notes": "Added from gambling-measures sheet. Corrected from an incorrect UK Data Service study number. The series page covers all three waves: SN 6639 (1999), SN 5836 (2007), SN 6843 (2010)."
  },
  {
   "Source_ID": "SRC_0197",
@@ -2623,7 +2623,7 @@
   "Dataset name": "British Gambling Prevalence Survey",
   "Resource type": "Access documentation",
   "Title / description": "Access documentation URL",
-  "URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/6899",
+  "URL": "https://datacatalogue.ukdataservice.ac.uk/series/series/200004#access-data",
   "Public or gated": "Public",
   "Variable names visible?": "No",
   "Question wording visible?": "No",
