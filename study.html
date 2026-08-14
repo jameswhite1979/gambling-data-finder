@@ -15,8 +15,8 @@
 <meta property="og:site_name" content="Gambling Data Finder">
 <meta property="og:title" content="Dataset — Gambling Data Finder">
 <meta property="og:description" content="Study profile: population, gambling measures, years covered, variables, questionnaires and data access routes.">
-<meta property="og:url" content="https://jameswhite1979.github.io/gambling-data-finder/study.html">
-<meta property="og:image" content="https://jameswhite1979.github.io/gambling-data-finder/assets/og-image.png">
+<meta property="og:url" content="https://www.gamblingdatafinder.com/study.html">
+<meta property="og:image" content="https://www.gamblingdatafinder.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -104,6 +104,40 @@
 
 <script src="app.js?v=7"></script>
 <script>
+const SITE_URL = 'https://www.gamblingdatafinder.com/';
+
+// Point the canonical link and the og: tags at this specific study rather than
+// at the shared study.html shell. Creates the tags if the head lacks them.
+function setStudyMeta(ds, studyId, dsName) {
+  const url = SITE_URL + 'study.html?id=' + encodeURIComponent(studyId);
+
+  const bits = [ds['Study design'], ds['Country'], ds['Age focus / population']]
+    .filter(Boolean).join('. ');
+  const desc = dsName + ' (' + studyId + '): gambling variables, questionnaires, '
+    + 'measures and data access routes.' + (bits ? ' ' + bits + '.' : '');
+
+  function setTag(selector, attr, value) {
+    let el = document.head.querySelector(selector);
+    if (!el) {
+      el = document.createElement(selector.startsWith('link') ? 'link' : 'meta');
+      if (selector.startsWith('link')) el.rel = 'canonical';
+      else if (selector.indexOf('property=') > -1) {
+        el.setAttribute('property', selector.match(/property="([^"]+)"/)[1]);
+      } else {
+        el.setAttribute('name', selector.match(/name="([^"]+)"/)[1]);
+      }
+      document.head.appendChild(el);
+    }
+    el.setAttribute(attr, value);
+  }
+
+  setTag('link[rel="canonical"]', 'href', url);
+  setTag('meta[property="og:url"]', 'content', url);
+  setTag('meta[property="og:title"]', 'content', dsName + ' — Gambling Data Finder');
+  setTag('meta[property="og:description"]', 'content', desc);
+  setTag('meta[name="description"]', 'content', desc);
+}
+
 document.addEventListener('DOMContentLoaded', async function() {
   // Inject shared nav and footer
   document.getElementById('site-header').innerHTML = renderNav('');
@@ -139,6 +173,12 @@ document.addEventListener('DOMContentLoaded', async function() {
 
   // Dynamic title
   document.title = dsName + ' — Gambling Data Finder';
+
+  // All 31 dataset pages share this one file, so the static head describes none
+  // of them. Rewrite the canonical and social tags per study, otherwise every
+  // ?id= URL advertises the same generic metadata and search engines are free
+  // to treat them as one page. Note this only reaches crawlers that run JS.
+  setStudyMeta(ds, studyId, dsName);
 
   // Hero: ID badge and name
   document.getElementById('study-hero-id').textContent = studyId;

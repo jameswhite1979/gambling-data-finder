@@ -2,7 +2,9 @@
 
 UKRI GHRIPPs project website for researchers to discover and compare gambling-related datasets across studies.
 
-**Live site:** https://jameswhite1979.github.io/gambling-data-finder/
+**Live site:** https://www.gamblingdatafinder.com/ (custom domain set via `CNAME`; the old
+`jameswhite1979.github.io/gambling-data-finder/` address now 301-redirects here). The site is
+served from the domain root, so absolute paths are `/style.css`, not `/gambling-data-finder/style.css`.
 
 ## Paths
 
@@ -44,6 +46,12 @@ A GitHub Action (`.github/workflows/validate.yml`) runs the same validation on e
 - `variables.json` and `gambling_measures.json` are stored **minified** (single line). Edit them via scripts, never by hand.
 - `style.css` and `app.js` are included with a version query (`?v=N`). Bump N in **all** HTML pages whenever either file changes (GitHub Pages caches for 10 minutes).
 - Fonts are loaded via `<link>` tags in each page head — do not re-add an `@import` to style.css.
+- Every page head carries a canonical link plus `og:`/`twitter:` tags pointing at
+  `https://www.gamblingdatafinder.com/`. New pages need the same block, and must be added to
+  the sitemap by re-running `scripts/build_seo.py`. Pages marked `<meta name="robots" content="noindex">`
+  (404, basket) are excluded from the sitemap automatically. `study.html` is deliberately the one
+  page with **no** static canonical — `setStudyMeta()` in that file writes a per-study one at
+  runtime, because a static canonical would collapse all 31 `?id=` URLs into a single page.
 - Read dataset IDs from records via `getDatasetId()` in app.js (files use `dataset_id`, `Dataset_ID` and `Dataset ID` inconsistently).
 
 ## Skills and scripts
@@ -52,6 +60,7 @@ A GitHub Action (`.github/workflows/validate.yml`) runs the same validation on e
 |------|-----|
 | Add a new dataset | `/ghripps-add-dataset` — full workflow with validation |
 | Rebuild facets + summary | `python scripts/validate_and_update.py <DATASET_ID> --data-dir data` |
+| Rebuild sitemap + robots | `py scripts/build_seo.py` (run after adding/removing a dataset) |
 | Merge new variables into existing dataset | Write new records to a temp JSON file, then `node .claude/commands/scripts/merge-variables.js <file>` |
 | Read a data dictionary | `node .claude/commands/scripts/search-dictionary.js <xlsx> [--alspac\|--mcs] [--sheet name] [--list-sheets]` |
 | Deploy to GitHub Pages | `bash .claude/commands/scripts/deploy-website.sh` then `git add`, `git commit`, `git push` |
