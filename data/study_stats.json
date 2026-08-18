@@ -330,5 +330,69 @@
   "sources": 3,
   "measures": 4,
   "named_measures": []
+ },
+ "UK_BIOBANK_GAMBLING": {
+  "variables": 1,
+  "gambling": 1,
+  "risk": 0,
+  "questionnaires": 1,
+  "sources": 1,
+  "measures": 1,
+  "named_measures": []
+ },
+ "STS_ATS_GB_2022": {
+  "variables": 3,
+  "gambling": 1,
+  "risk": 2,
+  "questionnaires": 1,
+  "sources": 1,
+  "measures": 1,
+  "named_measures": [
+   "PGSI"
+  ]
+ },
+ "NGSN_DRF": {
+  "variables": 1,
+  "gambling": 0,
+  "risk": 1,
+  "questionnaires": 1,
+  "sources": 1,
+  "measures": 0,
+  "named_measures": []
+ },
+ "CCHS_GAMBLING": {
+  "variables": 5,
+  "gambling": 5,
+  "risk": 0,
+  "questionnaires": 1,
+  "sources": 1,
+  "measures": 5,
+  "named_measures": [
+   "PGSI"
+  ]
+ },
+ "HILDA": {
+  "variables": 6,
+  "gambling": 6,
+  "risk": 0,
+  "questionnaires": 1,
+  "sources": 1,
+  "measures": 6,
+  "named_measures": [
+   "PGSI"
+  ]
+ },
+ "FIN_GAMBLING_SURVEYS": {
+  "variables": 15,
+  "gambling": 5,
+  "risk": 10,
+  "questionnaires": 1,
+  "sources": 1,
+  "measures": 8,
+  "named_measures": [
+   "ATGS",
+   "PGSI",
+   "SOGS"
+  ]
  }
 }

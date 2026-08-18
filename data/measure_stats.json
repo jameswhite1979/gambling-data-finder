@@ -129,21 +129,25 @@
  },
  {
   "name": "PGSI",
-  "variables": 204,
+  "variables": 215,
   "datasets": [
    "ADDHEALTH",
    "ALSPAC",
    "APMS",
    "BGPS",
+   "CCHS_GAMBLING",
    "EAGS",
+   "FIN_GAMBLING_SURVEYS",
    "GA_TSS",
    "GSGB",
+   "HILDA",
    "HSE",
    "HSE_SHES_2016",
    "LSAC",
    "MANITOBA_YA",
    "NSW",
-   "SHES_2017_2018_2019_2021"
+   "SHES_2017_2018_2019_2021",
+   "STS_ATS_GB_2022"
   ],
   "constructs": [
    "Derived gambling measure",
@@ -161,6 +165,17 @@
    "Problem gambling / harm"
   ],
   "note": "Useful harm outcome; fewer direct comparators"
+ },
+ {
+  "name": "SOGS",
+  "variables": 2,
+  "datasets": [
+   "FIN_GAMBLING_SURVEYS"
+  ],
+  "constructs": [
+   "Problem gambling / harm"
+  ],
+  "note": "Wave-specific SOGS"
  },
  {
   "name": "SOGS-RA",

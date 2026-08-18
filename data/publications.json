@@ -857,5 +857,65 @@
   "Risk/protective factors analysed": "Mental health and wellbeing, digital use, socioeconomic and demographic factors",
   "URL / DOI": "https://osf.io/sekhr/",
   "Notes": "Per-wave variable guides including the 2019-2021 gambling items."
+ },
+ {
+  "Dataset ID": "UK_BIOBANK_GAMBLING",
+  "Paper / documentation title": "Pathways, Trajectories, and Costs of Gambling-related Suicide among routinely collected healthcare data and general population datasets",
+  "Authors / year": "UK Biobank approved project 176976",
+  "Source type": "Approved research project record",
+  "Gambling measure used": "Linked gambling-related healthcare records",
+  "Risk/protective factors analysed": "Healthcare trajectories and suicide",
+  "URL / DOI": "https://www.ukbiobank.ac.uk/projects/pathways-trajectories-and-costs-of-gambling-related-suicide-among-routinely-collected-healthcare-data-and-general-population-datasets/",
+  "Notes": "Project record, not a completed publication"
+ },
+ {
+  "Dataset ID": "STS_ATS_GB_2022",
+  "Paper / documentation title": "The intersection of gambling with smoking and alcohol use in Great Britain",
+  "Authors / year": "Kock et al., 2024",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI; past-year gambling; weekly expenditure",
+  "Risk/protective factors analysed": "Current smoking; higher-risk AUDIT-C",
+  "URL / DOI": "https://doi.org/10.1136/bmjopen-2023-079633",
+  "Notes": "Adults 18+"
+ },
+ {
+  "Dataset ID": "NGSN_DRF",
+  "Paper / documentation title": "Gambling treatment: assessing the current system in England",
+  "Authors / year": "Office for Health Improvement and Disparities, 2023",
+  "Source type": "Government evidence assessment",
+  "Gambling measure used": "NGSN treatment episodes and PGSI",
+  "Risk/protective factors analysed": "CORE-10, service pathways, demographics",
+  "URL / DOI": "https://www.gov.uk/government/publications/gambling-treatment-assessing-the-current-system-in-england/gambling-treatment-assessing-the-current-system-in-england",
+  "Notes": "Use annual DRF reports for period-specific outputs"
+ },
+ {
+  "Dataset ID": "CCHS_GAMBLING",
+  "Paper / documentation title": "Gambling and problem gambling in Canada",
+  "Authors / year": "Statistics Canada, 2022",
+  "Source type": "Official analytical article",
+  "Gambling measure used": "2018 gambling products and PGSI",
+  "Risk/protective factors analysed": "Age, sex, household income, education and health-related covariates",
+  "URL / DOI": "https://www150.statcan.gc.ca/n1/pub/75-006-x/2022001/article/00006-eng.htm",
+  "Notes": "National household population; module sample documented in methods"
+ },
+ {
+  "Dataset ID": "HILDA",
+  "Paper / documentation title": "Longitudinal gambling analysis using HILDA waves 15, 18 and 22",
+  "Authors / year": "See journal record, 2026",
+  "Source type": "Peer-reviewed longitudinal analysis",
+  "Gambling measure used": "PGSI across three HILDA waves",
+  "Risk/protective factors analysed": "Longitudinal health and socioeconomic covariates",
+  "URL / DOI": "https://doi.org/10.1016/j.addbeh.2026.108618",
+  "Notes": "44,836 person-wave observations reported in article"
+ },
+ {
+  "Dataset ID": "FIN_GAMBLING_SURVEYS",
+  "Paper / documentation title": "Trends in attitudes towards gambling among Finnish women and men: cross-sectional population studies 2011, 2015, 2019 and 2023",
+  "Authors / year": "Gronroos et al., 2025",
+  "Source type": "Peer-reviewed repeated cross-sectional analysis",
+  "Gambling measure used": "ATGS-8 and gambling measures",
+  "Risk/protective factors analysed": "Sex and other sociodemographic factors",
+  "URL / DOI": "https://doi.org/10.1177/14550725251320729",
+  "Notes": "FSD publication list links further gambling analyses"
  }
 ]
