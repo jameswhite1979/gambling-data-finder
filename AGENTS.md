@@ -39,6 +39,12 @@ python scripts/validate_and_update.py <DATASET_ID> --data-dir data
 
 This validates all 9 JSON files, checks cross-references, fixes facets.json, and recounts summary.json.
 
+It also fills gaps in `metadata_check.json`: any dataset without an entry gets a derived stub, so
+the coverage table never renders blank rows after an ingest. **Existing entries are never
+modified** - that file holds hand-written prose (CLOSER result, next extraction action) which
+cannot be recomputed, so curated text is safe. A warning is raised for entries whose dataset no
+longer exists.
+
 Summary field sources:
 - `datasets` = length of datasets.json
 - `gambling_measures` = length of gambling_measures.json

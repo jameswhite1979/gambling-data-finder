@@ -263,6 +263,52 @@ def main():
     else:
         print(f"  OK    measure_stats.json")
 
+    # ---- metadata_check.json: fill gaps only ----
+    # Unlike the other derived files this one holds hand-written prose (CLOSER
+    # result, next extraction action) that cannot be recomputed, so existing
+    # entries are never touched. New datasets get a derived stub instead, which
+    # is what stops the coverage table rendering blanks after an ingest.
+    UK = {"united kingdom", "england", "scotland", "wales", "northern ireland", "great britain"}
+    try:
+        meta_check = load(data_dir, "metadata_check.json")
+    except Exception:
+        meta_check = None
+    if isinstance(meta_check, list):
+        have = {m.get("Dataset_ID") for m in meta_check}
+        added = []
+        for d in datasets:
+            ds_id = d.get("Dataset_ID")
+            if not ds_id or ds_id in have:
+                continue
+            n_vars = sum(1 for v in variables if v.get("dataset_id") == ds_id)
+            n_quest = sum(1 for q in questionnaires if q.get("Dataset_ID") == ds_id)
+            route = (d.get("Codebook / variable URL(s)") or d.get("Metadata / data profile URL")
+                     or d.get("Dataset/home URL") or "")
+            country = (d.get("Country") or "").strip().lower()
+            meta_check.append({
+                "Dataset_ID": ds_id,
+                "Dataset name": d.get("Dataset name", ds_id),
+                "Public catalogue/tool checked": "Yes" if route else "",
+                "CLOSER result": "Not a CLOSER source" if country in UK else "Not applicable",
+                "Study-specific public metadata route": route,
+                "Variable names public?": "Yes" if n_vars else "No",
+                "Question wording public?": "Yes" if n_quest else "",
+                "Raw data access status": "%s (%s)" % (d.get("Access type") or "Not stated",
+                                                       d.get("Access difficulty") or "not stated"),
+                "Metadata access needed?": "No" if n_vars else "Yes",
+                "Next extraction action": "" if n_vars else "Obtain variable-level documentation",
+                "Source URLs": route,
+            })
+            added.append(ds_id)
+        orphans = sorted(have - {d.get("Dataset_ID") for d in datasets} - {None})
+        if added:
+            save(data_dir, "metadata_check.json", meta_check, indent=1)
+            print(f"  FIXED metadata_check.json (+{len(added)}: {', '.join(added)})")
+        else:
+            print(f"  OK    metadata_check.json")
+        if orphans:
+            warnings.append(f"metadata_check.json: entries for datasets no longer in datasets.json: {orphans}")
+
     print()
     if errors:
         print(f"ERRORS ({len(errors)}):")
