@@ -19,3 +19,8 @@ staging/
 .Rhistory
 .RData
 .Rproj.user/
+
+# Expansion working documents (2026-08) - internal, keep out of the public site
+CODEX_PROMPT_adult_refresh.md
+ACCESS_LINKS_TO_CHECK.md
+RA_BRIEF_documentation_hunt.md
