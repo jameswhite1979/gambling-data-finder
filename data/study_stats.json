@@ -438,5 +438,42 @@
   "sources": 1,
   "measures": 20,
   "named_measures": []
+ },
+ "QLS": {
+  "variables": 3819,
+  "gambling": 1157,
+  "risk": 2633,
+  "questionnaires": 1,
+  "sources": 1,
+  "measures": 1157,
+  "named_measures": [
+   "PGSI",
+   "PPGM",
+   "NODS"
+  ]
+ },
+ "LLLP": {
+  "variables": 6801,
+  "gambling": 1982,
+  "risk": 4715,
+  "questionnaires": 1,
+  "sources": 1,
+  "measures": 1982,
+  "named_measures": [
+   "PGSI",
+   "PPGM"
+  ]
+ },
+ "AGRI_ANP_PANEL": {
+  "variables": 1246,
+  "gambling": 776,
+  "risk": 455,
+  "questionnaires": 1,
+  "sources": 1,
+  "measures": 776,
+  "named_measures": [
+   "PGSI",
+   "PPGM"
+  ]
  }
 }

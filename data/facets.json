@@ -40,7 +40,8 @@
   "GC_QTS_2016_2022",
   "ACT_GPS_2019",
   "NCS_R",
-  "MANITOBA_LGCM_II_2022"
+  "MANITOBA_LGCM_II_2022",
+  "QLS"
  ],
  "construct_categories": [
   "ADHD symptoms",
@@ -156,6 +157,7 @@
   "NODS",
   "PGSI",
   "PHQ-4",
+  "PPGM",
   "Rosenberg Self-Esteem Scale",
   "Rutter Behaviour Scale",
   "SDQ",

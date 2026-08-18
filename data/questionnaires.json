@@ -1538,5 +1538,47 @@
   "Variable names visible?": "In codebook",
   "Question wording visible?": "Expected; verify",
   "Notes": "Resolve before ingestion"
+ },
+ {
+  "Questionnaire_ID": "Q_QLS_01",
+  "Dataset_ID": "QLS",
+  "Dataset name": "Quinte Longitudinal Study of Gambling and Problem Gambling",
+  "Wave / year": "Wave 1, 2006",
+  "Age group": "Adults 18-90",
+  "Questionnaire / metadata title": "QLS user manual, codebook and baseline questionnaire",
+  "File type": "Controlled Dataverse documentation",
+  "URL": "https://hdl.handle.net/10864/10580",
+  "Public or gated": "Gated",
+  "Variable names visible?": "After access",
+  "Question wording visible?": "After access",
+  "Notes": "Add one row per wave after package review"
+ },
+ {
+  "Questionnaire_ID": "Q_LLLP_01",
+  "Dataset_ID": "LLLP",
+  "Dataset name": "Leisure, Lifestyle and Lifecycle Project",
+  "Wave / year": "Wave 1",
+  "Age group": "Adult cohorts",
+  "Questionnaire / metadata title": "LLLP Adult User Manual and Wave 1 questionnaire",
+  "File type": "Dataverse documentation",
+  "URL": "https://doi.org/10.5683/SP2/Z7YEYI",
+  "Public or gated": "Gated",
+  "Variable names visible?": "After access",
+  "Question wording visible?": "After access",
+  "Notes": "Add later-wave rows after review"
+ },
+ {
+  "Questionnaire_ID": "Q_AGRI_ANP_PANEL_01",
+  "Dataset_ID": "AGRI_ANP_PANEL",
+  "Dataset name": "AGRI National Project Online Panel Study",
+  "Wave / year": "2018 baseline",
+  "Age group": "Adults 18+ monthly gamblers",
+  "Questionnaire / metadata title": "ANP Online Panel user manual and questionnaire",
+  "File type": "Controlled package",
+  "URL": "https://doi.org/10.5683/SP3/JYUO8E",
+  "Public or gated": "Gated",
+  "Variable names visible?": "After access",
+  "Question wording visible?": "After access",
+  "Notes": "Verify named problem-gambling scale"
  }
 ]

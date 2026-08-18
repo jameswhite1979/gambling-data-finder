@@ -957,5 +957,35 @@
   "Risk/protective factors analysed": "Alcohol and cannabis",
   "URL / DOI": "https://doi.org/10.5683/SP3/KEA3OH",
   "Notes": "No peer-reviewed use verified"
+ },
+ {
+  "Dataset ID": "QLS",
+  "Paper / documentation title": "Deriving low-risk gambling limits from longitudinal data collected in two independent Canadian studies",
+  "Authors / year": "Currie et al., 2017",
+  "Source type": "Peer-reviewed longitudinal analysis",
+  "Gambling measure used": "CPGI/PGSI harm, frequency and expenditure",
+  "Risk/protective factors analysed": "Income and longitudinal harm",
+  "URL / DOI": "https://doi.org/10.1111/add.13909",
+  "Notes": "Joint QLS and LLLP analysis"
+ },
+ {
+  "Dataset ID": "LLLP",
+  "Paper / documentation title": "Deriving low-risk gambling limits from longitudinal data collected in two independent Canadian studies",
+  "Authors / year": "Currie et al., 2017",
+  "Source type": "Peer-reviewed longitudinal analysis",
+  "Gambling measure used": "CPGI harm, frequency and expenditure",
+  "Risk/protective factors analysed": "Income/expenditure and future harm",
+  "URL / DOI": "https://doi.org/10.1111/add.13909",
+  "Notes": "Joint LLLP and QLS analysis"
+ },
+ {
+  "Dataset ID": "AGRI_ANP_PANEL",
+  "Paper / documentation title": "The AGRI National Project: Online Panel Study dataset documentation",
+  "Authors / year": "Williams et al., 2022",
+  "Source type": "Dataset documentation",
+  "Gambling measure used": "Participation, online gambling and problem gambling",
+  "Risk/protective factors analysed": "Multiple",
+  "URL / DOI": "https://doi.org/10.5683/SP3/JYUO8E",
+  "Notes": "Add peer-reviewed use after codebook/publication review"
  }
 ]

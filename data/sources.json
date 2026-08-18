@@ -4366,5 +4366,47 @@
   "Recommended website field": "catalogue_url",
   "Priority": "Critical",
   "Notes": "Inspect named gambling measure"
+ },
+ {
+  "Source_ID": "SRC_QLS_001",
+  "Dataset_ID": "QLS",
+  "Dataset name": "Quinte Longitudinal Study of Gambling and Problem Gambling",
+  "Resource type": "Final report",
+  "Title / description": "Quinte Longitudinal Study of Gambling and Problem Gambling",
+  "URL": "https://opus.uleth.ca/bitstream/handle/10133/3641/QLS-OPGRC-2015.pdf",
+  "Public or gated": "Public report; gated data",
+  "Variable names visible?": "Partial",
+  "Question wording visible?": "Partial",
+  "Recommended website field": "metadata_url",
+  "Priority": "Critical",
+  "Notes": "Use controlled user manual for field IDs"
+ },
+ {
+  "Source_ID": "SRC_LLLP_001",
+  "Dataset_ID": "LLLP",
+  "Dataset name": "Leisure, Lifestyle and Lifecycle Project",
+  "Resource type": "GREO dataset record",
+  "Title / description": "Leisure, Lifestyle and Lifecycle Project: a longitudinal study of gambling in Alberta",
+  "URL": "https://doi.org/10.5683/SP2/Z7YEYI",
+  "Public or gated": "Public metadata; gated files",
+  "Variable names visible?": "In gated user manual",
+  "Question wording visible?": "In gated questionnaires",
+  "Recommended website field": "catalogue_url",
+  "Priority": "Critical",
+  "Notes": "Use adult file"
+ },
+ {
+  "Source_ID": "SRC_AGRI_ANP_PANEL_001",
+  "Dataset_ID": "AGRI_ANP_PANEL",
+  "Dataset name": "AGRI National Project Online Panel Study",
+  "Resource type": "GREO dataset record",
+  "Title / description": "The AGRI National Project: Online Panel Study",
+  "URL": "https://www.greo.ca/Modules/EvidenceCentre/Details/the-agri-national-project-online-panel-study",
+  "Public or gated": "Public metadata; gated data",
+  "Variable names visible?": "In codebook after access",
+  "Question wording visible?": "After access",
+  "Recommended website field": "catalogue_url",
+  "Priority": "Critical",
+  "Notes": "Sampling caveat required"
  }
 ]

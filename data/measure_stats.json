@@ -118,9 +118,10 @@
  },
  {
   "name": "NODS",
-  "variables": 38,
+  "variables": 54,
   "datasets": [
-   "GIBS"
+   "GIBS",
+   "QLS"
   ],
   "constructs": [
    "Derived gambling measure",
@@ -130,10 +131,11 @@
  },
  {
   "name": "PGSI",
-  "variables": 234,
+  "variables": 334,
   "datasets": [
    "ACT_GPS_2019",
    "ADDHEALTH",
+   "AGRI_ANP_PANEL",
    "ALSPAC",
    "APMS",
    "BGPS",
@@ -146,18 +148,35 @@
    "HILDA",
    "HSE",
    "HSE_SHES_2016",
+   "LLLP",
    "LSAC",
    "MANITOBA_YA",
    "NGSN_DRF",
    "NSW",
+   "QLS",
    "SHES_2017_2018_2019_2021",
    "STS_ATS_GB_2022"
   ],
   "constructs": [
    "Derived gambling measure",
+   "Gambling participation",
    "Problem gambling / harm"
   ],
   "note": "Candidate CPGI/PGSI-style harm item."
+ },
+ {
+  "name": "PPGM",
+  "variables": 127,
+  "datasets": [
+   "AGRI_ANP_PANEL",
+   "LLLP",
+   "QLS"
+  ],
+  "constructs": [
+   "Gambling participation",
+   "Problem gambling / harm"
+  ],
+  "note": ""
  },
  {
   "name": "SGHS",
