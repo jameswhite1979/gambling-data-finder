@@ -1510,5 +1510,33 @@
   "Variable names visible?": "No public preview",
   "Question wording visible?": "No public preview",
   "Notes": "Replace with direct documentation URL after approval"
+ },
+ {
+  "Questionnaire_ID": "Q_NCS_R_01",
+  "Dataset_ID": "NCS_R",
+  "Dataset name": "National Comorbidity Survey Replication",
+  "Wave / year": "2001-2003",
+  "Age group": "Adults 18+ Part II",
+  "Questionnaire / metadata title": "NCS-R Section 28: Gambling",
+  "File type": "PDF",
+  "URL": "https://www.hcp.med.harvard.edu/ncs/ftpdir/replication/US%20Gambling.pdf",
+  "Public or gated": "Public",
+  "Variable names visible?": "Yes",
+  "Question wording visible?": "Yes",
+  "Notes": "GM item series with CAPI routing"
+ },
+ {
+  "Questionnaire_ID": "Q_MANITOBA_LGCM_II_2022_01",
+  "Dataset_ID": "MANITOBA_LGCM_II_2022",
+  "Dataset name": "Liquor, Gambling and Cannabis in Manitoba Survey II, 2022",
+  "Wave / year": "2025",
+  "Age group": "Adults 18+",
+  "Questionnaire / metadata title": "Survey II questionnaire and codebook",
+  "File type": "Borealis deposit",
+  "URL": "https://doi.org/10.5683/SP3/KEA3OH",
+  "Public or gated": "File-level status to be confirmed",
+  "Variable names visible?": "In codebook",
+  "Question wording visible?": "Expected; verify",
+  "Notes": "Resolve before ingestion"
  }
 ]

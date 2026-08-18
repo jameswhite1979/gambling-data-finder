@@ -418,5 +418,25 @@
   "named_measures": [
    "PGSI"
   ]
+ },
+ "NCS_R": {
+  "variables": 84,
+  "gambling": 84,
+  "risk": 0,
+  "questionnaires": 1,
+  "sources": 1,
+  "measures": 84,
+  "named_measures": [
+   "DSM-IV-PG"
+  ]
+ },
+ "MANITOBA_LGCM_II_2022": {
+  "variables": 113,
+  "gambling": 20,
+  "risk": 84,
+  "questionnaires": 1,
+  "sources": 1,
+  "measures": 20,
+  "named_measures": []
  }
 }

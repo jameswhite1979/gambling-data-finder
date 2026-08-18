@@ -4338,5 +4338,33 @@
   "Recommended website field": "catalogue_url",
   "Priority": "Critical",
   "Notes": "Request codebook with data"
+ },
+ {
+  "Source_ID": "SRC_NCS_R_001",
+  "Dataset_ID": "NCS_R",
+  "Dataset name": "National Comorbidity Survey Replication",
+  "Resource type": "Official questionnaire",
+  "Title / description": "NCS-R Section 28: Gambling",
+  "URL": "https://www.hcp.med.harvard.edu/ncs/ftpdir/replication/US%20Gambling.pdf",
+  "Public or gated": "Public",
+  "Variable names visible?": "Yes",
+  "Question wording visible?": "Yes",
+  "Recommended website field": "questionnaire_url",
+  "Priority": "Critical",
+  "Notes": "Dedicated gambling schedule"
+ },
+ {
+  "Source_ID": "SRC_MANITOBA_LGCM_II_2022_001",
+  "Dataset_ID": "MANITOBA_LGCM_II_2022",
+  "Dataset name": "Liquor, Gambling and Cannabis in Manitoba Survey II, 2022",
+  "Resource type": "GREO/Borealis dataset record",
+  "Title / description": "Manitoba Liquor, Gambling and Cannabis Survey II",
+  "URL": "https://doi.org/10.5683/SP3/KEA3OH",
+  "Public or gated": "Public metadata; file status to verify",
+  "Variable names visible?": "In codebook",
+  "Question wording visible?": "In questionnaire/codebook",
+  "Recommended website field": "catalogue_url",
+  "Priority": "Critical",
+  "Notes": "Inspect named gambling measure"
  }
 ]

@@ -72,10 +72,11 @@
  },
  {
   "name": "DSM-IV-PG",
-  "variables": 58,
+  "variables": 99,
   "datasets": [
    "BGPS",
-   "HSE_SHES_2016"
+   "HSE_SHES_2016",
+   "NCS_R"
   ],
   "constructs": [
    "Problem gambling / harm"

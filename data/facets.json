@@ -38,7 +38,9 @@
   "HILDA",
   "FIN_GAMBLING_SURVEYS",
   "GC_QTS_2016_2022",
-  "ACT_GPS_2019"
+  "ACT_GPS_2019",
+  "NCS_R",
+  "MANITOBA_LGCM_II_2022"
  ],
  "construct_categories": [
   "ADHD symptoms",
@@ -110,6 +112,7 @@
  ],
  "named_measures": [
   "ATGS",
+  "AUDIT",
   "AUDIT-C",
   "Alcohol Dependence Scale",
   "BIS-11",

@@ -937,5 +937,25 @@
   "Risk/protective factors analysed": "Wellbeing, hardship, attitudes and demographics",
   "URL / DOI": "https://doi.org/10.26193/90W5HV",
   "Notes": "Confirm report file URL after access"
+ },
+ {
+  "Dataset ID": "NCS_R",
+  "Paper / documentation title": "DSM-IV pathological gambling in the National Comorbidity Survey Replication",
+  "Authors / year": "Kessler et al., 2008",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "DSM-IV pathological gambling module",
+  "Risk/protective factors analysed": "Psychiatric comorbidity and sociodemographics",
+  "URL / DOI": "https://hcp.hms.harvard.edu/publication/dsm-iv-pathological-gambling-national-comorbidity-survey-replication",
+  "Notes": "Adults in Part II subsample"
+ },
+ {
+  "Dataset ID": "MANITOBA_LGCM_II_2022",
+  "Paper / documentation title": "Manitoba Liquor, Gambling and Cannabis Survey II summary report",
+  "Authors / year": "Prairie Research Associates and LGCA, 2025",
+  "Source type": "Official survey report",
+  "Gambling measure used": "Participation, limits and motives",
+  "Risk/protective factors analysed": "Alcohol and cannabis",
+  "URL / DOI": "https://doi.org/10.5683/SP3/KEA3OH",
+  "Notes": "No peer-reviewed use verified"
  }
 ]
