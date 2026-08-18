@@ -1482,5 +1482,19 @@
   "Variable names visible?": "Yes",
   "Question wording visible?": "Yes in English variable metadata",
   "Notes": "Add one row per FSD wave"
+ },
+ {
+  "Questionnaire_ID": "Q_GC_QTS_2016_2022_01",
+  "Dataset_ID": "GC_QTS_2016_2022",
+  "Dataset name": "Gambling Commission Gambling Behaviour Quarterly Telephone Survey, 2016-2022",
+  "Wave / year": "2017 representative instrument",
+  "Age group": "16+",
+  "Questionnaire / metadata title": "Gambling Behaviour Quarterly Telephone Survey questionnaire 2017",
+  "File type": "PDF",
+  "URL": "https://doc.ukdataservice.ac.uk/doc/9103/mrdoc/pdf/9103_questionnaire_2017.pdf",
+  "Public or gated": "Public",
+  "Variable names visible?": "Partial",
+  "Question wording visible?": "Yes",
+  "Notes": "Add one row per annual questionnaire during ingestion"
  }
 ]

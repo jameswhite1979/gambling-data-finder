@@ -4310,5 +4310,19 @@
   "Recommended website field": "metadata_url",
   "Priority": "Critical",
   "Notes": "Add FSD2285, FSD2722, FSD3115 and FSD3917 source rows"
+ },
+ {
+  "Source_ID": "SRC_GC_QTS_2016_2022_001",
+  "Dataset_ID": "GC_QTS_2016_2022",
+  "Dataset name": "Gambling Commission Gambling Behaviour Quarterly Telephone Survey, 2016-2022",
+  "Resource type": "Official data availability page",
+  "Title / description": "Availability of research data on the UK Data Service",
+  "URL": "https://www.gamblingcommission.gov.uk/about-us/guide/page/availability-of-research-data-on-the-uk-data-service",
+  "Public or gated": "Public metadata; registered data",
+  "Variable names visible?": "Via UKDS documentation",
+  "Question wording visible?": "Yes",
+  "Recommended website field": "access_request_url",
+  "Priority": "Critical",
+  "Notes": "Lists 2016-2022 deposits"
  }
 ]

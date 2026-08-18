@@ -625,5 +625,22 @@
   "Data format / notes": "2019 English file; request translation for other files as needed",
   "Source URLs": "https://services.fsd.tuni.fi/catalogue/FSD3917?lang=en&study_language=en&tab=description",
   "Notes": "Access difficulty: Controlled because 2023 is the strictest wave; earlier waves are Registration / safeguarded"
+ },
+ {
+  "Dataset_ID": "GC_QTS_2016_2022",
+  "Dataset name": "Gambling Commission Gambling Behaviour Quarterly Telephone Survey, 2016-2022",
+  "Access status": "Available to registered UK Data Service users",
+  "Access route": "Register with UKDS and accept End User Licence conditions",
+  "Access request URL": "https://www.gamblingcommission.gov.uk/about-us/guide/page/availability-of-research-data-on-the-uk-data-service",
+  "Data access documentation URL": "https://doi.org/10.5255/UKDA-SN-9104-1",
+  "Open/public items": "Questionnaires, technical notes, aggregate trends",
+  "Gated items": "Individual-level annual files",
+  "Cost/fee": "No fee stated",
+  "Ethics/proposal likely?": "Standard UKDS registration; verify licence",
+  "Named contact/form": "UK Data Service registration",
+  "TRE / secure environment": "No primary TRE requirement stated",
+  "Data format / notes": "Separate annual deposits",
+  "Source URLs": "https://www.gamblingcommission.gov.uk/about-us/guide/page/availability-of-research-data-on-the-uk-data-service",
+  "Notes": "Access difficulty: Registration / safeguarded"
  }
 ]

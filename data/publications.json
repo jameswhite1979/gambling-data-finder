@@ -917,5 +917,15 @@
   "Risk/protective factors analysed": "Sex and other sociodemographic factors",
   "URL / DOI": "https://doi.org/10.1177/14550725251320729",
   "Notes": "FSD publication list links further gambling analyses"
+ },
+ {
+  "Dataset ID": "GC_QTS_2016_2022",
+  "Paper / documentation title": "Gambling behaviour 2015 to 2023: quarterly telephone survey trends",
+  "Authors / year": "Gambling Commission, current series documentation",
+  "Source type": "Official statistical trend report",
+  "Gambling measure used": "Participation and three-item PGSI mini-screen",
+  "Risk/protective factors analysed": "Age, sex, socioeconomic and attitude measures",
+  "URL / DOI": "https://www.gamblingcommission.gov.uk/about-us/guide/gambling-behaviour-2015-to-2023-quarterly-telephone-survey-trends",
+  "Notes": "Use annual technical notes for estimates"
  }
 ]

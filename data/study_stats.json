@@ -394,5 +394,16 @@
    "PGSI",
    "SOGS"
   ]
+ },
+ "GC_QTS_2016_2022": {
+  "variables": 165,
+  "gambling": 142,
+  "risk": 21,
+  "questionnaires": 1,
+  "sources": 1,
+  "measures": 142,
+  "named_measures": [
+   "PGSI"
+  ]
  }
 }

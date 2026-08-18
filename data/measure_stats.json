@@ -129,7 +129,7 @@
  },
  {
   "name": "PGSI",
-  "variables": 215,
+  "variables": 220,
   "datasets": [
    "ADDHEALTH",
    "ALSPAC",
@@ -139,6 +139,7 @@
    "EAGS",
    "FIN_GAMBLING_SURVEYS",
    "GA_TSS",
+   "GC_QTS_2016_2022",
    "GSGB",
    "HILDA",
    "HSE",
