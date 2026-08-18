@@ -37,7 +37,8 @@
   "CCHS_GAMBLING",
   "HILDA",
   "FIN_GAMBLING_SURVEYS",
-  "GC_QTS_2016_2022"
+  "GC_QTS_2016_2022",
+  "ACT_GPS_2019"
  ],
  "construct_categories": [
   "ADHD symptoms",
@@ -144,6 +145,7 @@
   "GHQ",
   "GMQ",
   "GRCS",
+  "K6",
   "Life Events Questionnaire",
   "MHI-5",
   "MSPSS",

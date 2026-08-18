@@ -4324,5 +4324,19 @@
   "Recommended website field": "access_request_url",
   "Priority": "Critical",
   "Notes": "Lists 2016-2022 deposits"
+ },
+ {
+  "Source_ID": "SRC_ACT_GPS_2019_001",
+  "Dataset_ID": "ACT_GPS_2019",
+  "Dataset name": "2019 ACT Gambling Prevalence Survey",
+  "Resource type": "ADA dataset record",
+  "Title / description": "2019 ACT Gambling Prevalence Survey, version 1.1",
+  "URL": "https://doi.org/10.26193/90W5HV",
+  "Public or gated": "Public metadata; gated data",
+  "Variable names visible?": "No",
+  "Question wording visible?": "No",
+  "Recommended website field": "catalogue_url",
+  "Priority": "Critical",
+  "Notes": "Request codebook with data"
  }
 ]

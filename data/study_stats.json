@@ -407,5 +407,16 @@
   "named_measures": [
    "PGSI"
   ]
+ },
+ "ACT_GPS_2019": {
+  "variables": 436,
+  "gambling": 372,
+  "risk": 49,
+  "questionnaires": 1,
+  "sources": 1,
+  "measures": 372,
+  "named_measures": [
+   "PGSI"
+  ]
  }
 }

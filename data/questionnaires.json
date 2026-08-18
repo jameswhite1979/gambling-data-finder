@@ -1496,5 +1496,19 @@
   "Variable names visible?": "Partial",
   "Question wording visible?": "Yes",
   "Notes": "Add one row per annual questionnaire during ingestion"
+ },
+ {
+  "Questionnaire_ID": "Q_ACT_GPS_2019_01",
+  "Dataset_ID": "ACT_GPS_2019",
+  "Dataset name": "2019 ACT Gambling Prevalence Survey",
+  "Wave / year": "2019",
+  "Age group": "Adults 18+",
+  "Questionnaire / metadata title": "2019 ACT Gambling Survey questionnaire/codebook",
+  "File type": "XLSX data dictionary (variable information and value labels)",
+  "URL": "https://doi.org/10.26193/90W5HV",
+  "Public or gated": "Data dictionary obtained; microdata gated",
+  "Variable names visible?": "No public preview",
+  "Question wording visible?": "No public preview",
+  "Notes": "Replace with direct documentation URL after approval"
  }
 ]

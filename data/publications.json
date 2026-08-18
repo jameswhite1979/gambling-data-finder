@@ -927,5 +927,15 @@
   "Risk/protective factors analysed": "Age, sex, socioeconomic and attitude measures",
   "URL / DOI": "https://www.gamblingcommission.gov.uk/about-us/guide/gambling-behaviour-2015-to-2023-quarterly-telephone-survey-trends",
   "Notes": "Use annual technical notes for estimates"
+ },
+ {
+  "Dataset ID": "ACT_GPS_2019",
+  "Paper / documentation title": "2019 ACT Gambling Survey report",
+  "Authors / year": "Paterson, Leslie and Taylor, 2019/2023 deposit",
+  "Source type": "Official survey report/dataset documentation",
+  "Gambling measure used": "PGSI, participation, expenditure and harm",
+  "Risk/protective factors analysed": "Wellbeing, hardship, attitudes and demographics",
+  "URL / DOI": "https://doi.org/10.26193/90W5HV",
+  "Notes": "Confirm report file URL after access"
  }
 ]

@@ -642,5 +642,22 @@
   "Data format / notes": "Separate annual deposits",
   "Source URLs": "https://www.gamblingcommission.gov.uk/about-us/guide/page/availability-of-research-data-on-the-uk-data-service",
   "Notes": "Access difficulty: Registration / safeguarded"
+ },
+ {
+  "Dataset_ID": "ACT_GPS_2019",
+  "Dataset name": "2019 ACT Gambling Prevalence Survey",
+  "Access status": "Restricted file with Request Access",
+  "Access route": "Create ADA Dataverse account and request access to the ZIP",
+  "Access request URL": "https://dataverse.ada.edu.au/dataset.xhtml?persistentId=doi:10.26193/90W5HV",
+  "Data access documentation URL": "https://doi.org/10.26193/90W5HV",
+  "Open/public items": "Dataset metadata and citation",
+  "Gated items": "CSV data ZIP and likely codebook",
+  "Cost/fee": "Not stated",
+  "Ethics/proposal likely?": "Request purpose and acceptance of the ADA terms of use",
+  "Named contact/form": "ADA Contact Owner / Request Access",
+  "TRE / secure environment": "Not stated",
+  "Data format / notes": "ZIP described as CSV data files",
+  "Source URLs": "https://doi.org/10.26193/90W5HV",
+  "Notes": "Access difficulty: Controlled"
  }
 ]
