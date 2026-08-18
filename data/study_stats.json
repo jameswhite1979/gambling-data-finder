@@ -332,7 +332,7 @@
   "named_measures": []
  },
  "UK_BIOBANK_GAMBLING": {
-  "variables": 1,
+  "variables": 2,
   "gambling": 1,
   "risk": 0,
   "questionnaires": 1,
@@ -475,5 +475,14 @@
    "PGSI",
    "PPGM"
   ]
+ },
+ "ELSA_GAMBLING_PROXY": {
+  "variables": 1,
+  "gambling": 0,
+  "risk": 0,
+  "questionnaires": 1,
+  "sources": 1,
+  "measures": 0,
+  "named_measures": []
  }
 }

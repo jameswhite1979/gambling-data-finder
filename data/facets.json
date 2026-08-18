@@ -41,7 +41,8 @@
   "ACT_GPS_2019",
   "NCS_R",
   "MANITOBA_LGCM_II_2022",
-  "QLS"
+  "QLS",
+  "ELSA_GAMBLING_PROXY"
  ],
  "construct_categories": [
   "ADHD symptoms",

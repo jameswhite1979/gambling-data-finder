@@ -1580,5 +1580,19 @@
   "Variable names visible?": "After access",
   "Question wording visible?": "After access",
   "Notes": "Verify named problem-gambling scale"
+ },
+ {
+  "Questionnaire_ID": "Q_ELSA_GAMBLING_PROXY_01",
+  "Dataset_ID": "ELSA_GAMBLING_PROXY",
+  "Dataset name": "English Longitudinal Study of Ageing - gambling winnings proxy",
+  "Wave / year": "Wave 1",
+  "Age group": "50+",
+  "Questionnaire / metadata title": "ELSA Wave 1 income/assets documentation",
+  "File type": "PDF",
+  "URL": "https://doc.ukdataservice.ac.uk/doc/5050/mrdoc/pdf/5050_wave_1_documentation.pdf",
+  "Public or gated": "Public",
+  "Variable names visible?": "Yes",
+  "Question wording visible?": "Yes",
+  "Notes": "Bundled winnings category"
  }
 ]

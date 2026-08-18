@@ -4408,5 +4408,19 @@
   "Recommended website field": "catalogue_url",
   "Priority": "Critical",
   "Notes": "Sampling caveat required"
+ },
+ {
+  "Source_ID": "SRC_ELSA_GAMBLING_PROXY_001",
+  "Dataset_ID": "ELSA_GAMBLING_PROXY",
+  "Dataset name": "English Longitudinal Study of Ageing - gambling winnings proxy",
+  "Resource type": "Wave documentation",
+  "Title / description": "ELSA Wave 1 documentation",
+  "URL": "https://doc.ukdataservice.ac.uk/doc/5050/mrdoc/pdf/5050_wave_1_documentation.pdf",
+  "Public or gated": "Public documentation",
+  "Variable names visible?": "Yes",
+  "Question wording visible?": "Yes",
+  "Recommended website field": "questionnaire_url",
+  "Priority": "Secondary",
+  "Notes": "Proxy only"
  }
 ]

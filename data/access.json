@@ -744,5 +744,22 @@
   "Data format / notes": "Two linked waves",
   "Source URLs": "https://www.greo.ca/en/greo-resource/data-repository.aspx",
   "Notes": "Access difficulty: Controlled"
+ },
+ {
+  "Dataset_ID": "ELSA_GAMBLING_PROXY",
+  "Dataset name": "English Longitudinal Study of Ageing - gambling winnings proxy",
+  "Access status": "UKDS primary data with tiered access",
+  "Access route": "Register/request study 5050",
+  "Access request URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/5050",
+  "Data access documentation URL": "https://doc.ukdataservice.ac.uk/doc/5050/",
+  "Open/public items": "Questionnaires/documentation",
+  "Gated items": "Microdata",
+  "Cost/fee": "No fee stated",
+  "Ethics/proposal likely?": "Depends on licence tier",
+  "Named contact/form": "UKDS study 5050",
+  "TRE / secure environment": "Secure variants exist; primary tier depends on requested fields",
+  "Data format / notes": "Wave-specific files",
+  "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/studies/study/5050",
+  "Notes": "Access difficulty: Registration / safeguarded"
  }
 ]

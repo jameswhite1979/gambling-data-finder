@@ -987,5 +987,15 @@
   "Risk/protective factors analysed": "Multiple",
   "URL / DOI": "https://doi.org/10.5683/SP3/JYUO8E",
   "Notes": "Add peer-reviewed use after codebook/publication review"
+ },
+ {
+  "Dataset ID": "ELSA_GAMBLING_PROXY",
+  "Paper / documentation title": "No gambling-specific ELSA publication verified",
+  "Authors / year": "to be confirmed",
+  "Source type": "Negative publication search note",
+  "Gambling measure used": "",
+  "Risk/protective factors analysed": "",
+  "URL / DOI": "https://www.elsa-project.ac.uk/study-documentation",
+  "Notes": "Do not present as an analysed gambling dataset"
  }
 ]
