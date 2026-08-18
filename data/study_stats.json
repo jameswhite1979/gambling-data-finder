@@ -440,12 +440,12 @@
   "named_measures": []
  },
  "QLS": {
-  "variables": 3819,
-  "gambling": 1157,
-  "risk": 2633,
+  "variables": 4757,
+  "gambling": 1477,
+  "risk": 3248,
   "questionnaires": 1,
   "sources": 1,
-  "measures": 1157,
+  "measures": 1477,
   "named_measures": [
    "PGSI",
    "PPGM",

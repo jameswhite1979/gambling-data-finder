@@ -118,7 +118,7 @@
  },
  {
   "name": "NODS",
-  "variables": 54,
+  "variables": 58,
   "datasets": [
    "GIBS",
    "QLS"
@@ -131,7 +131,7 @@
  },
  {
   "name": "PGSI",
-  "variables": 334,
+  "variables": 348,
   "datasets": [
    "ACT_GPS_2019",
    "ADDHEALTH",
@@ -166,7 +166,7 @@
  },
  {
   "name": "PPGM",
-  "variables": 127,
+  "variables": 141,
   "datasets": [
    "AGRI_ANP_PANEL",
    "LLLP",
