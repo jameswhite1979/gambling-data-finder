@@ -129,7 +129,7 @@
  },
  {
   "name": "PGSI",
-  "variables": 220,
+  "variables": 222,
   "datasets": [
    "ADDHEALTH",
    "ALSPAC",
@@ -146,6 +146,7 @@
    "HSE_SHES_2016",
    "LSAC",
    "MANITOBA_YA",
+   "NGSN_DRF",
    "NSW",
    "SHES_2017_2018_2019_2021",
    "STS_ATS_GB_2022"

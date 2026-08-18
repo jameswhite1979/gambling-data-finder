@@ -352,13 +352,15 @@
   ]
  },
  "NGSN_DRF": {
-  "variables": 1,
-  "gambling": 0,
-  "risk": 1,
+  "variables": 129,
+  "gambling": 53,
+  "risk": 18,
   "questionnaires": 1,
   "sources": 1,
-  "measures": 0,
-  "named_measures": []
+  "measures": 53,
+  "named_measures": [
+   "PGSI"
+  ]
  },
  "CCHS_GAMBLING": {
   "variables": 5,
