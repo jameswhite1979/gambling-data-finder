@@ -42,7 +42,9 @@
   "NCS_R",
   "MANITOBA_LGCM_II_2022",
   "QLS",
-  "ELSA_GAMBLING_PROXY"
+  "ELSA_GAMBLING_PROXY",
+  "LOYALTY_CARD_2014_2016",
+  "CSDD"
  ],
  "construct_categories": [
   "ADHD symptoms",
@@ -125,6 +127,7 @@
   "CIS-R",
   "CORE-10",
   "CPGI",
+  "CRT",
   "Cambridge Gambling Task",
   "Cantril Ladder",
   "DASS-21",
@@ -156,9 +159,11 @@
   "MSPSS",
   "NEO-FFI",
   "NODS",
+  "ONS4",
   "PGSI",
   "PHQ-4",
   "PPGM",
+  "REI-10",
   "Rosenberg Self-Esteem Scale",
   "Rutter Behaviour Scale",
   "SDQ",

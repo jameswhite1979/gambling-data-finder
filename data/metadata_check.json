@@ -583,5 +583,31 @@
   "Metadata access needed?": "No",
   "Next extraction action": "None planned - ELSA carries no gambling module beyond this bundled income proxy",
   "Source URLs": "https://doc.ukdataservice.ac.uk/doc/5050/mrdoc/pdf/5050_wave_1_documentation.pdf"
+ },
+ {
+  "Dataset_ID": "LOYALTY_CARD_2014_2016",
+  "Dataset name": "Gaming and Betting Study: Survey of Loyalty Card Customers, Waves 1 and 2, 2014-2016",
+  "Public catalogue/tool checked": "Yes",
+  "CLOSER result": "Not a CLOSER source",
+  "Study-specific public metadata route": "https://doc.ukdataservice.ac.uk/doc/8191/mrdoc/pdf/8191_survey_of_loyalty_card_customers_user_guide_final.pdf ; https://doc.ukdataservice.ac.uk/doc/8191/mrdoc/pdf/8191_survey_of_loyalty_card_customers_derived_variable_guide.pdf",
+  "Variable names public?": "Yes",
+  "Question wording public?": "Yes",
+  "Raw data access status": "UK Data Service End User Licence (Registration / safeguarded)",
+  "Metadata access needed?": "No",
+  "Next extraction action": "",
+  "Source URLs": "https://doc.ukdataservice.ac.uk/doc/8191/mrdoc/pdf/8191_survey_of_loyalty_card_customers_user_guide_final.pdf ; https://doc.ukdataservice.ac.uk/doc/8191/mrdoc/pdf/8191_survey_of_loyalty_card_customers_derived_variable_guide.pdf"
+ },
+ {
+  "Dataset_ID": "CSDD",
+  "Dataset name": "Cambridge Study in Delinquent Development, 1961-1981",
+  "Public catalogue/tool checked": "Yes",
+  "CLOSER result": "Not a CLOSER source",
+  "Study-specific public metadata route": "https://www.ojp.gov/pdffiles1/Digitization/103946NCJRS.pdf",
+  "Variable names public?": "Yes",
+  "Question wording public?": "Yes",
+  "Raw data access status": "ICPSR/NACJD download with a free account (Registration / safeguarded)",
+  "Metadata access needed?": "No",
+  "Next extraction action": "",
+  "Source URLs": "https://www.ojp.gov/pdffiles1/Digitization/103946NCJRS.pdf"
  }
 ]

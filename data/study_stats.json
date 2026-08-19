@@ -484,5 +484,25 @@
   "sources": 1,
   "measures": 0,
   "named_measures": []
+ },
+ "LOYALTY_CARD_2014_2016": {
+  "variables": 461,
+  "gambling": 301,
+  "risk": 93,
+  "questionnaires": 3,
+  "sources": 6,
+  "measures": 301,
+  "named_measures": [
+   "PGSI"
+  ]
+ },
+ "CSDD": {
+  "variables": 15,
+  "gambling": 15,
+  "risk": 0,
+  "questionnaires": 1,
+  "sources": 2,
+  "measures": 15,
+  "named_measures": []
  }
 }

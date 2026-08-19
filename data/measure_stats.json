@@ -131,7 +131,7 @@
  },
  {
   "name": "PGSI",
-  "variables": 348,
+  "variables": 377,
   "datasets": [
    "ACT_GPS_2019",
    "ADDHEALTH",
@@ -149,6 +149,7 @@
    "HSE",
    "HSE_SHES_2016",
    "LLLP",
+   "LOYALTY_CARD_2014_2016",
    "LSAC",
    "MANITOBA_YA",
    "NGSN_DRF",

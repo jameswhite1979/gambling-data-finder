@@ -997,5 +997,45 @@
   "Risk/protective factors analysed": "",
   "URL / DOI": "https://www.elsa-project.ac.uk/study-documentation",
   "Notes": "Do not present as an analysed gambling dataset"
+ },
+ {
+  "Dataset ID": "LOYALTY_CARD_2014_2016",
+  "Paper / documentation title": "Follow-up study of loyalty card customers: changes in gambling behaviour over time",
+  "Authors / year": "Wardle, Fuller, Maplethorpe and Jones, 2017",
+  "Source type": "Research report",
+  "Gambling measure used": "PGSI (nine items), product-level participation and frequency",
+  "Risk/protective factors analysed": "Impulsivity, thinking style, cognitive reflection, wellbeing, life events, income and demographics",
+  "URL / DOI": "https://www.gambleaware.org/media/hvudbxgn/follow-up-study-of-loyalty-card-customers-report.pdf",
+  "Notes": "Wave 2 report prepared for GambleAware, 25 January 2017."
+ },
+ {
+  "Dataset ID": "LOYALTY_CARD_2014_2016",
+  "Paper / documentation title": "Gaming and Betting Study: Survey of Loyalty Card Customers, Waves 1 and 2, 2014-2016 - user guide",
+  "Authors / year": "NatCen Social Research",
+  "Source type": "Data documentation",
+  "Gambling measure used": "PGSI scoring and thresholds; derived gambling measures",
+  "Risk/protective factors analysed": "Full covariate list",
+  "URL / DOI": "https://doc.ukdataservice.ac.uk/doc/8191/mrdoc/pdf/8191_survey_of_loyalty_card_customers_user_guide_final.pdf",
+  "Notes": "Documents the released variable list, missing-value conventions and weighting."
+ },
+ {
+  "Dataset ID": "CSDD",
+  "Paper / documentation title": "Cambridge Study in Delinquent Development [Great Britain], 1961-1981 - codebook",
+  "Authors / year": "Farrington, 1984",
+  "Source type": "Data documentation",
+  "Gambling measure used": "Betting participation and expenditure items; derived gambling classification",
+  "Risk/protective factors analysed": "Delinquency, family, school, personality and employment measures",
+  "URL / DOI": "https://www.ojp.gov/pdffiles1/Digitization/103946NCJRS.pdf",
+  "Notes": "ICPSR 8488. Gambling items are at VAR469, VAR567, VAR657-662, VAR687, VAR719-722, VAR780 and VAR814."
+ },
+ {
+  "Dataset ID": "CSDD",
+  "Paper / documentation title": "The Delinquent Way of Life",
+  "Authors / year": "West and Farrington, 1977",
+  "Source type": "Book",
+  "Gambling measure used": "Betting and gambling items from the age 18-19 interview",
+  "Risk/protective factors analysed": "Delinquency, employment, drinking and leisure",
+  "URL / DOI": "https://www.icpsr.umich.edu/web/NACJD/studies/8488",
+  "Notes": "Principal study monograph covering the age 18-19 sweep."
  }
 ]

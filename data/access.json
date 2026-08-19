@@ -761,5 +761,39 @@
   "Data format / notes": "Wave-specific files",
   "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/studies/study/5050",
   "Notes": "Access difficulty: Registration / safeguarded"
+ },
+ {
+  "Dataset_ID": "LOYALTY_CARD_2014_2016",
+  "Dataset name": "Gaming and Betting Study: Survey of Loyalty Card Customers",
+  "Access status": "Available under the UK Data Service End User Licence",
+  "Access route": "Registration with the UK Data Service, then download",
+  "Access request URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/8191",
+  "Data access documentation URL": "https://doc.ukdataservice.ac.uk/doc/8191/mrdoc/pdf/8191_survey_of_loyalty_card_customers_user_guide_final.pdf",
+  "Open/public items": "User guide, both wave questionnaires and the derived-variable guide are open PDFs and list every released variable name",
+  "Gated items": "The RGT1416.sav data file. The linked loyalty-card machine-play records are not released at all.",
+  "Cost/fee": "No fee",
+  "Ethics/proposal likely?": "Not required for End User Licence access; institutional approval may apply locally",
+  "Named contact/form": "UK Data Service helpdesk",
+  "TRE / secure environment": "No - standard download",
+  "Data format / notes": "SPSS .sav; missing-value conventions -1 not applicable, -8 don't know, -9 refused",
+  "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/studies/study/8191 ; https://doc.ukdataservice.ac.uk/doc/8191/mrdoc/pdf/8191_survey_of_loyalty_card_customers_user_guide_final.pdf",
+  "Notes": "Two CAPI routing errors are documented at Wave 2 (W2_OtherLimits and W2_Staff); affected cases are coded -4."
+ },
+ {
+  "Dataset_ID": "CSDD",
+  "Dataset name": "Cambridge Study in Delinquent Development",
+  "Access status": "Available from ICPSR/NACJD",
+  "Access route": "Free ICPSR account, then download",
+  "Access request URL": "https://www.icpsr.umich.edu/web/NACJD/studies/8488",
+  "Data access documentation URL": "https://www.ojp.gov/pdffiles1/Digitization/103946NCJRS.pdf",
+  "Open/public items": "The full codebook is an open PDF printing every variable number, label, code frame and universe",
+  "Gated items": "The data file itself",
+  "Cost/fee": "No fee",
+  "Ethics/proposal likely?": "Not required for public-use download",
+  "Named contact/form": "NACJD user support",
+  "TRE / secure environment": "No - standard download",
+  "Data format / notes": "Card-image data, 14 records per case; columns 1-3 hold the case number and 4-5 the card number",
+  "Source URLs": "https://www.icpsr.umich.edu/web/NACJD/studies/8488 ; https://www.ojp.gov/pdffiles1/Digitization/103946NCJRS.pdf",
+  "Notes": "Version 2 released 4 November 2005; dataset compiled April 1984."
  }
 ]
