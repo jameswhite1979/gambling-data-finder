@@ -8,7 +8,7 @@ description: Copy updated website files from OneDrive to the gambling-data-finde
 ## Step 1: Copy and check
 
 ```bash
-bash C:/Users/wppjw/gambling-data-finder/.claude/commands/scripts/deploy-website.sh
+bash .claude/commands/scripts/deploy-website.sh
 ```
 
 Review the git diff output to confirm only expected files changed.
@@ -18,5 +18,5 @@ Review the git diff output to confirm only expected files changed.
 Stage only the changed files, write a descriptive commit message (no AI attribution), and push:
 
 ```bash
-cd "C:/Users/wppjw/gambling-data-finder" && git add <files> && git commit -m "<message>" && git push
+git add <files> && git commit -m "<message>" && git push
 ```

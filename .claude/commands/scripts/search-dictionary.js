@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const BASE_DIR = path.join('C:', 'Users', 'wppjw', 'OneDrive - Cardiff University',
-  'Bids', 'UKRI', 'GHRIPPs', 'Study', 'Data availability');
+const { oneDriveRoot } = require('./paths.js');
+const BASE_DIR = oneDriveRoot();
 const XLSX = require(path.join(BASE_DIR, 'node_modules', 'xlsx'));
 
 // Usage: node search-dictionary.js <excel-file> [sheet-name] [--alspac] [--mcs]

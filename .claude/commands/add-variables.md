@@ -11,19 +11,21 @@ Read the source data dictionary using the search script:
 
 ```bash
 # Standard Excel file:
-node C:/Users/wppjw/gambling-data-finder/.claude/commands/scripts/search-dictionary.js "<path-to-excel>"
+node .claude/commands/scripts/search-dictionary.js "<path-to-excel>"
 
 # ALSPAC layout (col0=file, col1=varname, col2=label):
-node C:/Users/wppjw/gambling-data-finder/.claude/commands/scripts/search-dictionary.js "<path>" --alspac --sheet "<sheet>"
+node .claude/commands/scripts/search-dictionary.js "<path>" --alspac --sheet "<sheet>"
 
 # MCS layout (headers contain \r\n):
-node C:/Users/wppjw/gambling-data-finder/.claude/commands/scripts/search-dictionary.js "<path>" --mcs
+node .claude/commands/scripts/search-dictionary.js "<path>" --mcs
 
 # List available sheets:
-node C:/Users/wppjw/gambling-data-finder/.claude/commands/scripts/search-dictionary.js "<path>" --list-sheets
+node .claude/commands/scripts/search-dictionary.js "<path>" --list-sheets
 ```
 
-Data dictionaries are in: `C:\Users\wppjw\OneDrive - Cardiff University\Bids\UKRI\GHRIPPs\Study\Data availability\Dataset metadata dictionary questionnaire\`
+Data dictionaries live in the `Dataset metadata dictionary questionnaire` folder inside the
+OneDrive working directory. That path is machine-specific, so it is kept in
+`.claude/commands/scripts/local-paths.json` (gitignored) rather than hard-coded here.
 
 Use judgement to filter relevant variables and assign categories.
 
@@ -49,7 +51,7 @@ Row ID types: `GM` (gambling measure), `RF` (risk factor), `META` (metadata), `O
 ## Step 3: Merge (fixed script)
 
 ```bash
-node C:/Users/wppjw/gambling-data-finder/.claude/commands/scripts/merge-variables.js /tmp/new-records.json
+node .claude/commands/scripts/merge-variables.js /tmp/new-records.json
 ```
 
 Deduplicates by `variable_row_id` and `dataset_id|variable_name`.
@@ -57,7 +59,7 @@ Deduplicates by `variable_row_id` and `dataset_id|variable_name`.
 ## Step 4: Validate and rebuild derived files
 
 ```bash
-python C:/Users/wppjw/.claude/skills/ghripps-add-dataset/scripts/validate_and_update.py <DATASET_ID>
+python scripts/validate_and_update.py <DATASET_ID> --data-dir data
 ```
 
 This validates all JSON files, fixes facets.json, and recounts summary.json.

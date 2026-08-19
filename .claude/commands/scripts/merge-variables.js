@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const SITE_DIR = path.join('C:', 'Users', 'wppjw', 'OneDrive - Cardiff University',
-  'Bids', 'UKRI', 'GHRIPPs', 'Study', 'Data availability', 'website');
+const { siteDir } = require('./paths.js');
+const SITE_DIR = siteDir();
 const DATA = path.join(SITE_DIR, 'data');
 
 function readJson(name) {

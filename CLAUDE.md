@@ -8,10 +8,15 @@ served from the domain root, so absolute paths are `/style.css`, not `/gambling-
 
 ## Paths
 
-- **Git repo (deploy here):** `C:\Users\wppjw\gambling-data-finder\`
-- **Working copy:** `C:\Users\wppjw\OneDrive - Cardiff University\Bids\UKRI\GHRIPPs\Study\Data availability\website\`
-- **Data dictionaries:** `C:\Users\wppjw\OneDrive - Cardiff University\Bids\UKRI\GHRIPPs\Study\Data availability\Dataset metadata dictionary questionnaire\`
-- **Paper & build scripts:** `C:\Users\wppjw\OneDrive - Cardiff University\Bids\UKRI\GHRIPPs\Study\Data availability\Paper\`
+Absolute paths are machine-specific and this repo is public, so they are not recorded here.
+They live in `.claude/commands/scripts/local-paths.json`, which is gitignored. On a new
+machine, copy `local-paths.example.json` to `local-paths.json` and fill in `oneDriveRoot`,
+or set the `GDF_ONEDRIVE_ROOT` environment variable.
+
+- **Git repo (deploy here):** the repo root - scripts derive it from their own location
+- **Working copy:** `<oneDriveRoot>/website/`
+- **Data dictionaries:** `<oneDriveRoot>/Dataset metadata dictionary questionnaire/`
+- **Paper & build scripts:** `<oneDriveRoot>/Paper/`
 
 ## Architecture
 

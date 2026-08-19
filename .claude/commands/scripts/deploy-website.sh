@@ -2,8 +2,17 @@
 # Copy website files from OneDrive working directory to git repo
 # Usage: bash deploy-website.sh [commit message]
 
-SRC="C:/Users/wppjw/OneDrive - Cardiff University/Bids/UKRI/GHRIPPs/Study/Data availability/website"
-DST="C:/Users/wppjw/gambling-data-finder"
+# Paths are resolved at run time so none are hard-coded into this public repo.
+# DST comes from this script's own location; SRC from local-paths.json (gitignored).
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DST="$(cd "$SCRIPT_DIR/../../.." && pwd)"
+SRC="$(cd "$SCRIPT_DIR" && node -p "require('./paths.js').siteDir()")"
+
+if [ ! -d "$SRC" ]; then
+  echo "Source directory not found: $SRC" >&2
+  echo "Check .claude/commands/scripts/local-paths.json" >&2
+  exit 1
+fi
 
 # Data files (always sync)
 for f in variables.json facets.json summary.json datasets.json publications.json questionnaires.json sources.json gambling_measures.json access.json metadata_check.json; do
