@@ -131,7 +131,7 @@
  },
  {
   "name": "PGSI",
-  "variables": 377,
+  "variables": 378,
   "datasets": [
    "ACT_GPS_2019",
    "ADDHEALTH",
@@ -148,6 +148,7 @@
    "HILDA",
    "HSE",
    "HSE_SHES_2016",
+   "KCMHR_HWCS",
    "LLLP",
    "LOYALTY_CARD_2014_2016",
    "LSAC",

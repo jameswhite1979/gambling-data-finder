@@ -44,7 +44,12 @@
   "QLS",
   "ELSA_GAMBLING_PROXY",
   "LOYALTY_CARD_2014_2016",
-  "CSDD"
+  "CSDD",
+  "WOS_TWENTY07",
+  "MHCYP",
+  "BHPS_GAMBLING_PROXY",
+  "KCMHR_HWCS",
+  "GLAD"
  ],
  "construct_categories": [
   "ADHD symptoms",

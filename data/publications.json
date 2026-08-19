@@ -1037,5 +1037,55 @@
   "Risk/protective factors analysed": "Delinquency, employment, drinking and leisure",
   "URL / DOI": "https://www.icpsr.umich.edu/web/NACJD/studies/8488",
   "Notes": "Principal study monograph covering the age 18-19 sweep."
+ },
+ {
+  "Dataset ID": "WOS_TWENTY07",
+  "Paper / documentation title": "Cohort Profile: West of Scotland Twenty-07 Study: Health in the Community",
+  "Authors / year": "Benzeval and colleagues, 2009",
+  "Source type": "Cohort profile",
+  "Gambling measure used": "Not the focus; gambling items are in the Wave 4 schedule",
+  "Risk/protective factors analysed": "Employment, deprivation, health behaviours and mental health",
+  "URL / DOI": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2935558/",
+  "Notes": "Confirms the three cohorts born around 1932, 1952 and 1972 and Wave 4 fieldwork in 2000-04."
+ },
+ {
+  "Dataset ID": "MHCYP",
+  "Paper / documentation title": "Mental Health of Children and Young People in England, 2023 - wave 4 follow-up, part 2: sleep, loneliness, activities and health behaviours",
+  "Authors / year": "NHS England, 2023",
+  "Source type": "Statistical release",
+  "Gambling measure used": "Days gambled money online in the past 7 days",
+  "Risk/protective factors analysed": "Sleep, loneliness, social media use and health behaviours",
+  "URL / DOI": "https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-of-children-and-young-people-in-england/2023-wave-4-follow-up/part-2-sleep-loneliness-activities-and-health-behaviours",
+  "Notes": "Published 21 November 2023; gives the wording, age universes and prevalence."
+ },
+ {
+  "Dataset ID": "BHPS_GAMBLING_PROXY",
+  "Paper / documentation title": "Gambling and financial distress",
+  "Authors / year": "LSE Centre for Economic Performance discussion paper 1762, 2021",
+  "Source type": "Discussion paper",
+  "Gambling measure used": "BHPS gambling winnings receipt and amount",
+  "Risk/protective factors analysed": "Income, financial distress and household circumstances",
+  "URL / DOI": "https://eprints.lse.ac.uk/114438/1/dp1762.pdf",
+  "Notes": "States that the data cannot distinguish non-players from unsuccessful players - the basis for the proxy classification."
+ },
+ {
+  "Dataset ID": "KCMHR_HWCS",
+  "Paper / documentation title": "Health and wellbeing of UK Armed Forces personnel and veterans: protocol for the fourth phase of a cohort study",
+  "Authors / year": "King's Centre for Military Health Research, 2023",
+  "Source type": "Protocol preprint",
+  "Gambling measure used": "Problem Gambling Severity Index, cut-off 8 or more",
+  "Risk/protective factors analysed": "PTSD, complex PTSD, common mental disorders, alcohol, illicit drug use, loneliness and social support",
+  "URL / DOI": "https://www.medrxiv.org/content/10.1101/2023.08.17.23294221v1.full.pdf",
+  "Notes": "Posted 23 August 2023. Lists the PGSI as measure 13 of the Phase 4 questionnaire."
+ },
+ {
+  "Dataset ID": "GLAD",
+  "Paper / documentation title": "The Genetic Links to Anxiety and Depression (GLAD) Study: online recruitment into the largest recontactable study of depression and anxiety",
+  "Authors / year": "Davies and colleagues, 2019",
+  "Source type": "Cohort profile",
+  "Gambling measure used": "Optional questionnaire asking detailed questions about gambling",
+  "Risk/protective factors analysed": "Anxiety and depression phenotypes, trauma, substance use and life events",
+  "URL / DOI": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6891252/",
+  "Notes": "The single public source establishing that a gambling module exists."
  }
 ]

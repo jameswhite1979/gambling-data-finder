@@ -504,5 +504,52 @@
   "sources": 2,
   "measures": 15,
   "named_measures": []
+ },
+ "WOS_TWENTY07": {
+  "variables": 3,
+  "gambling": 3,
+  "risk": 0,
+  "questionnaires": 1,
+  "sources": 4,
+  "measures": 3,
+  "named_measures": []
+ },
+ "MHCYP": {
+  "variables": 4,
+  "gambling": 4,
+  "risk": 0,
+  "questionnaires": 2,
+  "sources": 5,
+  "measures": 4,
+  "named_measures": []
+ },
+ "BHPS_GAMBLING_PROXY": {
+  "variables": 4,
+  "gambling": 0,
+  "risk": 0,
+  "questionnaires": 2,
+  "sources": 3,
+  "measures": 0,
+  "named_measures": []
+ },
+ "KCMHR_HWCS": {
+  "variables": 1,
+  "gambling": 1,
+  "risk": 0,
+  "questionnaires": 1,
+  "sources": 2,
+  "measures": 1,
+  "named_measures": [
+   "PGSI"
+  ]
+ },
+ "GLAD": {
+  "variables": 1,
+  "gambling": 1,
+  "risk": 0,
+  "questionnaires": 1,
+  "sources": 3,
+  "measures": 1,
+  "named_measures": []
  }
 }

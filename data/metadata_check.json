@@ -609,5 +609,70 @@
   "Metadata access needed?": "No",
   "Next extraction action": "",
   "Source URLs": "https://www.ojp.gov/pdffiles1/Digitization/103946NCJRS.pdf"
+ },
+ {
+  "Dataset_ID": "WOS_TWENTY07",
+  "Dataset name": "West of Scotland Twenty-07 Study: Health in the Community",
+  "Public catalogue/tool checked": "Yes",
+  "CLOSER result": "Not a CLOSER source",
+  "Study-specific public metadata route": "https://2007study.sphsu.mrc.ac.uk/W4-all-R-and-L-main_2012_08.pdf",
+  "Variable names public?": "Yes",
+  "Question wording public?": "Yes",
+  "Raw data access status": "Application to the study team (Controlled)",
+  "Metadata access needed?": "No",
+  "Next extraction action": "",
+  "Source URLs": "https://2007study.sphsu.mrc.ac.uk/W4-all-R-and-L-main_2012_08.pdf"
+ },
+ {
+  "Dataset_ID": "MHCYP",
+  "Dataset name": "Mental Health of Children and Young People in England",
+  "Public catalogue/tool checked": "Yes",
+  "CLOSER result": "Not a CLOSER source",
+  "Study-specific public metadata route": "https://doc.ukdataservice.ac.uk/doc/9128/mrdoc/pdf/9128_mhcyp_2020_derived_variable_specification_v1.pdf",
+  "Variable names public?": "Yes",
+  "Question wording public?": "Yes",
+  "Raw data access status": "UK Data Service; published statistics are open (Registration / safeguarded)",
+  "Metadata access needed?": "No",
+  "Next extraction action": "",
+  "Source URLs": "https://doc.ukdataservice.ac.uk/doc/9128/mrdoc/pdf/9128_mhcyp_2020_derived_variable_specification_v1.pdf"
+ },
+ {
+  "Dataset_ID": "BHPS_GAMBLING_PROXY",
+  "Dataset name": "British Household Panel Survey - gambling winnings proxy",
+  "Public catalogue/tool checked": "Yes",
+  "CLOSER result": "Not a CLOSER source",
+  "Study-specific public metadata route": "https://doc.ukdataservice.ac.uk/doc/5151/mrdoc/pdf/5151_questionnaires_w17.pdf ; https://doc.ukdataservice.ac.uk/doc/5151/mrdoc/pdf/5151_questionnaires_w18.pdf",
+  "Variable names public?": "Yes",
+  "Question wording public?": "Yes",
+  "Raw data access status": "UK Data Service End User Licence (Registration / safeguarded)",
+  "Metadata access needed?": "No",
+  "Next extraction action": "",
+  "Source URLs": "https://doc.ukdataservice.ac.uk/doc/5151/mrdoc/pdf/5151_questionnaires_w17.pdf ; https://doc.ukdataservice.ac.uk/doc/5151/mrdoc/pdf/5151_questionnaires_w18.pdf"
+ },
+ {
+  "Dataset_ID": "KCMHR_HWCS",
+  "Dataset name": "Health and Wellbeing Cohort Study (King's Centre for Military Health Research)",
+  "Public catalogue/tool checked": "Yes",
+  "CLOSER result": "Not a CLOSER source",
+  "Study-specific public metadata route": "https://www.medrxiv.org/content/10.1101/2023.08.17.23294221v1.full.pdf",
+  "Variable names public?": "Yes",
+  "Question wording public?": "Yes",
+  "Raw data access status": "Project proposal to the study team (Controlled)",
+  "Metadata access needed?": "No",
+  "Next extraction action": "",
+  "Source URLs": "https://www.medrxiv.org/content/10.1101/2023.08.17.23294221v1.full.pdf"
+ },
+ {
+  "Dataset_ID": "GLAD",
+  "Dataset name": "Genetic Links to Anxiety and Depression Study",
+  "Public catalogue/tool checked": "Yes",
+  "CLOSER result": "Not a CLOSER source",
+  "Study-specific public metadata route": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6891252/",
+  "Variable names public?": "Yes",
+  "Question wording public?": "Yes",
+  "Raw data access status": "Application to the NIHR BioResource / GLAD team (Controlled)",
+  "Metadata access needed?": "No",
+  "Next extraction action": "",
+  "Source URLs": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6891252/"
  }
 ]
