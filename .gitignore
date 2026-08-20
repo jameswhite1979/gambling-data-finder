@@ -34,3 +34,9 @@ RA_BRIEF_gambling_data_finder.md
 # Codex prompt files are working notes, never part of the site.
 # Pattern rather than one line per file, so a new prompt cannot leak by omission.
 CODEX_PROMPT_*.md
+
+# Local dev tooling for the pre-deploy page check. This repo is served by
+# GitHub Pages, so node_modules must never be committed.
+node_modules/
+package-lock.json
+.playwright-report/
