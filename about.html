@@ -8,6 +8,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
 <link rel="stylesheet" href="style.css?v=6">
+<style>
+/* .info-grid is styled small and grey where it labels study metadata; on this
+   page it is body copy, so match the surrounding text. */
+.content-page .info-grid{font-size:1rem}
+.content-page .info-grid dd{color:var(--text)}
+</style>
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="canonical" href="https://www.gamblingdatafinder.com/about.html">
@@ -35,14 +41,13 @@
 
   <div class="detail-section">
     <h2>Purpose</h2>
-    <p style="margin-bottom:1rem;font-size:.9rem;color:var(--text-muted);">The purpose of the Gambling Data Finder is to make existing gambling-related data easier to discover and compare. It brings together metadata from cohort studies, panel studies, population surveys and other relevant sources so users can identify datasets that may be suitable for research on gambling participation, gambling-related harm, risk and protective factors, and participant characteristics.</p>
-    <p style="font-size:.9rem;color:var(--text-muted);">The tool supports CYP-GHRIP by highlighting what is already available, where there are gaps in measurement or coverage, and where further engagement with data owners may improve the research infrastructure for prevention, policy and practice.</p>
-    <p>Adult studies are indexed alongside youth studies rather than excluded. Many carry the 16&ndash;24 age group inside a wider adult sample, so they hold data on emerging adults that no youth survey covers; the instruments they use, particularly the PGSI, are the same ones that make cross-study synthesis possible; and adult data provide the comparison against which findings for children and young people can be read. A study is therefore included on whether it measures gambling participation or gambling harm, not on the age of its sample.</p>
+    <p style="margin-bottom:1rem;">The purpose of the Gambling Data Finder is to make existing gambling-related data easier to discover and compare. It brings together metadata from cohort studies, panel studies, population surveys and other relevant sources so users can identify datasets that may be suitable for research on gambling participation, gambling-related harm, risk and protective factors, and participant characteristics.</p>
+    <p>The tool supports CYP-GHRIP by highlighting what is already available, where there are gaps in measurement or coverage, and where further engagement with data owners may improve the research infrastructure for prevention, policy and practice.</p>
   </div>
 
   <div class="detail-section">
     <h2>What you can find</h2>
-    <ul style="padding-left:1.2rem;font-size:.9rem;color:var(--text-muted);line-height:1.8;">
+    <ul style="padding-left:1.2rem;line-height:1.8;">
       <li>An overview of each dataset or study, including population, geography, design and age coverage</li>
       <li>Relevant survey questions and variables, filterable by study, topic, measure, age group and access route</li>
       <li>Questionnaire wording, response options and documentation links where available</li>
@@ -56,13 +61,13 @@
 
   <div class="detail-section">
     <h2>How the metadata helps</h2>
-    <p style="margin-bottom:1rem;font-size:.9rem;color:var(--text-muted);">By bringing study documentation into one searchable structure, the site helps users judge whether a dataset may be useful before investing time in a full access request. Users can compare how gambling was measured, where questions appeared, whether standardised scales were used, and which contextual variables are available alongside gambling measures.</p>
-    <p style="font-size:.9rem;color:var(--text-muted);">The catalogue also improves transparency by recording the source documentation used for each entry and by distinguishing extracted metadata from areas that still require manual review or data-owner confirmation.</p>
+    <p style="margin-bottom:1rem;">By bringing study documentation into one searchable structure, the site helps users judge whether a dataset may be useful before investing time in a full access request. Users can compare how gambling was measured, where questions appeared, whether standardised scales were used, and which contextual variables are available alongside gambling measures.</p>
+    <p>The catalogue also improves transparency by recording the source documentation used for each entry and by distinguishing extracted metadata from areas that still require manual review or data-owner confirmation.</p>
   </div>
 
   <div class="detail-section">
     <h2>What it does not do</h2>
-    <ul style="padding-left:1.2rem;font-size:.9rem;color:var(--text-muted);line-height:1.8;">
+    <ul style="padding-left:1.2rem;line-height:1.8;">
       <li>It does not host restricted individual-level data unless explicitly allowed</li>
       <li>It does not replace repository or study-team access processes</li>
       <li>It does not guarantee that every gambling-relevant item has been identified</li>
@@ -84,6 +89,10 @@
       <dd>View standardised gambling instruments and recurring measures, including PGSI, DSM-derived measures and SOGS-RA.</dd>
       <dt>Coverage</dt>
       <dd>See what metadata is available, what has been extracted, and where manual review or further data-owner engagement may be needed.</dd>
+      <dt>Analysis</dt>
+      <dd>Check how ready each dataset is for secondary analysis, scored on measurement detail, access route, risk/protective factor coverage and published use, and see which datasets look compatible enough to pool or compare.</dd>
+      <dt>Ideas</dt>
+      <dd>Turn the catalogue into candidate research. A gap matrix shows which risk and protective factor domains are well covered and which are barely studied, and a question generator suggests cross-study questions the indexed data could answer.</dd>
       <dt>Basket</dt>
       <dd>Collect variables, questions and questionnaires of interest and download the selection to support data access requests or evidence mapping.</dd>
     </dl>
@@ -91,13 +100,13 @@
 
   <div class="detail-section">
     <h2>Data sources</h2>
-    <p style="margin-bottom:1rem;font-size:.9rem;color:var(--text-muted);">Variable metadata was extracted from questionnaires, codebooks, data dictionaries and other documentation published by study teams. Access and governance information was gathered from study websites, data repositories and open data archives including UK Data Service, ICPSR and related catalogues.</p>
-    <p style="font-size:.9rem;color:var(--text-muted);">The catalogue is a living resource for CYP-GHRIP evidence mapping and future phases of the partnership. If you notice errors or missing data, or would like your study included, please get in touch.</p>
+    <p style="margin-bottom:1rem;">Variable metadata was extracted from questionnaires, codebooks, data dictionaries and other documentation published by study teams. Access and governance information was gathered from study websites, data repositories and open data archives including UK Data Service, ICPSR and related catalogues.</p>
+    <p>The catalogue is a living resource for CYP-GHRIP evidence mapping and future phases of the partnership. If you notice errors or missing data, or would like your study included, please get in touch.</p>
   </div>
 
   <div class="detail-section" id="contact">
     <h2>Contact</h2>
-    <p style="font-size:.9rem;color:var(--text-muted);">For questions, corrections or contributions, please contact the CYP-GHRIP data availability team.</p>
+    <p>For questions, corrections or contributions, please contact the CYP-GHRIP data availability team at <a href="mailto:cyp.ghrip@ed.ac.uk">cyp.ghrip@ed.ac.uk</a>.</p>
   </div>
 </div>
 
