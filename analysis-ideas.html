@@ -83,7 +83,7 @@
 
   <div class="ideas-section">
     <h2>Best studies for new analysis</h2>
-    <p>These rankings prioritise studies with gambling measures plus the relevant risk, protective, harm or longitudinal structure.</p>
+    <p>These rankings prioritise studies with gambling measures plus the relevant risk, protective, harm or longitudinal structure. They cover the whole catalogue, so adult studies appear alongside youth studies; the age at which gambling is measured is shown against each.</p>
     <div id="dataset-rankings"><div class="loading">Loading rankings...</div></div>
   </div>
 
@@ -181,11 +181,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     domainDefs.forEach(d => {
       domains[d.key] = risk.filter(v => hasTerms(textForVar(v), d.terms)).length;
     });
+    const age = (ds['Age gambling measured'] || ds['Age focus / population'] || '').trim();
     const design = (ds['Study design'] || '').toLowerCase();
     const longitudinal = design.includes('longitudinal') || design.includes('cohort') || design.includes('panel') || design.includes('repeated');
     const domainCount = Object.values(domains).filter(n => n > 0).length;
     const ideaScore = (gamb.length ? 4 : 0) + Math.min(domainCount, 6) + Math.min(namedMeasures.length, 3) + (harm.length ? 2 : 0) + (longitudinal ? 2 : 0);
-    return { id, name: dsName(id), ds, vars, gamb, risk, harm, protective, namedMeasures, domains, domainCount, longitudinal, ideaScore };
+    return { id, name: dsName(id), ds, age, vars, gamb, risk, harm, protective, namedMeasures, domains, domainCount, longitudinal, ideaScore };
   }
 
   function pubText(p) {
@@ -251,7 +252,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   function renderRankingTable(title, rows, reasonFn) {
     let html = `<h3>${escapeHTML(title)}</h3><div class="ideas-table-wrap"><table class="ideas-table"><thead><tr><th scope="col">Study</th><th scope="col">Why it is useful</th><th scope="col">Signals</th></tr></thead><tbody>`;
     rows.forEach(s => {
-      html += `<tr><td><a href="study.html?id=${encodeURIComponent(s.id)}">${escapeHTML(s.name)}</a></td><td>${escapeHTML(reasonFn(s))}</td><td><span class="ideas-pill">${s.gamb.length} gambling vars</span> <span class="ideas-pill ideas-pill-high">${s.domainCount} domains</span>${s.longitudinal ? ' <span class="ideas-pill ideas-pill-med">Longitudinal</span>' : ''}</td></tr>`;
+      html += `<tr><td><a href="study.html?id=${encodeURIComponent(s.id)}">${escapeHTML(s.name)}</a></td><td>${escapeHTML(reasonFn(s))}</td><td><span class="ideas-pill">${s.gamb.length} gambling vars</span> <span class="ideas-pill ideas-pill-high">${s.domainCount} domains</span>${s.longitudinal ? ' <span class="ideas-pill ideas-pill-med">Longitudinal</span>' : ''}${s.age ? ` <span class="ideas-pill" title="Age at which gambling is measured">Age ${escapeHTML(s.age)}</span>` : ''}</td></tr>`;
     });
     html += '</tbody></table></div>';
     return html;
@@ -358,16 +359,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   function renderPrimaryGaps() {
     const gaps = [
-      ['Prospective harm pathways', 'Repeated measures that put risk/protective factors before gambling harm, then follow later outcomes.'],
+      ['Prospective harm pathways in young people', 'Quinte, the Leisure Lifestyle and Lifecycle Project and the AGRI panel now provide this for adults: risk factors measured before gambling harm, with later outcomes followed. No youth study has an equivalent prospective structure.'],
       ['Youth-specific harm outcomes', 'Items on school impact, family conflict, debt, sleep, wellbeing, stigma and affected-others harm.'],
       ['Digital gambling ecology', 'Consistent measures of advertising exposure, influencers, loot boxes, skins, esports betting and gambling-like finance products.'],
       ['Protective mechanisms', 'Better coverage of social support, parental monitoring, school connectedness, digital literacy and help-seeking.'],
       ['Inequalities and subgroup power', 'Larger samples and consistent measures for ethnicity, disability, deprivation, care experience, migration and LGBTQ+ status.'],
       ['Harmonised gambling modules', 'A compact gambling and harm module repeated across surveys, and comparable between youth and adult samples, so that findings for young people can be read against the adult evidence rather than in isolation.'],
-      ['Consent for record linkage', 'Gambling surveys rarely collect consent to link education, health or benefits records; building linkage consent into new collections would transform what harms can be observed.'],
+      ['Consent for record linkage', 'Linkage is now established for adults: UK Biobank to clinical records, the Finnish surveys to national registers, the loyalty card study to operator data. Youth gambling surveys still rarely collect consent to link education, health or benefits records.'],
       ['Under-11s and primary-age exposure', 'Youth gambling surveys start at 11; exposure through family gambling, advertising and gambling-like games begins earlier and is essentially unmeasured.'],
       ['Behavioural and account data', 'The Gaming and Betting loyalty card study pairs survey responses with operator machine data for adults and is indexed here, so the design is proven; nothing equivalent exists for young people.'],
-      ['Repeated gambling modules within cohorts', 'Most cohorts ask about gambling at a single sweep; repeating a short module at 2-3 ages would enable genuine trajectory analysis of initiation, escalation and desistance.'],
+      ['Repeated gambling modules within youth cohorts', 'Most UK birth cohorts ask about gambling at a single sweep. The Cambridge Study in Delinquent Development shows the value of repeating it, having asked at four ages between 14 and 22; repeating a short module at two or three ages would enable genuine trajectory analysis of initiation, escalation and desistance.'],
       ['Prevalence of affected others among children', 'How many children live with an adult whose gambling causes harm is unknown; only SHRN 2025 currently asks young people directly.'],
       ['Youth-validated screening instruments', 'DSM-IV-MR-J and adapted PGSI items predate online gambling and gambling-like gaming; validation work for contemporary youth gambling is needed before scores can be compared across surveys.'],
     ];
