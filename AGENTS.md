@@ -12,6 +12,35 @@ Static HTML/CSS/JS site with JSON data files in `data/`. No backend. Deployed vi
 - **Shared code:** app.js, style.css
 - **Data files (in `data/`):** variables.json, datasets.json, publications.json, questionnaires.json, gambling_measures.json, sources.json, facets.json (derived), summary.json (derived)
 
+## Inclusion criterion
+
+**To be included, a study must collect data on gambling participation or gambling harm.**
+
+That is the test for a record in `datasets.json`. Everything else the catalogue holds -
+risk/protective factors, participant characteristics, questionnaires, access routes - is
+supporting detail attached to a study that already passes it. Those things do not on their own
+qualify a study for inclusion.
+
+Read the criterion strictly:
+
+- **Participation** means the data identify who gambled: an item on gambling behaviour,
+  frequency, product type, or expenditure. An item on gambling *winnings received* is not
+  participation. It cannot separate a non-gambler from a gambler who lost, so it fails.
+- **Harm** means a screen (PGSI, SOGS, DSM-IV-MR-J, CPGI, PPGM, NODS), a consequence item, or a
+  recorded clinical diagnosis such as ICD-10 F63.0 or Z72.6.
+
+A study may pass on either one alone. UK Biobank has no participation item and is included
+solely on its linked clinical diagnosis codes.
+
+Contextual and administrative datasets that measure the gambling environment rather than people
+(for example AHAH, which holds gambling outlet density) are a deliberate exception. Add one only
+when it supports analysis of the studies that do meet the criterion, and say so in the record.
+
+**Do not create a dataset record to document a negative screening result.** A record asserts the
+study belongs in the catalogue. When a study is checked and found to carry no qualifying measure,
+record it in the RA brief's closed list instead, with the sources checked and the date. Two
+studies, BHPS and ELSA, were added this way in error and removed on 2026-08-20.
+
 ## Data model
 
 Each variable record in `variables.json` has these fields:
