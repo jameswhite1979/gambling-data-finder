@@ -746,23 +746,6 @@
   "Notes": "Access difficulty: Controlled"
  },
  {
-  "Dataset_ID": "ELSA_GAMBLING_PROXY",
-  "Dataset name": "English Longitudinal Study of Ageing - gambling winnings proxy",
-  "Access status": "UKDS primary data with tiered access",
-  "Access route": "Register/request study 5050",
-  "Access request URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/5050",
-  "Data access documentation URL": "https://doc.ukdataservice.ac.uk/doc/5050/",
-  "Open/public items": "Questionnaires/documentation",
-  "Gated items": "Microdata",
-  "Cost/fee": "No fee stated",
-  "Ethics/proposal likely?": "Depends on licence tier",
-  "Named contact/form": "UKDS study 5050",
-  "TRE / secure environment": "Secure variants exist; primary tier depends on requested fields",
-  "Data format / notes": "Wave-specific files",
-  "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/studies/study/5050",
-  "Notes": "Access difficulty: Registration / safeguarded"
- },
- {
   "Dataset_ID": "LOYALTY_CARD_2014_2016",
   "Dataset name": "Gaming and Betting Study: Survey of Loyalty Card Customers",
   "Access status": "Available under the UK Data Service End User Licence",
@@ -829,23 +812,6 @@
   "Data format / notes": "SPSS and Stata via the UK Data Service",
   "Source URLs": "https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-of-children-and-young-people-in-england ; https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-of-children-and-young-people-in-england/2023-wave-4-follow-up/part-2-sleep-loneliness-activities-and-health-behaviours",
   "Notes": "Separate UKDS study numbers per wave, for example 9128 for 2020 and 9322 for 2021."
- },
- {
-  "Dataset_ID": "BHPS_GAMBLING_PROXY",
-  "Dataset name": "British Household Panel Survey - gambling winnings proxy",
-  "Access status": "Available under the UK Data Service End User Licence",
-  "Access route": "Registration with the UK Data Service, then download",
-  "Access request URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/5151",
-  "Data access documentation URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/5151",
-  "Open/public items": "All wave questionnaires are open PDFs and print the variable names",
-  "Gated items": "The data files",
-  "Cost/fee": "No fee",
-  "Ethics/proposal likely?": "Not required for End User Licence access",
-  "Named contact/form": "UK Data Service helpdesk",
-  "TRE / secure environment": "No - standard download",
-  "Data format / notes": "SPSS, Stata and tab-delimited; BHPS is study 5151",
-  "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/studies/study/5151 ; https://doc.ukdataservice.ac.uk/doc/5151/mrdoc/pdf/5151_questionnaires_w17.pdf",
-  "Notes": "The gambling winnings item is a proxy only - see the dataset notes."
  },
  {
   "Dataset_ID": "KCMHR_HWCS",

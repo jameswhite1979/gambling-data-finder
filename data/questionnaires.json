@@ -1582,20 +1582,6 @@
   "Notes": "Verify named problem-gambling scale"
  },
  {
-  "Questionnaire_ID": "Q_ELSA_GAMBLING_PROXY_01",
-  "Dataset_ID": "ELSA_GAMBLING_PROXY",
-  "Dataset name": "English Longitudinal Study of Ageing - gambling winnings proxy",
-  "Wave / year": "Wave 1",
-  "Age group": "50+",
-  "Questionnaire / metadata title": "ELSA Wave 1 income/assets documentation",
-  "File type": "PDF",
-  "URL": "https://doc.ukdataservice.ac.uk/doc/5050/mrdoc/pdf/5050_wave_1_documentation.pdf",
-  "Public or gated": "Public",
-  "Variable names visible?": "Yes",
-  "Question wording visible?": "Yes",
-  "Notes": "Bundled winnings category"
- },
- {
   "Questionnaire_ID": "Q_LOYALTY_CARD_2014_2016_01",
   "Dataset_ID": "LOYALTY_CARD_2014_2016",
   "Dataset name": "Gaming and Betting Study: Survey of Loyalty Card Customers",
@@ -1692,34 +1678,6 @@
   "Variable names visible?": "Yes",
   "Question wording visible?": "Labels and derivation syntax visible",
   "Notes": "UKDS study 9128."
- },
- {
-  "Questionnaire_ID": "Q_BHPS_GAMBLING_PROXY_01",
-  "Dataset_ID": "BHPS_GAMBLING_PROXY",
-  "Dataset name": "British Household Panel Survey - gambling winnings proxy",
-  "Wave / year": "Wave 17 (2007/08)",
-  "Age group": "16+",
-  "Questionnaire / metadata title": "BHPS wave 17 questionnaire",
-  "File type": "PDF",
-  "URL": "https://doc.ukdataservice.ac.uk/doc/5151/mrdoc/pdf/5151_questionnaires_w17.pdf",
-  "Public or gated": "Public",
-  "Variable names visible?": "Yes",
-  "Question wording visible?": "Labels/questions visible",
-  "Notes": "Questions F37 to F39."
- },
- {
-  "Questionnaire_ID": "Q_BHPS_GAMBLING_PROXY_02",
-  "Dataset_ID": "BHPS_GAMBLING_PROXY",
-  "Dataset name": "British Household Panel Survey - gambling winnings proxy",
-  "Wave / year": "Wave 18 (2008/09)",
-  "Age group": "16+",
-  "Questionnaire / metadata title": "BHPS wave 18 questionnaire",
-  "File type": "PDF",
-  "URL": "https://doc.ukdataservice.ac.uk/doc/5151/mrdoc/pdf/5151_questionnaires_w18.pdf",
-  "Public or gated": "Public",
-  "Variable names visible?": "Yes",
-  "Question wording visible?": "Labels/questions visible",
-  "Notes": "Questions F37 to F39."
  },
  {
   "Questionnaire_ID": "Q_KCMHR_HWCS_01",

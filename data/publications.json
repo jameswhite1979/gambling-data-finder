@@ -989,16 +989,6 @@
   "Notes": "Add peer-reviewed use after codebook/publication review"
  },
  {
-  "Dataset ID": "ELSA_GAMBLING_PROXY",
-  "Paper / documentation title": "No gambling-specific ELSA publication verified",
-  "Authors / year": "to be confirmed",
-  "Source type": "Negative publication search note",
-  "Gambling measure used": "",
-  "Risk/protective factors analysed": "",
-  "URL / DOI": "https://www.elsa-project.ac.uk/study-documentation",
-  "Notes": "Do not present as an analysed gambling dataset"
- },
- {
   "Dataset ID": "LOYALTY_CARD_2014_2016",
   "Paper / documentation title": "Follow-up study of loyalty card customers: changes in gambling behaviour over time",
   "Authors / year": "Wardle, Fuller, Maplethorpe and Jones, 2017",
@@ -1057,16 +1047,6 @@
   "Risk/protective factors analysed": "Sleep, loneliness, social media use and health behaviours",
   "URL / DOI": "https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-of-children-and-young-people-in-england/2023-wave-4-follow-up/part-2-sleep-loneliness-activities-and-health-behaviours",
   "Notes": "Published 21 November 2023; gives the wording, age universes and prevalence."
- },
- {
-  "Dataset ID": "BHPS_GAMBLING_PROXY",
-  "Paper / documentation title": "Gambling and financial distress",
-  "Authors / year": "LSE Centre for Economic Performance discussion paper 1762, 2021",
-  "Source type": "Discussion paper",
-  "Gambling measure used": "BHPS gambling winnings receipt and amount",
-  "Risk/protective factors analysed": "Income, financial distress and household circumstances",
-  "URL / DOI": "https://eprints.lse.ac.uk/114438/1/dp1762.pdf",
-  "Notes": "States that the data cannot distinguish non-players from unsuccessful players - the basis for the proxy classification."
  },
  {
   "Dataset ID": "KCMHR_HWCS",

@@ -332,12 +332,12 @@
   "named_measures": []
  },
  "UK_BIOBANK_GAMBLING": {
-  "variables": 2,
-  "gambling": 1,
+  "variables": 3,
+  "gambling": 2,
   "risk": 0,
   "questionnaires": 1,
   "sources": 1,
-  "measures": 1,
+  "measures": 2,
   "named_measures": []
  },
  "STS_ATS_GB_2022": {
@@ -476,15 +476,6 @@
    "PPGM"
   ]
  },
- "ELSA_GAMBLING_PROXY": {
-  "variables": 1,
-  "gambling": 0,
-  "risk": 0,
-  "questionnaires": 1,
-  "sources": 1,
-  "measures": 0,
-  "named_measures": []
- },
  "LOYALTY_CARD_2014_2016": {
   "variables": 461,
   "gambling": 301,
@@ -521,15 +512,6 @@
   "questionnaires": 2,
   "sources": 5,
   "measures": 4,
-  "named_measures": []
- },
- "BHPS_GAMBLING_PROXY": {
-  "variables": 4,
-  "gambling": 0,
-  "risk": 0,
-  "questionnaires": 2,
-  "sources": 3,
-  "measures": 0,
   "named_measures": []
  },
  "KCMHR_HWCS": {

@@ -572,19 +572,6 @@
   "Source URLs": "https://doi.org/10.5683/SP3/JYUO8E"
  },
  {
-  "Dataset_ID": "ELSA_GAMBLING_PROXY",
-  "Dataset name": "English Longitudinal Study of Ageing - gambling winnings proxy",
-  "Public catalogue/tool checked": "Yes",
-  "CLOSER result": "Not a CLOSER source",
-  "Study-specific public metadata route": "UK Data Service SN 5050 Wave 1 documentation",
-  "Variable names public?": "Yes - released columns Iapk01-Iapk05 confirmed",
-  "Question wording public?": "Yes - Wave 1 questionnaire published",
-  "Raw data access status": "Safeguarded/EUL via UK Data Service (Registration / safeguarded)",
-  "Metadata access needed?": "No",
-  "Next extraction action": "None planned - ELSA carries no gambling module beyond this bundled income proxy",
-  "Source URLs": "https://doc.ukdataservice.ac.uk/doc/5050/mrdoc/pdf/5050_wave_1_documentation.pdf"
- },
- {
   "Dataset_ID": "LOYALTY_CARD_2014_2016",
   "Dataset name": "Gaming and Betting Study: Survey of Loyalty Card Customers, Waves 1 and 2, 2014-2016",
   "Public catalogue/tool checked": "Yes",
@@ -635,19 +622,6 @@
   "Metadata access needed?": "No",
   "Next extraction action": "",
   "Source URLs": "https://doc.ukdataservice.ac.uk/doc/9128/mrdoc/pdf/9128_mhcyp_2020_derived_variable_specification_v1.pdf"
- },
- {
-  "Dataset_ID": "BHPS_GAMBLING_PROXY",
-  "Dataset name": "British Household Panel Survey - gambling winnings proxy",
-  "Public catalogue/tool checked": "Yes",
-  "CLOSER result": "Not a CLOSER source",
-  "Study-specific public metadata route": "https://doc.ukdataservice.ac.uk/doc/5151/mrdoc/pdf/5151_questionnaires_w17.pdf ; https://doc.ukdataservice.ac.uk/doc/5151/mrdoc/pdf/5151_questionnaires_w18.pdf",
-  "Variable names public?": "Yes",
-  "Question wording public?": "Yes",
-  "Raw data access status": "UK Data Service End User Licence (Registration / safeguarded)",
-  "Metadata access needed?": "No",
-  "Next extraction action": "",
-  "Source URLs": "https://doc.ukdataservice.ac.uk/doc/5151/mrdoc/pdf/5151_questionnaires_w17.pdf ; https://doc.ukdataservice.ac.uk/doc/5151/mrdoc/pdf/5151_questionnaires_w18.pdf"
  },
  {
   "Dataset_ID": "KCMHR_HWCS",

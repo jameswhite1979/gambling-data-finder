@@ -4410,20 +4410,6 @@
   "Notes": "Sampling caveat required"
  },
  {
-  "Source_ID": "SRC_ELSA_GAMBLING_PROXY_001",
-  "Dataset_ID": "ELSA_GAMBLING_PROXY",
-  "Dataset name": "English Longitudinal Study of Ageing - gambling winnings proxy",
-  "Resource type": "Wave documentation",
-  "Title / description": "ELSA Wave 1 documentation",
-  "URL": "https://doc.ukdataservice.ac.uk/doc/5050/mrdoc/pdf/5050_wave_1_documentation.pdf",
-  "Public or gated": "Public documentation",
-  "Variable names visible?": "Yes",
-  "Question wording visible?": "Yes",
-  "Recommended website field": "questionnaire_url",
-  "Priority": "Secondary",
-  "Notes": "Proxy only"
- },
- {
   "Source_ID": "SRC_LOYALTY_CARD_2014_2016_001",
   "Dataset_ID": "LOYALTY_CARD_2014_2016",
   "Dataset name": "Gaming and Betting Study: Survey of Loyalty Card Customers",
@@ -4660,48 +4646,6 @@
   "Recommended website field": "publication_url",
   "Priority": "High",
   "Notes": ""
- },
- {
-  "Source_ID": "SRC_BHPS_GAMBLING_PROXY_001",
-  "Dataset_ID": "BHPS_GAMBLING_PROXY",
-  "Dataset name": "British Household Panel Survey - gambling winnings proxy",
-  "Resource type": "Questionnaire",
-  "Title / description": "Wave 17 questionnaire - F37 to F39 carry QWINDFG and QWINDFGY",
-  "URL": "https://doc.ukdataservice.ac.uk/doc/5151/mrdoc/pdf/5151_questionnaires_w17.pdf",
-  "Public or gated": "Public",
-  "Variable names visible?": "Yes",
-  "Question wording visible?": "Full wording visible",
-  "Recommended website field": "questionnaire_url",
-  "Priority": "Critical",
-  "Notes": ""
- },
- {
-  "Source_ID": "SRC_BHPS_GAMBLING_PROXY_002",
-  "Dataset_ID": "BHPS_GAMBLING_PROXY",
-  "Dataset name": "British Household Panel Survey - gambling winnings proxy",
-  "Resource type": "Questionnaire",
-  "Title / description": "Wave 18 questionnaire - F37 to F39 carry RWINDFG and RWINDFGY",
-  "URL": "https://doc.ukdataservice.ac.uk/doc/5151/mrdoc/pdf/5151_questionnaires_w18.pdf",
-  "Public or gated": "Public",
-  "Variable names visible?": "Yes",
-  "Question wording visible?": "Full wording visible",
-  "Recommended website field": "questionnaire_url",
-  "Priority": "Critical",
-  "Notes": ""
- },
- {
-  "Source_ID": "SRC_BHPS_GAMBLING_PROXY_003",
-  "Dataset_ID": "BHPS_GAMBLING_PROXY",
-  "Dataset name": "British Household Panel Survey - gambling winnings proxy",
-  "Resource type": "Publication",
-  "Title / description": "LSE CEP discussion paper 1762, which states the data cannot distinguish non-players from unsuccessful players",
-  "URL": "https://eprints.lse.ac.uk/114438/1/dp1762.pdf",
-  "Public or gated": "Public",
-  "Variable names visible?": "No",
-  "Question wording visible?": "Analysis only",
-  "Recommended website field": "publication_url",
-  "Priority": "High",
-  "Notes": "Primary evidence for the proxy classification."
  },
  {
   "Source_ID": "SRC_KCMHR_HWCS_001",
