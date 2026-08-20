@@ -93,7 +93,7 @@
   <div class="method-grid">
     <section class="method-panel">
       <h2>How readiness is scored</h2>
-      <p>Readiness is a 0-20 score based on eleven documented features: under-25 coverage, gambling measure coverage, named or validated gambling measures, public variable/question wording metadata, risk/protective factor breadth, validated risk/protective measures, longitudinal design, inequality variables, access route clarity, published research use and compatibility with other datasets. Risk/protective breadth and inequality coverage are read from the variables actually extracted for each dataset (for example area deprivation, income, ethnicity and disability), so compatible modules such as the Health Survey for England and the Scottish Health Survey score consistently.</p>
+      <p>Readiness is a 0-18 score based on ten documented features: gambling measure coverage, named or validated gambling measures, public variable/question wording metadata, risk/protective factor breadth, validated risk/protective measures, longitudinal design, inequality variables, access route clarity, published research use and compatibility with other datasets. Risk/protective breadth and inequality coverage are read from the variables actually extracted for each dataset (for example area deprivation, income, ethnicity and disability), so compatible modules such as the Health Survey for England and the Scottish Health Survey score consistently.</p>
     </section>
     <section class="method-panel">
       <h2>What synthesis-ready means</h2>
@@ -114,16 +114,16 @@
 
   <div class="subsection">
     <h2>Dataset readiness scores</h2>
-    <p style="color:var(--text-muted);font-size:.85rem;margin-bottom:.8rem;">Each dataset is scored 0&ndash;20 across eleven components reflecting how ready and useful it is for gambling-related secondary analysis. Higher scores indicate greater readiness for research use and cross-dataset synthesis.</p>
+    <p style="color:var(--text-muted);font-size:.85rem;margin-bottom:.8rem;">Each dataset is scored 0&ndash;18 across ten components reflecting how ready and useful it is for gambling-related secondary analysis. Higher scores indicate greater readiness for research use and cross-dataset synthesis.</p>
     <div class="score-legend">
-      <span class="score-legend-item"><span class="score-pill score-high">16&ndash;20</span> High readiness</span>
-      <span class="score-legend-item"><span class="score-pill score-good">11&ndash;15</span> Good candidate</span>
-      <span class="score-legend-item"><span class="score-pill score-moderate">6&ndash;10</span> Moderate / exploratory</span>
-      <span class="score-legend-item"><span class="score-pill score-low">0&ndash;5</span> Low readiness</span>
+      <span class="score-legend-item"><span class="score-pill score-high">14&ndash;18</span> High readiness</span>
+      <span class="score-legend-item"><span class="score-pill score-good">10&ndash;13</span> Good candidate</span>
+      <span class="score-legend-item"><span class="score-pill score-moderate">5&ndash;9</span> Moderate / exploratory</span>
+      <span class="score-legend-item"><span class="score-pill score-low">0&ndash;4</span> Low readiness</span>
     </div>
     <div class="score-legend" style="margin-bottom:1rem;">
       <span class="score-legend-item"><strong>Compat.</strong> Compatibility flag</span>
-      <span class="score-legend-item"><strong>U25</strong> Under-25 data</span>
+      <span class="score-legend-item"><strong>U25</strong> Under-25 gambling data (not scored)</span>
       <span class="score-legend-item"><strong>Gamb</strong> Clear gambling measure</span>
       <span class="score-legend-item"><strong>Named</strong> Named or validated gambling measure</span>
       <span class="score-legend-item"><strong>Meta</strong> Metadata quality</span>
@@ -194,18 +194,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     const mc = (metaCheck || []).find(m => m.Dataset_ID === id) || {};
     const pubs = (publications || []).filter(p => p['Dataset ID'] === id);
     const riskDomains = (ds['Key risk/protective domains confirmed'] || '').toLowerCase();
-    const age = (ds['Age focus / population'] || '').toLowerCase();
+    const age = ((ds['Age gambling measured'] || ds['Age focus / population']) || '').toLowerCase();
     const design = (ds['Study design'] || '').toLowerCase();
     const accessURL = ds['Access request URL'] || '';
 
     const components = {};
 
-    // 1. Under-25 (0-2)
-    if (age.match(/adolescen|child|youth|young|11-17|11-16|16-24|18-24|18-25|under 25|school|grades 7-12|15-16|11,|age 14|age 11|years 7/i))
-      components.under25 = 2;
-    else if (age.match(/16\+|18\+|adult|emerging/i))
-      components.under25 = 1;
-    else components.under25 = 0;
+    // Age coverage of the gambling measure. Reported for information only and
+    // NOT scored: the catalogue includes a study on its gambling measures
+    // whatever the age of the sample, so scoring age would penalise the adult
+    // studies for being adult. Read from 'Age gambling measured' rather than the
+    // free-text population description, which mis-classified BCS70, NCDS, CSDD,
+    // GUI98 and the Finnish School Health Promotion Study.
+    let under25;
+    if (/\b(1[0-9]|2[0-4])\b|adolescen|child|youth|young|pupil|student|school|under 25/i.test(age)) under25 = 'Y';
+    else if (/16\+|18\+|adult|emerging/i.test(age)) under25 = 'part';
+    else under25 = '-';
 
     // 2. Clear gambling measure (0-2)
     if (gambVars.length > 5) components.gamblingMeasure = 2;
@@ -271,9 +275,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const total = Object.values(components).reduce((a, b) => a + b, 0);
     let band, bandClass;
-    if (total >= 16) { band = 'High'; bandClass = 'score-high'; }
-    else if (total >= 11) { band = 'Good'; bandClass = 'score-good'; }
-    else if (total >= 6) { band = 'Moderate'; bandClass = 'score-moderate'; }
+    if (total >= 14) { band = 'High'; bandClass = 'score-high'; }
+    else if (total >= 10) { band = 'Good'; bandClass = 'score-good'; }
+    else if (total >= 5) { band = 'Moderate'; bandClass = 'score-moderate'; }
     else { band = 'Low'; bandClass = 'score-low'; }
 
     // Compatibility flag
@@ -285,14 +289,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     else if (gambVars.length > 0) compatFlag = 'C';
     else compatFlag = 'D';
 
-    return { id, name: ds['Dataset name'], dataset: ds, total, band, bandClass, components, namedMeasures, compatFlag, gambVarCount: gambVars.length, riskDomains: riskDomains, domainCount };
+    return { id, name: ds['Dataset name'], dataset: ds, total, band, bandClass, components, under25, namedMeasures, compatFlag, gambVarCount: gambVars.length, riskDomains: riskDomains, domainCount };
   }
 
   const scored = scorableDatasets.map(computeReadiness).sort((a, b) => b.total - a.total);
 
   // Summary cards
-  const highCount = scored.filter(s => s.total >= 16).length;
-  const goodCount = scored.filter(s => s.total >= 11 && s.total < 16).length;
+  const highCount = scored.filter(s => s.total >= 14).length;
+  const goodCount = scored.filter(s => s.total >= 10 && s.total < 14).length;
   const compatAB = scored.filter(s => s.compatFlag === 'A' || s.compatFlag === 'B').length;
   const avgScore = (scored.reduce((a, b) => a + b.total, 0) / scored.length).toFixed(1);
 
@@ -309,7 +313,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   let html = `<div style="overflow-x:auto;"><table class="readiness-table">
     <thead><tr>
       <th scope="col">Dataset</th><th scope="col">Score</th><th scope="col">Band</th><th scope="col">Compat.</th>
-      <th title="Under-25 data (0-2)">U25</th>
+      <th title="Does the gambling measure cover under-25s? Shown for information; not part of the score">U25</th>
       <th title="Clear gambling measure (0-2)">Gamb</th>
       <th title="Named/validated measure (0-2)">Named</th>
       <th title="Metadata quality (0-2)">Meta</th>
@@ -331,7 +335,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       <td style="text-align:center;"><span class="score-pill ${s.bandClass}">${s.total}</span></td>
       <td>${s.band}</td>
       <td style="text-align:center;"><span class="compat-flag compat-${s.compatFlag}">${s.compatFlag}</span></td>
-      <td style="text-align:center;">${c.under25}</td>
+      <td style="text-align:center;color:var(--text-muted);">${s.under25}</td>
       <td style="text-align:center;">${c.gamblingMeasure}</td>
       <td style="text-align:center;">${c.namedMeasure}</td>
       <td style="text-align:center;">${c.metadata}</td>
