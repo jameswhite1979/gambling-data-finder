@@ -676,7 +676,7 @@ nav a.active{color:var(--amber-light);background:rgba(217,119,6,.15)}
 .accordion-arrow{transition:transform var(--transition);font-size:.8rem;color:var(--text-muted)}
 .accordion-item.open .accordion-arrow{transform:rotate(180deg)}
 .accordion-body{
-  display:none;padding:0 1rem 1rem;font-size:.9rem;color:var(--text-muted);line-height:1.6;
+  display:none;padding:0 1rem 1rem;font-size:1rem;color:var(--text);line-height:1.6;
 }
 .accordion-item.open .accordion-body{display:block}
 
