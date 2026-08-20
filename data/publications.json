@@ -1067,5 +1067,715 @@
   "Risk/protective factors analysed": "Anxiety and depression phenotypes, trauma, substance use and life events",
   "URL / DOI": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6891252/",
   "Notes": "The single public source establishing that a gambling module exists."
+ },
+ {
+  "Dataset ID": "ACT_GPS_2019",
+  "Paper / documentation title": "Harm profiles associated with low-risk gambling: Longitudinal analysis of three datasets",
+  "Authors / year": "Suomi et al., 2024",
+  "Source type": "Research report",
+  "Gambling measure used": "PGSI; Short Gambling Harm Screen (SGHS)",
+  "Risk/protective factors analysed": "Demographics, psychosocial characteristics, risk transitions and COVID-19 impacts",
+  "URL / DOI": "https://www.gamblingandracing.act.gov.au/__data/assets/pdf_file/0020/2316071/2023-Harm-profiles-associated-with-low-risk-gambling-Longitudinal-analysis-of-three-datasets-ANU-Research-Report.pdf",
+  "Notes": "Uses the 2019 and 2014 ACT prevalence surveys for harm profiles and combines them with HILDA and ANUpoll longitudinal analyses."
+ },
+ {
+  "Dataset ID": "AGRI_ANP_PANEL",
+  "Paper / documentation title": "Gambling fallacies: Predicting problem gambling in a national sample",
+  "Authors / year": "Leonard et al., 2021",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PPGM; Gambling Fallacies Measure; Gambling Participation Instrument",
+  "Risk/protective factors analysed": "Impulsivity, gambling involvement, wins/losses, family history and gambling fallacies",
+  "URL / DOI": "https://doi.org/10.1037/adb0000673",
+  "Notes": "Baseline 2018 online panel and 2019 follow-up; 10,199 at baseline and 4,707 at follow-up."
+ },
+ {
+  "Dataset ID": "AGRI_ANP_PANEL",
+  "Paper / documentation title": "Gambling in Canada During the COVID Lockdown: Prospective National Survey",
+  "Authors / year": "Shaw et al., 2022",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI; frequency, session time, expenditure, product count and gambling platform",
+  "Risk/protective factors analysed": "COVID-related health, employment, leisure and social-isolation impacts",
+  "URL / DOI": "https://doi.org/10.1007/s10899-021-10073-8",
+  "Notes": "Re-surveyed 3,449 AGRI panel members during the national lockdown and compared them with pre-pandemic baseline data."
+ },
+ {
+  "Dataset ID": "AGRI_ANP_PANEL",
+  "Paper / documentation title": "Gambling in Canada during the pandemic: Six months after the national COVID lockdown",
+  "Authors / year": "Shaw et al., 2022",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI; gambling frequency, expenditure, products and platform",
+  "Risk/protective factors analysed": "Pandemic impacts, demographics and psychosocial characteristics",
+  "URL / DOI": "https://doi.org/10.1097/CXA.0000000000000157",
+  "Notes": "Longitudinal follow-up of the AGRI COVID panel six months after lockdown."
+ },
+ {
+  "Dataset ID": "AGRI_ANP_PANEL",
+  "Paper / documentation title": "Indigenous gambling and problem gambling in Canada",
+  "Authors / year": "Williams et al., 2022",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "CCHS PGSI; online-panel PPGM and gambling participation",
+  "Risk/protective factors analysed": "Indigenous identity, geography, income, mental health, substance use and gambling involvement",
+  "URL / DOI": "https://doi.org/10.1007/s10899-021-10022-5",
+  "Notes": "Joint analysis of the 2018 CCHS gambling module and the AGRI online panel."
+ },
+ {
+  "Dataset ID": "AGRI_ANP_PANEL",
+  "Paper / documentation title": "Making change: Attempts to reduce or stop gambling in a general population sample of people who gamble",
+  "Authors / year": "Hodgins et al., 2022",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PPGM; gambling participation and self-reported change attempts",
+  "Risk/protective factors analysed": "Problem severity, reasons for change, strategies, treatment and self-help",
+  "URL / DOI": "https://doi.org/10.3389/fpsyt.2022.892238",
+  "Notes": "Uses the national online panel of Canadian adults who gambled."
+ },
+ {
+  "Dataset ID": "AGRI_ANP_PANEL",
+  "Paper / documentation title": "Etiology of problem gambling in Canada",
+  "Authors / year": "Williams et al., 2023",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PPGM; gambling participation, losses, products and fallacies",
+  "Risk/protective factors analysed": "108 candidate variables including impulsivity, income, mental disorders, social network and family history",
+  "URL / DOI": "https://doi.org/10.1037/adb0000843",
+  "Notes": "10,119 panel participants assessed in 2018 and 2019; includes prospective and concurrent models."
+ },
+ {
+  "Dataset ID": "AGRI_ANP_PANEL",
+  "Paper / documentation title": "Problem gambling severity, gambling behavior, substance use, and mental health in gamblers who do and do not use cannabis: Evidence from a Canadian national sample",
+  "Authors / year": "McGrath et al., 2023",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PPGM; gambling participation, expenditure and products",
+  "Risk/protective factors analysed": "Cannabis, alcohol, tobacco, other substances and mental health",
+  "URL / DOI": "https://doi.org/10.1016/j.addbeh.2022.107520",
+  "Notes": "Secondary analysis of the national online panel."
+ },
+ {
+  "Dataset ID": "AGRI_ANP_PANEL",
+  "Paper / documentation title": "Prevalence and predictors of illegal gambling in Canada",
+  "Authors / year": "Mackey-Simpkin et al., 2023",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "Illegal gambling participation; PPGM and gambling involvement",
+  "Risk/protective factors analysed": "Demographics, gambling involvement and problem-gambling severity",
+  "URL / DOI": "https://doi.org/10.1080/14459795.2022.2149833",
+  "Notes": "Published online in 2022 and in volume 23 in 2023; uses AGRI panel respondents."
+ },
+ {
+  "Dataset ID": "AGRI_ANP_PANEL",
+  "Paper / documentation title": "Predictors of problem gambling remission in adults: A Canadian longitudinal study",
+  "Authors / year": "Allami et al., 2024",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PPGM; gambling activities and motivations",
+  "Risk/protective factors analysed": "Leisure diversification, tobacco/substance use while gambling, mental-health remission and baseline severity",
+  "URL / DOI": "https://doi.org/10.1037/adb0000964",
+  "Notes": "Analysis of 468 baseline problem gamblers who completed the one-year follow-up."
+ },
+ {
+  "Dataset ID": "AGRI_ANP_PANEL",
+  "Paper / documentation title": "Characteristics that differentiate online from land-based gamblers: Results from a national longitudinal study of gambling",
+  "Authors / year": "Shaw and Williams, 2024",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "Gambling mode, participation and problem-gambling status",
+  "Risk/protective factors analysed": "Demographics, gambling involvement and psychosocial characteristics",
+  "URL / DOI": "https://doi.org/10.4309/DSBT2331",
+  "Notes": "Longitudinal comparison of online and land-based gamblers in the national panel."
+ },
+ {
+  "Dataset ID": "CCHS_GAMBLING",
+  "Paper / documentation title": "A national survey of gambling problems in Canada",
+  "Authors / year": "Cox et al., 2005",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "Canadian Problem Gambling Index (CPGI)",
+  "Risk/protective factors analysed": "Province, video-lottery-terminal availability and permanent casinos",
+  "URL / DOI": "https://doi.org/10.1177/070674370505000404",
+  "Notes": "CCHS Cycle 1.2 Mental Health and Well-Being; 34,770 respondents aged 15 or older."
+ },
+ {
+  "Dataset ID": "CCHS_GAMBLING",
+  "Paper / documentation title": "The relationship between problem gambling and mental and physical health correlates among a nationally representative sample of Canadian women",
+  "Authors / year": "Afifi et al., 2010",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "CPGI",
+  "Risk/protective factors analysed": "Mental and physical health, substance use and sociodemographics",
+  "URL / DOI": "https://doi.org/10.1007/BF03404366",
+  "Notes": "Women in CCHS Cycle 1.2."
+ },
+ {
+  "Dataset ID": "CCHS_GAMBLING",
+  "Paper / documentation title": "Beyond description: Understanding gender differences in problem gambling",
+  "Authors / year": "Stark et al., 2012",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "CPGI/PGSI; number and type of games played",
+  "Risk/protective factors analysed": "Gender, game choice and gambling breadth",
+  "URL / DOI": "https://doi.org/10.1556/JBA.1.2012.3.5",
+  "Notes": "Uses the 2007 CCHS alongside the 2005 Ontario Prevalence Survey; the CCHS result concerns number of games played."
+ },
+ {
+  "Dataset ID": "CCHS_GAMBLING",
+  "Paper / documentation title": "Validation of the Problem Gambling Severity Index using confirmatory factor analysis and Rasch modelling",
+  "Authors / year": "Miller et al., 2013",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI",
+  "Risk/protective factors analysed": "None; psychometric structure, item functioning and classification",
+  "URL / DOI": "https://doi.org/10.1002/mpr.1392",
+  "Notes": "Combines CCHS Cycle 1.2 with the Canadian Problem Gambling Index integrated dataset."
+ },
+ {
+  "Dataset ID": "CCHS_GAMBLING",
+  "Paper / documentation title": "Is a sense of community belonging associated with problem gambling in Canada?",
+  "Authors / year": "Izutsu and Suzuki, 2021",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "CPGI",
+  "Risk/protective factors analysed": "Community belonging, sex and marital status",
+  "URL / DOI": "https://doi.org/10.1007/s00127-021-02040-w",
+  "Notes": "CCHS 2013-2014; 38,968 residents of Quebec, Saskatchewan, Manitoba and British Columbia."
+ },
+ {
+  "Dataset ID": "CCHS_GAMBLING",
+  "Paper / documentation title": "Gambling and problem gambling in Canada in 2018: Prevalence and changes since 2002",
+  "Authors / year": "Williams et al., 2021",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI; gambling participation by product",
+  "Risk/protective factors analysed": "Province, age, sex and changes since CCHS 2002",
+  "URL / DOI": "https://doi.org/10.1177/0706743720980080",
+  "Notes": "2018 CCHS Gambling Rapid Response; adults aged 18 or older."
+ },
+ {
+  "Dataset ID": "CCHS_GAMBLING",
+  "Paper / documentation title": "Predictors of gambling and problem gambling in Canada",
+  "Authors / year": "Williams et al., 2021",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI; gambling participation, frequency and expenditure",
+  "Risk/protective factors analysed": "Demographics, mental health, substance use and gambling involvement",
+  "URL / DOI": "https://doi.org/10.17269/s41997-020-00443-x",
+  "Notes": "2018 CCHS Gambling Rapid Response."
+ },
+ {
+  "Dataset ID": "CCHS_GAMBLING",
+  "Paper / documentation title": "Indigenous gambling and problem gambling in Canada",
+  "Authors / year": "Williams et al., 2022",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "CCHS PGSI; online-panel PPGM and participation",
+  "Risk/protective factors analysed": "Indigenous identity, geography, socioeconomic position, mental health and substance use",
+  "URL / DOI": "https://doi.org/10.1007/s10899-021-10022-5",
+  "Notes": "Joint analysis of the 2018 CCHS gambling module and AGRI online panel."
+ },
+ {
+  "Dataset ID": "FIN_GAMBLING_SURVEYS",
+  "Paper / documentation title": "Trends in Lower-Risk Gambling by Age and Net Income among Finnish Men and Women in 2011, 2015, and 2019",
+  "Authors / year": "Grönroos et al., 2024",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "Lower-Risk Gambling Guidelines indicators; PGSI",
+  "Risk/protective factors analysed": "Age, sex and net income",
+  "URL / DOI": "https://doi.org/10.1007/s10899-024-10355-x",
+  "Notes": "Repeated cross-sectional analysis of the 2011, 2015 and 2019 Finnish Gambling Surveys."
+ },
+ {
+  "Dataset ID": "FIN_GAMBLING_SURVEYS",
+  "Paper / documentation title": "Gambling Motives and Offshore Gambling: A Finnish Population Study",
+  "Authors / year": "Hagfors et al., 2024",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI; gambling motives, frequency, expenditure and offshore participation",
+  "Risk/protective factors analysed": "Age, sex, gambling motives and intensity",
+  "URL / DOI": "https://doi.org/10.1007/s10899-023-10253-8",
+  "Notes": "Finnish Gambling 2019; 1,422 adult past-year online gamblers."
+ },
+ {
+  "Dataset ID": "FIN_GAMBLING_SURVEYS",
+  "Paper / documentation title": "How gambling motives are associated with socio-demographics and gambling behavior: A Finnish population study",
+  "Authors / year": "Hagfors et al., 2022",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI; primary and additional gambling motives",
+  "Risk/protective factors analysed": "Sex, age, income, employment, frequency, products and mode",
+  "URL / DOI": "https://doi.org/10.1556/2006.2022.00003",
+  "Notes": "Finnish Gambling 2019 with one-year motive follow-up."
+ },
+ {
+  "Dataset ID": "FIN_GAMBLING_SURVEYS",
+  "Paper / documentation title": "Harm as reported by affected others: A population-based cross-sectional Finnish Gambling 2019 study",
+  "Authors / year": "Lind et al., 2022",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "Affected-other gambling-harm items; PGSI",
+  "Risk/protective factors analysed": "Relationship to gambler, demographics and respondent wellbeing",
+  "URL / DOI": "https://doi.org/10.1016/j.addbeh.2022.107263",
+  "Notes": "Finnish Gambling 2019 affected-other subsample."
+ },
+ {
+  "Dataset ID": "FIN_GAMBLING_SURVEYS",
+  "Paper / documentation title": "Gambling behavior and criminal convictions: A register-based investigation",
+  "Authors / year": "Lind et al., 2023",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI; gambling participation, expenditure and activities",
+  "Risk/protective factors analysed": "Criminal convictions and social disadvantage",
+  "URL / DOI": "https://doi.org/10.1080/16066359.2023.2230877",
+  "Notes": "Finnish Gambling 2019 linked to register data."
+ },
+ {
+  "Dataset ID": "FIN_GAMBLING_SURVEYS",
+  "Paper / documentation title": "Socio-Demographics, Gambling Participation, Gambling Settings, and Addictive Behaviors Associated with Gambling Modes: A Population-Based Study",
+  "Authors / year": "Lind et al., 2022",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "Gambling mode, participation, expenditure and PGSI",
+  "Risk/protective factors analysed": "Sex, age, income, settings, alcohol and smoking",
+  "URL / DOI": "https://doi.org/10.1007/s10899-021-10074-7",
+  "Notes": "Finnish Gambling 2019; 3,077 adult past-year gamblers."
+ },
+ {
+  "Dataset ID": "FIN_GAMBLING_SURVEYS",
+  "Paper / documentation title": "Public opinions and attitudes toward a state monopoly: A study of the Finnish gambling system",
+  "Authors / year": "Macey et al., 2023",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "Gambling attitudes and policy-opinion items; gambling participation",
+  "Risk/protective factors analysed": "Survey year, sex, age, gambling behaviour and monopoly-system views",
+  "URL / DOI": "https://doi.org/10.1186/s12889-023-16917-9",
+  "Notes": "Compares Finnish Gambling 2015 and 2019."
+ },
+ {
+  "Dataset ID": "FIN_GAMBLING_SURVEYS",
+  "Paper / documentation title": "Using latent class analysis to identify Finnish gambler types and potential risk",
+  "Authors / year": "Macey et al., 2024",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "Gambling participation, intensity, products and PGSI",
+  "Risk/protective factors analysed": "Demographics, gambling mode and behavioural profiles",
+  "URL / DOI": "https://doi.org/10.1080/14459795.2024.2401521",
+  "Notes": "Secondary analysis of Finnish Gambling 2019."
+ },
+ {
+  "Dataset ID": "FIN_GAMBLING_SURVEYS",
+  "Paper / documentation title": "Gambling, gambling problems and gambling-related attitudes and opinions in 2007-2019: Finnish Gambling 2019",
+  "Authors / year": "Salonen et al., 2020",
+  "Source type": "Research report",
+  "Gambling measure used": "PGSI; participation, products, expenditure and ATGS-8",
+  "Risk/protective factors analysed": "Survey year, sex, age and sociodemographic trends",
+  "URL / DOI": "https://www.julkari.fi/items/96680b1a-0515-4e23-8755-a4ef747a085b",
+  "Notes": "Finnish-language THL report comparing the 2007, 2011, 2015 and 2019 surveys."
+ },
+ {
+  "Dataset ID": "FIN_GAMBLING_SURVEYS",
+  "Paper / documentation title": "Gambling and problem gambling - Finnish Gambling 2019: Prevalence of at-risk gambling has decreased",
+  "Authors / year": "Salonen et al., 2020",
+  "Source type": "Official statistics",
+  "Gambling measure used": "PGSI; gambling participation, products and expenditure",
+  "Risk/protective factors analysed": "Sex, age and other sociodemographic groups",
+  "URL / DOI": "https://www.julkari.fi/items/6712f8d2-75d7-40fe-920e-c710063cd8f8",
+  "Notes": "English THL statistical report 9/2020; distinct from the already-recorded 2025 attitudes paper."
+ },
+ {
+  "Dataset ID": "GC_QTS_2016_2022",
+  "Paper / documentation title": "Gambling participation in 2019: Behaviour, awareness and attitudes",
+  "Authors / year": "Gambling Commission, 2020",
+  "Source type": "Official statistics",
+  "Gambling measure used": "Past-four-week participation; PGSI mini-screen",
+  "Risk/protective factors analysed": "Age, sex, socioeconomic group, mode, frequency, trust and attitudes",
+  "URL / DOI": "https://www.gamblingcommission.gov.uk/report/gambling-participation-in-2019-behaviour-awareness-and-attitudes/gambling-participation-in-2019-executive-summary",
+  "Notes": "Annual report combining the quarterly telephone tracker with separate online-tracker material; table notes identify the source for each estimate."
+ },
+ {
+  "Dataset ID": "GC_QTS_2016_2022",
+  "Paper / documentation title": "Gambling behaviour in 2020: Findings from the quarterly telephone survey",
+  "Authors / year": "Gambling Commission, 2021",
+  "Source type": "Official statistics",
+  "Gambling measure used": "Past-four-week participation; PGSI mini-screen",
+  "Risk/protective factors analysed": "Age, sex, mode, COVID-19 restrictions, trust, crime perceptions and attitudes",
+  "URL / DOI": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/year-to-december-2020",
+  "Notes": "4,007 adults interviewed in four 2020 quarterly waves."
+ },
+ {
+  "Dataset ID": "GC_QTS_2016_2022",
+  "Paper / documentation title": "Gambling behaviour in 2021: Findings from the quarterly telephone survey",
+  "Authors / year": "Gambling Commission, 2022",
+  "Source type": "Official statistics",
+  "Gambling measure used": "Past-four-week participation; PGSI mini-screen",
+  "Risk/protective factors analysed": "Age, sex, frequency, COVID-19 restrictions, trust and attitudes",
+  "URL / DOI": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/gambling-behaviour-in-2021-findings-from-the-quarterly-telephone-survey",
+  "Notes": "4,021 adults interviewed in four 2021 quarterly waves."
+ },
+ {
+  "Dataset ID": "GC_QTS_2016_2022",
+  "Paper / documentation title": "Gambling behaviour in 2022: Findings from the quarterly telephone survey",
+  "Authors / year": "Gambling Commission, 2023",
+  "Source type": "Official statistics",
+  "Gambling measure used": "Past-four-week participation; PGSI mini-screen",
+  "Risk/protective factors analysed": "Age, sex, mode, product, trust, crime perceptions and attitudes",
+  "URL / DOI": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/gambling-behaviour-in-2022-findings-from-the-quarterly-telephone-survey",
+  "Notes": "4,001 adults interviewed in four 2022 quarterly waves."
+ },
+ {
+  "Dataset ID": "HILDA",
+  "Paper / documentation title": "The effect of gambling problems on the subjective wellbeing of gamblers' family and friends: Evidence from large-scale population research in Australia and Canada",
+  "Authors / year": "Tulloch et al., 2021",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI household classification in HILDA; affected-other status in QLS",
+  "Risk/protective factors analysed": "Income, education, employment, relationship status and own gambling problems",
+  "URL / DOI": "https://doi.org/10.1556/2006.2021.00077",
+  "Notes": "Joint HILDA and QLS analysis; HILDA N=19,064."
+ },
+ {
+  "Dataset ID": "HILDA",
+  "Paper / documentation title": "Gambling and Financial Stress",
+  "Authors / year": "Koomson et al., 2022",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI; participation and expenditure",
+  "Risk/protective factors analysed": "Income, labour-market status, household composition and financial stress",
+  "URL / DOI": "https://doi.org/10.1007/s11205-022-02898-6",
+  "Notes": "Uses HILDA gambling waves 15 and 18."
+ },
+ {
+  "Dataset ID": "HILDA",
+  "Paper / documentation title": "How many children are exposed to at-risk parental gambling in Australia? Results from a representative national sample",
+  "Authors / year": "Suomi et al., 2022",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI",
+  "Risk/protective factors analysed": "Parental status, household structure and number of dependent children",
+  "URL / DOI": "https://doi.org/10.1016/j.addbeh.2022.107305",
+  "Notes": "Uses a HILDA gambling wave to estimate national exposure among children under 15."
+ },
+ {
+  "Dataset ID": "HILDA",
+  "Paper / documentation title": "Temperature shocks and gambling",
+  "Authors / year": "Trinh et al., 2022",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI and gambling prevalence",
+  "Risk/protective factors analysed": "Postcode-level temperature shocks, psychological distress, social capital and physical activity",
+  "URL / DOI": "https://doi.org/10.1016/j.eneco.2022.106406",
+  "Notes": "HILDA gambling data linked to satellite temperature data."
+ },
+ {
+  "Dataset ID": "HILDA",
+  "Paper / documentation title": "How gambling problems relate to health and wellbeing in Australian households: Evidence from the Household Income and Labour Dynamics in Australia Survey",
+  "Authors / year": "Tulloch et al., 2023",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI household classification",
+  "Risk/protective factors analysed": "SF-6D, SF-36 mental health, financial satisfaction and community belonging",
+  "URL / DOI": "https://doi.org/10.1016/j.addbeh.2022.107538",
+  "Notes": "13,698 respondents without their own gambling problem in households where all residents completed PGSI."
+ },
+ {
+  "Dataset ID": "HILDA",
+  "Paper / documentation title": "Trajectories of wellbeing in people who live with gamblers experiencing a gambling problem: An 18-year longitudinal analysis of HILDA",
+  "Authors / year": "Tulloch et al., 2023",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI household classification",
+  "Risk/protective factors analysed": "Life satisfaction, stressors, social, health, community and financial wellbeing",
+  "URL / DOI": "https://doi.org/10.1371/journal.pone.0281099",
+  "Notes": "Identifies household affected others in the 2018 gambling wave and models wellbeing across 18 years."
+ },
+ {
+  "Dataset ID": "HILDA",
+  "Paper / documentation title": "Internet and Gambling: Insights from Australia's NBN Rollout",
+  "Authors / year": "Ackermann et al., 2025",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI; gambling risk category and online/land-based activities",
+  "Risk/protective factors analysed": "NBN availability, social capital, cognitive function, age, education and income",
+  "URL / DOI": "https://doi.org/10.1007/s10899-024-10352-0",
+  "Notes": "HILDA gambling data linked to postcode-level National Broadband Network rollout."
+ },
+ {
+  "Dataset ID": "HILDA",
+  "Paper / documentation title": "Longitudinal gambling risk transitions: Evidence from a nationally representative Australian sample",
+  "Authors / year": "Suomi et al., 2025",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI",
+  "Risk/protective factors analysed": "Financial hardship, education, health, alcohol, neighbourhood disadvantage, mastery and demographics",
+  "URL / DOI": "https://doi.org/10.1080/16066359.2024.2331749",
+  "Notes": "HILDA gambling waves 15 and 18; 12,364 respondents."
+ },
+ {
+  "Dataset ID": "HILDA",
+  "Paper / documentation title": "Betting against the odds? The effect of mental health on problem gambling behavior",
+  "Authors / year": "Kesavayuth et al., 2025",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI-derived problem-gambling outcome",
+  "Risk/protective factors analysed": "Mental health and sociodemographic controls",
+  "URL / DOI": "https://doi.org/10.1016/j.econmod.2025.107278",
+  "Notes": "Longitudinal HILDA analysis using an instrumental-variables design."
+ },
+ {
+  "Dataset ID": "HILDA",
+  "Paper / documentation title": "Crime and chance: Understanding the relationship between neighbourhood crime and gambling",
+  "Authors / year": "Churchill et al., 2025",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI and alternative gambling indicators",
+  "Risk/protective factors analysed": "Postcode crime, perceived safety, trust, social capital and mental health",
+  "URL / DOI": "https://doi.org/10.1016/j.puhe.2025.105953",
+  "Notes": "HILDA linked to official postcode-level police statistics."
+ },
+ {
+  "Dataset ID": "LLLP",
+  "Paper / documentation title": "The Leisure, Lifestyle, & Lifecycle Project: A longitudinal study of gambling in Alberta. Final report",
+  "Authors / year": "el-Guebaly et al., 2015",
+  "Source type": "Research report",
+  "Gambling measure used": "PGSI/CPGI; PPGM; gambling participation, frequency and expenditure",
+  "Risk/protective factors analysed": "Mental health, substance use, personality, life events, social environment and demographics",
+  "URL / DOI": "https://doi.org/10.11575/PRISM/9908",
+  "Notes": "Principal empirical final report; includes parallel analyses with QLS but is not the already-recorded low-risk-limits paper."
+ },
+ {
+  "Dataset ID": "LLLP",
+  "Paper / documentation title": "A qualitative examination of factors underlying transitions in problem gambling severity: Findings from the Leisure, Lifestyle, & Lifecycle Project",
+  "Authors / year": "Mutti-Packer et al., 2017",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "Change in validated problem-gambling severity; qualitative interview",
+  "Risk/protective factors analysed": "Financial, social and internal reasons for increases and decreases",
+  "URL / DOI": "https://doi.org/10.1080/16066359.2017.1307967",
+  "Notes": "Interviews with 41 participants whose severity changed between waves 4 and 5."
+ },
+ {
+  "Dataset ID": "LLLP",
+  "Paper / documentation title": "Predicting future harm from gambling over a five-year period in a general population sample: A survival analysis",
+  "Authors / year": "Currie et al., 2021",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI harms; gambling frequency, expenditure and percentage of income",
+  "Risk/protective factors analysed": "Mental/substance disorder, fallacies, stressful events, products, EGMs and casino games",
+  "URL / DOI": "https://doi.org/10.1186/s12888-020-03016-x",
+  "Notes": "Joint LLLP and QLS analysis; excludes baseline problem gamblers."
+ },
+ {
+  "Dataset ID": "LLLP",
+  "Paper / documentation title": "Psychometric properties of the Problem Gambling Severity Index among older adults",
+  "Authors / year": "Gorenko et al., 2021",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI",
+  "Risk/protective factors analysed": "Age, sex and differential item functioning",
+  "URL / DOI": "https://doi.org/10.1080/14459795.2021.1985582",
+  "Notes": "Uses older adults from LLLP wave 4 and QLS wave 5."
+ },
+ {
+  "Dataset ID": "LLLP",
+  "Paper / documentation title": "Protective action and risky beliefs: The relationship between religion and gambling fallacies",
+  "Authors / year": "Williams et al., 2022",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PPGM; Gambling Fallacies Measure",
+  "Risk/protective factors analysed": "Religious belief, religious practice and supernatural thinking",
+  "URL / DOI": "https://doi.org/10.1007/s10899-021-10028-z",
+  "Notes": "Cross-sectional secondary analysis of LLLP and QLS baseline samples."
+ },
+ {
+  "Dataset ID": "NCS_R",
+  "Paper / documentation title": "Pathological gambling, problem gambling and sleep complaints: An analysis of the National Comorbidity Survey Replication",
+  "Authors / year": "Parhami et al., 2013",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "DSM-IV pathological-gambling module",
+  "Risk/protective factors analysed": "Sleep initiation, sleep maintenance, early waking, daytime sleepiness, psychiatric comorbidity and demographics",
+  "URL / DOI": "https://doi.org/10.1007/s10899-012-9299-8",
+  "Notes": "Secondary NCS-R analysis; distinct from the already-recorded Kessler prevalence/comorbidity paper."
+ },
+ {
+  "Dataset ID": "NGSN_DRF",
+  "Paper / documentation title": "Annual Statistics from the National Gambling Treatment Service (Great Britain) 2018/2019",
+  "Authors / year": "GambleAware, 2020",
+  "Source type": "Official statistics",
+  "Gambling measure used": "PGSI; CORE-10; gambling activity and location",
+  "Risk/protective factors analysed": "Demographics, employment, referral, waiting time, treatment engagement and outcomes",
+  "URL / DOI": "https://www.gambleaware.org/our-research/publication-library/articles/annual-statistics-from-the-national-gambling-treatment-service-great-britain-20182019/",
+  "Notes": "Annual DRF analysis for clients treated from April 2018 to March 2019."
+ },
+ {
+  "Dataset ID": "NGSN_DRF",
+  "Paper / documentation title": "Annual Statistics from the National Gambling Treatment Service (Great Britain) 2020/2021",
+  "Authors / year": "GambleAware, 2021",
+  "Source type": "Official statistics",
+  "Gambling measure used": "PGSI; CORE-10; gambling activity and location",
+  "Risk/protective factors analysed": "Demographics, employment, referral, access, retention and treatment outcomes",
+  "URL / DOI": "https://www.gambleaware.org/media/mdrnoeuu/final_ga_annual-stats_report_2020-21_english.pdf",
+  "Notes": "Reports annual DRF data and trends back to 2015/16."
+ },
+ {
+  "Dataset ID": "NGSN_DRF",
+  "Paper / documentation title": "Annual Statistics from the National Gambling Treatment Service (Great Britain) 2021/2022",
+  "Authors / year": "GambleAware, 2022",
+  "Source type": "Official statistics",
+  "Gambling measure used": "PGSI; CORE-10; gambling activity and location",
+  "Risk/protective factors analysed": "Demographics, employment, referral, waiting time, exit reason and treatment outcome",
+  "URL / DOI": "https://www.gambleaware.org/media/htmfx21w/202216_ga_annual-stats_report_english_v4.pdf",
+  "Notes": "Annual DRF analysis for April 2021 to March 2022."
+ },
+ {
+  "Dataset ID": "NGSN_DRF",
+  "Paper / documentation title": "Annual Statistics from the National Gambling Treatment Service (Great Britain) 2022/2023",
+  "Authors / year": "GambleAware, 2023",
+  "Source type": "Official statistics",
+  "Gambling measure used": "PGSI; CORE-10; gambling activity and location",
+  "Risk/protective factors analysed": "Client characteristics, access, treatment engagement and outcomes",
+  "URL / DOI": "https://www.gambleaware.org/our-research/publication-library/articles/annual-statistics-from-the-national-gambling-treatment-service-great-britain-1st-april-2022-to-31st-march-2023/",
+  "Notes": "Network was subsequently renamed the National Gambling Support Network."
+ },
+ {
+  "Dataset ID": "NGSN_DRF",
+  "Paper / documentation title": "Annual Statistics from the National Gambling Support Network (Great Britain) 2023/2024",
+  "Authors / year": "GambleAware, 2024",
+  "Source type": "Official statistics",
+  "Gambling measure used": "PGSI; CORE-10; gambling activity and service tier",
+  "Risk/protective factors analysed": "Demographics, employment, access, treatment completion and outcomes",
+  "URL / DOI": "https://www.gambleaware.org/our-research/publication-library/articles/annual-statistics-from-the-national-gambling-support-network-great-britain-20232024/",
+  "Notes": "First report to include Tier 2 early-intervention data alongside Tier 3/4 DRF treatment data."
+ },
+ {
+  "Dataset ID": "NGSN_DRF",
+  "Paper / documentation title": "Annual Statistics from the National Gambling Support Network (Great Britain) 2024/2025",
+  "Authors / year": "GambleAware, 2025",
+  "Source type": "Official statistics",
+  "Gambling measure used": "PGSI; CORE-10; gambling activity and service tier",
+  "Risk/protective factors analysed": "Demographics, employment, onset age, access, completion and outcomes",
+  "URL / DOI": "https://www.gambleaware.org/our-research/publication-library/articles/annual-statistics-from-the-national-gambling-treatment-service-great-britain-1st-april-2024-to-31st-march-2025/",
+  "Notes": "Published November 2025; the landing-page title retains \"Treatment Service\" while the PDF uses NGSN."
+ },
+ {
+  "Dataset ID": "QLS",
+  "Paper / documentation title": "Quinte Longitudinal Study of Gambling and Problem Gambling",
+  "Authors / year": "Williams et al., 2015",
+  "Source type": "Research report",
+  "Gambling measure used": "PPGM; PGSI/CPGI; participation, frequency and expenditure",
+  "Risk/protective factors analysed": "Mental health, substance use, personality, stress, values, social functioning, leisure and intelligence",
+  "URL / DOI": "https://opus.uleth.ca/items/96ccb411-071b-47e8-9ddb-3ba98659c308",
+  "Notes": "Principal five-year empirical report; 4,121 participants and 93.9% retention."
+ },
+ {
+  "Dataset ID": "QLS",
+  "Paper / documentation title": "Implications of gambling problems for family and interpersonal adjustment: Results from the Quinte Longitudinal Study",
+  "Authors / year": "Cowlishaw et al., 2016",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI",
+  "Risk/protective factors analysed": "Depression, anxiety, substance use, family functioning, relationship satisfaction and social support",
+  "URL / DOI": "https://doi.org/10.1111/add.13402",
+  "Notes": "Five-wave latent-trajectory analysis."
+ },
+ {
+  "Dataset ID": "QLS",
+  "Paper / documentation title": "Is subclinical gambling really subclinical?",
+  "Authors / year": "Weinstock et al., 2017",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "NODS; CIDI-SF and ASSIST for comparator disorders",
+  "Risk/protective factors analysed": "Quality of life and seven psychosocial-functioning domains",
+  "URL / DOI": "https://doi.org/10.1016/j.addbeh.2017.05.014",
+  "Notes": "QLS wave 1; compares respondents with 2-3 NODS criteria with mild substance-use disorder and no psychopathology."
+ },
+ {
+  "Dataset ID": "QLS",
+  "Paper / documentation title": "The Categorical Stability of Gambling Motives Among Community-Recruited Gamblers: A Longitudinal Assessment",
+  "Authors / year": "McGrath and Konkolÿ Thege, 2018",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "Gambling Motives Questionnaire-Financial; problem-gambling severity",
+  "Risk/protective factors analysed": "Gambling fallacies and stability/change in motives",
+  "URL / DOI": "https://doi.org/10.1007/s10899-017-9687-1",
+  "Notes": "2,795 QLS gamblers across five annual assessments."
+ },
+ {
+  "Dataset ID": "QLS",
+  "Paper / documentation title": "Locating gambling problems across a continuum of severity: Rasch analysis of the Quinte Longitudinal Study",
+  "Authors / year": "Cowlishaw et al., 2019",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PPGM problem-behaviour and harm items",
+  "Risk/protective factors analysed": "None; item severity and indicators of lower-severity problems",
+  "URL / DOI": "https://doi.org/10.1016/j.addbeh.2018.12.016",
+  "Notes": "Rasch analysis of QLS problem-gambling items."
+ },
+ {
+  "Dataset ID": "QLS",
+  "Paper / documentation title": "An evaluation of the Pathways Model using the Quinte Longitudinal dataset",
+  "Authors / year": "Mader et al., 2019",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "First-onset PPGM problem/pathological gambling",
+  "Risk/protective factors analysed": "Anxiety, depression, substance use, impulsivity, antisociality and social dysfunction",
+  "URL / DOI": "https://doi.org/10.1080/14459795.2019.1602158",
+  "Notes": "Latent-class analysis of 125 adults with first-onset problem gambling after baseline."
+ },
+ {
+  "Dataset ID": "QLS",
+  "Paper / documentation title": "Predicting future harm from gambling over a five-year period in a general population sample: A survival analysis",
+  "Authors / year": "Currie et al., 2021",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI harms; gambling frequency, expenditure and percentage of income",
+  "Risk/protective factors analysed": "Mental/substance disorder, fallacies, stressful events, products, EGMs and casino games",
+  "URL / DOI": "https://doi.org/10.1186/s12888-020-03016-x",
+  "Notes": "Joint QLS and LLLP analysis; excludes baseline problem gamblers."
+ },
+ {
+  "Dataset ID": "QLS",
+  "Paper / documentation title": "Psychometric properties of the Problem Gambling Severity Index among older adults",
+  "Authors / year": "Gorenko et al., 2021",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PGSI",
+  "Risk/protective factors analysed": "Age, sex and differential item functioning",
+  "URL / DOI": "https://doi.org/10.1080/14459795.2021.1985582",
+  "Notes": "Uses older adults from QLS wave 5 and LLLP wave 4."
+ },
+ {
+  "Dataset ID": "QLS",
+  "Paper / documentation title": "Protective action and risky beliefs: The relationship between religion and gambling fallacies",
+  "Authors / year": "Williams et al., 2022",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "PPGM; Gambling Fallacies Measure",
+  "Risk/protective factors analysed": "Religious belief, religious practice and supernatural thinking",
+  "URL / DOI": "https://doi.org/10.1007/s10899-021-10028-z",
+  "Notes": "Cross-sectional secondary analysis of QLS and LLLP baseline samples."
+ },
+ {
+  "Dataset ID": "QLS",
+  "Paper / documentation title": "A 5-year longitudinal examination of the co-occurring patterns of gambling and other addictive behaviors",
+  "Authors / year": "Kim et al., 2024",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "Problem-gambling severity; substance and behavioural-addiction severity",
+  "Risk/protective factors analysed": "Mental disorders, personality, stress, life satisfaction, social support, family history and demographics",
+  "URL / DOI": "https://doi.org/10.1016/j.addbeh.2023.107894",
+  "Notes": "Secondary analysis of all five QLS years; tests co-occurrence and addiction substitution."
+ },
+ {
+  "Dataset ID": "STS_ATS_GB_2022",
+  "Paper / documentation title": "Gambling and its association with psychological distress among different population groups: A cross-sectional study in Great Britain, 2022",
+  "Authors / year": "Jackson et al., 2026",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "Past-year gambling; PGSI",
+  "Risk/protective factors analysed": "Kessler-6 distress, age, sex, occupational social grade, smoking and alcohol use",
+  "URL / DOI": "https://doi.org/10.1186/s12889-026-27630-8",
+  "Notes": "October 2022 Smoking and Alcohol Toolkit Study gambling module; distinct from the already-recorded smoking/alcohol-intersection paper."
+ },
+ {
+  "Dataset ID": "LOYALTY_CARD_2014_2016",
+  "Paper / documentation title": "Gambling machines research programme: Report 2 - Identifying problem gambling: Findings from a survey of loyalty card holders",
+  "Authors / year": "Wardle et al., 2014",
+  "Source type": "Research report",
+  "Gambling measure used": "PGSI; participation, frequency, machine play and gambling motivations",
+  "Risk/protective factors analysed": "Age, employment, deprivation, income, ethnicity, attitudes and motivations",
+  "URL / DOI": "https://www.greo.ca/Modules/EvidenceCentre/Details/gambling-machines-research-programme-report-2-identifying-problem-gambling-findings-survey",
+  "Notes": "Baseline survey of 4,727 bookmaker loyalty-card customers; linked-data consent was obtained for Report 3."
+ },
+ {
+  "Dataset ID": "LOYALTY_CARD_2014_2016",
+  "Paper / documentation title": "People who play machines in bookmakers: Secondary analysis of loyalty card survey data",
+  "Authors / year": "Wardle, 2016",
+  "Source type": "Research report",
+  "Gambling measure used": "PGSI; participation, frequency and machine-gambling indicators",
+  "Risk/protective factors analysed": "Age, ethnicity, employment, income, deprivation and problem-gambler typology",
+  "URL / DOI": "https://www.gambleaware.org/media/ksacco25/natcen-secondary-analysis-of-loyalty-card-survey-final.pdf",
+  "Notes": "Secondary analysis of the 2014 baseline survey, including more than 900 respondents classified as problem gamblers."
+ },
+ {
+  "Dataset ID": "CSDD",
+  "Paper / documentation title": "The development of offending and antisocial behaviour from childhood: Key findings from the Cambridge Study in Delinquent Development",
+  "Authors / year": "Farrington, 1995",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "Bespoke heavy-gambling indicator within an antisocial-personality composite",
+  "Risk/protective factors analysed": "Childhood antisocial behaviour, impulsivity, school attainment, family criminality, poverty and parenting",
+  "URL / DOI": "https://doi.org/10.1111/j.1469-7610.1995.tb01342.x",
+  "Notes": "Reports longitudinal CSDD analyses through adulthood; gambling is one analysed component of the age-18 antisocial-behaviour measure."
+ },
+ {
+  "Dataset ID": "CSDD",
+  "Paper / documentation title": "The structural similarity of processes generating criminal and analogous behaviors",
+  "Authors / year": "Paternoster and Brame, 1998",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "Bespoke gambling participation/frequency items",
+  "Risk/protective factors analysed": "Self-control, offending, drinking, smoking and accidents",
+  "URL / DOI": "https://doi.org/10.1111/j.1745-9125.1998.tb01261.x",
+  "Notes": "Analysis of 369 CSDD respondents at age 18; gambling is explicitly treated as an analogous behaviour."
+ },
+ {
+  "Dataset ID": "CSDD",
+  "Paper / documentation title": "On the association among self-control, crime, and analogous behaviors",
+  "Authors / year": "Paternoster and Brame, 2000",
+  "Source type": "Peer-reviewed article",
+  "Gambling measure used": "Bespoke gambling participation/frequency items",
+  "Risk/protective factors analysed": "Self-control, crime, alcohol, smoking and other analogous behaviours",
+  "URL / DOI": "https://doi.org/10.1111/j.1745-9125.2000.tb00913.x",
+  "Notes": "Reanalysis of the CSDD self-control/analogous-behaviour relationships, including gambling."
  }
 ]
