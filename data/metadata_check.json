@@ -166,7 +166,7 @@
   "Raw data access status": "Unknown / likely controlled by CAMH or data owner",
   "Metadata access needed?": "Yes",
   "Next extraction action": "Locate 2023/2025 questionnaire and data dictionary/codebook to confirm exact item wording and variable names for gambling, loot boxes, video gaming and social media measures.",
-  "Source URLs": "https://www.camh.ca/osduhs"
+  "Source URLs": "https://www.camh.ca/en/science-and-research/institutes-and-centres/institute-for-mental-health-policy-research/ontario-student-drug-use-and-health-survey---osduhs"
  },
  {
   "Dataset_ID": "MANITOBA_YA",
@@ -439,7 +439,7 @@
   "Raw data access status": "UK Data Service safeguarded access (Registration / safeguarded)",
   "Metadata access needed?": "No",
   "Next extraction action": "Complete for both deposits",
-  "Source URLs": "https://doc.ukdataservice.ac.uk/doc/9537/"
+  "Source URLs": "https://datacatalogue.ukdataservice.ac.uk/studies/study/9537"
  },
  {
   "Dataset_ID": "CCHS_GAMBLING",

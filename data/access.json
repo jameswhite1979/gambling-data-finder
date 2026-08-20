@@ -141,7 +141,7 @@
   "Access status": "UKDS registered access / Gambling Commission data release",
   "Access route": "Registration / standard safeguarded application",
   "Access request URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/9346",
-  "Data access documentation URL": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/gambling-survey-for-great-britain-year-2-2024-official-statistics",
+  "Data access documentation URL": "https://www.gamblingcommission.gov.uk/report/gambling-survey-for-great-britain-annual-report-2024-official-statistics",
   "Open/public items": "",
   "Gated items": "",
   "Cost/fee": "Usually not stated / may vary",
@@ -174,8 +174,8 @@
   "Dataset name": "Health Behaviour in School-aged Children",
   "Access status": "HBSC/national-team data access",
   "Access route": "Controlled / unclear by country",
-  "Access request URL": "https://hbsc.org/data/",
-  "Data access documentation URL": "https://hbsc.org/",
+  "Access request URL": "https://www.hbsc.org/data/",
+  "Data access documentation URL": "https://www.hbsc.org/",
   "Open/public items": "",
   "Gated items": "",
   "Cost/fee": "Usually not stated / may vary",
@@ -183,7 +183,7 @@
   "Named contact/form": "See access URL / study helpdesk",
   "TRE / secure environment": "No / not primary",
   "Data format / notes": "Formats and licence conditions to verify in data documentation",
-  "Source URLs": "https://hbsc.org/ ; https://hbsc.org/publications/reports/",
+  "Source URLs": "https://www.hbsc.org/ ; https://www.hbsc.org/publications/reports/",
   "Notes": ""
  },
  {
@@ -234,7 +234,7 @@
   "Named contact/form": "See access URL / study helpdesk",
   "TRE / secure environment": "No / not primary",
   "Data format / notes": "Formats and licence conditions to verify in data documentation",
-  "Source URLs": "https://cls.ucl.ac.uk/cls-studies/millennium-cohort-study/ ; https://beta.ukdataservice.ac.uk/datacatalogue/series/series?id=2000031",
+  "Source URLs": "https://cls.ucl.ac.uk/cls-studies/millennium-cohort-study/ ; https://datacatalogue.ukdataservice.ac.uk/series/series/2000031",
   "Notes": ""
  },
  {
@@ -521,7 +521,7 @@
   "Named contact/form": "oxwell@psych.ox.ac.uk; PI Mina Fazel (mina.fazel@psych.ox.ac.uk)",
   "TRE / secure environment": "Brainwaves Hub / DPUK portal",
   "Data format / notes": "Gambling variables only 2019-2021; geographical coverage varies by wave.",
-  "Source URLs": "https://www.psych.ox.ac.uk/research/schoolmentalhealth ; https://osf.io/sekhr/",
+  "Source URLs": "https://www.psych.ox.ac.uk/research/projects/schoolmentalhealth ; https://osf.io/sekhr/",
   "Notes": ""
  },
  {
@@ -564,7 +564,7 @@
   "Access status": "Safeguarded UKDS deposit; table-level conditions must be checked",
   "Access route": "Register with UKDS and request SN 9537",
   "Access request URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/9537",
-  "Data access documentation URL": "https://doc.ukdataservice.ac.uk/doc/9537/mrdoc/pdf/9537_appointment_table_safeguarded_transformations.pdf",
+  "Data access documentation URL": "https://datacatalogue.ukdataservice.ac.uk/studies/study/9537mrdoc/pdf/9537_appointment_table_safeguarded_transformations.pdf",
   "Open/public items": "Catalogue, transformation summaries, annual reports",
   "Gated items": "Anonymised individual/episode relational tables",
   "Cost/fee": "No fee stated",
