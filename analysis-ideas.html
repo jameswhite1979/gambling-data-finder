@@ -352,7 +352,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const html = '<div class="missing-grid">' + missing.map(m => {
       const ids = countKeywordDatasets(usableVars, m.terms);
       const cls = ids.size <= 1 ? 'ideas-pill-low' : ids.size <= 3 ? 'ideas-pill-med' : 'ideas-pill-high';
-      return `<div class="missing-item"><h3>${escapeHTML(m.title)} <span class="ideas-pill ${cls}">${ids.size} studies flagged</span></h3><p>${escapeHTML(m.why)}</p></div>`;
+      return `<div class="missing-item"><h3>${escapeHTML(m.title)} <span class="ideas-pill ${cls}">${ids.size} ${ids.size === 1 ? 'study' : 'studies'} flagged</span></h3><p>${escapeHTML(m.why)}</p></div>`;
     }).join('') + '</div>';
     document.getElementById('missing-content').innerHTML = html;
   }
