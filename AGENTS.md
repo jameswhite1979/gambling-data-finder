@@ -16,10 +16,14 @@ Static HTML/CSS/JS site with JSON data files in `data/`. No backend. Deployed vi
 
 **To be included, a study must collect data on gambling participation or gambling harm.**
 
-That is the test for a record in `datasets.json`. Everything else the catalogue holds -
+That is the whole test for a record in `datasets.json`. Everything else the catalogue holds -
 risk/protective factors, participant characteristics, questionnaires, access routes - is
-supporting detail attached to a study that already passes it. Those things do not on their own
-qualify a study for inclusion.
+supporting detail attached to a study that already passes it.
+
+**Risk and protective factors are not part of the test, in either direction.** They do not
+qualify a study on their own, and their absence does not disqualify one. A study measuring
+gambling participation with no risk factors recorded at all is in; a study with a rich
+risk-factor battery and no gambling measure is out.
 
 Read the criterion strictly:
 
