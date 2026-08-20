@@ -12,16 +12,13 @@
   ]
  },
  "BIB_AOW": {
-  "variables": 2722,
-  "gambling": 42,
+  "variables": 2773,
+  "gambling": 93,
   "risk": 2680,
   "questionnaires": 5,
   "sources": 15,
-  "measures": 1011,
-  "named_measures": [
-   "SDQ",
-   "GHQ"
-  ]
+  "measures": 91,
+  "named_measures": []
  },
  "MCS": {
   "variables": 306,
