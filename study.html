@@ -106,15 +106,19 @@
 <script>
 const SITE_URL = 'https://www.gamblingdatafinder.com/';
 
+function studyDescription(ds, studyId, dsName) {
+  const bits = [ds['Study design'], ds['Country'], ds['Age focus / population']]
+    .filter(Boolean).join('. ');
+  return dsName + ' (' + studyId + '): gambling variables, questionnaires, '
+    + 'measures and data access routes.' + (bits ? ' ' + bits + '.' : '');
+}
+
 // Point the canonical link and the og: tags at this specific study rather than
 // at the shared study.html shell. Creates the tags if the head lacks them.
 function setStudyMeta(ds, studyId, dsName) {
   const url = SITE_URL + 'study.html?id=' + encodeURIComponent(studyId);
 
-  const bits = [ds['Study design'], ds['Country'], ds['Age focus / population']]
-    .filter(Boolean).join('. ');
-  const desc = dsName + ' (' + studyId + '): gambling variables, questionnaires, '
-    + 'measures and data access routes.' + (bits ? ' ' + bits + '.' : '');
+  const desc = studyDescription(ds, studyId, dsName);
 
   function setTag(selector, attr, value) {
     let el = document.head.querySelector(selector);
@@ -136,6 +140,69 @@ function setStudyMeta(ds, studyId, dsName) {
   setTag('meta[property="og:title"]', 'content', dsName + ' — Gambling Data Finder');
   setTag('meta[property="og:description"]', 'content', desc);
   setTag('meta[name="description"]', 'content', desc);
+}
+
+// Google Dataset Search reads schema.org/Dataset markup. This catalogue does not
+// host any data, so the markup describes the study and says where it actually
+// lives: url is this landing page, sameAs the study's own site, and
+// conditionsOfAccess records the real access route rather than implying a
+// download. Fields absent from datasets.json are omitted, never guessed.
+function setStudyJsonLd(ds, studyId, dsName, stats) {
+  const url = SITE_URL + 'study.html?id=' + encodeURIComponent(studyId);
+  const raw = ds['Years covered'] || '';
+
+  // "Years covered" is free text: "2006-2011", "2001-02, 2008", "2023-ongoing".
+  // Take the span between the earliest and latest year mentioned rather than
+  // trusting one format, and leave it out entirely if no year is present.
+  let temporal = null;
+  const years = (raw.match(/\b(?:19|20)\d{2}\b/g) || []).map(Number);
+  if (years.length) {
+    const lo = Math.min.apply(null, years), hi = Math.max.apply(null, years);
+    temporal = /ongoing|present|current/i.test(raw) ? lo + '/..'
+             : (lo === hi ? String(lo) : lo + '/' + hi);
+  }
+
+  const keywords = ['gambling', 'gambling participation', 'gambling harm', 'problem gambling']
+    .concat((stats.named_measures || []).slice(0, 8))
+    .concat([ds['Country'], ds['Study design']].filter(Boolean));
+
+  const node = {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    '@id': url + '#dataset',
+    name: dsName,
+    alternateName: studyId,
+    identifier: studyId,
+    url: url,
+    description: studyDescription(ds, studyId, dsName),
+    keywords: keywords,
+    inLanguage: 'en',
+    isPartOf: { '@type': 'DataCatalog', '@id': SITE_URL + '#catalog' },
+    includedInDataCatalog: {
+      '@type': 'DataCatalog',
+      name: 'Gambling Data Finder',
+      url: SITE_URL
+    },
+    creator: ds['Owner / data controller']
+      ? { '@type': 'Organization', name: ds['Owner / data controller'] } : null,
+    spatialCoverage: ds['Country'] || null,
+    temporalCoverage: temporal,
+    measurementTechnique: ds['Data collection mode'] || null,
+    variableMeasured: (stats.named_measures || []).length
+      ? stats.named_measures : null,
+    conditionsOfAccess: ds['Access type'] || null,
+    sameAs: ds['Dataset/home URL'] || ds['Catalogue URL'] || null
+  };
+  Object.keys(node).forEach(k => { if (node[k] == null) delete node[k]; });
+
+  let el = document.getElementById('study-jsonld');
+  if (!el) {
+    el = document.createElement('script');
+    el.type = 'application/ld+json';
+    el.id = 'study-jsonld';
+    document.head.appendChild(el);
+  }
+  el.textContent = JSON.stringify(node, null, 2);
 }
 
 document.addEventListener('DOMContentLoaded', async function() {
@@ -174,7 +241,7 @@ document.addEventListener('DOMContentLoaded', async function() {
   // Dynamic title
   document.title = dsName + ' — Gambling Data Finder';
 
-  // All 31 dataset pages share this one file, so the static head describes none
+  // Every dataset page shares this one file, so the static head describes none
   // of them. Rewrite the canonical and social tags per study, otherwise every
   // ?id= URL advertises the same generic metadata and search engines are free
   // to treat them as one page. Note this only reaches crawlers that run JS.
@@ -198,6 +265,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 
   // Per-study counts from precomputed stats
   const stats = (studyStats && studyStats[studyId]) || { variables: 0, gambling: 0, risk: 0, questionnaires: 0, sources: 0, measures: 0, named_measures: [] };
+
+  setStudyJsonLd(ds, studyId, dsName, stats);
   const studyQs = questionnaires ? questionnaires.filter(q => q['Dataset_ID'] === studyId) : [];
   const studySources = sources ? sources.filter(s => s['Dataset_ID'] === studyId) : [];
 
