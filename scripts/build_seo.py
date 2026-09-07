@@ -18,7 +18,7 @@ import sys
 SITE = 'https://www.gamblingdatafinder.com/'
 
 # study.html is the shared shell behind every ?id= URL and has no content of its
-# own; the 31 study URLs built from datasets.json stand in for it.
+# own; the per-study URLs generated below from datasets.json stand in for it.
 SHELL_PAGES = {'study.html'}
 
 NOINDEX_RE = re.compile(r'<meta\s+name="robots"\s+content="[^"]*noindex', re.I)

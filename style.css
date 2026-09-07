@@ -170,6 +170,14 @@ nav a.active{color:var(--amber-light);background:rgba(217,119,6,.15)}
 .section-header a{font-size:.85rem;color:var(--amber);font-weight:500}
 .section-header a:hover{text-decoration:underline}
 
+/* Homepage "what this site is" prose. .section is full width, so cap the
+   measure at the 760px used by .hero-sub; inline links need an underline
+   because the base `a` colour is barely distinct from body text. */
+.site-intro p{max-width:760px;margin-bottom:1rem;line-height:1.7}
+.site-intro p:last-child{margin-bottom:0}
+.site-intro p a{color:var(--amber);text-decoration:underline;text-underline-offset:2px}
+.site-intro p a:hover,.site-intro p a:focus-visible{color:var(--navy)}
+
 /* ===== TOPIC CARDS ===== */
 .topic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.8rem}
 .topic-card{

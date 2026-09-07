@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gambling Data Finder &mdash; CYP-GHRIP</title>
+<title>Gambling Data Finder | Gambling research datasets and surveys</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=8">
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="canonical" href="https://www.gamblingdatafinder.com/">
-<meta name="description" content="Find research datasets measuring gambling participation and gambling harm: 50 studies, 158 datasets, 26,000+ variables, standardised measures and data access routes.">
+<meta name="description" content="Find gambling research datasets and surveys: 50 studies, 158 datasets and 26,000+ variables on gambling participation and harm, plus data access routes.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Gambling Data Finder">
-<meta property="og:title" content="Gambling Data Finder &mdash; CYP-GHRIP">
-<meta property="og:description" content="Find research datasets measuring gambling participation and gambling harm: 50 studies, 158 datasets, 26,000+ variables, standardised measures and data access routes.">
+<meta property="og:title" content="Gambling Data Finder | Gambling research datasets and surveys">
+<meta property="og:description" content="Find gambling research datasets and surveys: 50 studies, 158 datasets and 26,000+ variables on gambling participation and harm, plus data access routes.">
 <meta property="og:url" content="https://www.gamblingdatafinder.com/">
 <meta property="og:image" content="https://www.gamblingdatafinder.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -53,8 +53,26 @@
 </head>
 <body>
 
-<!-- Header injected by JS -->
-<div id="header"></div>
+<!-- Header: static block written by scripts/build_static.js; mountChrome() in app.js is the JS fallback -->
+<div id="header">
+<!-- build_static:header -->
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><span class="logo-text">Gambling Data Finder</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('nav-open');this.setAttribute('aria-expanded',this.classList.contains('open'))">
+      <span class="nav-toggle-icon"></span>
+    </button>
+    <nav>
+      <a href="index.html" class="active">Home</a><a href="explore.html">Explore</a><a href="visualisations.html">Visualisations</a><a href="measures.html">Measures</a><a href="new-analysis.html">Analysis</a><a href="analysis-ideas.html">Ideas</a><a href="coverage.html">Coverage</a><a href="faq.html">FAQs</a><a href="about.html">About</a>
+      <a href="basket.html" class="nav-basket-link">
+        Basket <span class="basket-badge" id="nav-basket-count"></span>
+      </a>
+    </nav>
+  </div>
+</header>
+<!-- /build_static:header -->
+</div>
 
 <!-- ===== HERO ===== -->
 <section id="main-content" class="hero">
@@ -81,27 +99,38 @@
 <div class="metrics">
   <div class="metrics-grid">
     <div class="metric-card">
-      <div class="metric-num" id="metric-studies">&mdash;</div>
+      <div class="metric-num" id="metric-studies">50</div>
       <div class="metric-label">Studies</div>
     </div>
     <div class="metric-card">
-      <div class="metric-num" id="metric-datasets">&mdash;</div>
+      <div class="metric-num" id="metric-datasets">158</div>
       <div class="metric-label">Datasets</div>
     </div>
     <div class="metric-card">
-      <div class="metric-num" id="metric-questionnaires">&mdash;</div>
+      <div class="metric-num" id="metric-questionnaires">122</div>
       <div class="metric-label">Questionnaires</div>
     </div>
     <div class="metric-card">
-      <div class="metric-num" id="metric-variables">&mdash;</div>
+      <div class="metric-num" id="metric-variables">26,178</div>
       <div class="metric-label">Variables</div>
     </div>
     <div class="metric-card">
-      <div class="metric-num" id="metric-gambling">&mdash;</div>
+      <div class="metric-num" id="metric-gambling">9,236</div>
       <div class="metric-label">Gambling questions</div>
     </div>
   </div>
 </div>
+
+<!-- ===== WHAT THIS SITE IS ===== -->
+<section class="section site-intro" aria-labelledby="site-intro-heading">
+  <div class="section-header">
+    <h2 id="site-intro-heading">A catalogue of gambling research datasets</h2>
+    <a href="about.html">About the project &rarr;</a>
+  </div>
+  <p>The Gambling Data Finder is a free catalogue of UK and international research datasets that measure gambling participation and gambling-related harm. It covers birth cohorts such as <a href="study.html?id=ALSPAC">ALSPAC</a> and the <a href="study.html?id=MCS">Millennium Cohort Study</a>, household panels like <a href="study.html?id=USOC">Understanding Society</a>, national surveys including the <a href="study.html?id=GSGB">Gambling Survey for Great Britain</a> and the <a href="study.html?id=APMS">Adult Psychiatric Morbidity Survey</a>, and school surveys such as the <a href="study.html?id=YPGS">Young People and Gambling Survey</a>. It also includes studies from the United States, Canada, Australia, New Zealand, Ireland and Finland.</p>
+  <p>For each study you can see which gambling measures were used, for example the <a href="measures.html">PGSI, DSM-IV-MR-J and SOGS-RA</a>, and which waves and age groups asked about gambling. Question wording or labels are shown where available, alongside <a href="explore.html">risk and protective factors</a>. <a href="howto.html">Step-by-step guides</a> cover searching, comparing measures and exporting records; the FAQs explain <a href="faq.html">how to request access to the data</a>.</p>
+  <p>The catalogue holds metadata only, not individual-level data; each study page points to the repository or study team that holds it. It was built by the UKRI-funded Children and Young People Gambling Harm Research and Innovation Partnership (CYP-GHRIP) to support <a href="new-analysis.html">secondary analysis</a>, meta-analysis and harmonisation across studies, and to help researchers judge whether a dataset merits a full access request.</p>
+</section>
 
 <!-- ===== EXPLORE DATASETS ===== -->
 <section class="section">
@@ -110,68 +139,118 @@
     <a href="studies.html">View all &rarr;</a>
   </div>
   <div class="studies-grid" id="studies-grid" aria-live="polite">
-    <div class="loading">Loading datasets...</div>
-  </div>
+<!-- build_static:studies-grid -->
+<a href="study.html?id=NCDS" class="study-card"><div class="study-card-id">NCDS</div><div class="study-card-name">1958 National Child Development Study</div><div class="study-card-meta">UK &middot; Birth cohort</div><div class="study-card-stats"><span class="study-card-stat">Born March 1958; sweep 4 (age 23) contains gambling item</span></div></a>
+<a href="study.html?id=BCS70" class="study-card"><div class="study-card-id">BCS70</div><div class="study-card-name">1970 British Cohort Study</div><div class="study-card-meta">UK &middot; Birth cohort</div><div class="study-card-stats"><span class="study-card-stat">Born April 1970; sweep 4 (age 15/16) contains gambling items</span></div></a>
+<a href="study.html?id=ACT_GPS_2019" class="study-card"><div class="study-card-id">ACT_GPS_2019</div><div class="study-card-name">2019 ACT Gambling Prevalence Survey</div><div class="study-card-meta">Australia - Australian Capital Territory &middot; Cross-sectional adult prevalence survey</div><div class="study-card-stats"><span class="study-card-stat">Adult ACT residents aged 18+</span></div></a>
+<a href="study.html?id=AHAH" class="study-card"><div class="study-card-id">AHAH</div><div class="study-card-name">Access to Healthy Assets and Hazards</div><div class="study-card-meta">Great Britain &middot; Contextual/geospatial environmental dataset</div><div class="study-card-stats"><span class="study-card-stat">Not individual participant data; area-level contextual linkage to cohorts/areas</span></div></a>
+<a href="study.html?id=APMS" class="study-card"><div class="study-card-id">APMS</div><div class="study-card-name">Adult Psychiatric Morbidity Survey</div><div class="study-card-meta">England &middot; Cross-sectional psychiatric morbidity survey</div><div class="study-card-stats"><span class="study-card-stat">Adults; includes younger adults</span></div></a>
+<a href="study.html?id=AGRI_ANP_PANEL" class="study-card"><div class="study-card-id">AGRI_ANP_PANEL</div><div class="study-card-name">AGRI National Project Online Panel Study</div><div class="study-card-meta">Canada &middot; Two-wave national online panel of monthly gamblers</div><div class="study-card-stats"><span class="study-card-stat">Canadian adults aged 18+ who gambled at least monthly</span></div></a>
+<a href="study.html?id=ASSAD" class="study-card"><div class="study-card-id">ASSAD</div><div class="study-card-name">Australian Secondary School Alcohol and Drug Survey</div><div class="study-card-meta">Australia &middot; Cross-sectional school survey (triennial since 1984; gambling module added 2017)</div><div class="study-card-stats"><span class="study-card-stat">Secondary school students aged 12-17</span></div></a>
+<a href="study.html?id=ALSPAC" class="study-card"><div class="study-card-id">ALSPAC</div><div class="study-card-name">Avon Longitudinal Study of Parents and Children</div><div class="study-card-meta">England &middot; Birth cohort</div><div class="study-card-stats"><span class="study-card-stat">Adolescence; CLOSER file F17 gambling</span></div></a>
+<a href="study.html?id=BIB_AOW" class="study-card"><div class="study-card-id">BIB_AOW</div><div class="study-card-name">Born in Bradford - Age of Wonder</div><div class="study-card-meta">England &middot; Longitudinal cohort/school survey</div><div class="study-card-stats"><span class="study-card-stat">Adolescents; post-16 questionnaire also relevant</span></div></a>
+<a href="study.html?id=BGPS" class="study-card"><div class="study-card-id">BGPS</div><div class="study-card-name">British Gambling Prevalence Survey</div><div class="study-card-meta">Great Britain &middot; Repeated cross-sectional adult survey</div><div class="study-card-stats"><span class="study-card-stat">Adults aged 16+; includes 16-24 year olds</span></div></a>
+<a href="study.html?id=CSDD" class="study-card"><div class="study-card-id">CSDD</div><div class="study-card-name">Cambridge Study in Delinquent Development, 1961-1981</div><div class="study-card-meta">England &middot; Prospective longitudinal cohort with repeated interviews, parent, teacher and peer ratings, and criminal-record searches</div><div class="study-card-stats"><span class="study-card-stat">411 males from a working-class area of South London, born around 1953 and followed from age 8</span></div></a>
+<a href="study.html?id=CCHS_GAMBLING" class="study-card"><div class="study-card-id">CCHS_GAMBLING</div><div class="study-card-name">Canadian Community Health Survey: gambling modules and rapid responses</div><div class="study-card-meta">Canada &middot; Repeated cross-sectional national health survey with optional and rapid-response gambling modules</div><div class="study-card-stats"><span class="study-card-stat">Household population aged 12+ or 15+ depending cycle; adult subsamples available</span></div></a>
+<a href="study.html?id=EAGS" class="study-card"><div class="study-card-id">EAGS</div><div class="study-card-name">Emerging Adults Gambling Survey</div><div class="study-card-meta">Great Britain &middot; Longitudinal survey</div><div class="study-card-stats"><span class="study-card-stat">Emerging adults aged 16-24</span></div></a>
+<a href="study.html?id=ESPAD" class="study-card"><div class="study-card-id">ESPAD</div><div class="study-card-name">European School Survey Project on Alcohol and Other Drugs</div><div class="study-card-meta">Europe &middot; Repeated cross-national school survey</div><div class="study-card-stats"><span class="study-card-stat">Age 15-16</span></div></a>
+<a href="study.html?id=FIN_GAMBLING_SURVEYS" class="study-card"><div class="study-card-id">FIN_GAMBLING_SURVEYS</div><div class="study-card-name">Finnish Gambling Surveys, 2007-2023</div><div class="study-card-meta">Finland &middot; Repeated national cross-sectional probability surveys</div><div class="study-card-stats"><span class="study-card-stat">Household population aged 15-74; adult subsamples available</span></div></a>
+<a href="study.html?id=FINLAND_SHP" class="study-card"><div class="study-card-id">FINLAND_SHP</div><div class="study-card-name">Finnish School Health Promotion Study</div><div class="study-card-meta">Finland &middot; Repeated cross-sectional school survey</div><div class="study-card-stats"><span class="study-card-stat">Students aged 14-16 (grades 8-9)</span></div></a>
+<a href="study.html?id=GA_TSS" class="study-card"><div class="study-card-id">GA_TSS</div><div class="study-card-name">GambleAware Annual GB Treatment and Support Survey</div><div class="study-card-meta">Great Britain &middot; Repeated cross-sectional survey</div><div class="study-card-stats"><span class="study-card-stat">Adults aged 18+; last two waves (2023, 2024) include retrospective questions about gambling before age 18</span></div></a>
+<a href="study.html?id=GC_QTS_2016_2022" class="study-card"><div class="study-card-id">GC_QTS_2016_2022</div><div class="study-card-name">Gambling Commission Gambling Behaviour Quarterly Telephone Survey, 2016-2022</div><div class="study-card-meta">Great Britain &middot; Repeated cross-sectional quarterly telephone survey; annual UKDS files</div><div class="study-card-stats"><span class="study-card-stat">People aged 16+ in Great Britain</span></div></a>
+<a href="study.html?id=GIBS" class="study-card"><div class="study-card-id">GIBS</div><div class="study-card-name">Gambling Impact and Behavior Study</div><div class="study-card-meta">United States &middot; Cross-sectional adult and youth survey plus community files</div><div class="study-card-stats"><span class="study-card-stat">Adults and youth in the US; youth sample includes adolescents</span></div></a>
+<a href="study.html?id=HSE_SHES_2016" class="study-card"><div class="study-card-id">HSE_SHES_2016</div><div class="study-card-name">Gambling in England and Scotland, 2016: Combined HSE/SHeS</div><div class="study-card-meta">England and Scotland &middot; Combined cross-sectional household survey data</div><div class="study-card-stats"><span class="study-card-stat">Adults aged 16+; includes 16-24 year olds</span></div></a>
+<a href="study.html?id=GSGB" class="study-card"><div class="study-card-id">GSGB</div><div class="study-card-name">Gambling Survey for Great Britain</div><div class="study-card-meta">Great Britain &middot; Repeated cross-sectional survey</div><div class="study-card-stats"><span class="study-card-stat">Adults, includes 18-24</span></div></a>
+<a href="study.html?id=LOYALTY_CARD_2014_2016" class="study-card"><div class="study-card-id">LOYALTY_CARD_2014_2016</div><div class="study-card-name">Gaming and Betting Study: Survey of Loyalty Card Customers, Waves 1 and 2, 2014-2016</div><div class="study-card-meta">Great Britain &middot; Two-wave longitudinal survey of bookmaker loyalty card holders</div><div class="study-card-stats"><span class="study-card-stat">Adults holding a Ladbrokes, William Hill or Paddy Power loyalty card who had played machines in a bookmakers</span></div></a>
+<a href="study.html?id=GLAD" class="study-card"><div class="study-card-id">GLAD</div><div class="study-card-name">Genetic Links to Anxiety and Depression Study</div><div class="study-card-meta">United Kingdom &middot; Volunteer recontactable cohort with genetic and questionnaire data</div><div class="study-card-stats"><span class="study-card-stat">Participants aged 16 and over with lifetime anxiety or depression, recruited from September 2018</span></div></a>
+<a href="study.html?id=LSAC" class="study-card"><div class="study-card-id">LSAC</div><div class="study-card-name">Growing Up in Australia: Longitudinal Study of Australian Children</div><div class="study-card-meta">Australia &middot; Nationally representative longitudinal cohort (two cohorts recruited 2004; surveyed roughly every two years)</div><div class="study-card-stats"><span class="study-card-stat">Two cohorts followed from infancy; young-person gambling module ages 16-24, plus Parent 1 gambling module</span></div></a>
+<a href="study.html?id=GUI98" class="study-card"><div class="study-card-id">GUI98</div><div class="study-card-name">Growing Up in Ireland Cohort '98</div><div class="study-card-meta">Ireland &middot; Prospective longitudinal cohort</div><div class="study-card-stats"><span class="study-card-stat">Longitudinal cohort; gambling questions at age 20 (Wave 4) only</span></div></a>
+<a href="study.html?id=KCMHR_HWCS" class="study-card"><div class="study-card-id">KCMHR_HWCS</div><div class="study-card-name">Health and Wellbeing Cohort Study (King's Centre for Military Health Research)</div><div class="study-card-meta">United Kingdom &middot; Four-phase cohort study of UK Armed Forces personnel from the Iraq and Afghanistan era</div><div class="study-card-stats"><span class="study-card-stat">Serving and ex-serving UK Armed Forces personnel, Regulars and Reservists</span></div></a>
+<a href="study.html?id=HBSC" class="study-card"><div class="study-card-id">HBSC</div><div class="study-card-name">Health Behaviour in School-aged Children</div><div class="study-card-meta">International &middot; Repeated cross-national school survey</div><div class="study-card-stats"><span class="study-card-stat">Ages 11, 13, 15</span></div></a>
+<a href="study.html?id=HSE" class="study-card"><div class="study-card-id">HSE</div><div class="study-card-name">Health Survey for England</div><div class="study-card-meta">England &middot; Repeated cross-sectional household health survey</div><div class="study-card-stats"><span class="study-card-stat">Adults aged 16+; includes 16-24 year olds</span></div></a>
+<a href="study.html?id=HILDA" class="study-card"><div class="study-card-id">HILDA</div><div class="study-card-name">Household, Income and Labour Dynamics in Australia Survey</div><div class="study-card-meta">Australia &middot; Annual national household panel</div><div class="study-card-stats"><span class="study-card-stat">All household members aged 15+; adult subsamples available</span></div></a>
+<a href="study.html?id=LLLP" class="study-card"><div class="study-card-id">LLLP</div><div class="study-card-name">Leisure, Lifestyle and Lifecycle Project</div><div class="study-card-meta">Canada - Alberta &middot; Multi-cohort longitudinal gambling study</div><div class="study-card-stats"><span class="study-card-stat">Adult cohorts aged 18-20, 23-25, 43-45 and 63-65; separate adolescent file</span></div></a>
+<a href="study.html?id=MANITOBA_LGCM_II_2022" class="study-card"><div class="study-card-id">MANITOBA_LGCM_II_2022</div><div class="study-card-name">Liquor, Gambling and Cannabis in Manitoba Survey II, 2022</div><div class="study-card-meta">Canada - Manitoba &middot; Cross-sectional mixed-mode adult survey</div><div class="study-card-stats"><span class="study-card-stat">Manitobans aged 18+</span></div></a>
+<a href="study.html?id=MANITOBA_YA" class="study-card"><div class="study-card-id">MANITOBA_YA</div><div class="study-card-name">Manitoba Longitudinal Study of Young Adults</div><div class="study-card-meta">Canada &middot; Longitudinal young adult survey</div><div class="study-card-stats"><span class="study-card-stat">Young adults</span></div></a>
+<a href="study.html?id=MHCYP" class="study-card"><div class="study-card-id">MHCYP</div><div class="study-card-name">Mental Health of Children and Young People in England</div><div class="study-card-meta">England &middot; National probability survey with follow-up waves</div><div class="study-card-stats"><span class="study-card-stat">Children and young people in England, with follow-up waves in 2020, 2021, 2022 and 2023</span></div></a>
+<a href="study.html?id=MCS" class="study-card"><div class="study-card-id">MCS</div><div class="study-card-name">Millennium Cohort Study</div><div class="study-card-meta">UK &middot; Birth cohort</div><div class="study-card-stats"><span class="study-card-stat">Age 14 gambling items</span></div></a>
+<a href="study.html?id=NCS_R" class="study-card"><div class="study-card-id">NCS_R</div><div class="study-card-name">National Comorbidity Survey Replication</div><div class="study-card-meta">United States &middot; National cross-sectional psychiatric epidemiology survey</div><div class="study-card-stats"><span class="study-card-stat">US household adults aged 18+; gambling in Part II subsample</span></div></a>
+<a href="study.html?id=NGSN_DRF" class="study-card"><div class="study-card-id">NGSN_DRF</div><div class="study-card-name">National Gambling Support Network Data Reporting Framework, 2015-2026</div><div class="study-card-meta">Great Britain &middot; Longitudinal treatment-service administrative records in linked relational tables</div><div class="study-card-stats"><span class="study-card-stat">Adults aged 18+ accessing NGSN treatment or support</span></div></a>
+<a href="study.html?id=ADDHEALTH" class="study-card"><div class="study-card-id">ADDHEALTH</div><div class="study-card-name">National Longitudinal Study of Adolescent to Adult Health</div><div class="study-card-meta">United States &middot; Longitudinal cohort</div><div class="study-card-stats"><span class="study-card-stat">Adolescents followed into adulthood</span></div></a>
+<a href="study.html?id=NSW" class="study-card"><div class="study-card-id">NSW</div><div class="study-card-name">National Survey for Wales gambling module</div><div class="study-card-meta">Wales &middot; Repeated cross-sectional household survey</div><div class="study-card-stats"><span class="study-card-stat">Adults aged 16+ in UKDS study; gambling report aged 18+ for 2022/23</span></div></a>
+<a href="study.html?id=OSDUHS" class="study-card"><div class="study-card-id">OSDUHS</div><div class="study-card-name">Ontario Student Drug Use and Health Survey</div><div class="study-card-meta">Canada &middot; Repeated cross-sectional school survey</div><div class="study-card-stats"><span class="study-card-stat">Grades 7-12</span></div></a>
+<a href="study.html?id=OXWELL" class="study-card"><div class="study-card-id">OXWELL</div><div class="study-card-name">OxWell Student Survey</div><div class="study-card-meta">England &middot; Repeated cross-sectional school survey (waves 2019, 2020, 2021, 2023, 2025; gambling items in 2019-2021 only)</div><div class="study-card-stats"><span class="study-card-stat">Pupils aged 8-18 (school Years 4-13 incl. FE colleges); gambling items asked of older pupils only</span></div></a>
+<a href="study.html?id=QLS" class="study-card"><div class="study-card-id">QLS</div><div class="study-card-name">Quinte Longitudinal Study of Gambling and Problem Gambling</div><div class="study-card-meta">Canada - Ontario &middot; Five-wave annual adult longitudinal cohort</div><div class="study-card-stats"><span class="study-card-stat">Adults approximately 18-90 in the Quinte region</span></div></a>
+<a href="study.html?id=SHRN" class="study-card"><div class="study-card-id">SHRN</div><div class="study-card-name">School Health Research Network Student Health and Wellbeing Survey</div><div class="study-card-meta">Wales &middot; Repeated cross-sectional school survey</div><div class="study-card-stats"><span class="study-card-stat">Secondary school pupils; years 7-11</span></div></a>
+<a href="study.html?id=SHES_2017_2018_2019_2021" class="study-card"><div class="study-card-id">SHES_2017_2018_2019_2021</div><div class="study-card-name">Scottish Health Survey 2012-2017 and 2021 (gambling module years)</div><div class="study-card-meta">Scotland &middot; Repeated cross-sectional health survey</div><div class="study-card-stats"><span class="study-card-stat">Age 16+ adults; includes 16-24 young adults</span></div></a>
+<a href="study.html?id=STS_ATS_GB_2022" class="study-card"><div class="study-card-id">STS_ATS_GB_2022</div><div class="study-card-name">Smoking and Alcohol Toolkit Studies: October 2022 GB gambling module</div><div class="study-card-meta">Great Britain &middot; Repeated cross-sectional surveillance survey; one-off gambling pilot module</div><div class="study-card-stats"><span class="study-card-stat">Adults aged 18+ living in Great Britain</span></div></a>
+<a href="study.html?id=UK_BIOBANK_GAMBLING" class="study-card"><div class="study-card-id">UK_BIOBANK_GAMBLING</div><div class="study-card-name">UK Biobank gambling-adjacent questionnaire and linked clinical records</div><div class="study-card-meta">United Kingdom &middot; Prospective volunteer cohort with questionnaires and linked health records</div><div class="study-card-stats"><span class="study-card-stat">Recruited age 40-69 in 2006-2010</span></div></a>
+<a href="study.html?id=USOC" class="study-card"><div class="study-card-id">USOC</div><div class="study-card-name">Understanding Society / UK Household Longitudinal Study</div><div class="study-card-meta">UK &middot; Household panel</div><div class="study-card-stats"><span class="study-card-stat">Adults and young adults within household panel; gambling module in Wave 13 self-completion</span></div></a>
+<a href="study.html?id=WOS_TWENTY07" class="study-card"><div class="study-card-id">WOS_TWENTY07</div><div class="study-card-name">West of Scotland Twenty-07 Study: Health in the Community</div><div class="study-card-meta">Scotland &middot; Three-cohort longitudinal study of people born around 1932, 1952 and 1972, followed over five waves from 1987/88 to 2007/08</div><div class="study-card-stats"><span class="study-card-stat">Regional sample from the Central Clydeside Conurbation plus a localities sample from two Glasgow areas</span></div></a>
+<a href="study.html?id=YPGS" class="study-card"><div class="study-card-id">YPGS</div><div class="study-card-name">Young People and Gambling Survey</div><div class="study-card-meta">Great Britain &middot; Repeated cross-sectional school survey</div><div class="study-card-stats"><span class="study-card-stat">11-17 in recent waves; historic 11-16</span></div></a>
+<a href="study.html?id=YPBAS" class="study-card"><div class="study-card-id">YPBAS</div><div class="study-card-name">Young Persons' Behaviour and Attitudes Survey</div><div class="study-card-meta">Northern Ireland &middot; Cross-sectional school-based survey of post-primary pupils (roughly every three years since 2000; gambling module in the 2022 wave only)</div><div class="study-card-stats"><span class="study-card-stat">Post-primary pupils aged 11-16 (school Years 8-12)</span></div></a>
+<a href="study.html?id=YOUTH07_NZ" class="study-card"><div class="study-card-id">YOUTH07_NZ</div><div class="study-card-name">Youth'07 - New Zealand Youth Health and Wellbeing Survey</div><div class="study-card-meta">New Zealand &middot; Cross-sectional nationally representative school survey</div><div class="study-card-stats"><span class="study-card-stat">Secondary school students aged 12-19</span></div></a>
+<!-- /build_static:studies-grid -->
+</div>
 </section>
 
-<!-- Footer injected by JS -->
-<div id="footer"></div>
+<!-- Footer: static block written by scripts/build_static.js; mountChrome() in app.js is the JS fallback -->
+<div id="footer">
+<!-- build_static:footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Help</h4>
+      <a href="faq.html">FAQs</a>
+      <a href="howto.html">How-to guides</a>
+      <a href="coverage.html">Dataset coverage</a>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <a href="about.html">About the CYP-GHRIP data resource</a>
+      <a href="studies.html">All studies and datasets</a>
+      <a href="special-datasets.html">Special datasets</a>
+      <a href="measures.html">Standardised measures</a>
+    </div>
+    <div class="footer-col">
+      <h4>Project</h4>
+      <a href="about.html">CYP-GHRIP</a>
+      <a href="about.html#contact">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    Gambling Data Finder &mdash; Children and Young People Gambling Harm Research and Innovation Partnership (CYP-GHRIP)<br>
+    Last updated: <span id="footer-date">2026-08-20</span>
+  </div>
+</footer>
+<!-- /build_static:footer -->
+</div>
 
-<script src="app.js?v=7"></script>
+<script src="app.js?v=8"></script>
 <script>
 document.addEventListener('DOMContentLoaded', async function() {
 
-  /* ---- Inject shared header & footer ---- */
-  document.getElementById('header').innerHTML = renderNav('home');
-  document.getElementById('footer').innerHTML = renderFooter();
-  updateBasketCount();
+  /* ---- Shared header & footer: static blocks from scripts/build_static.js; mountChrome() renders them only if missing ---- */
+  mountChrome('home');
 
   /* ---- Metric cards from summary.json ---- */
   const summary = await fetchJSON('data/summary.json');
   if (summary) {
-    document.getElementById('metric-studies').textContent = (summary.studies || 31).toLocaleString();
-    document.getElementById('metric-datasets').textContent = summary.datasets.toLocaleString();
-    document.getElementById('metric-questionnaires').textContent = summary.questionnaires.toLocaleString();
-    document.getElementById('metric-variables').textContent = summary.variables.toLocaleString();
-    document.getElementById('metric-gambling').textContent = summary.gambling_measures.toLocaleString();
+    document.getElementById('metric-studies').textContent = formatCount(summary.studies);
+    document.getElementById('metric-datasets').textContent = formatCount(summary.datasets);
+    document.getElementById('metric-questionnaires').textContent = formatCount(summary.questionnaires);
+    document.getElementById('metric-variables').textContent = formatCount(summary.variables);
+    document.getElementById('metric-gambling').textContent = formatCount(summary.gambling_measures);
     const footerDate = document.getElementById('footer-date');
     if (footerDate) footerDate.textContent = summary.last_updated || '';
   }
 
-  /* ---- Study / dataset cards ---- */
-  var datasets = await fetchJSON('data/datasets.json');
-  if (datasets) {
-    var grid = document.getElementById('studies-grid');
-    grid.innerHTML = '';
-
-    var sorted = datasets
-      .filter(function(d) { return d['Dataset name'] || d['Dataset_ID']; })
-      .sort(function(a, b) {
-        return (a['Dataset name'] || '').localeCompare(b['Dataset name'] || '');
-      });
-
-    sorted.forEach(function(d) {
-      var id = d['Dataset_ID'] || d['Dataset name'];
-      var name = d['Dataset name'] || id;
-      var country = d['Country'] || '';
-      var age = d['Age focus / population'] || '';
-      var design = d['Study design'] || '';
-
-      var card = document.createElement('a');
-      card.href = 'study.html?id=' + encodeURIComponent(id);
-      card.className = 'study-card';
-      card.innerHTML =
-        '<div class="study-card-id">' + escapeHTML(id) + '</div>' +
-        '<div class="study-card-name">' + escapeHTML(name) + '</div>' +
-        '<div class="study-card-meta">' +
-          escapeHTML(country) +
-          (design ? ' &middot; ' + escapeHTML(design) : '') +
-        '</div>' +
-        '<div class="study-card-stats">' +
-          (age ? '<span class="study-card-stat">' + escapeHTML(age) + '</span>' : '') +
-        '</div>';
-      grid.appendChild(card);
-    });
+  /* ---- Study / dataset cards: pre-rendered by scripts/build_static.js; render here only if missing ---- */
+  var grid = document.getElementById('studies-grid');
+  if (!grid.querySelector('.study-card')) {
+    grid.innerHTML = '<div class="loading">Loading datasets...</div>';
+    var datasets = await fetchJSON('data/datasets.json');
+    grid.innerHTML = datasets ? renderStudyGrid(datasets, null, { counts: false }) : '<p>Unable to load datasets.</p>';
   }
 
 });

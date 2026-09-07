@@ -2,15 +2,15 @@
 
 UKRI GHRIPPs project website for researchers to discover and compare gambling-related datasets across studies.
 
-**Live site:** https://jameswhite1979.github.io/gambling-data-finder/
+**Live site:** https://www.gamblingdatafinder.com/
 
 ## Architecture
 
 Static HTML/CSS/JS site with JSON data files in `data/`. No backend. Deployed via GitHub Pages.
 
-- **Pages:** index.html, search.html, explore.html, study.html, measures.html, publications.html, new-analysis.html, about.html
+- **Pages:** index.html, search.html, explore.html, studies.html, study.html, compare.html, measures.html, new-analysis.html, analysis-ideas.html, visualisations.html, coverage.html, special-datasets.html, howto.html, faq.html, about.html, basket.html, 404.html
 - **Shared code:** app.js, style.css
-- **Data files (in `data/`):** variables.json, datasets.json, publications.json, questionnaires.json, gambling_measures.json, sources.json, facets.json (derived), summary.json (derived)
+- **Data files (in `data/`):** variables.json, datasets.json, publications.json, questionnaires.json, gambling_measures.json, sources.json, facets.json (derived), summary.json (derived), study_stats.json (derived)
 
 ## Inclusion criterion
 
@@ -64,13 +64,23 @@ Optional: `question_text` (full questionnaire wording — makes it searchable).
 
 ## Derived files
 
-`facets.json` and `summary.json` are derived from the other data files. **After editing any data file**, rebuild them:
+`facets.json`, `summary.json` and `study_stats.json` are derived from the other data files. **After editing any data file**, rebuild them:
 
 ```
 python scripts/validate_and_update.py <DATASET_ID> --data-dir data
 ```
 
-This validates all 9 JSON files, checks cross-references, fixes facets.json, and recounts summary.json.
+This validates all 9 JSON files, checks cross-references, fixes facets.json, recounts summary.json and regenerates study_stats.json.
+
+### Static header, footer and study-card grids
+
+The shared header, footer and the study-card grids on index.html and studies.html are derived output too. Their markup lives only in app.js (`renderNav`, `renderFooter`, `renderStudyGrid`); `scripts/build_static.js` runs those functions in Node with `data/datasets.json`, `data/study_stats.json` and `data/summary.json` (footer date) and writes the result into every `*.html` between `<!-- build_static:... -->` marker comments, so the raw HTML carries the navigation and dataset links. Re-run it after the validation script, after editing the nav, footer or card functions in app.js, and after adding a page:
+
+```
+node scripts/build_static.js
+```
+
+`node scripts/build_static.js --check` reports stale pages without writing anything; CI runs it and fails if any page is stale. Never hand-edit the content between the markers. Each page calls `mountChrome('<id>')`, which renders the chrome client-side only when the static block is missing, so a page still works if the build is skipped.
 
 It also fills gaps in `metadata_check.json`: any dataset without an entry gets a derived stub, so
 the coverage table never renders blank rows after an ingest. **Existing entries are never

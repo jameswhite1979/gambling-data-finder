@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About - Gambling Data Finder</title>
+<title>About the CYP-GHRIP data resource | Gambling Data Finder</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=8">
 <style>
 /* .info-grid is styled small and grey where it labels study metadata; on this
    page it is body copy, so match the surrounding text. */
@@ -17,19 +17,37 @@
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="canonical" href="https://www.gamblingdatafinder.com/about.html">
-<meta name="description" content="About the Gambling Data Finder, built by the CYP-GHRIP team.">
+<meta name="description" content="About the Gambling Data Finder, a metadata catalogue built by the UKRI-funded CYP-GHRIP partnership to help researchers find and assess gambling datasets.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Gambling Data Finder">
-<meta property="og:title" content="About - Gambling Data Finder">
-<meta property="og:description" content="About the Gambling Data Finder, built by the CYP-GHRIP team.">
+<meta property="og:title" content="About the CYP-GHRIP data resource | Gambling Data Finder">
+<meta property="og:description" content="About the Gambling Data Finder, a metadata catalogue built by the UKRI-funded CYP-GHRIP partnership to help researchers find and assess gambling datasets.">
 <meta property="og:url" content="https://www.gamblingdatafinder.com/about.html">
 <meta property="og:image" content="https://www.gamblingdatafinder.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
-<div id="header"></div>
+<div id="header">
+<!-- build_static:header -->
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><span class="logo-text">Gambling Data Finder</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('nav-open');this.setAttribute('aria-expanded',this.classList.contains('open'))">
+      <span class="nav-toggle-icon"></span>
+    </button>
+    <nav>
+      <a href="index.html">Home</a><a href="explore.html">Explore</a><a href="visualisations.html">Visualisations</a><a href="measures.html">Measures</a><a href="new-analysis.html">Analysis</a><a href="analysis-ideas.html">Ideas</a><a href="coverage.html">Coverage</a><a href="faq.html">FAQs</a><a href="about.html" class="active">About</a>
+      <a href="basket.html" class="nav-basket-link">
+        Basket <span class="basket-badge" id="nav-basket-count"></span>
+      </a>
+    </nav>
+  </div>
+</header>
+<!-- /build_static:header -->
+</div>
 
-<div class="content-page">
+<div id="main-content" class="content-page">
   <h1>About the Gambling Data Finder</h1>
 
   <div class="detail-section">
@@ -110,13 +128,40 @@
   </div>
 </div>
 
-<div id="footer"></div>
-<script src="app.js?v=7"></script>
+<div id="footer">
+<!-- build_static:footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Help</h4>
+      <a href="faq.html">FAQs</a>
+      <a href="howto.html">How-to guides</a>
+      <a href="coverage.html">Dataset coverage</a>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <a href="about.html">About the CYP-GHRIP data resource</a>
+      <a href="studies.html">All studies and datasets</a>
+      <a href="special-datasets.html">Special datasets</a>
+      <a href="measures.html">Standardised measures</a>
+    </div>
+    <div class="footer-col">
+      <h4>Project</h4>
+      <a href="about.html">CYP-GHRIP</a>
+      <a href="about.html#contact">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    Gambling Data Finder &mdash; Children and Young People Gambling Harm Research and Innovation Partnership (CYP-GHRIP)<br>
+    Last updated: <span id="footer-date">2026-08-20</span>
+  </div>
+</footer>
+<!-- /build_static:footer -->
+</div>
+<script src="app.js?v=8"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('header').innerHTML = renderNav('about');
-  document.getElementById('footer').innerHTML = renderFooter();
-  updateBasketCount();
+  mountChrome('about');
 });
 </script>
 </body>

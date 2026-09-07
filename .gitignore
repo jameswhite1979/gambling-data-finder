@@ -40,3 +40,6 @@ CODEX_PROMPT_*.md
 node_modules/
 package-lock.json
 .playwright-report/
+
+# Python bytecode from the build and validation scripts
+__pycache__/

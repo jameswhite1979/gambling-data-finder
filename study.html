@@ -3,30 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dataset — Gambling Data Finder</title>
+<title>Gambling dataset profile | Gambling Data Finder</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=8">
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta name="description" content="Study profile: population, gambling measures, years covered, variables, questionnaires and data access routes.">
+<meta name="description" content="Profile of one gambling dataset: population, years covered, gambling measures such as the PGSI, variables, questionnaires, publications and data access.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Gambling Data Finder">
-<meta property="og:title" content="Dataset — Gambling Data Finder">
-<meta property="og:description" content="Study profile: population, gambling measures, years covered, variables, questionnaires and data access routes.">
+<meta property="og:title" content="Gambling dataset profile | Gambling Data Finder">
+<meta property="og:description" content="Profile of one gambling dataset: population, years covered, gambling measures such as the PGSI, variables, questionnaires, publications and data access.">
 <meta property="og:url" content="https://www.gamblingdatafinder.com/study.html">
 <meta property="og:image" content="https://www.gamblingdatafinder.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 
-<div id="site-header"></div>
+<div id="site-header">
+<!-- build_static:header -->
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><span class="logo-text">Gambling Data Finder</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('nav-open');this.setAttribute('aria-expanded',this.classList.contains('open'))">
+      <span class="nav-toggle-icon"></span>
+    </button>
+    <nav>
+      <a href="index.html">Home</a><a href="explore.html">Explore</a><a href="visualisations.html">Visualisations</a><a href="measures.html">Measures</a><a href="new-analysis.html">Analysis</a><a href="analysis-ideas.html">Ideas</a><a href="coverage.html">Coverage</a><a href="faq.html">FAQs</a><a href="about.html">About</a>
+      <a href="basket.html" class="nav-basket-link">
+        Basket <span class="basket-badge" id="nav-basket-count"></span>
+      </a>
+    </nav>
+  </div>
+</header>
+<!-- /build_static:header -->
+</div>
 
 <div class="study-hero" id="study-hero">
   <div class="study-hero-inner">
     <div class="study-hero-id" id="study-hero-id"></div>
-    <h1 id="study-name">Loading...</h1>
+    <h1 id="study-name">Gambling dataset profile</h1>
     <div class="study-hero-badges" id="study-hero-badges"></div>
     <div class="study-stats" id="study-stats"></div>
   </div>
@@ -34,6 +52,9 @@
 
 <div id="main-content" class="study-layout">
   <div class="study-main">
+    <div class="detail-section" id="study-intro">
+      <p>Each study page in the Gambling Data Finder profiles one gambling research dataset: its population, the years covered, the gambling measures used (such as the PGSI), and its variables, questionnaires, publications and access route. Choose a study from <a href="studies.html">all studies and datasets</a>, or <a href="search.html">search the variables</a> directly.</p>
+    </div>
     <div class="detail-section" id="overview-section" style="display:none">
       <h2>Overview</h2>
       <dl class="info-grid" id="overview-grid"></dl>
@@ -100,25 +121,168 @@
   </aside>
 </div>
 
-<div id="site-footer"></div>
+<div id="site-footer">
+<!-- build_static:footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Help</h4>
+      <a href="faq.html">FAQs</a>
+      <a href="howto.html">How-to guides</a>
+      <a href="coverage.html">Dataset coverage</a>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <a href="about.html">About the CYP-GHRIP data resource</a>
+      <a href="studies.html">All studies and datasets</a>
+      <a href="special-datasets.html">Special datasets</a>
+      <a href="measures.html">Standardised measures</a>
+    </div>
+    <div class="footer-col">
+      <h4>Project</h4>
+      <a href="about.html">CYP-GHRIP</a>
+      <a href="about.html#contact">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    Gambling Data Finder &mdash; Children and Young People Gambling Harm Research and Innovation Partnership (CYP-GHRIP)<br>
+    Last updated: <span id="footer-date">2026-08-20</span>
+  </div>
+</footer>
+<!-- /build_static:footer -->
+</div>
 
-<script src="app.js?v=7"></script>
+<script src="app.js?v=8"></script>
 <script>
 const SITE_URL = 'https://www.gamblingdatafinder.com/';
+const SITE_NAME = 'Gambling Data Finder';
 
-function studyDescription(ds, studyId, dsName) {
-  const bits = [ds['Study design'], ds['Country'], ds['Age focus / population']]
-    .filter(Boolean).join('. ');
-  return dsName + ' (' + studyId + '): gambling variables, questionnaires, '
-    + 'measures and data access routes.' + (bits ? ' ' + bits + '.' : '');
+// Search results show roughly the first 60-65 characters of a title. The brand
+// suffix is kept only when the whole title fits that window; otherwise the
+// dataset name, which carries the words people search for, stands alone rather
+// than being cut short to make room for the suffix. Used for both the document
+// title and og:title so the two never differ.
+function studyTitle(dsName) {
+  const full = dsName + ' | ' + SITE_NAME;
+  return full.length <= 65 ? full : dsName;
+}
+
+// Per-study description built only from fields that exist in datasets.json
+// plus the named measures in study_stats.json. Returns the full text (for the
+// JSON-LD description, where length is not penalised) and a version trimmed to
+// the 120-155 character window that search results display. Empty fields are
+// omitted, never guessed. 'Age focus / population' is free text that carries
+// internal notes, so it is deliberately not used here.
+function studyDescription(ds, studyId, dsName, stats) {
+  const LIMIT = 155, FLOOR = 120;
+  // People search for short acronyms (MCS, ALSPAC); IDs like
+  // SHES_2017_2018_2019_2021 add nothing, so only acronyms are shown.
+  const acronym = /^[A-Z]{2,8}$/.test(studyId) ? ' (' + studyId + ')' : '';
+  const design = ds['Study design'] || '';
+  const country = ds['Country'] || '';
+  // 'Years covered' and 'Age gambling measured' are free text with notes in
+  // brackets or after a semicolon ("2019-2025 (biennial)", "15+; use adult
+  // subgroup as required"). Keep the part before the first note.
+  function core(value) {
+    return String(value || '').replace(/\s*\([^)]*\)/g, '').split(';')[0]
+      .replace(/\s+,/g, ',').replace(/\s+/g, ' ').trim();
+  }
+  const years = core(ds['Years covered']);
+  const age = ageClause(core(ds['Age gambling measured']));
+  const named = ((stats && stats.named_measures) || []).slice(0, 3);
+  const access = ds['Access difficulty'] ? ds['Access difficulty'] + ' access.' : '';
+
+  // Only a plain age expression ("16+", "11, 14", "14-15, 16-17 and 21-22") is
+  // quoted; word-led values ("About 28", "Midlife/older follow-up") are not.
+  function ageClause(value) {
+    if (/^\d[\d\s,+\/\-\u2013]*(?:and[\d\s,+\/\-\u2013]+)*$/.test(value)) {
+      const several = /[,+\-\u2013]|\band\b/.test(value);
+      return 'at ' + (several ? 'ages ' : 'age ') + value;
+    }
+    if (/^adults?$/i.test(value)) return 'in adults';
+    return '';
+  }
+  function lead(facts) {
+    const list = facts.filter(Boolean).join(', ');
+    // A second colon reads badly when the name already has one
+    // ("Growing Up in Australia: Longitudinal Study...").
+    const sep = /:/.test(dsName + list) ? '. ' : ': ';
+    return dsName + acronym + (list ? sep + list : '') + '.';
+  }
+  function measured(withMeasures) {
+    const using = withMeasures && named.length ? 'using ' + named.join(', ') : '';
+    if (age && using) return 'Gambling measured ' + age + ', ' + using + '.';
+    if (age) return 'Gambling measured ' + age + '.';
+    if (using) return 'Gambling measured ' + using + '.';
+    return '';
+  }
+  function join(parts) { return parts.filter(Boolean).join(' '); }
+
+  const full = join([lead([design, country, years]), measured(true), access]);
+  // The JSON-LD description should also name the topic when a study has no age,
+  // measure or access facts of its own.
+  const fullText = /gambling/i.test(full) ? full : full + ' Gambling variables and data access routes.';
+
+  // Fit the text by dropping whole clauses, never by cutting mid-sentence. The
+  // age, measure and access clauses are what distinguish one study from
+  // another, so the lead is shortened first (design, then years, then country)
+  // and those clauses are given up only when no lead is short enough.
+  const leads = [[design, country, years], [country, years], [country], []];
+  const tails = [
+    [measured(true), access],
+    [measured(false), access],
+    [measured(true)],
+    [measured(false)],
+    [access]
+  ];
+  let short;
+  tails.some(function(tail) {
+    return leads.some(function(facts) {
+      const s = join([lead(facts)].concat(tail));
+      if (s.length <= LIMIT) short = s;
+      return short !== undefined;
+    });
+  });
+  if (short === undefined) {
+    // Nothing factual fits alongside the name: fall back to the name plus as
+    // many lead facts as possible.
+    short = leads.map(lead).find(function(s) { return s.length <= LIMIT; });
+    if (short === undefined) {
+      // Only reachable if the name alone is too long: cut at a word boundary.
+      short = lead([]).slice(0, LIMIT - 1).replace(/\s+\S*$/, '').replace(/[\s,;:.]+$/, '') + '.';
+    }
+  }
+  // Every description should name the topic, and results display best at
+  // 120-155 characters. Pad with a general sentence when the text is short, or
+  // when a study with no age, measure or access facts never says "gambling".
+  // The pads avoid repeating "access" when the access clause is present.
+  if (short.length < FLOOR || !/gambling/i.test(short)) {
+    const pads = /\baccess\b/i.test(short)
+      ? ['Gambling variables, questionnaires and documentation listed.',
+         'Gambling variables and questionnaires listed.',
+         'Gambling variables listed.']
+      : ['Gambling variables, questionnaires and data access routes.',
+         'Gambling variables and data access routes.',
+         'Gambling variables and data access.'];
+    const pad = pads.find(function(p) { return (short + ' ' + p).length <= LIMIT; });
+    if (pad) {
+      short += ' ' + pad;
+    } else if (!/gambling/i.test(short)) {
+      // The lead itself is too long to take a pad: shorten it until one fits.
+      const last = pads[pads.length - 1];
+      const alt = leads.map(lead).find(function(s) { return (s + ' ' + last).length <= LIMIT; });
+      if (alt) short = alt + ' ' + last;
+    }
+  }
+  return { full: fullText, short: short };
 }
 
 // Point the canonical link and the og: tags at this specific study rather than
 // at the shared study.html shell. Creates the tags if the head lacks them.
-function setStudyMeta(ds, studyId, dsName) {
+function setStudyMeta(ds, studyId, dsName, stats) {
   const url = SITE_URL + 'study.html?id=' + encodeURIComponent(studyId);
 
-  const desc = studyDescription(ds, studyId, dsName);
+  const desc = studyDescription(ds, studyId, dsName, stats).short;
 
   function setTag(selector, attr, value) {
     let el = document.head.querySelector(selector);
@@ -137,7 +301,7 @@ function setStudyMeta(ds, studyId, dsName) {
 
   setTag('link[rel="canonical"]', 'href', url);
   setTag('meta[property="og:url"]', 'content', url);
-  setTag('meta[property="og:title"]', 'content', dsName + ' — Gambling Data Finder');
+  setTag('meta[property="og:title"]', 'content', studyTitle(dsName));
   setTag('meta[property="og:description"]', 'content', desc);
   setTag('meta[name="description"]', 'content', desc);
 }
@@ -174,7 +338,7 @@ function setStudyJsonLd(ds, studyId, dsName, stats) {
     alternateName: studyId,
     identifier: studyId,
     url: url,
-    description: studyDescription(ds, studyId, dsName),
+    description: studyDescription(ds, studyId, dsName, stats).full,
     keywords: keywords,
     inLanguage: 'en',
     isPartOf: { '@type': 'DataCatalog', '@id': SITE_URL + '#catalog' },
@@ -206,10 +370,8 @@ function setStudyJsonLd(ds, studyId, dsName, stats) {
 }
 
 document.addEventListener('DOMContentLoaded', async function() {
-  // Inject shared nav and footer
-  document.getElementById('site-header').innerHTML = renderNav('');
-  document.getElementById('site-footer').innerHTML = renderFooter();
-  updateBasketCount();
+  // Shared header and footer: static blocks from scripts/build_static.js; mountChrome() renders them only if missing
+  mountChrome('');
 
   const params = new URLSearchParams(window.location.search);
   const studyId = params.get('id');
@@ -238,14 +400,13 @@ document.addEventListener('DOMContentLoaded', async function() {
 
   const dsName = ds['Dataset name'] || studyId;
 
-  // Dynamic title
-  document.title = dsName + ' — Gambling Data Finder';
+  // Dynamic title (see studyTitle for the length rule)
+  document.title = studyTitle(dsName);
 
-  // Every dataset page shares this one file, so the static head describes none
-  // of them. Rewrite the canonical and social tags per study, otherwise every
-  // ?id= URL advertises the same generic metadata and search engines are free
-  // to treat them as one page. Note this only reaches crawlers that run JS.
-  setStudyMeta(ds, studyId, dsName);
+  // The static intro paragraph exists for crawlers and for visits without a
+  // valid id; the per-study sections replace it.
+  const intro = document.getElementById('study-intro');
+  if (intro) intro.remove();
 
   // Hero: ID badge and name
   document.getElementById('study-hero-id').textContent = studyId;
@@ -266,6 +427,12 @@ document.addEventListener('DOMContentLoaded', async function() {
   // Per-study counts from precomputed stats
   const stats = (studyStats && studyStats[studyId]) || { variables: 0, gambling: 0, risk: 0, questionnaires: 0, sources: 0, measures: 0, named_measures: [] };
 
+  // Every dataset page shares this one file, so the static head describes none
+  // of them. Rewrite the canonical and social tags per study, otherwise every
+  // ?id= URL advertises the same generic metadata and search engines are free
+  // to treat them as one page. Note this only reaches crawlers that run JS.
+  // Called here, after stats is built, so the description can name measures.
+  setStudyMeta(ds, studyId, dsName, stats);
   setStudyJsonLd(ds, studyId, dsName, stats);
   const studyQs = questionnaires ? questionnaires.filter(q => q['Dataset_ID'] === studyId) : [];
   const studySources = sources ? sources.filter(s => s['Dataset_ID'] === studyId) : [];

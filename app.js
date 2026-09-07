@@ -107,7 +107,10 @@ function renderNav(activePage) {
 </header>`;
 }
 
-function renderFooter() {
+// `lastUpdated` is supplied by scripts/build_static.js when it bakes the footer
+// into each page; in the browser the placeholder is filled from summary.json by
+// the DOMContentLoaded handler at the end of this file.
+function renderFooter(lastUpdated) {
   return `<footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-col">
@@ -131,9 +134,105 @@ function renderFooter() {
   </div>
   <div class="footer-bottom">
     Gambling Data Finder &mdash; Children and Young People Gambling Harm Research and Innovation Partnership (CYP-GHRIP)<br>
-    Last updated: <span id="footer-date">&mdash;</span>
+    Last updated: <span id="footer-date">${lastUpdated ? escapeHTML(lastUpdated) : '&mdash;'}</span>
   </div>
 </footer>`;
+}
+
+// The header and footer are pre-rendered into every page by scripts/build_static.js
+// so the raw HTML carries the navigation links. Render them client-side only when
+// the static block is missing (a container div, or else body-level like basket.html),
+// then wire up the basket badge.
+function mountChrome(activePage) {
+  if (!document.querySelector('.site-header')) {
+    const h = document.getElementById('header') || document.getElementById('site-header');
+    if (h) h.innerHTML = renderNav(activePage);
+    else document.body.insertAdjacentHTML('afterbegin', renderNav(activePage));
+  }
+  if (!document.querySelector('.site-footer')) {
+    const f = document.getElementById('footer') || document.getElementById('site-footer');
+    if (f) f.innerHTML = renderFooter();
+    else document.body.insertAdjacentHTML('beforeend', renderFooter());
+  }
+  updateBasketCount();
+}
+
+// ================================================================
+// Study cards (index.html, studies.html, scripts/build_static.js)
+// ================================================================
+//
+// The study-card grids are baked into index.html and studies.html by
+// scripts/build_static.js, which runs these functions in Node and must produce
+// byte-identical output on every machine and in CI. That rules out
+// String.prototype.localeCompare (ICU- and locale-dependent ordering) and an
+// unpinned Number.prototype.toLocaleString (digit grouping follows the host
+// locale), so ordering is by lower-cased code points and digit grouping is
+// pinned to en-GB. The browser fallback in each page calls the same functions.
+
+// Case-insensitive code-point order on "Dataset name", then exact name, then
+// Dataset_ID so the sort is total and stable across engines.
+function compareDatasetNames(a, b) {
+  const an = String(a['Dataset name'] || ''), bn = String(b['Dataset name'] || '');
+  const al = an.toLowerCase(), bl = bn.toLowerCase();
+  if (al !== bl) return al < bl ? -1 : 1;
+  if (an !== bn) return an < bn ? -1 : 1;
+  const ai = getDatasetId(a), bi = getDatasetId(b);
+  return ai < bi ? -1 : ai > bi ? 1 : 0;
+}
+
+function sortDatasets(datasets) {
+  return (datasets || [])
+    .filter(d => d && (d['Dataset_ID'] || d['Dataset name']))
+    .slice()
+    .sort(compareDatasetNames);
+}
+
+// Thousands grouping pinned to en-GB ("26,178") for reproducible static output.
+function formatCount(n) {
+  return Number(n || 0).toLocaleString('en-GB');
+}
+
+// One card as a single line of HTML. `stats` is the study's entry from
+// study_stats.json (or null); `opts.counts` selects the studies.html variant
+// (variable/gambling counts and access type) over the index.html variant (age
+// focus only).
+function renderStudyCard(d, stats, opts) {
+  const counts = !!(opts && opts.counts);
+  const id = d['Dataset_ID'] || d['Dataset name'];
+  const name = d['Dataset name'] || id;
+  const country = d['Country'] || '';
+  const design = d['Study design'] || '';
+  const age = d['Age focus / population'] || '';
+  const meta = (counts ? [country, design, age] : [country, design])
+    .filter(Boolean).map(escapeHTML).join(' &middot; ');
+
+  let statsHTML;
+  if (counts) {
+    const nVars = (stats && stats.variables) || 0;
+    const nGamb = (stats && stats.gambling) || 0;
+    const accessType = d['Access type'] || d['Access difficulty'] || '';
+    statsHTML =
+      '<span class="study-card-stat">' + formatCount(nVars) + (nVars === 1 ? ' variable' : ' variables') + '</span>' +
+      (nGamb ? '<span class="study-card-stat">' + formatCount(nGamb) + ' gambling</span>' : '') +
+      (accessType ? '<span class="study-card-stat" style="color:var(--text-muted);">' + escapeHTML(truncate(accessType, 25)) + '</span>' : '');
+  } else {
+    statsHTML = age ? '<span class="study-card-stat">' + escapeHTML(age) + '</span>' : '';
+  }
+
+  return '<a href="study.html?id=' + encodeURIComponent(id) + '" class="study-card">' +
+    '<div class="study-card-id">' + escapeHTML(id) + '</div>' +
+    '<div class="study-card-name">' + escapeHTML(name) + '</div>' +
+    '<div class="study-card-meta">' + meta + '</div>' +
+    '<div class="study-card-stats">' + statsHTML + '</div>' +
+    '</a>';
+}
+
+// Sorted grid: one <a class="study-card"> per line. `statsById` is the parsed
+// study_stats.json (may be null when opts.counts is false).
+function renderStudyGrid(datasets, statsById, opts) {
+  return sortDatasets(datasets)
+    .map(d => renderStudyCard(d, statsById ? statsById[d['Dataset_ID'] || d['Dataset name']] : null, opts))
+    .join('\n');
 }
 
 // ================================================================

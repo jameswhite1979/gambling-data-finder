@@ -34,3 +34,17 @@ jobs:
             exit 1
           fi
           echo "Derived files up to date"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      # Runs after the derived-file check so a stale summary.json is reported by
+      # its own step rather than as a confusing footer-date diff here.
+      - name: Check static header, footer and study grids are current
+        run: |
+          if ! node scripts/build_static.js --check; then
+            echo "::error::Static HTML blocks are stale (pages listed above). Run: node scripts/build_static.js  and commit the changed .html files."
+            exit 1
+          fi
+          echo "Static HTML blocks up to date"
