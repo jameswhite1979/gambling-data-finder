@@ -94,7 +94,7 @@ const TEXT_BAKES = {
   }),
   'studies.html': (data, ctx) => ({
     'studies-summary': data.datasets.length + ' studies (' + ctx.formatCount(data.summary.datasets) + ' datasets) with ' +
-      ctx.formatCount(data.summary.variables) + ' variables indexed for CYP-GHRIP evidence mapping',
+      ctx.formatCount(data.summary.variables) + ' variables indexed for Y-GHRIP evidence mapping',
   }),
 };
 

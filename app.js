@@ -121,19 +121,19 @@ function renderFooter(lastUpdated) {
     </div>
     <div class="footer-col">
       <h4>About</h4>
-      <a href="about.html">About the CYP-GHRIP data resource</a>
+      <a href="about.html">About the Y-GHRIP data resource</a>
       <a href="studies.html">All studies and datasets</a>
       <a href="special-datasets.html">Special datasets</a>
       <a href="measures.html">Standardised measures</a>
     </div>
     <div class="footer-col">
       <h4>Project</h4>
-      <a href="about.html">CYP-GHRIP</a>
+      <a href="about.html">Y-GHRIP</a>
       <a href="about.html#contact">Contact</a>
     </div>
   </div>
   <div class="footer-bottom">
-    Gambling Data Finder &mdash; Children and Young People Gambling Harm Research and Innovation Partnership (CYP-GHRIP)<br>
+    Gambling Data Finder &mdash; Youth Gambling Harm Research and Innovation Partnership (Y-GHRIP)<br>
     Last updated: <span id="footer-date">${lastUpdated ? escapeHTML(lastUpdated) : '&mdash;'}</span>
   </div>
 </footer>`;
