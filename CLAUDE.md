@@ -95,4 +95,3 @@ node scripts/build_static.js
 - The v21 mapping workbook in OneDrive is STALE — do not re-run a full export from it. Edit the deployed JSON directly.
 - `gh` CLI is not installed. Use `git` commands for pushing. Git Credential Manager handles auth.
 - XLSX module is installed in the OneDrive `Data availability/node_modules/` directory. The search-dictionary script resolves it from there automatically.
-- Never credit Claude/AI in commits, pages, or document metadata.

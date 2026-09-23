@@ -133,6 +133,5 @@ The browse-by-topic tree is defined in the `TOPIC_FOLDERS` JavaScript constant i
 
 ## Constraints
 
-- Never credit AI tools (Codex, Claude, GPT, etc.) as author or contributor in commits, pages, or metadata
 - Do not add comments to JSON files
 - Keep commits focused — one logical change per commit
