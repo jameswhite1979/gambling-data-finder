@@ -9,7 +9,7 @@ Checks:
   - Dataset_ID present in datasets.json, access.json, facets.json
   - Source/pub/questionnaire/variable/gambling_measure entries reference correct ID
   - No duplicate IDs within any file
-  - summary.json counts match actual array lengths
+  - summary.json counts match actual array lengths (publications counts distinct papers)
 
 Fixes:
   - Adds Dataset_ID to facets.json datasets array if missing
@@ -33,6 +33,16 @@ def save(data_dir, name, data, indent=1):
     path = os.path.join(data_dir, name)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=indent, ensure_ascii=False)
+
+def count_papers(publications):
+    """Distinct papers: a paper listed under more than one study has one record per study,
+    with the same title and link, so count each title/link pair once."""
+    def norm(s):
+        return re.sub(r"\W+", " ", (s or "").lower()).strip()
+    def norm_url(u):
+        return re.sub(r"^https?://(www\.)?|/$", "", (u or "").strip().lower())
+    return len({(norm(p.get("Paper / documentation title")), norm_url(p.get("URL / DOI")))
+                for p in publications})
 
 def main():
     if len(sys.argv) < 2:
@@ -168,7 +178,7 @@ def main():
         "risk_protective_variables": role_counts.get("Risk/protective factor", 0),
         "source_urls": len(sources),
         "last_updated": date.today().isoformat(),
-        "publications": len(publications),
+        "publications": count_papers(publications),
     }
 
     # last_updated only moves when a real count changes, so re-running the

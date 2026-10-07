@@ -1,15 +1,5 @@
 [
  {
-  "Dataset ID": "ALSPAC",
-  "Paper / documentation title": "CLOSER/ALSPAC gambling questionnaire records",
-  "Authors / year": "CLOSER/ALSPAC",
-  "Source type": "Metadata records",
-  "Gambling measure used": "Gambling questionnaire/PGSI/CPGI-derived variables",
-  "Risk/protective factors analysed": "Rich cohort variables",
-  "URL / DOI": "https://discovery.closer.ac.uk/",
-  "Notes": "Use for variable-level extraction"
- },
- {
   "Dataset ID": "APMS",
   "Paper / documentation title": "APMS 2023/24 Gambling behaviour chapter",
   "Authors / year": "NHS England, 2025",
@@ -18,16 +8,6 @@
   "Risk/protective factors analysed": "Psychiatric morbidity",
   "URL / DOI": "https://digital.nhs.uk/data-and-information/publications/statistical/adult-psychiatric-morbidity-survey/survey-of-mental-health-and-wellbeing-england-2023-24/gambling-behaviour",
   "Notes": "Recent adult mental-health dataset"
- },
- {
-  "Dataset ID": "EAGS",
-  "Paper / documentation title": "Emerging Adults Gambling Survey protocol/publication",
-  "Authors / year": "Wardle et al., 2020",
-  "Source type": "Protocol/data description",
-  "Gambling measure used": "PGSI and gambling behaviours",
-  "Risk/protective factors analysed": "Gaming/social media/health behaviours",
-  "URL / DOI": "https://wellcomeopenresearch.org/articles/5-240",
-  "Notes": "Useful for extraction of constructs"
  },
  {
   "Dataset ID": "EAGS",
@@ -41,16 +21,6 @@
  },
  {
   "Dataset ID": "EAGS",
-  "Paper / documentation title": "The Emerging Adults Gambling Survey: study protocol",
-  "Authors / year": "Wardle, 2020",
-  "Source type": "Protocol",
-  "Gambling measure used": "Gambling behaviours/harms and longitudinal design",
-  "Risk/protective factors analysed": "Digital technology/gaming/social media and young adults",
-  "URL / DOI": "https://doi.org/10.12688/wellcomeopenres.15969.1",
-  "Notes": "Uploaded protocol confirms ages 16-24, Wave 1 n=3549 and Wave 2 planned; useful source for study design."
- },
- {
-  "Dataset ID": "EAGS",
   "Paper / documentation title": "The relationship between problematic gambling severity and engagement with gambling products",
   "Authors / year": "Wardle and Tipping, 2023",
   "Source type": "Peer-reviewed paper",
@@ -60,33 +30,13 @@
   "Notes": "Uploaded paper demonstrates longitudinal analysis of young adults aged 16-26."
  },
  {
-  "Dataset ID": "ESPAD",
-  "Paper / documentation title": "ESPAD Report 2019 / 2024 data portal",
-  "Authors / year": "ESPAD consortium",
-  "Source type": "Official report/data portal",
-  "Gambling measure used": "Gambling for money / online gambling / problematic gambling",
-  "Risk/protective factors analysed": "Substance use/gaming/wellbeing",
-  "URL / DOI": "https://data.espad.org/",
-  "Notes": "Cross-national school survey"
- },
- {
-  "Dataset ID": "GIBS",
-  "Paper / documentation title": "Gambling Impact and Behavior Study, 1997-1999",
-  "Authors / year": "NORC/ICPSR",
-  "Source type": "Data documentation",
-  "Gambling measure used": "Problem-gambling diagnostic assessment",
-  "Risk/protective factors analysed": "Mental health/substance/demographic variables",
-  "URL / DOI": "https://www.icpsr.umich.edu/web/NAHDAP/studies/2778",
-  "Notes": "Historical US youth/adult data"
- },
- {
   "Dataset ID": "GUI98",
   "Paper / documentation title": "Adolescent online gambling in Growing Up in Ireland",
   "Authors / year": "GREO summary of published analysis",
   "Source type": "Evidence summary",
   "Gambling measure used": "Online gambling",
   "Risk/protective factors analysed": "Demographic/socioeconomic/health",
-  "URL / DOI": "https://www.greo.ca/",
+  "URL / DOI": "https://www.greo.ca/Modules/EvidenceCentre/Details/the-impact-of-gaming-in-childhood-and-adolescence-on-gambling-as-young-adults",
   "Notes": "Confirms waves 3 and 4 gambling variables"
  },
  {
@@ -100,26 +50,6 @@
   "Notes": "Confirms PGSI"
  },
  {
-  "Dataset ID": "OSDUHS",
-  "Paper / documentation title": "Cross Validation of the Gambling Problem Severity Subscale",
-  "Authors / year": "Turner et al., 2018",
-  "Source type": "Peer-reviewed paper",
-  "Gambling measure used": "CAGI/GPSS",
-  "Risk/protective factors analysed": "Adolescent gambling validation",
-  "URL / DOI": "https://link.springer.com/article/10.1007/s10899-017-9731-1",
-  "Notes": "Confirms CAGI/GPSS use"
- },
- {
-  "Dataset ID": "OSDUHS",
-  "Paper / documentation title": "Traumatic brain injuries and problem gambling in youth",
-  "Authors / year": "Turner et al., 2020",
-  "Source type": "Peer-reviewed paper",
-  "Gambling measure used": "Youth problem gambling measure",
-  "Risk/protective factors analysed": "TBI and covariates",
-  "URL / DOI": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7531994/",
-  "Notes": "Confirms gambling analyses in OSDUHS"
- },
- {
   "Dataset ID": "SHES_2017_2018_2019_2021",
   "Paper / documentation title": "Scottish Health Survey 2017/2018/2019/2021 Gambling chapter",
   "Authors / year": "Scottish Government, 2022",
@@ -128,16 +58,6 @@
   "Risk/protective factors analysed": "Health/demographics",
   "URL / DOI": "https://www.gov.scot/publications/scottish-health-survey-2021-volume-1-main-report/pages/14/",
   "Notes": "Confirms PGSI"
- },
- {
-  "Dataset ID": "SHRN",
-  "Paper / documentation title": "Gambling among adolescents in Wales / SHRN data paper",
-  "Authors / year": "SHRN team / Wardle-related papers",
-  "Source type": "Peer-reviewed paper",
-  "Gambling measure used": "Past-year/past-week gambling and harm item",
-  "Risk/protective factors analysed": "School/youth risk factors",
-  "URL / DOI": "https://academic.oup.com/ije/article/50/4/1077/6216951",
-  "Notes": "Data profile confirms SHRN resource"
  },
  {
   "Dataset ID": "OSDUHS",
@@ -173,8 +93,8 @@
   "Publication_ID": "PUB_BCS70_001",
   "Dataset ID": "BCS70",
   "Dataset name": "",
-  "Paper / documentation title": "CLOSER written evidence to UK Parliament on social and economic impact of the gambling industry",
-  "Authors / year": "CLOSER, 2022",
+  "Paper / documentation title": "CLOSER, the home of longitudinal research - Written evidence (GAM0060)",
+  "Authors / year": "Davies / 2019",
   "Source type": "Parliamentary written evidence",
   "URL / DOI": "https://committees.parliament.uk/writtenevidence/104870/html/",
   "Notes": "Cites BCS70 age-16 betting/gambling spending item: around 6,000 respondents, 5% spent money on betting/gambling, and 5% of those saw it as their most important spending activity; notes the question was not repeated. Policy evidence, not a peer-reviewed gambling analysis paper.",
@@ -669,86 +589,6 @@
   "Notes": "Past-12-month gambling activities and behaviours; PGSI at-risk classification."
  },
  {
-  "Dataset ID": "BIB_AOW",
-  "Paper / documentation title": "Born in Bradford Age of Wonder 2024-25 questionnaire",
-  "Authors / year": "Born in Bradford, 2024",
-  "Source type": "Data documentation",
-  "Gambling measure used": "Own-money gambling activity items; family gambling; in-game items and loot boxes",
-  "Risk/protective factors analysed": "Questionnaire includes mental health, wellbeing, substance use, socioeconomic, family, school and digital environment measures",
-  "URL / DOI": "https://borninbradford.nhs.uk/wp-content/uploads/2024/11/Age-of-Wonder-24-25-Questionnaire.pdf",
-  "Notes": "No DOI - official questionnaire documentation; gambling analysis publication not located."
- },
- {
-  "Dataset ID": "BIB_AOW",
-  "Paper / documentation title": "Born in Bradford Age of Wonder Post-16 2025-26 questionnaire",
-  "Authors / year": "Born in Bradford, 2025",
-  "Source type": "Data documentation",
-  "Gambling measure used": "Own-money gambling activity items; family gambling; digital gambling exposure",
-  "Risk/protective factors analysed": "Questionnaire includes mental health, wellbeing, substance use, socioeconomic, family, education and digital environment measures",
-  "URL / DOI": "https://borninbradford.nhs.uk/wp-content/uploads/2025/09/Age-of-Wonder-Post-16-25-26-Questionnaire.pdf",
-  "Notes": "No DOI - official questionnaire documentation; gambling analysis publication not located."
- },
- {
-  "Dataset ID": "USOC",
-  "Paper / documentation title": "UK Household Longitudinal Study Mainstage Questionnaire: Wave 13",
-  "Authors / year": "Understanding Society, 2023",
-  "Source type": "Data documentation",
-  "Gambling measure used": "Past-week gambling activity items",
-  "Risk/protective factors analysed": "Questionnaire includes health, mental wellbeing, finances, employment, relationships and demographic variables",
-  "URL / DOI": "https://www.understandingsociety.ac.uk/wp-content/uploads/documentation/main-survey/questionnaires/6614-main-survey-questionnaire-w13.pdf",
-  "Notes": "No DOI - official questionnaire documentation; gambling analysis publication not located."
- },
- {
-  "Dataset ID": "NCDS",
-  "Paper / documentation title": "National Child Development Study: Age 23, Sweep 4, 1981, and Public Examination Results, 1978",
-  "Authors / year": "CLS / UK Data Service",
-  "Source type": "Data documentation",
-  "Gambling measure used": "Past-4-week gambling including bingo",
-  "Risk/protective factors analysed": "Cohort documentation supports analysis with mental health, substance use, family, socioeconomic and education variables",
-  "URL / DOI": "https://datacatalogue.ukdataservice.ac.uk/studies/study/5566",
-  "Notes": "No DOI - official UKDS catalogue/documentation; gambling analysis publication not located."
- },
- {
-  "Dataset ID": "MCS",
-  "Paper / documentation title": "MCS6 Young Person Questionnaire",
-  "Authors / year": "Centre for Longitudinal Studies, 2015",
-  "Source type": "Data documentation",
-  "Gambling measure used": "Past-4-week own-money gambling grid",
-  "Risk/protective factors analysed": "Questionnaire includes activities, attitudes, family, friends, victimisation, risky behaviours, health and wellbeing",
-  "URL / DOI": "https://cls.ucl.ac.uk/wp-content/uploads/2017/12/MCS6-Young-Person-Questionnaire.pdf",
-  "Notes": "No DOI - official questionnaire documentation."
- },
- {
-  "Dataset ID": "HSE_SHES_2016",
-  "Paper / documentation title": "User guide for the HSE and SHeS 2016 combined gambling dataset",
-  "Authors / year": "NatCen Social Research, 2018",
-  "Source type": "Data documentation",
-  "Gambling measure used": "PGSI; DSM-IV; gambling participation weights",
-  "Risk/protective factors analysed": "Data guide documents combined HSE and SHeS variables and weights for gambling analyses",
-  "URL / DOI": "https://doc.ukdataservice.ac.uk/doc/8416/mrdoc/pdf/8416_2016_hse_and_shes_combined_user_guide.pdf",
-  "Notes": "No DOI - UKDS official user guide for the archived combined gambling dataset."
- },
- {
-  "Dataset ID": "NSW",
-  "Paper / documentation title": "National Survey for Wales: results viewer",
-  "Authors / year": "Welsh Government, 2025",
-  "Source type": "Official data tool",
-  "Gambling measure used": "PGSI; gambling activities",
-  "Risk/protective factors analysed": "Interactive official statistics viewer for National Survey for Wales releases, including the gambling release",
-  "URL / DOI": "https://www.gov.wales/national-survey-wales-results-viewer",
-  "Notes": "No DOI - official Welsh Government results viewer."
- },
- {
-  "Dataset ID": "GUI98",
-  "Paper / documentation title": "Growing Up in Ireland Cohort 98 questionnaires",
-  "Authors / year": "Growing Up in Ireland",
-  "Source type": "Data documentation",
-  "Gambling measure used": "Online gambling and gambling-related questionnaire items",
-  "Risk/protective factors analysed": "Questionnaires document demographic, socioeconomic, education, health and family measures for Cohort 98 waves",
-  "URL / DOI": "https://www.growingup.gov.ie/questionnaires/",
-  "Notes": "No DOI - official questionnaire documentation; additional gambling analysis publication not located."
- },
- {
   "Dataset ID": "GIBS",
   "Paper / documentation title": "Gambling Impact and Behavior Study: Report to the National Gambling Impact Study Commission",
   "Authors / year": "Gerstein et al., 1999",
@@ -769,56 +609,6 @@
   "Notes": "No DOI - official Scottish Health Survey gambling chapter."
  },
  {
-  "Dataset ID": "BCS70",
-  "Paper / documentation title": "1970 British Cohort Study: Age 16, Sweep 4, 1986",
-  "Authors / year": "CLS / UK Data Service",
-  "Source type": "Data documentation",
-  "Gambling measure used": "Age-16 betting shop and betting/gambling spending items",
-  "Risk/protective factors analysed": "Cohort documentation supports analysis with school, family, mental health, substance use, socioeconomic and education variables",
-  "URL / DOI": "https://datacatalogue.ukdataservice.ac.uk/studies/study/3535",
-  "Notes": "No DOI - official UKDS catalogue/documentation; additional gambling analysis publication not located."
- },
- {
-  "Dataset ID": "YOUTH07_NZ",
-  "Paper / documentation title": "Youth2000 data access and data dictionary documentation",
-  "Authors / year": "University of Auckland AHRG",
-  "Source type": "Data documentation",
-  "Gambling measure used": "Custom Youth07 gambling behaviour items",
-  "Risk/protective factors analysed": "Youth2000 documentation supports analysis with wellbeing, depression, social connectedness, alcohol, income, demographic and deprivation variables",
-  "URL / DOI": "https://www.fmhs.auckland.ac.nz/en/faculty/adolescent-health-research-group/collaborations-and-access-to-datasets.html",
-  "Notes": "No DOI - official AHRG data access and data dictionary documentation."
- },
- {
-  "Dataset ID": "FINLAND_SHP",
-  "Paper / documentation title": "FSD3551 School Health Promotion Study 2019 catalogue record",
-  "Authors / year": "Finnish Social Science Data Archive / THL",
-  "Source type": "Data documentation",
-  "Gambling measure used": "Gambling frequency item",
-  "Risk/protective factors analysed": "Catalogue and questionnaires document wellbeing, health, school, substance use, family and leisure-time measures",
-  "URL / DOI": "https://services.fsd.tuni.fi/catalogue/FSD3551?study_language=en",
-  "Notes": "No DOI - FSD catalogue record and questionnaire documentation."
- },
- {
-  "Dataset ID": "LSAC",
-  "Paper / documentation title": "Growing Up in Australia (LSAC) Data User Guide",
-  "Authors / year": "Australian Institute of Family Studies, 2024",
-  "Source type": "Data documentation",
-  "Gambling measure used": "PGSI; gambling participation items",
-  "Risk/protective factors analysed": "Mental health, substance use, family, peers, school, socioeconomic position",
-  "URL / DOI": "https://growingupinaustralia.gov.au/data-and-documentation/data-user-guide",
-  "Notes": "Documents the young-person gambling module (Waves 7-10) and Parent 1 gambling module (Waves 5-9)."
- },
- {
-  "Dataset ID": "LSAC",
-  "Paper / documentation title": "Longitudinal Study of Australian Children (LSAC) Release 10 - ADA Dataverse catalogue record",
-  "Authors / year": "Australian Data Archive / DSS, 2025",
-  "Source type": "Metadata records",
-  "Gambling measure used": "PGSI; gambling participation items",
-  "Risk/protective factors analysed": "Wide-ranging cohort measures across health, family, school and socioeconomic domains",
-  "URL / DOI": "https://dataverse.ada.edu.au/dataset.xhtml?persistentId=doi:10.26193/XMLCQP",
-  "Notes": "Wave 10 data released October 2025. No DOI shown here beyond the ADA persistent identifier."
- },
- {
   "Dataset ID": "YPBAS",
   "Paper / documentation title": "Experience of gambling by young people in Northern Ireland 2022",
   "Authors / year": "NISRA, 2023",
@@ -837,36 +627,6 @@
   "Risk/protective factors analysed": "Demographics (school year, gender)",
   "URL / DOI": "https://www.health-ni.gov.uk/publications/young-persons-behaviour-and-attitudes-survey-2022-gambling-data-tables",
   "Notes": "Detailed data tables for the 2022 gambling module."
- },
- {
-  "Dataset ID": "OXWELL",
-  "Paper / documentation title": "Study protocol: the OxWell school survey investigating social, emotional and behavioural factors associated with mental health and well-being",
-  "Authors / year": "Mansfield et al., 2022",
-  "Source type": "Protocol",
-  "Gambling measure used": "Custom gambling participation / online gambling items (2019-2021)",
-  "Risk/protective factors analysed": "Mental health and wellbeing, digital use, demographics, family",
-  "URL / DOI": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9066348/",
-  "Notes": "Protocol paper; gambling items appear in 2019-2021 waves for older pupils only."
- },
- {
-  "Dataset ID": "OXWELL",
-  "Paper / documentation title": "OxWell Student Survey variable guides (OSF)",
-  "Authors / year": "University of Oxford, 2019-2025",
-  "Source type": "Data documentation",
-  "Gambling measure used": "Custom gambling participation / online gambling items (2019-2021)",
-  "Risk/protective factors analysed": "Mental health and wellbeing, digital use, socioeconomic and demographic factors",
-  "URL / DOI": "https://osf.io/sekhr/",
-  "Notes": "Per-wave variable guides including the 2019-2021 gambling items."
- },
- {
-  "Dataset ID": "UK_BIOBANK_GAMBLING",
-  "Paper / documentation title": "Pathways, Trajectories, and Costs of Gambling-related Suicide among routinely collected healthcare data and general population datasets",
-  "Authors / year": "UK Biobank approved project 176976",
-  "Source type": "Approved research project record",
-  "Gambling measure used": "Linked gambling-related healthcare records",
-  "Risk/protective factors analysed": "Healthcare trajectories and suicide",
-  "URL / DOI": "https://www.ukbiobank.ac.uk/projects/pathways-trajectories-and-costs-of-gambling-related-suicide-among-routinely-collected-healthcare-data-and-general-population-datasets/",
-  "Notes": "Project record, not a completed publication"
  },
  {
   "Dataset ID": "STS_ATS_GB_2022",
@@ -979,16 +739,6 @@
   "Notes": "Joint LLLP and QLS analysis"
  },
  {
-  "Dataset ID": "AGRI_ANP_PANEL",
-  "Paper / documentation title": "The AGRI National Project: Online Panel Study dataset documentation",
-  "Authors / year": "Williams et al., 2022",
-  "Source type": "Dataset documentation",
-  "Gambling measure used": "Participation, online gambling and problem gambling",
-  "Risk/protective factors analysed": "Multiple",
-  "URL / DOI": "https://doi.org/10.5683/SP3/JYUO8E",
-  "Notes": "Add peer-reviewed use after codebook/publication review"
- },
- {
   "Dataset ID": "LOYALTY_CARD_2014_2016",
   "Paper / documentation title": "Follow-up study of loyalty card customers: changes in gambling behaviour over time",
   "Authors / year": "Wardle, Fuller, Maplethorpe and Jones, 2017",
@@ -997,26 +747,6 @@
   "Risk/protective factors analysed": "Impulsivity, thinking style, cognitive reflection, wellbeing, life events, income and demographics",
   "URL / DOI": "https://www.gambleaware.org/media/hvudbxgn/follow-up-study-of-loyalty-card-customers-report.pdf",
   "Notes": "Wave 2 report prepared for GambleAware, 25 January 2017."
- },
- {
-  "Dataset ID": "LOYALTY_CARD_2014_2016",
-  "Paper / documentation title": "Gaming and Betting Study: Survey of Loyalty Card Customers, Waves 1 and 2, 2014-2016 - user guide",
-  "Authors / year": "NatCen Social Research",
-  "Source type": "Data documentation",
-  "Gambling measure used": "PGSI scoring and thresholds; derived gambling measures",
-  "Risk/protective factors analysed": "Full covariate list",
-  "URL / DOI": "https://doc.ukdataservice.ac.uk/doc/8191/mrdoc/pdf/8191_survey_of_loyalty_card_customers_user_guide_final.pdf",
-  "Notes": "Documents the released variable list, missing-value conventions and weighting."
- },
- {
-  "Dataset ID": "CSDD",
-  "Paper / documentation title": "Cambridge Study in Delinquent Development [Great Britain], 1961-1981 - codebook",
-  "Authors / year": "Farrington, 1984",
-  "Source type": "Data documentation",
-  "Gambling measure used": "Betting participation and expenditure items; derived gambling classification",
-  "Risk/protective factors analysed": "Delinquency, family, school, personality and employment measures",
-  "URL / DOI": "https://www.ojp.gov/pdffiles1/Digitization/103946NCJRS.pdf",
-  "Notes": "ICPSR 8488. Gambling items are at VAR469, VAR567, VAR657-662, VAR687, VAR719-722, VAR780 and VAR814."
  },
  {
   "Dataset ID": "CSDD",
@@ -1029,16 +759,6 @@
   "Notes": "Principal study monograph covering the age 18-19 sweep."
  },
  {
-  "Dataset ID": "WOS_TWENTY07",
-  "Paper / documentation title": "Cohort Profile: West of Scotland Twenty-07 Study: Health in the Community",
-  "Authors / year": "Benzeval and colleagues, 2009",
-  "Source type": "Cohort profile",
-  "Gambling measure used": "Not the focus; gambling items are in the Wave 4 schedule",
-  "Risk/protective factors analysed": "Employment, deprivation, health behaviours and mental health",
-  "URL / DOI": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2935558/",
-  "Notes": "Confirms the three cohorts born around 1932, 1952 and 1972 and Wave 4 fieldwork in 2000-04."
- },
- {
   "Dataset ID": "MHCYP",
   "Paper / documentation title": "Mental Health of Children and Young People in England, 2023 - wave 4 follow-up, part 2: sleep, loneliness, activities and health behaviours",
   "Authors / year": "NHS England, 2023",
@@ -1047,26 +767,6 @@
   "Risk/protective factors analysed": "Sleep, loneliness, social media use and health behaviours",
   "URL / DOI": "https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-of-children-and-young-people-in-england/2023-wave-4-follow-up/part-2-sleep-loneliness-activities-and-health-behaviours",
   "Notes": "Published 21 November 2023; gives the wording, age universes and prevalence."
- },
- {
-  "Dataset ID": "KCMHR_HWCS",
-  "Paper / documentation title": "Health and wellbeing of UK Armed Forces personnel and veterans: protocol for the fourth phase of a cohort study",
-  "Authors / year": "King's Centre for Military Health Research, 2023",
-  "Source type": "Protocol preprint",
-  "Gambling measure used": "Problem Gambling Severity Index, cut-off 8 or more",
-  "Risk/protective factors analysed": "PTSD, complex PTSD, common mental disorders, alcohol, illicit drug use, loneliness and social support",
-  "URL / DOI": "https://www.medrxiv.org/content/10.1101/2023.08.17.23294221v1.full.pdf",
-  "Notes": "Posted 23 August 2023. Lists the PGSI as measure 13 of the Phase 4 questionnaire."
- },
- {
-  "Dataset ID": "GLAD",
-  "Paper / documentation title": "The Genetic Links to Anxiety and Depression (GLAD) Study: online recruitment into the largest recontactable study of depression and anxiety",
-  "Authors / year": "Davies and colleagues, 2019",
-  "Source type": "Cohort profile",
-  "Gambling measure used": "Optional questionnaire asking detailed questions about gambling",
-  "Risk/protective factors analysed": "Anxiety and depression phenotypes, trauma, substance use and life events",
-  "URL / DOI": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6891252/",
-  "Notes": "The single public source establishing that a gambling module exists."
  },
  {
   "Dataset ID": "ACT_GPS_2019",
