@@ -424,7 +424,7 @@
   "Dataset_ID": "HBSC",
   "Dataset name": "Health Behaviour in School-aged Children country gambling modules",
   "Wave / year": "Country/wave-specific; Italy 2013/14 and 2021/22 gambling confirmed in literature/search",
-  "Age group": "Ages 11, 13, 15; some countries include 17-year-olds or gambling modules",
+  "Age group": "Ages 11, 13, 15 surveyed; gambling items asked of 15-year-olds (some countries, e.g. Italy, also include 17-year-olds)",
   "Questionnaire / metadata title": "Questionnaire URL from archive-search inventory",
   "File type": "URL",
   "URL": "https://www.hbsc.org/publications/reports/",
