@@ -76,6 +76,11 @@ function serve() {
 // cosmetic font request; neither indicates a broken page.
 const IGNORE = [/favicon/i, /net::ERR_ABORTED.*\.ico/i];
 
+// The Cloudflare Web Analytics beacon rejects localhost with a CORS error, and
+// test runs should not count as visits, so answer its requests with an empty
+// script. Fulfilling rather than aborting keeps net::ERR_FAILED out of the console.
+const BEACON = /^https:\/\/(static\.)?cloudflareinsights\.com\//;
+
 (async () => {
   const only = process.argv[2];
   const targets = only ? Object.keys(PAGES).filter(p => p.startsWith(only)) : Object.keys(PAGES);
@@ -87,6 +92,7 @@ const IGNORE = [/favicon/i, /net::ERR_ABORTED.*\.ico/i];
 
   for (const page of targets) {
     const ctx = await browser.newContext();
+    await ctx.route(BEACON, r => r.fulfill({ status: 200, contentType: 'text/javascript', body: '' }));
     const tab = await ctx.newPage();
     const errors = [];
     tab.on('console', m => { if (m.type() === 'error' && !IGNORE.some(r => r.test(m.text()))) errors.push('console: ' + m.text()); });

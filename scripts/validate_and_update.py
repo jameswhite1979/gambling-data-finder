@@ -13,6 +13,8 @@ Checks:
 
 Fixes:
   - Adds Dataset_ID to facets.json datasets array if missing
+  - Regenerates facets.json named_measures, risk_domains, wave_years and age_groups
+    from variables (and questionnaires)
   - Recounts and rewrites summary.json from actual data
   - Sets summary.json last_updated to today
   - Regenerates study_stats.json (per-study counts + named measures)
@@ -242,6 +244,25 @@ def main():
         print(f"  FIXED facets.json named_measures ({len(all_named)} measures)")
     else:
         print(f"  OK    facets.json named_measures")
+
+    # ---- search filter facets: regenerate so each dropdown lists every value in use ----
+    # search.html filters variables and questionnaires on wave and age, so those take
+    # values from both; questionnaires carry no risk domain.
+    def rebuild_facet(key, var_field, q_field=None):
+        values = {(v.get(var_field) or "").strip() for v in variables}
+        if q_field:
+            values |= {(q.get(q_field) or "").strip() for q in questionnaires}
+        values = sorted(values - {""})
+        if facets.get(key) != values:
+            facets[key] = values
+            save(data_dir, "facets.json", facets, indent=1)
+            print(f"  FIXED facets.json {key} ({len(values)} values)")
+        else:
+            print(f"  OK    facets.json {key}")
+
+    rebuild_facet("risk_domains", "risk_domain")
+    rebuild_facet("wave_years", "wave_year", "Wave / year")
+    rebuild_facet("age_groups", "age_group", "Age group")
 
     # ---- measure_stats.json: per named gambling measure summary for measures.html ----
     measure_stats = []
